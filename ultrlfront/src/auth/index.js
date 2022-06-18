@@ -1,5 +1,5 @@
 export const signup = (user) => {
-    return fetch('https://ultralearnapi.solo7903.repl.co/signup'`, {
+    return fetch('https://ultralearnapi.solo7903.repl.co/signup', {
       method: "POST",
       headers: {
         Accept: "application/json",
