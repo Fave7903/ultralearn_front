@@ -1,0 +1,44 @@
+.color{
+    background-color: rgba(92, 39, 209, 0.5)
+
+}
+.float-start{
+font-weight: 700;
+padding: 2VW
+}
+.text-light {
+    font-size: 1.5vw;
+}
+.caption{
+   margin-top: -20vw; 
+}
+.btn{
+    background-color: #5c27d1
+}
+.fluid{
+    width:5vw
+}
+.fb{
+    width: 10vw;
+}
+.txt {
+color: #5c27d1;
+text-decoration: none;
+}
+.image{
+    width: 50vw;
+    height: 60vw;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding-bottom: 20vw;
+}
+form-check-input{
+    background-color: rgb(155, 115, 155);
+}
+.password{
+    text-decoration: none;
+
+    color: purple;
+    float: right;
+}
