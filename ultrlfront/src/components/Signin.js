@@ -7,7 +7,6 @@ import '../assets/style.css'
 import image3 from '../assets/image 3.png'
 import face from '../assets/facebook.png'
 import down from '../assets/download.png'
-import { CircularProgress } from '@material-ui/core'
 
 
 
@@ -79,7 +78,9 @@ class Signin extends Component {
         </div>
 
         {loading ? <div className="jumbotron text-center">
-          <CircularProgress color="secondary"/>
+          <div class="spinner-border text-primary" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
         </div> : ""}
         <div className="p-5">
                 <p className="text-dark fs-3 fw-bolder">Welcome Back!</p>  
