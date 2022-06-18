@@ -1,5 +1,5 @@
 export const signup = (user) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/signup`, {
+    return fetch('https://ultralearnapi.solo7903.repl.co/signup'`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -14,7 +14,7 @@ export const signup = (user) => {
   }
 
 export const signin = (user) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/signin`, {
+    return fetch('https://ultralearnapi.solo7903.repl.co/signin', {
       method: "POST",
       headers: {
         Accept: "application/json",
