@@ -74,9 +74,9 @@ class Signup extends Component {
             </div>
 
         
-      <div className="container col">
+      <div className="container col mx-5">
         <br></br>
-        <h2 className="mt-5 mb-5">Signup</h2>
+        <h2 className="mt-5 mb-5 fw-bolder">Create an account with UltraLearn</h2>
 
         <div className="alert alert-danger" style={{display: error ? "" : "none"}}>
           {error}
