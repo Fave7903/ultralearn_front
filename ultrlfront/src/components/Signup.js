@@ -74,7 +74,7 @@ class Signup extends Component {
             </div>
 
         
-      <div className="col">
+      <div className="container col">
         <br></br>
         <h2 className="mt-5 mb-5">Signup</h2>
 
