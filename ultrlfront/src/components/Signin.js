@@ -84,7 +84,7 @@ class Signin extends Component {
         </div> : ""}
         <div className="p-5">
                 <p className="text-dark fs-3 fw-bolder">Welcome Back!</p>  
-                <p>Welcome back,please share your details</p>
+                <p>Welcome back, please share your details</p>
           <form>
                 <div className="form-group mb-4">
             <label className="text-muted">Email</label>
