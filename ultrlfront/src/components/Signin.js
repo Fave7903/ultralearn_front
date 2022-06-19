@@ -107,7 +107,7 @@ class Signin extends Component {
             </input>
           </div>
                   <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></input>
+                    <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked"></input>
                     <label className="form-check-label" for="flexCheckChecked">
                       Remember Me
                     </label>
