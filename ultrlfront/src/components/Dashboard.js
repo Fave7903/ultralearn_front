@@ -12,7 +12,7 @@ const Dashboard = () => {
         </div>
       }
       {!isAuthenticated() &&
-        <Navigate to="/signin" />
+        <Navigate to="/signup" />
       }
     </div>
   );
