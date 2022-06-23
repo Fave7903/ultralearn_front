@@ -1,5 +1,5 @@
 export const signup = (user) => {
-    return fetch('https://ultralearnapi.solo7903.repl.co/signup', {
+    return fetch('https://api-ultralearn.herokuapp.com/signup', {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -14,7 +14,7 @@ export const signup = (user) => {
   }
 
 export const signin = (user) => {
-    return fetch('https://ultralearnapi.solo7903.repl.co/signin', {
+    return fetch('https://api-ultralearn.herokuapp.com/signin', {
       method: "POST",
       headers: {
         Accept: "application/json",
