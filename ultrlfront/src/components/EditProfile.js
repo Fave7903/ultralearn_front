@@ -63,7 +63,7 @@ class EditProfile extends Component {
       fullName,
       username,
       email,
-      password,
+      password: password || undefined,
       dateOfBirth,
       bio,
       skillInterests,
@@ -186,13 +186,12 @@ class EditProfile extends Component {
 
           <div className="form-group mb-4">
             <label className="text-muted">Gender</label>
-            <input 
-              onChange={this.handleChange("gender")} 
-              type="text" 
-              className="form-control" 
-              value={gender}>
-            </input>
+            <select class="form-select" aria-label="Default select example" value={gender} onChange={this.handleChange("gender")}>
+            <option value="Male" selected>Male</option>
+            <option value="Female">Female</option>
+          </select>
           </div>
+    
 
           <div className="form-group mb-4">
             <label className="text-muted">Skill Interest</label>
