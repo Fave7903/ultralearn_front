@@ -27,7 +27,7 @@ class EditProfile extends Component {
     read(name, token)
     .then(data => {
       if (data.error) {
-        console.log("Error")
+        this.setState({error: data.error})
       } else {
         this.setState({ 
           id: data._id, 
