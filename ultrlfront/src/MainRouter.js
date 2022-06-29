@@ -1,16 +1,18 @@
 import React from 'react'
-import {Route, Routes} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import Signup from './components/Signup'
 import Signin from './components/Signin'
 import Dashboard from './components/Dashboard'
+import EditProfile from './components/EditProfile'
 
 const MainRouter = () => {
   return (
-    <Routes>
-      <Route exact path="/" element={<Dashboard />}></Route>
-      <Route exact path="/signup" element={<Signup />}></Route>
-      <Route exact path="/signin" element={<Signin />}></Route>
-    </Routes>
+    <Switch>
+      <Route exact path="/" component={Dashboard}></Route>
+      <Route exact path="/signup" component={Signup}></Route>
+      <Route exact path="/signin" component={Signin}></Route>
+      <Route exact path="/edit/:name" component={EditProfile}></Route>
+    </Switch>
   );
 }
 

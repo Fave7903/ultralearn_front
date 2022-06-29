@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Navigate } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { signin, authenticate } from '../auth'
 import {Link} from 'react-router-dom'
 import { GoogleLogin } from 'react-google-login'
@@ -57,7 +57,7 @@ class Signin extends Component {
   render() {
     const {email, password, error, redirectToReferer, loading} = this.state
     if (redirectToReferer) {
-      return <Navigate to="/" />
+      return <Redirect to="/" />
     }
     return (
         <div>
@@ -78,8 +78,8 @@ class Signin extends Component {
         </div>
 
         {loading ? <div className="jumbotron text-center">
-          <div class="spinner-border text-primary" role="status">
-  <span class="sr-only">Loading...</span>
+          <div className="spinner-border text-primary" role="status">
+  <span className="sr-only">Loading...</span>
 </div>
         </div> : ""}
         <div className="p-5">
