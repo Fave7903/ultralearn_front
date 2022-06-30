@@ -34,6 +34,7 @@ class Signup extends Component {
     event.preventDefault()
     this.setState({loading: true})
     const {fullName, username, email, password} = this.state
+    username.trim()
     const user = {
       fullName,
       username,
