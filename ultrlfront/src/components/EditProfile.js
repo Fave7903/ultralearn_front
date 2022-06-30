@@ -188,7 +188,8 @@ class EditProfile extends Component {
           <div className="form-group mb-4">
             <label className="text-muted">Gender</label>
             <select class="form-select" aria-label="Default select example" value={gender} onChange={this.handleChange("gender")}>
-            <option value="Male" selected>Male</option>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
           </div>
