@@ -32,6 +32,7 @@ class Signin extends Component {
   
   clickSubmit = event => {
     event.preventDefault()
+    window.scrollTo(0, 0)
     this.setState({loading: true})
     const {email, password} = this.state
     const user = {

@@ -57,6 +57,7 @@ class EditProfile extends Component {
   }
   clickSubmit = event => {
     event.preventDefault()
+    window.scrollTo(0, 0)
     this.setState({loading: true})
     const {fullName, username, email, password, dateOfBirth, bio, skillInterests, gender, location} = this.state
     const user = {
