@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { isAuthenticated } from '../auth'
 import { read, update } from './apiUser'
+import {Redirect} from 'react-router-dom'
+import '../assets/style.css'
 
 
 class EditProfile extends Component {
@@ -18,7 +20,7 @@ class EditProfile extends Component {
       bio: "",
       skillInterests: "",
       loading: false,
-      open: false
+      redirectToProfile: false
     }
   }
 
@@ -95,7 +97,7 @@ class EditProfile extends Component {
           bio: "",
           skillInterests: "",
           loading: false,
-          open: true
+          redirectToProfile: true
         })
         }
       })
@@ -104,7 +106,11 @@ class EditProfile extends Component {
   
   
   render() {
-    const {fullName, username, email, password, error, open, dateOfBirth, bio, skillInterests, gender, location, loading} = this.state
+    const {fullName, username, email, password, error, dateOfBirth, bio, skillInterests, redirectToProfile, gender, location, loading} = this.state
+
+    if (redirectToProfile) {
+      return <Redirect to={`/ul/${isAuthenticated().user.username}`}></Redirect>
+    }
     return (
       <div className='container'>
         <h2 className="mt-5 mb-5">Edit Profile</h2>
@@ -113,9 +119,6 @@ class EditProfile extends Component {
           {error}
         </div>
 
-        <div className="alert alert-success" style={{display: open ? "" : "none"}}>
-           Update Successful
-        </div>
 
         {loading ? <div className="jumbotron text-center">
           <div className="spinner-border text-primary" role="status">
@@ -215,7 +218,7 @@ class EditProfile extends Component {
             </textarea>
           </div>
           
-          <button onClick={this.clickSubmit} className="btn btn-raised btn-primary">Update</button>
+          <button onClick={this.clickSubmit} className="btn btn-raised btn-lg btn-outline-primary">Update</button>
         </form>
       </div>
     );

@@ -2,11 +2,8 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { signin, authenticate } from '../auth'
 import {Link} from 'react-router-dom'
-import { GoogleLogin } from 'react-google-login'
 import '../assets/style.css'
 import image3 from '../assets/image 3.png'
-import face from '../assets/facebook.png'
-import down from '../assets/download.png'
 
 
 
@@ -117,19 +114,7 @@ class Signin extends Component {
                     <button className="btn btn-primary btn-lg" onClick={this.clickSubmit}>Login</button>
                   </div>
             </form>
-                  <div className="p-5 text-center">
-                    <p>Or continue with</p>
-                    <p>
-                      <GoogleLogin 
-            clientId="141056353686-8dm6cb1216qdaumv029rqiqk7hb0s2sf.apps.googleusercontent.com"
-            onSuccess={this.googleSuccess}
-            onFailure={this.googleFailure}
-
-            />
-                        <img src={face} className="fb"alt="Facebook"/>
-                        <img src={down} className="fluid"alt="Twitter"/>
-                      </p>
-                </div>
+                
                 <div className="text-center">
                     <p>
                         Don't have an account?&nbsp;&nbsp;

@@ -6,14 +6,15 @@ const Dashboard = () => {
   return (
     <div>
       {isAuthenticated() &&
-        <div className="container mt-5 mx-2">
-        <h1>{`Welcome to your UltraLearn dashboard, ${isAuthenticated().user.fullName}`}</h1>
-          <h5>{`Your username is ${isAuthenticated().user.username}`}</h5>
-
-          <div className='d-inline-block'>
-            <Link className='btn btn-raised btn-success' to={`/edit/${isAuthenticated().user.username}`}>Edit Profile</Link>
+        <div className="row">
+        <div className="container mt-5 col-9">
+        <h1>Home Page</h1>
+         </div>
+          <div className='mt-5 col-3'>
+            <Link to={`/ul/${isAuthenticated().user.username}`}><img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" className="card-img-top" alt='profile' style={{width: '50px', height: '50px', objectFit: 'cover', borderRadius: '50%'}}/><p>{isAuthenticated().user.username}</p></Link>
           </div>
-        </div>
+       
+          </div>
       }
       {!isAuthenticated() &&
         <Redirect to="/signup" />

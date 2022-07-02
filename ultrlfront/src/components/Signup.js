@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { signup } from '../auth'
 import {Link} from 'react-router-dom'
-import { GoogleLogin } from 'react-google-login'
 import image3 from '../assets/image 3.png'
 import '../assets/style.css'
 
@@ -18,13 +17,6 @@ class Signup extends Component {
       loading: false
     }
   }
-  googleSuccess = async (res) => {
-    console.log(res)
-  }
-  // googleFailure = (error) => {
-  //   console.log(error)
-  //   console.log("Google Sign In was unsuccessful")
-  // }
   handleChange = name => event => {
     this.setState({error: ""})
     this.setState({open: false})
@@ -141,15 +133,6 @@ class Signup extends Component {
           <div className="col-6 btn-lg mx-auto">
               <button className="btn btn-primary btn-raised btn-lg"  onClick={this.clickSubmit} >Signup</button>
           </div>
-        <p className="fw-bold mt-2">Or Continue with</p>
-          <div className="container mt-3 mx-2">
-          <GoogleLogin 
-            clientId="141056353686-8dm6cb1216qdaumv029rqiqk7hb0s2sf.apps.googleusercontent.com"
-            onSuccess={this.googleSuccess}
-            onFailure={this.googleFailure}
-
-            />
-            </div>
         </form>
        
         <div className="text-center">
