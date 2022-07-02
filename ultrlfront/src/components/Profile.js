@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { isAuthenticated } from '../auth'
 import {Redirect, Link} from 'react-router-dom'
 import {read} from './apiUser'
+import avatar from '../assets/avatar.png'
 
 class Profile extends Component {
   constructor() {
@@ -44,7 +45,7 @@ class Profile extends Component {
       <div className='container mt-5'>
         
         <div>
-          <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" className="card-img-top" alt={user.fullName} style={{width: '180px', height: '180px', objectFit: 'cover', borderRadius: '50%'}}/>
+          <img src={avatar} className="card-img-top" alt={user.fullName} style={{width: '180px', height: '180px', objectFit: 'cover', borderRadius: '50%'}}/>
         
         </div>
 
