@@ -1,0 +1,81 @@
+.body{
+    color:black;
+}
+.float-start{
+font-weight: 700;
+padding: 2VW
+}
+.caption{
+    color: #5F0F40;
+    font-size: 1.3rem;
+    margin-top:-14rem;
+    font-weight: 700;
+    text-align: center;
+    margin-left: -6rem;
+
+
+}
+.greytext{
+    color: #3C3B3B;
+}
+
+.btn{
+    background-color: #5F0F40;
+}
+.float-start{
+    color: #5F0F40;
+    font-weight: bold;
+}
+.image-fluid{
+    width: 19%;
+}
+.img-fluid{
+    margin-top: -9vw;
+}
+.fb{
+    width: 10vw;
+}
+.fw-bolder{
+    color: #5F0F40;
+}
+.fw-bold{
+    color: #5F0F40;
+}
+.txt {
+color: #5F0F40;
+text-decoration: none;
+font-weight: 400;
+}
+form-check-input[type=checkbox]:checked {
+    background-color: #5F0F40;
+}
+.form-control{
+    border: 1px solid black;
+}
+.text{
+    color: black;
+    font-weight: 800;
+}
+.password{
+    text-decoration: none;
+
+    color: purple;
+    float: right;
+}
+.float-end{
+    float: right;
+}
+@media screen and (max-width: 768px){
+    .caption{
+        margin-top: -7rem;
+        font-size: 1rem;
+        text-align: center;
+        margin-left: auto;
+    }
+    .img-fluid{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+}
