@@ -91,6 +91,10 @@ class Profile extends Component {
             <p className="fw-bold">{user.bio}</p> 
             <p style={{display: user.location ? "" : "none"}}><i className='fas fa-map-marker-alt'></i>{` ${user.location}, Nigeria`}</p>
         <p style={{display: user.created ? "" : "none"}}><i class='far fa-calendar-alt'></i>{` Joined ${new Date(user.created).toDateString()}`}</p>
+            {user.followers.length === 1 ? <p className="fw-bold" style={{display: user.followers ? "" : "none"}}>{`${user.followers.length} Follower, ${user.following.length} Following`}</p>
+            :
+              <p className="fw-bold" style={{display: user.followers ? "" : "none"}}>{`${user.followers.length} Followers, ${user.following.length} Following`}</p>
+            }
         </div>
           <div className="col-sm-2">
           {isAuthenticated().user && isAuthenticated().user._id === user._id ? (
