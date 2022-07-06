@@ -31,7 +31,7 @@ class FindPeople extends Component {
   clickFollow = (user, i) => {
     const userId = isAuthenticated().user._id
     const token = isAuthenticated().token
-
+    window.scrollTo(0, 0)
     follow(userId, token, user._id)
     .then(data => {
       if (data.error) {
