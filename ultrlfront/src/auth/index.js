@@ -35,6 +35,16 @@ export const authenticate = (jwt, next) => {
     }
   }
 
+export const signout = (next) => {
+  if (typeof window !== "undefined") localStorage.removeItem("jwt")
+  next()
+  return fetch('https://api-ultralearn.herokuapp.com/signout', {
+    method: "GET"
+  }).then(response => {
+    return response.json()
+  }).catch(err => console.log(err))
+}
+
 export const isAuthenticated = () => {
   if (typeof window == "undefined") { 
     return false

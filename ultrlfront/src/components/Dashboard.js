@@ -1,20 +1,28 @@
 import React from 'react'
 import { isAuthenticated } from '../auth'
-import { Redirect, Link } from 'react-router-dom'
-import avatar from '../assets/avatar.png'
+import { Redirect } from 'react-router-dom'
+import NewPost from '../posts/NewPost'
+import Posts from '../posts/Posts'
+import Nav from './Nav'
 
 const Dashboard = () => {
   return (
     <div>
       {isAuthenticated() &&
+        <div>
         <div className="row">
-        <div className="container mt-5 col-9">
+        <div className="container mt-5 col-4">
         <h1>Home Page</h1>
          </div>
-          <div className='mt-5 col-3'>
-            <Link to={`/ul/${isAuthenticated().user.username}`}><img src={avatar} className="card-img-top" alt='profile' style={{width: '50px', height: '50px', objectFit: 'cover', borderRadius: '50%'}}/><p>{isAuthenticated().user.username}</p></Link>
+          <div className="mt-5 col-8 float-right">
+         <Nav />
+            </div>
+       </div>
+          <NewPost />
+
+          <div className="container">
+            <Posts />
           </div>
-       
           </div>
       }
       {!isAuthenticated() &&

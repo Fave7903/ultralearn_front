@@ -45,7 +45,6 @@ class Signin extends Component {
           authenticate(data, () => {
             this.setState({redirectToReferer: true})
           })
-          console.log(user)
         }
       })
   }

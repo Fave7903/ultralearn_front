@@ -3,6 +3,7 @@ import { isAuthenticated } from '../auth'
 import { read, update } from './apiUser'
 import {Redirect} from 'react-router-dom'
 import '../assets/style.css'
+import Nav from './Nav'
 
 
 class EditProfile extends Component {
@@ -113,6 +114,7 @@ class EditProfile extends Component {
     }
     return (
       <div className='container'>
+        <Nav />
         <h2 className="mt-5 mb-5">Edit Profile</h2>
 
         <div className="alert alert-danger" style={{display: error ? "" : "none"}}>

@@ -3,15 +3,41 @@ import { isAuthenticated } from '../auth'
 import {Redirect, Link} from 'react-router-dom'
 import {read} from './apiUser'
 import avatar from '../assets/avatar.png'
+import FollowButton from './FollowButton'
+import ProfileTabs from './ProfileTabs'
+import Nav from './Nav'
 
 class Profile extends Component {
   constructor() {
     super() 
     this.state = {
-      user: "",
+      user: { following: [], followers: [] },
       redirectToSignin: false,
-      loading: true
+      loading: true,
+      following: false,
+      error: ""
     }
+  }
+  checkFollow = user => {
+    const jwt = isAuthenticated()
+    const match = user.followers.find(follower => {
+      // one id has  many other ids (followers) and vice versa
+      return follower._id === jwt.user._id
+    })
+    return match
+  }
+
+  clickFollow = callApi => {
+    const userId = isAuthenticated().user._id
+    const token = isAuthenticated().token
+    callApi(userId, token, this.state.user._id)
+    .then(data => {
+      if (data.error) {
+        this.setState({error: data.error})
+      } else {
+        this.setState({user: data, following: !this.state.following})
+      }
+    })
   }
 
   init = (name) => {
@@ -21,11 +47,13 @@ class Profile extends Component {
       if (data.error) {
         this.setState({ redirectToSignin: true })
       } else {
-        this.setState({ user: data })
+        let following = this.checkFollow(data)
+        this.setState({ user: data, following })
         this.setState({ loading: false})
       }
     })
   }
+  
 
   componentDidMount() {
     const name = this.props.match.params.name
@@ -43,7 +71,7 @@ class Profile extends Component {
     
     return (
       <div className='container mt-5'>
-        
+        <Nav />
         <div>
           <img src={avatar} className="card-img-top" alt={user.fullName} style={{width: '180px', height: '180px', objectFit: 'cover', borderRadius: '50%'}}/>
         
@@ -65,12 +93,17 @@ class Profile extends Component {
         <p style={{display: user.created ? "" : "none"}}><i class='far fa-calendar-alt'></i>{` Joined ${new Date(user.created).toDateString()}`}</p>
         </div>
           <div className="col-sm-2">
-          {isAuthenticated().user && isAuthenticated().user._id === user._id && (
+          {isAuthenticated().user && isAuthenticated().user._id === user._id ? (
               <Link className="btn btn-outline-primary btn-lg" to={`/edit/${isAuthenticated().user.username}`}>Edit Profile</Link>
-          )}
+          ) :
+            <div style={{display: user.fullName ? "" : "none"}}>
+             <FollowButton following={this.state.following} onButtonClick={this.clickFollow} />
+            </div>
+          }
             </div>
         </div>
         <hr style={{height: '5px', backgroundColor: 'purple'}}></hr>
+          <ProfileTabs followers={user.followers} following={user.following}/>
           </div>
     );
   }
