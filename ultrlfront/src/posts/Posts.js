@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {list} from './apiPost'
 import {Link} from 'react-router-dom'
-import avatar from '../assets/avatar.png'
 
 class Posts extends Component {
   constructor() {
