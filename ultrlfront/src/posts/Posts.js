@@ -26,7 +26,7 @@ class Posts extends Component {
   renderPosts = (posts) => {
     return (
             <div>
-            {posts.reverse().map((post, i) => {
+            {posts.map((post, i) => {
           const posterFull = post.postedBy ? post.postedBy.fullName : " Unknown"
           const posterUser = post.postedBy ? post.postedBy.username : " Unknown"
         return (
