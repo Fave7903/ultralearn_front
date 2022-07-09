@@ -1,0 +1,156 @@
+/* navbar righy image */
+.form-inline img{
+    width: 70x;
+    height: 70px;
+}
+
+
+
+/* row dicv styling */
+/* .row{
+    padding: 30px 100px;
+    display: flex;
+} */
+/* row-contents div styling */
+.row-contents{
+    margin: auto;
+    display: flex;
+}
+
+
+
+
+/* styling both column1 and column2 */
+.column1, .column2{
+    /* width: 512pox;
+    height: 720px; */
+    margin: auto;
+    width: 440px;
+    height: 512px;
+}
+/* column1 styling */
+.column1{
+    padding: 5px 20px 5px 20px;
+    background-color: white;
+}
+/* style image - column1 */
+.column1 img{
+    padding-bottom: 25px;
+    /* width: 337px;
+    height: 407px; */
+    margin: auto;
+}
+/* paragraph of column1 */
+.column1 p{
+    text-align: center;
+
+    font-weight: bolder;
+    font-size: xx-large;
+    margin-bottom: 50px;
+}
+
+/* column2 background */
+.column2{
+    background-color:
+    #DFD0FF;
+    height: 70%;
+    /* width: 100%; */
+
+}
+li{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+
+
+/* styling button div */
+
+/* styling button elements */
+.btn button{
+    border: none;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: #997BD9;
+    font-size: 11px;
+    border-radius: 20px;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+}
+
+.section{
+    width: 85%;
+    height: 60%;
+    background-color: #d6c9f1;
+    line-height: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0px 30px;
+    color: rgb(125, 20, 223);
+    overflow-y: scroll;
+
+}
+
+
+input{
+    padding-right:12px;
+}
+
+.scrollbar-deep-purple::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+.scrollbar-deep-purple::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+.scrollbar-deep-purple::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #512da8;
+}
+
+.scrollbar-deep-purple {
+    scrollbar-color: #512da8 #F5F5F5;
+}
+
+.bordered-deep-purple::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    border: 1px solid #512da8;
+}
+
+.bordered-deep-purple::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: none;
+}
+
+
+@media screen and (min-width: 840px) {
+.column1, .column2 {
+    /* width: 100%; */
+    margin: auto;
+    padding: auto;
+}
+.row{
+    padding: auto;
+    margin: auto;
+}
+
+
+.section{
+    padding: 0%;
+
+}
+header{
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    clear: both;
+}
+.img-fluid{
+    width: 100%;
+}
+}

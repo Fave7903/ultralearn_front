@@ -7,6 +7,7 @@ import Profile from './components/Profile'
 import EditProfile from './components/EditProfile'
 import FindPeople from './components/FindPeople'
 import Users from './components/Users'
+import Interest from './components/Interest'
 
 const MainRouter = () => {
   return (
@@ -17,6 +18,7 @@ const MainRouter = () => {
       <Route exact path="/signin" component={Signin}></Route>
       <Route exact path="/ul/:name" component={Profile}></Route>
       <Route exact path="/findpeople" component={FindPeople}></Route>
+      <Route exact path="/interest" component={Interest}></Route>
       <Route exact path="/edit/:name" component={EditProfile}></Route>
     </Switch>
   );

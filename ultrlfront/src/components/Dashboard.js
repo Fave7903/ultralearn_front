@@ -10,14 +10,7 @@ const Dashboard = () => {
     <div>
       {isAuthenticated() &&
         <div>
-        <div className="row">
-        <div className="container mt-5 col-4">
-        <h1>Home Page</h1>
-         </div>
-          <div className="mt-5 col-8 float-right">
-         <Nav />
-            </div>
-       </div>
+        <Nav />
           <NewPost />
 
           <div className="container">

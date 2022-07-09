@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { isAuthenticated } from '../auth'
 import { create } from './apiPost'
-import {Redirect} from 'react-router-dom'
 
 
 class NewPost extends Component {
@@ -11,8 +10,7 @@ class NewPost extends Component {
       body: "",
       error: "",
       user: {},
-      loading: false,
-      redirectToProfile: false
+      loading: false
     }
   }
 
@@ -28,6 +26,8 @@ class NewPost extends Component {
   }
   clickSubmit = event => {
     event.preventDefault()
+    window.scrollTo(0, 0)
+    window.location.reload()
     this.setState({loading: true})
     const {body} = this.state
     const post = {
@@ -44,7 +44,7 @@ class NewPost extends Component {
           console.log(data.error)
         }
         else {
-          this.setState({loading: false, body: "", redirectToProfile: true})
+          this.setState({loading: false, body: ""})
         }
       })
   }
@@ -52,14 +52,12 @@ class NewPost extends Component {
   
   
   render() {
-    const {body, user, error, loading, redirectToProfile} = this.state
+    const {body, error, loading} = this.state
 
-    if (redirectToProfile) {
-      return <Redirect to={`/ul/${user.username}`} />
-    }
+   
     return (
-      <div className='container'>
-        <h2 className="mt-5 mb-5">Create Post</h2>
+      <div className='container pt-5 mt-5'>
+        <h1 className="fw-bolder mt-5 mb-5">{`Welcome back ${isAuthenticated().user.username}!`}</h1>
 
         <div className="alert alert-danger" style={{display: error ? "" : "none"}}>
           {error}
@@ -74,20 +72,23 @@ class NewPost extends Component {
 
         <form>
 
-          
-          <div className="form-group mb-4">
-            <label className="text-muted">Share your post</label>
+          <div className="row">
+          <div className="form-group mb-4 col-8">
             <textarea
+              style={{borderRadius: "13px"}}
               onChange={this.handleChange("body")} 
               type="text" 
+              placeholder="Tell us something..."
               className="form-control" 
               value={body}>
             </textarea>
           </div>
 
          
-          
-          <button onClick={this.clickSubmit} className="btn btn-raised btn-lg btn-outline-primary">Create Post</button>
+          <div className="col-4">
+          <button onClick={this.clickSubmit} className="btn btn-raised btn-lg btn-outline-primary">Post</button>
+            </div>
+            </div>
         </form>
       </div>
     );

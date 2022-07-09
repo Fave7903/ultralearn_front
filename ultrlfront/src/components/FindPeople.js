@@ -49,10 +49,10 @@ class FindPeople extends Component {
   }
 
   renderUsers = (users) => (
-    <div className='row'>
+    <div>
           {users.map((user, i) => (
-            <div className="card col-md-3 mx-3" key={i}>
-  <img src={avatar} className="card-img-top" alt={user.username} style={{width: '180px', height: '180px', objectFit: 'cover', borderRadius: '50%'}}/>
+            <div className="card mx-3" key={i}>
+  <img src={avatar} className="card-img-top" alt={user.username} style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%'}}/>
   <div className="card-body">
     <h5 className="card-title">{user.fullName}</h5>
     <p className="card-text">{user.username}</p>
@@ -68,7 +68,7 @@ class FindPeople extends Component {
     const {users, open, error, followMessage, loading} = this.state
     
     return (
-      <div className='container'>
+      <div className='container pt-5 mt-5'>
         <Nav />
         <h2 className="mt-5 mb-5">Learners you can follow on UltraLearn</h2>
 

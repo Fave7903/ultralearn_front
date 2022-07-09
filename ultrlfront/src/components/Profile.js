@@ -72,7 +72,7 @@ class Profile extends Component {
     return (
       <div className='container mt-5'>
         <Nav />
-        <div>
+        <div className="pt-5 mt-5">
           <img src={avatar} className="card-img-top" alt={user.fullName} style={{width: '180px', height: '180px', objectFit: 'cover', borderRadius: '50%'}}/>
         
         </div>

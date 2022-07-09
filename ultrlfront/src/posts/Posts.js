@@ -30,7 +30,7 @@ class Posts extends Component {
           const posterFull = post.postedBy ? post.postedBy.fullName : " Unknown"
           const posterUser = post.postedBy ? post.postedBy.username : " Unknown"
         return (
-            <div className="card mb-2" style={{boxShadow: "2px 5px silver"}} key={i}>
+            <div className="card mb-2" style={{boxShadow: "2px 5px purple"}} key={i}>
   <div className="card-body">
    <div className="card-title"> 
      <Link className="d-flex mx-2 mb-0" to={`/ul/${posterUser}`}>
