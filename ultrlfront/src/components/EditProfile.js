@@ -4,6 +4,8 @@ import { read, update } from './apiUser'
 import {Redirect} from 'react-router-dom'
 import '../assets/style.css'
 import Nav from './Nav'
+import Axios from 'axios'
+import {Image} from 'cloudinary-react'
 
 
 class EditProfile extends Component {
@@ -21,7 +23,9 @@ class EditProfile extends Component {
       bio: "",
       skillInterests: "",
       loading: false,
-      redirectToProfile: false
+      redirectToProfile: false,
+      imageSelected: "",
+      imgId: ""
     }
   }
 
@@ -41,7 +45,8 @@ class EditProfile extends Component {
           location: data.location,
           gender: data.gender,
           bio: data.bio,
-          skillInterests: data.skillInterests
+          skillInterests: data.skillInterests,
+          imgId: data.imgId
         })
       }
     })
@@ -51,6 +56,18 @@ class EditProfile extends Component {
     const name = this.props.match.params.name
     this.init(name)
   }
+
+  uploadImage = () => {
+  const formData = new FormData()
+  formData.append('file', this.state.imageSelected)
+  formData.append('upload_preset', "favoursoar")
+
+  Axios.post("https://api.cloudinary.com/v1_1/favoursoar/image/upload", formData).then(response => {
+    this.setState({imgId: response.data.public_id})
+  }).catch(err => {
+    console.log(err)
+  })
+}
 
  
   handleChange = name => event => {
@@ -62,7 +79,7 @@ class EditProfile extends Component {
     event.preventDefault()
     window.scrollTo(0, 0)
     this.setState({loading: true})
-    const {fullName, username, email, password, dateOfBirth, bio, skillInterests, gender, location} = this.state
+    const {fullName, username, email, password, dateOfBirth, bio, skillInterests, gender, location, imgId} = this.state
     const user = {
       fullName,
       username,
@@ -72,12 +89,13 @@ class EditProfile extends Component {
       bio,
       skillInterests,
       gender,
-      location
+      location,
+      imgId
     }
     //console.log(user)
     const name = this.props.match.params.name
     const token = isAuthenticated().token
-    console.log(user)
+
     update(name, token, user)
       .then(data => {
         if (data.error) {
@@ -85,7 +103,7 @@ class EditProfile extends Component {
           console.log(data.error)
         }
         else {
-          console.log("Data: ", data)
+          
           this.setState({
           error: "",
           fullName: "",
@@ -107,14 +125,15 @@ class EditProfile extends Component {
   
   
   render() {
-    const {fullName, username, email, password, error, dateOfBirth, bio, skillInterests, redirectToProfile, gender, location, loading} = this.state
+    const {fullName, username, email, password, error, dateOfBirth, bio, skillInterests, redirectToProfile, gender, location, loading, imgId} = this.state
 
     if (redirectToProfile) {
       return <Redirect to={`/ul/${isAuthenticated().user.username}`}></Redirect>
     }
     return (
-      <div className='container'>
+      <div>
         <Nav />
+        <div  className='container pt-5 mt-5'>
         <h2 className="mt-5 mb-5">Edit Profile</h2>
 
         <div className="alert alert-danger" style={{display: error ? "" : "none"}}>
@@ -127,6 +146,14 @@ class EditProfile extends Component {
   <span className="sr-only">Loading...</span>
 </div>
         </div> : ""}
+
+          <div>
+      <input style={{width: "50%"}} className="form-control mx-3" type="file" onChange={(event) => {this.setState({imageSelected: event.target.files[0]})}}/>
+      <button className="btn btn-raised btn-success mt-1 mx-3" onClick={this.uploadImage}>Upload Image</button>
+            {imgId &&
+      <Image  cloudName="favoursoar" publicId={imgId} style={{width: "180px", height: "180px", objectFit: "cover", borderRadius: "50%"}}/>
+            }
+    </div>
 
         <form>
 
@@ -222,6 +249,7 @@ class EditProfile extends Component {
           
           <button onClick={this.clickSubmit} className="btn btn-raised btn-lg btn-outline-primary">Update</button>
         </form>
+          </div>
       </div>
     );
   }

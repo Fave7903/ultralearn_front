@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import avatar from '../assets/avatar.png'
 import {isAuthenticated} from '../auth'
 import Nav from './Nav'
+import {Image} from 'cloudinary-react'
 
 class FindPeople extends Component {
   constructor() {
@@ -52,7 +53,9 @@ class FindPeople extends Component {
     <div>
           {users.map((user, i) => (
             <div className="card mx-3" key={i}>
-  <img src={avatar} className="card-img-top" alt={user.username} style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%'}}/>
+  {user.imgId ? <Image cloudName="favoursoar" publicId={user.imgId} style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%', borderColor: "purple"}}/> :
+          <img src={avatar} className="card-img-top" alt='profile' style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%'}}/>
+          }
   <div className="card-body">
     <h5 className="card-title">{user.fullName}</h5>
     <p className="card-text">{user.username}</p>

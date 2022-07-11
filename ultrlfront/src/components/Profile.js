@@ -6,6 +6,7 @@ import avatar from '../assets/avatar.png'
 import FollowButton from './FollowButton'
 import ProfileTabs from './ProfileTabs'
 import Nav from './Nav'
+import {Image} from 'cloudinary-react'
 
 class Profile extends Component {
   constructor() {
@@ -70,10 +71,13 @@ class Profile extends Component {
 
     
     return (
-      <div className='container mt-5'>
+      <div>
         <Nav />
-        <div className="pt-5 mt-5">
-          <img src={avatar} className="card-img-top" alt={user.fullName} style={{width: '180px', height: '180px', objectFit: 'cover', borderRadius: '50%'}}/>
+        <div className="container pt-5 mt-5">
+        <div className="mt-5">
+          {user.imgId ? <Image cloudName="favoursoar" publicId={user.imgId} style={{width: '180px', height: '180px', objectFit: 'cover', borderRadius: '50%'}}/> :
+          <img src={avatar} className="card-img-top" alt='profile' style={{width: '180px', height: '180px', objectFit: 'cover', borderRadius: '50%'}}/>
+          }
         
         </div>
 
@@ -108,6 +112,7 @@ class Profile extends Component {
         </div>
         <hr style={{height: '5px', backgroundColor: 'purple'}}></hr>
           <ProfileTabs followers={user.followers} following={user.following}/>
+          </div>
           </div>
     );
   }

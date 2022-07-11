@@ -3,6 +3,7 @@ import avatar from '../assets/avatar.png'
 import ultra from '../assets/ultra.png'
 import { signout } from '../auth'
 import {isAuthenticated} from '../auth'
+import {Image} from 'cloudinary-react'
 
 const Nav = () =>  {
   
@@ -34,7 +35,10 @@ return (
   </div>
     <span className="dropdown navbar-text mx-4"> 
         <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src={avatar} className="card-img-top" alt='profile' style={{width: '50px', height: '50px', objectFit: 'cover', borderRadius: '50%'}}/> {isAuthenticated().user.username}
+          {isAuthenticated().user.imgId ? <Image cloudName="favoursoar" publicId={isAuthenticated().user.imgId} style={{width: '50px', height: '50px', objectFit: 'cover', borderRadius: '50%', borderColor: "purple"}}/> :
+          <img src={avatar} className="card-img-top" alt='profile' style={{width: '50px', height: '50px', objectFit: 'cover', borderRadius: '50%'}}/>
+          }
+          {isAuthenticated().user.username}
         </a>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
           <Link className="dropdown-item" to={`/ul/${isAuthenticated().user.username}`}>Profile</Link>

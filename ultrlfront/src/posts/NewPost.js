@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { isAuthenticated } from '../auth'
 import { create } from './apiPost'
+import Axios from 'axios'
+import {Image} from 'cloudinary-react'
 
 
 class NewPost extends Component {
@@ -10,13 +12,28 @@ class NewPost extends Component {
       body: "",
       error: "",
       user: {},
-      loading: false
+      loading: false,
+      imageSelected: "",
+      postImgId: ""
     }
   }
 
   componentDidMount() {
     this.setState({user: isAuthenticated().user})
   }
+
+  uploadImage = () => {
+  const formData = new FormData()
+  formData.append('file', this.state.imageSelected)
+  formData.append('upload_preset', "favoursoar")
+
+  Axios.post("https://api.cloudinary.com/v1_1/favoursoar/image/upload", formData).then(response => {
+    this.setState({postImgId: response.data.public_id})
+    console.log()
+  }).catch(err => {
+    console.log(err)
+  })
+}
 
  
   handleChange = name => event => {
@@ -29,9 +46,10 @@ class NewPost extends Component {
     window.scrollTo(0, 0)
     window.location.reload()
     this.setState({loading: true})
-    const {body} = this.state
+    const {body, postImgId} = this.state
     const post = {
-      body
+      body,
+      postImgId
     }
     //console.log(user)
     const name = isAuthenticated().user.username
@@ -52,7 +70,7 @@ class NewPost extends Component {
   
   
   render() {
-    const {body, error, loading} = this.state
+    const {body, error, loading, postImgId} = this.state
 
    
     return (
@@ -90,6 +108,13 @@ class NewPost extends Component {
             </div>
             </div>
         </form>
+           <div>
+      <input style={{width: "50%"}} className="form-control mx-3" type="file" onChange={(event) => {this.setState({imageSelected: event.target.files[0]})}}/>
+      <button className="btn btn-raised btn-success mt-1 mx-3" onClick={this.uploadImage}>Upload Image</button>
+             {postImgId &&
+      <Image cloudName="favoursoar" publicId={postImgId} style={{width: "300px", height: "350px"}}/>
+             }
+    </div>
       </div>
     );
   }

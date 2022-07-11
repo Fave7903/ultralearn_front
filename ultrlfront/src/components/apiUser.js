@@ -100,3 +100,4 @@ export const findPeople = (name, token) => {
     })
     .catch(err => console.log(err))
 }
+

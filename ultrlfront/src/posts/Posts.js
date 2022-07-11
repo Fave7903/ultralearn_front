@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {list} from './apiPost'
 import {Link} from 'react-router-dom'
 import avatar from '../assets/avatar.png'
+import {Image} from 'cloudinary-react'
 
 class Posts extends Component {
   constructor() {
@@ -35,7 +36,9 @@ class Posts extends Component {
    <div className="card-title"> 
      <Link className="d-flex mx-2 mb-0" to={`/ul/${posterUser}`}>
     
-       <img src={avatar} className="card-img-top" alt='profile' style={{width: '50px', height: '50px', objectFit: 'cover', borderRadius: '50%'}}/>
+       {post.postedBy.imgId ? <Image cloudName="favoursoar" publicId={post.postedBy.imgId} style={{width: '50px', height: '50px', objectFit: 'cover', borderRadius: '50%'}}/> :
+          <img src={avatar} className="card-img-top" alt='profile' style={{width: '50px', height: '50px', objectFit: 'cover', borderRadius: '50%'}}/>
+          }
       <div className="mx-2">
        <p className="fw-bold lead mb-0">{posterFull}</p><p className="font-italic">{posterUser}</p>
         </div>
@@ -44,9 +47,11 @@ class Posts extends Component {
      <hr></hr>
    </div>
             {post.body.length > 105 && this.state.more ? <p className="card-text">{post.body.substring(0, 150)}...<span className="lead" style={{cursor: "pointer"}} onClick={() => this.setState({more: !this.state.more})}>see more</span></p> : <p className="card-text">{post.body}</p>}
-    { /*
-    <Link to={`/post/${post._id}`} className="btn btn-primary btn-raised btn-sm">Read more</Link>
-              */
+    {post.postImgId &&
+   <div className="container" style={{backgroundColor: "purple", width: '100%', height: '350px'}}>
+     <Image cloudName="favoursoar" publicId={post.postImgId} style={{objectFit: 'contain', width: "100%", height: "100%"}}/>
+   
+   </div>
     }
   </div>
           

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import avatar from '../assets/avatar.png'
+import {Image} from 'cloudinary-react'
 
 class ProfileTabs extends Component {
   render() {
@@ -16,7 +17,9 @@ class ProfileTabs extends Component {
              
                   <div>
                     <Link to={`/ul/${person.username}`}>
-                      <img src={avatar} className="card-img-top float-left mr-2" alt={person.username} style={{width: '40px', height: '40px', objectFit: 'cover', borderRadius: '50%'}}/>
+                      {person.imgId ? <Image cloudName="favoursoar" publicId={person.imgId} style={{width: '40px', height: '40px', objectFit: 'cover', borderRadius: '50%'}}/> :
+          <img src={avatar} className="card-img-top" alt='profile' style={{width: '40px', height: '40px', objectFit: 'cover', borderRadius: '50%'}}/>
+          }
                       <div className='d-inline-block mx-2'>
                         <p className='lead'>{person.username}</p>
                       </div>
@@ -35,7 +38,9 @@ class ProfileTabs extends Component {
                
                   <div>
                     <Link to={`/ul/${person.username}`}>
-                      <img src={avatar} className="card-img-top float-left mr-2" alt={person.username} style={{width: '40px', height: '40px', objectFit: 'cover', borderRadius: '50%'}}/>
+                      {person.imgId ? <Image cloudName="favoursoar" publicId={person.imgId} style={{width: '40px', height: '40px', objectFit: 'cover', borderRadius: '50%'}}/> :
+          <img src={avatar} className="card-img-top" alt='profile' style={{width: '40px', height: '40px', objectFit: 'cover', borderRadius: '50%'}}/>
+          }
                       <div className='d-inline-block mx-2'>
                         <p className='lead'>{person.username}</p>
                       </div>
