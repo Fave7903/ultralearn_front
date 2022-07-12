@@ -35,7 +35,7 @@ return (
     <span className="dropdown navbar-text mx-4"> 
         <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {isAuthenticated().user.imgId ? <Image cloudName="favoursoar" publicId={isAuthenticated().user.imgId} style={{width: '50px', height: '50px', objectFit: 'cover', borderRadius: '50%', borderColor: "purple"}}/> :
-          <i className="fa-solid fa-user mx-3" style={{color: "#5f0f40", fontSize: "50px"}}></i>
+          <i className="fa-solid fa-user mx-3" style={{color: "#5f0f40", fontSize: "35px"}}></i>
           }
           {isAuthenticated().user.username}
         </a>

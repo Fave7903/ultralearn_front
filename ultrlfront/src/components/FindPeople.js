@@ -72,7 +72,7 @@ class FindPeople extends Component {
     return (
       <div className='container pt-5 mt-5'>
         <Nav />
-        <h2 className="mt-5 mb-5">Learners you can follow on UltraLearn</h2>
+        <h2 className="d-flex align-items-center justify-content-center mt-5 mb-5">Find People</h2>
 
         {error && (
         <div className="alert alert-danger">

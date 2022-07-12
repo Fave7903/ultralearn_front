@@ -42,6 +42,12 @@ class NewPost extends Component {
     this.setState({ [name]: event.target.value })
   }
   clickSubmit = event => {
+    if (!this.state.body && !this.state.postImgId) {
+      window.onbeforeunload = () => {
+        event.preventDefault()
+        this.setState({error: "Please fill in the required fields"})
+      }
+    } else {
       event.preventDefault()
     window.scrollTo(0, 0)
     window.location.reload()
@@ -65,6 +71,7 @@ class NewPost extends Component {
           this.setState({loading: false, body: ""})
         }
       })
+      }
     
   }
   
@@ -75,7 +82,7 @@ class NewPost extends Component {
 
    
     return (
-      <div className='container pt-5 mt-5'>
+      <div className='container pt-5'>
         <div className="row pt-5 mt-5">
           <div className="col-sm-2">
         <button className="btn btn-raised btn-lg mx-0" style={{backgroundColor: "#5f0f40", color: "#fff"}}>Explore</button>
@@ -102,7 +109,7 @@ class NewPost extends Component {
           <div className="row">
             <div className="col-sm-8 mb-4 row">
           {isAuthenticated().user.imgId ? <Image cloudName="favoursoar" publicId={isAuthenticated().user.imgId} style={{width: '120px', height: '120px', objectFit: 'cover', borderRadius: '50%'}} className="col-sm-3"/> :
-          <i className="fa-solid fa-user mx-3" style={{color: "#5f0f40", fontSize: "120px"}}></i>
+          <i className="fa-solid fa-user col-sm-3" style={{color: "#5f0f40", fontSize: "100px"}}></i>
           }
               <div className="col-sm-9">
             <textarea
@@ -123,7 +130,7 @@ class NewPost extends Component {
            </div>
             </div>
         </form>
-        <div className="mt-2">
+        <div className="d-flex align-items-center justify-content-center mt-0">
       <input style={{width: "50%"}} className="form-control" type="file" onChange={(event) => {this.setState({imageSelected: event.target.files[0]})}}/>
       <button className="btn btn-raised mt-2" onClick={this.uploadImage} style={{backgroundColor: "#5f0f40", color: "white"}}>Attach photo</button>
              {postImgId &&
