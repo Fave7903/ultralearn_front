@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {list} from './apiPost'
 import {Link} from 'react-router-dom'
-import avatar from '../assets/avatar.png'
 import {Image} from 'cloudinary-react'
 
 class Posts extends Component {
@@ -31,24 +30,24 @@ class Posts extends Component {
           const posterFull = post.postedBy ? post.postedBy.fullName : " Unknown"
           const posterUser = post.postedBy ? post.postedBy.username : " Unknown"
         return (
-            <div className="card mb-2" style={{boxShadow: "2px 5px purple"}} key={i}>
+            <div className="card mb-2" style={{boxShadow: "2px 5px #5f0f40"}} key={i}>
   <div className="card-body">
    <div className="card-title"> 
      <Link className="d-flex mx-2 mb-0" to={`/ul/${posterUser}`}>
     
        {post.postedBy.imgId ? <Image cloudName="favoursoar" publicId={post.postedBy.imgId} style={{width: '50px', height: '50px', objectFit: 'cover', borderRadius: '50%'}}/> :
-          <img src={avatar} className="card-img-top" alt='profile' style={{width: '50px', height: '50px', objectFit: 'cover', borderRadius: '50%'}}/>
+          <i className="fa-solid fa-user mx-3" style={{color: "#5f0f40", fontSize: "50px"}}></i>
           }
       <div className="mx-2">
-       <p className="fw-bold lead mb-0">{posterFull}</p><p className="font-italic">{posterUser}</p>
+       <p className="fw-bold lead mb-0" style={{color: "#5f0f40"}}>{posterFull}</p><p className="font-italic" style={{color: "#5f0f40"}}>{posterUser}</p>
         </div>
      </Link>
-     <p className="lead mb-1">Posted on {new Date(post.created).toDateString()}</p>
-     <hr></hr>
+     <p style={{color: "#5f0f40"}} className="mb-1">Posted on {new Date(post.created).toDateString()}</p>
+     <hr style={{color: "#5f0f40"}}></hr>
    </div>
-            {post.body.length > 105 && this.state.more ? <p className="card-text">{post.body.substring(0, 150)}...<span className="lead" style={{cursor: "pointer"}} onClick={() => this.setState({more: !this.state.more})}>see more</span></p> : <p className="card-text">{post.body}</p>}
+            {post.body.length > 105 && this.state.more ? <p className="card-text">{post.body.substring(0, 150)}...<span style={{cursor: "pointer", color: "#5f0f40"}} onClick={() => this.setState({more: !this.state.more})}>see more</span></p> : <p className="card-text">{post.body}</p>}
     {post.postImgId &&
-   <div className="container" style={{backgroundColor: "purple", width: '100%', height: '350px'}}>
+   <div className="container" style={{backgroundColor: "#5f0f40", width: '100%', height: '350px'}}>
      <Image cloudName="favoursoar" publicId={post.postImgId} style={{objectFit: 'contain', width: "100%", height: "100%"}}/>
    
    </div>
@@ -69,8 +68,7 @@ class Posts extends Component {
     const {posts, loading} = this.state
     
     return (
-      <div className='container bg-light'>
-        <h2 className="mt-5 mb-5">Recent Posts</h2>
+      <div className='container mt-5 bg-light'>
         {loading ? <div className="jumbotron text-center">
           <div className="spinner-border text-primary" role="status">
   <span className="sr-only">Loading...</span>

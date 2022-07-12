@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { isAuthenticated } from '../auth'
 import {Redirect, Link} from 'react-router-dom'
 import {read} from './apiUser'
-import avatar from '../assets/avatar.png'
 import FollowButton from './FollowButton'
 import ProfileTabs from './ProfileTabs'
 import Nav from './Nav'
@@ -76,7 +75,7 @@ class Profile extends Component {
         <div className="container pt-5 mt-5">
         <div className="mt-5">
           {user.imgId ? <Image cloudName="favoursoar" publicId={user.imgId} style={{width: '180px', height: '180px', objectFit: 'cover', borderRadius: '50%'}}/> :
-          <img src={avatar} className="card-img-top" alt='profile' style={{width: '180px', height: '180px', objectFit: 'cover', borderRadius: '50%'}}/>
+          <i className="fa-solid fa-user mx-3" style={{color: "#5f0f40", fontSize: "180px"}}></i>
           }
         
         </div>
@@ -90,19 +89,19 @@ class Profile extends Component {
 </div>
         </div> : ""}
             
-          <h1 className="fw-bolder">{user.fullName}</h1>
+          <h1 className="fw-bolder" style={{color: "#5f0f40"}}>{user.fullName}</h1>
         <p>{user.username}</p>
-            <p className="fw-bold">{user.bio}</p> 
-            <p style={{display: user.location ? "" : "none"}}><i className='fas fa-map-marker-alt'></i>{` ${user.location}, Nigeria`}</p>
-        <p style={{display: user.created ? "" : "none"}}><i class='far fa-calendar-alt'></i>{` Joined ${new Date(user.created).toDateString()}`}</p>
-            {user.followers.length === 1 ? <p className="fw-bold" style={{display: user.followers ? "" : "none"}}>{`${user.followers.length} Follower, ${user.following.length} Following`}</p>
+            <p className="fw-bold" style={{color: "#5f0f40"}}>{user.bio}</p> 
+            <p style={{display: user.location ? "" : "none", color: "#5f0f40"}}><i className='fas fa-map-marker-alt'></i>{` ${user.location}, Nigeria`}</p>
+        <p style={{display: user.created ? "" : "none", color: "#5f0f40"}}><i class='far fa-calendar-alt'></i>{` Joined ${new Date(user.created).toDateString()}`}</p>
+            {user.followers.length === 1 ? <p className="fw-bold" style={{display: user.followers ? "" : "none", color: "#5f0f40"}}>{`${user.followers.length} Follower, ${user.following.length} Following`}</p>
             :
-              <p className="fw-bold" style={{display: user.followers ? "" : "none"}}>{`${user.followers.length} Followers, ${user.following.length} Following`}</p>
+              <p className="fw-bold" style={{display: user.followers ? "" : "none", color: "#5f0f40"}}>{`${user.followers.length} Followers, ${user.following.length} Following`}</p>
             }
         </div>
           <div className="col-sm-2">
           {isAuthenticated().user && isAuthenticated().user._id === user._id ? (
-              <Link className="btn btn-outline-primary btn-lg" to={`/edit/${isAuthenticated().user.username}`}>Edit Profile</Link>
+              <Link className="btn btn-outline btn-lg" to={`/edit/${isAuthenticated().user.username}`}>Edit Profile</Link>
           ) :
             <div style={{display: user.fullName ? "" : "none"}}>
              <FollowButton following={this.state.following} onButtonClick={this.clickFollow} />

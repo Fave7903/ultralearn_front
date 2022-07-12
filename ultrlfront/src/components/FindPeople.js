@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { findPeople, follow } from './apiUser'
 import {Link} from 'react-router-dom'
-import avatar from '../assets/avatar.png'
 import {isAuthenticated} from '../auth'
 import Nav from './Nav'
 import {Image} from 'cloudinary-react'
@@ -54,13 +53,13 @@ class FindPeople extends Component {
           {users.map((user, i) => (
             <div className="card mx-3" key={i}>
   {user.imgId ? <Image cloudName="favoursoar" publicId={user.imgId} style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%', borderColor: "purple"}}/> :
-          <img src={avatar} className="card-img-top" alt='profile' style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%'}}/>
+          <i className="fa-solid fa-user mx-3" style={{color: "#5f0f40", fontSize: "100px"}}></i>
           }
   <div className="card-body">
     <h5 className="card-title">{user.fullName}</h5>
     <p className="card-text">{user.username}</p>
-    <Link to={`/ul/${user.username}`} className="btn btn-primary btn-raised btn-sm">View Profile</Link>
-    <button onClick={() => this.clickFollow(user, i)} className='btn btn-raised btn-info float-right btn-sm mx-3 mt-1'>Follow</button>
+    <Link to={`/ul/${user.username}`} className="btn btn-raised btn-sm" style={{backgroundColor: "#5f0f40", color: "white"}}>View Profile</Link>
+    <button style={{backgroundColor: "#5f0f40", color: "white"}} onClick={() => this.clickFollow(user, i)} className='btn btn-raised btn-info float-right btn-sm mx-3 mt-1'>Follow</button>
   </div>
 </div>
           ))}

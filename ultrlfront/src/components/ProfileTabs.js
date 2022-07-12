@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-import avatar from '../assets/avatar.png'
 import {Image} from 'cloudinary-react'
 
 class ProfileTabs extends Component {
@@ -18,7 +17,7 @@ class ProfileTabs extends Component {
                   <div>
                     <Link to={`/ul/${person.username}`}>
                       {person.imgId ? <Image cloudName="favoursoar" publicId={person.imgId} style={{width: '40px', height: '40px', objectFit: 'cover', borderRadius: '50%'}}/> :
-          <img src={avatar} className="card-img-top" alt='profile' style={{width: '40px', height: '40px', objectFit: 'cover', borderRadius: '50%'}}/>
+          <i className="fa-solid fa-user mx-3" style={{color: "#5f0f40", fontSize: "40px"}}></i>
           }
                       <div className='d-inline-block mx-2'>
                         <p className='lead'>{person.username}</p>
@@ -39,7 +38,7 @@ class ProfileTabs extends Component {
                   <div>
                     <Link to={`/ul/${person.username}`}>
                       {person.imgId ? <Image cloudName="favoursoar" publicId={person.imgId} style={{width: '40px', height: '40px', objectFit: 'cover', borderRadius: '50%'}}/> :
-          <img src={avatar} className="card-img-top" alt='profile' style={{width: '40px', height: '40px', objectFit: 'cover', borderRadius: '50%'}}/>
+          <i className="fa-solid fa-user mx-3" style={{color: "#5f0f40", fontSize: "40px"}}></i>
           }
                       <div className='d-inline-block mx-2'>
                         <p className='lead'>{person.username}</p>
