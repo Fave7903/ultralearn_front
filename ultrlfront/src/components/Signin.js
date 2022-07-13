@@ -68,7 +68,7 @@ class Signin extends Component {
                 <p className="float-start mt-n3  "><img src={ultralearn} className="image-fluid me-n4 " alt="Student"/>UltraLEARN</p>
                 <figure>
                 <img src={logo} className="img-fluid mx-auto d-block" alt="Student"/>
-                <figcaption className="text-center figure-caption text-dark"> Exploring Growth Conversations</figcaption>
+                <figcaption style={{color: "#5F0F40"}} className="text-center figure-caption"> Exploring Growth Conversations</figcaption>
                 </figure>
             </div>
             <div className="col bg-light">
