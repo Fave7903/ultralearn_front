@@ -21,6 +21,12 @@ padding: 2VW
 
 .btn{
     background-color: #5F0F40;
+    color: white;
+}
+.btn-outline{
+  background-color: white;
+  color: #5F0F40;
+  border-color: #5F0F40;
 }
 .float-start{
     color: #5F0F40;

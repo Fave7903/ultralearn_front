@@ -108,8 +108,8 @@ class NewPost extends Component {
 
           <div className="row">
             <div className="col-sm-8 mb-4 row">
-          {isAuthenticated().user.imgId ? <Image cloudName="favoursoar" publicId={isAuthenticated().user.imgId} style={{width: '120px', height: '120px', objectFit: 'cover', borderRadius: '50%'}} className="col-sm-3"/> :
-          <i className="fa-solid fa-user col-sm-3" style={{color: "#5f0f40", fontSize: "100px"}}></i>
+          {isAuthenticated().user.imgId ? <Image cloudName="favoursoar" publicId={isAuthenticated().user.imgId} style={{width: '120px', height: '150px', objectFit: 'cover', borderRadius: '50%'}} className="col-sm-3 d-none d-lg-block d-xl-block"/> :
+          <i className="fa-solid fa-user col-sm-3 d-none d-lg-block d-xl-block" style={{color: "#5f0f40", fontSize: "100px"}}></i>
           }
               <div className="col-sm-9">
             <textarea
