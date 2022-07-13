@@ -25,9 +25,6 @@ return (
       <li className="nav-item active mx-5">
         <Link className="nav-link" to="/findpeople" style={{color: "#5f0f40"}}>Add Friends<span className="sr-only">(current)</span></Link>
       </li>
-      <li className="nav-item active mx-5">
-        <Link className="nav-link" to="/interest" style={{color: "#5f0f40"}}>Interest<span className="sr-only">(current)</span></Link>
-      </li>
        
     </ul>
     
