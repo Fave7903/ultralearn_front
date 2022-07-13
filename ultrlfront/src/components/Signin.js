@@ -3,7 +3,9 @@ import { Redirect } from 'react-router-dom'
 import { signin, authenticate } from '../auth'
 import {Link} from 'react-router-dom'
 import '../assets/style.css'
-import image3 from '../assets/image 3.png'
+// import image3 from '../assets/image 3.png'
+import ultralearn from '../assets/ultralearn (1).png'
+import logo from '../assets/newLogo.png'
 
 
 
@@ -61,14 +63,15 @@ class Signin extends Component {
          
         <div className="container-fluid">
             <div className="row">
-            <div className=" color col">
-                <p className="float-start text-light">UltraLEARN</p>
+            <div className="color col h3">
+              
+                <p className="float-start mt-n3  "><img src={ultralearn} className="image-fluid me-n4 " alt="Student"/>UltraLEARN</p>
                 <figure>
-                <img src={image3} className="image text-center" alt="Student"/>
-                <figcaption className="text-light text-center caption"> Promoting Growth Conversations</figcaption>
+                <img src={logo} className="img-fluid mx-auto d-block" alt="Student"/>
+                <figcaption className="text-center figure-caption text-dark"> Exploring Growth Conversations</figcaption>
                 </figure>
             </div>
-            <div className="col">
+            <div className="col bg-light">
             <br></br>
                <div className="alert alert-danger" style={{display: error ? "" : "none"}}>
           {error}
@@ -79,13 +82,14 @@ class Signin extends Component {
   <span className="sr-only">Loading...</span>
 </div>
         </div> : ""}
-        <div className="p-5">
-                <p className="text-dark fs-3 fw-bolder">Welcome Back!</p>  
-                <p>Welcome back, please share your details</p>
+        <div className="p-5 mt-3">
+                <p className="fs-3 fw-bolder mb-5">Welcome Back!</p>  
+                <p className="greytext lead mt-2">Welcome back, please enter your details</p>
           <form>
                 <div className="form-group mb-4">
-            <label className="text-muted">Email</label>
+            <label className="lead fw-bold">Email</label>
             <input 
+              style={{height: "50px", borderRadius: "15px"}}
               onChange={this.handleChange("email")} 
               type="email" 
               placeholder="Email"
@@ -93,9 +97,10 @@ class Signin extends Component {
               value={email}>
             </input>
           </div>
-          <div className="form-group mb-4">
-            <label className="text-muted">Password</label>
+          <div className="form-group mb-2">
+            <label className="lead fw-bold">Password</label>
             <input 
+              style={{height: "50px", borderRadius: "15px"}}
               onChange={this.handleChange("password")} 
               type="password" 
               className="form-control"
@@ -103,21 +108,33 @@ class Signin extends Component {
               value={password}>
             </input>
           </div>
-                  <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked"></input>
-                    <label className="form-check-label" for="flexCheckChecked">
-                      Remember Me
+          
+                  <div className="form-check lead mx-4">
+                    <input className="form-check-input text-dark" type="checkbox" value="" id="flexCheckChecked"></input>
+                    <label className="form-check-label text-dark" for="flexCheckChecked">
+                      Remember me
                     </label>
                   </div>
-                  <div className="col-6 btn-lg mx-auto">
-                    <button className="btn btn-primary btn-lg" onClick={this.clickSubmit}>Login</button>
+                  <div className="col-5 mx-auto mt-5 mb-5">
+                    <button style={{height: "50px", borderRadius: "15px", color: "white"}} className="btn col mx-auto" onClick={this.clickSubmit}>Login</button>
                   </div>
             </form>
-                
-                <div className="text-center">
+                  {/* <div className="fw-bold text-dark">
+                    <p>Or continue with</p>
+                    <p>
+                      <GoogleLogin 
+            clientId="141056353686-8dm6cb1216qdaumv029rqiqk7hb0s2sf.apps.googleusercontent.com"
+            onSuccess={this.googleSuccess}
+            onFailure={this.googleFailure}
+            /> */}
+                        {/* <img src={face} className="fb"alt="Facebook"/> */}
+                        {/* <img src={down} className="fluid"alt="Twitter"/> */}
+                      {/* </p>
+                </div> */}
+                <div className="text-center lead">
                     <p>
                         Don't have an account?&nbsp;&nbsp;
-                        <Link to="/signup" className="txt">SignUp</Link>
+                        <Link to="/signup" style={{color: "#5F0F40"}} className="fw-bold">Signup</Link>
                     </p>
                 </div>
             </div>

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { signup } from '../auth'
 import {Link} from 'react-router-dom'
-import image3 from '../assets/image 3.png'
+// import image3 from '../assets/image 3.png'
+import ultralearn from '../assets/ultralearn (1).png'
+import logo from '../assets/newLogo.png'
 import '../assets/style.css'
 
 class Signup extends Component {
@@ -56,21 +58,32 @@ class Signup extends Component {
     const {fullName, username, email, password, error, open, loading} = this.state
     return (
       <div>
-      <div className="contaner-fluid">
-      <div className="row"> 
+      <div className="contaner-fluid ">
+      <div className="row "> 
+      <div className='color col h3'>
+      <p className="float-start mt-n3 "><img src={ultralearn} className="image-fluid me-n4" alt="Student"/>UltraLEARN</p>
 
-        <div className=" color col">
-                <p className="float-start text-light">UltraLEARN</p>
-                <figure>
-                <img src={image3} className="image text-center" alt="Student"/>
-                <figcaption className="text-light text-center caption"> Promoting Growth Conversations</figcaption>
+
+                    <figure>
+                <img src={logo} className="img-fluid mx-auto d-block" alt="Student"/>
+                <figcaption style={{color: "#5F0F40"}} className="text-center figure-caption"> Exploring Growth Conversations</figcaption>
                 </figure>
-            </div>
 
-        
-      <div className="container col mx-5">
-        <br></br>
-        <h2 className="mt-5 mb-5 fw-bolder">Create an account with UltraLEARN</h2>
+                </div>
+                    
+
+
+
+        <div className="bg-light col">
+                  <div className="float-right mt-4 mx-2">
+        <p className="lead">
+                        Already have an account?&nbsp;&nbsp;
+                        <Link to="/signin" style={{color: "#5F0F40"}} className="fw-bold">Login</Link>
+                    </p>
+                    </div>
+      <div className="p-5 mt-4">
+      
+        <h2 className=" mb-5 fw-bolder">Register</h2>
 
         <div className="alert alert-danger" style={{display: error ? "" : "none"}}>
           {error}
@@ -88,31 +101,34 @@ class Signup extends Component {
         
         <form>
           <div className="row">
-          <div className="form-group mb-4 col">
-            <label className="text-muted">Full Name</label>
+          <div className="form-group mb-4 col-6">
+            <label className="lead fw-bold">Full Name</label>
             <input 
+              style={{height: "50px", borderRadius: "15px"}}
               onChange={this.handleChange("fullName")} 
               type="text" 
               className="form-control" 
-              placeholder="Full Name"
+              placeholder="Your name"
               value={fullName}>
             </input>
           </div>
 
-          <div className="form-group mb-4 col">
-            <label className="text-muted">Username</label>
+          <div className="form-group mb-4 col-6">
+            <label className="lead fw-bold">Username</label>
             <input 
+              style={{height: "50px", borderRadius: "15px"}}
               onChange={this.handleChange("username")} 
               type="text" 
-              placeholder="Username"
+              placeholder="Your username"
               className="form-control" 
               value={username}>
             </input>
           </div>
           </div>
           <div className="form-group mb-4">
-            <label className="text-muted">Email</label>
+            <label className="lead fw-bold">Email</label>
             <input 
+              style={{height: "50px", borderRadius: "15px"}}
               onChange={this.handleChange("email")} 
               type="email" 
               placeholder="Email"
@@ -120,29 +136,50 @@ class Signup extends Component {
               value={email}>
             </input>
           </div>
-          <div className="form-group mb-4">
-            <label className="text-muted">Password</label>
+          <div className="form-group mb-2">
+            <label className="lead fw-bold">Password</label>
             <input 
+              style={{height: "50px", borderRadius: "15px"}}
               onChange={this.handleChange("password")} 
               type="password" 
               className="form-control"
               placeholder="6+ characters, must contain a number"
               value={password}>
             </input>
+            <div className="mx-4 mt-1 lead">
+            <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked"></input>
+                    <label className="form-check-label" for="flexCheckChecked">
+                      Remember me
+                    </label>
+              </div>
           </div>
-          <div className="col-6 btn-lg mx-auto">
-              <button className="btn btn-primary btn-raised btn-lg"  onClick={this.clickSubmit} >Signup</button>
-          </div>
-        </form>
-       
-        <div className="text-center">
-                    <p>
-                        Aready have an account?&nbsp;&nbsp;
-                        <Link to="/signin" className="txt">SignIn</Link>
-                    </p>
+          
+          <div className="mt-5 mx-4 lead">
+<p>
+<input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>Creating an account means you accept our <a href='https://ultralearn.github.io/Terms-and-Conditions/' style={{color: "#5F0F40"}} className="fw-bold">Terms and Conditions</a>
+</p>
                 </div>
+          <div className="col-5 mx-auto">
+              <button className="btn col mx-auto" style={{height: "50px", borderRadius: "15px", color: "white"}} onClick={this.clickSubmit} >Sign Up</button>
+          </div>
+          {/* <div>
+        <p className="fw-bold text-dark">
+          Or Continue with</p>
+        </div> */}
+          {/* <div className="container mt-3 mx-2">
+          <GoogleLogin 
+            clientId="141056353686-8dm6cb1216qdaumv029rqiqk7hb0s2sf.apps.googleusercontent.com"
+            onSuccess={this.googleSuccess}
+            onFailure={this.googleFailure}
+            />
+            </div> */}
+            <br></br>
+        </form>
+
+
      
       </div>
+        </div>
         </div>
         </div>
         </div>

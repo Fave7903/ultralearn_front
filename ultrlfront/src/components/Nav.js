@@ -12,7 +12,7 @@ return (
   <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <Link className="navbar-brand mx-2" to="/">
     <img src={ultra} style={{ width: "40px", height: "40px"}} className="d-inline-block align-top" alt=""/>
-    <span className="fw-bolder" style={{color: "#5f0f40"}}>UltraLEARN</span>
+    <span className="fw-bolder h2" style={{color: "#5f0f40"}}>UltraLEARN</span>
   </Link>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>

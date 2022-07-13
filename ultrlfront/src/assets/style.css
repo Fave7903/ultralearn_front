@@ -1,59 +1,77 @@
-body {
-  padding-top: 70px;
-}
-@media (max-width: 979px) {
-  body {
-    padding-top: 0px;
-  }
-}
-
-
-.color{
-    background-color: rgba(92, 39, 209, 0.5)
-
+.body{
+    color:black;
 }
 .float-start{
 font-weight: 700;
 padding: 2VW
 }
-
-.text-light {
-    font-size: 1.5vw;
-}
 .caption{
-   margin-top: -20vw; 
+    color: #5F0F40;
+    font-size: 1.3rem;
+    margin-top:-14rem;
+    font-weight: 700;
+    text-align: center;
+    margin-left: -6rem;
+
+
 }
-.btn-lg{
-    border-color: purple;
-    color: purple;
+.greytext{
+    color: #3C3B3B;
 }
-.lead{
-  color: purple;
+
+.btn{
+    background-color: #5F0F40;
 }
-.fluid{
-    width:5vw
+.float-start{
+    color: #5F0F40;
+    font-weight: bold;
+}
+.image-fluid{
+    width: 19%;
+}
+.img-fluid{
+    margin-top: -9vw;
 }
 .fb{
     width: 10vw;
 }
+.fw-bolder{
+    color: #5F0F40;
+}
+
 .txt {
-color: #5c27d1;
+color: #5F0F40;
 text-decoration: none;
+font-weight: 400;
 }
-.image{
-    width: 50vw;
-    height: 60vw;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    padding-bottom: 20vw;
+form-check-input[type=checkbox]:checked {
+    background-color: #5F0F40;
 }
-form-check-input{
-    background-color: rgb(155, 115, 155);
+
+.text{
+    color: black;
+    font-weight: 800;
 }
 .password{
     text-decoration: none;
 
     color: purple;
     float: right;
+}
+.float-end{
+    float: right;
+}
+@media screen and (max-width: 768px){
+    .caption{
+        margin-top: -7rem;
+        font-size: 1rem;
+        text-align: center;
+        margin-left: auto;
+    }
+    .img-fluid{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
 }
