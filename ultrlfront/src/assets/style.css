@@ -81,3 +81,41 @@ form-check-input[type=checkbox]:checked {
 
     }
 }
+.terms{
+    font-family: montserrat;
+    color: 
+    #5F0F40;
+
+}
+.content{
+    background-color: #EFE9E9;
+
+}
+.text1{
+    font-weight: 700;
+    border-bottom: 0.3vw solid #5F0F40;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    margin: auto;
+    justify-content: center;
+    padding-top: 2vw;
+    width: 60%;
+}
+.btnsection{
+    text-align: center;
+}
+.btn1{
+    color: #5F0F40;
+    background-color: white;
+    border: 1px solid #5F0F40;
+    margin: 3vw;
+    padding:0.7vw;
+}
+.btn2{
+    color: white;
+    background-color: #5F0F40;
+    border: none;
+    padding: 0.7vw;
+  
+}

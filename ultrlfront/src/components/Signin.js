@@ -18,7 +18,8 @@ class Signin extends Component {
       password: "",
       error: "",
       redirectToReferer: false,
-      loading: false
+      loading: false,
+      toggler: "password"
     }
   }
 
@@ -27,6 +28,13 @@ class Signin extends Component {
     this.setState({ [name]: event.target.value })
   }
 
+  toggle = () => {
+    if (this.state.toggler === "password") {
+      this.setState({toggler: "text"})
+    } else {
+      this.setState({toggler: "password"})
+    }
+ }
   
   
   clickSubmit = event => {
@@ -54,7 +62,7 @@ class Signin extends Component {
   
   
   render() {
-    const {email, password, error, redirectToReferer, loading} = this.state
+    const {email, password, error, redirectToReferer, loading, toggler} = this.state
     if (redirectToReferer) {
       return <Redirect to="/" />
     }
@@ -102,14 +110,21 @@ class Signin extends Component {
             <input 
               style={{height: "50px", borderRadius: "15px"}}
               onChange={this.handleChange("password")} 
-              type="password" 
+              type={toggler} 
               className="form-control"
               placeholder="6+ characters, must contain a number"
               value={password}>
             </input>
+            
           </div>
+            <div className="mx-4 mt-1 mb-3">
+            <input onClick={this.toggle} className="form-check-input" type="checkbox" value="" id="flexCheckChecked"></input>
+                    <label className="form-check-label" for="flexCheckChecked">
+                      Show password
+                    </label>
+              </div>
           
-                  <div className="form-check lead mx-4">
+                  <div className="form-check lead mx-3">
                     <input className="form-check-input text-dark" type="checkbox" value="" id="flexCheckChecked"></input>
                     <label className="form-check-label text-dark" for="flexCheckChecked">
                       Remember me

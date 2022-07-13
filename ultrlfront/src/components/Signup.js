@@ -16,7 +16,9 @@ class Signup extends Component {
       password: "",
       error: "",
       open: false,
-      loading: false
+      loading: false,
+      toggler: "password",
+      accept: false
     }
   }
   handleChange = name => event => {
@@ -24,7 +26,17 @@ class Signup extends Component {
     this.setState({open: false})
     this.setState({ [name]: event.target.value })
   }
+
+  toggle = () => {
+    if (this.state.toggler === "password") {
+      this.setState({toggler: "text"})
+    } else {
+      this.setState({toggler: "password"})
+    }
+  }
+  
   clickSubmit = event => {
+    if (this.state.accept) { 
     event.preventDefault()
     window.scrollTo(0, 0)
     this.setState({loading: true})
@@ -50,12 +62,17 @@ class Signup extends Component {
           loading: false
         })
       })
+    } else {
+      event.preventDefault()
+      window.scrollTo(0, 0)
+      this.setState({error: "Please accept our Terms and Conditions to Sign up"})
+    }
   }
   
   
   
   render() {
-    const {fullName, username, email, password, error, open, loading} = this.state
+    const {fullName, username, email, password, error, open, loading, toggler} = this.state
     return (
       <div>
       <div className="contaner-fluid ">
@@ -141,11 +158,17 @@ class Signup extends Component {
             <input 
               style={{height: "50px", borderRadius: "15px"}}
               onChange={this.handleChange("password")} 
-              type="password" 
+              type={toggler} 
               className="form-control"
               placeholder="6+ characters, must contain a number"
               value={password}>
             </input>
+            <div className="mx-4 mt-1 mb-3">
+            <input onClick={this.toggle} className="form-check-input" type="checkbox" value="" id="flexCheckChecked"></input>
+                    <label className="form-check-label" for="flexCheckChecked">
+                      Show password
+                    </label>
+              </div>
             <div className="mx-4 mt-1 lead">
             <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked"></input>
                     <label className="form-check-label" for="flexCheckChecked">
@@ -156,7 +179,13 @@ class Signup extends Component {
           
           <div className="mt-5 mx-4 lead">
 <p>
-<input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>Creating an account means you accept our <a href='https://ultralearn.github.io/Terms-and-Conditions/' style={{color: "#5F0F40"}} className="fw-bold">Terms and Conditions</a>
+<input onClick={() => {
+  if (this.state.accept === false) {
+    this.setState({accept: true})
+  } else {
+    this.setState({accept: false})
+  }
+}} onChange={() => this.setState({error: ""})} className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>Creating an account means you accept our <Link to='/terms' style={{color: "#5F0F40"}} className="fw-bold">Terms and Conditions</Link>
 </p>
                 </div>
           <div className="col-5 mx-auto">
