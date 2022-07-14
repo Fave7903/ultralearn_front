@@ -6,6 +6,7 @@ import FollowButton from './FollowButton'
 import ProfileTabs from './ProfileTabs'
 import Nav from './Nav'
 import {Image} from 'cloudinary-react'
+import {listByUser} from '../posts/apiPost'
 
 class Profile extends Component {
   constructor() {
@@ -15,7 +16,8 @@ class Profile extends Component {
       redirectToSignin: false,
       loading: true,
       following: false,
-      error: ""
+      error: "",
+      posts: []
     }
   }
   checkFollow = user => {
@@ -50,6 +52,18 @@ class Profile extends Component {
         let following = this.checkFollow(data)
         this.setState({ user: data, following })
         this.setState({ loading: false})
+        this.loadPosts(data.username)
+      }
+    })
+  }
+
+  loadPosts = name => {
+    const token = isAuthenticated().token
+    listByUser(name, token).then(data => {
+      if (data.error) {
+        console.log(data.error)
+      } else {
+        this.setState({posts: data})
       }
     })
   }
@@ -65,7 +79,7 @@ class Profile extends Component {
   }
   
   render() {
-    const {redirectToSignin, user, loading} = this.state
+    const {redirectToSignin, user, loading, posts} = this.state
     if(redirectToSignin) return <Redirect to="/signin"/>
 
     
@@ -110,7 +124,7 @@ class Profile extends Component {
             </div>
         </div>
         <hr style={{height: '5px', backgroundColor: 'purple'}}></hr>
-          <ProfileTabs followers={user.followers} following={user.following}/>
+          <ProfileTabs followers={user.followers} following={user.following} posts={posts}/>
           </div>
           </div>
     );

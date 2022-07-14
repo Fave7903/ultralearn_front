@@ -12,7 +12,8 @@ class FindPeople extends Component {
       users: [],
       error: "",
       open: false,
-      loading: true
+      loading: true, 
+      searchTerm: ""
     };
   }
 
@@ -50,7 +51,13 @@ class FindPeople extends Component {
 
   renderUsers = (users) => (
     <div>
-          {users.map((user, i) => (
+          {users.filter((val) => {
+            if (this.state.searchTerm === "") {
+              return val
+            } else if (val.fullName.toLowerCase().includes(this.state.searchTerm.toLowerCase()) || val.username.toLowerCase().includes(this.state.searchTerm.toLowerCase())) {
+              return val
+            }
+          }).map((user, i) => (
             <div className="card mx-3" key={i}>
   {user.imgId ? <Image cloudName="favoursoar" publicId={user.imgId} style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%', borderColor: "purple"}}/> :
           <i className="fa-solid fa-user mx-3" style={{color: "#5f0f40", fontSize: "100px"}}></i>
@@ -74,6 +81,16 @@ class FindPeople extends Component {
         <Nav />
         <h2 className="d-flex align-items-center justify-content-center mt-5 mb-5">Find People</h2>
 
+        <div className="input-group mb-3" style ={{width: "50%"}}>
+          <div className="input-group-prepend">
+            <span className="input-group-text" id="basic-addon1"><i className="fas fa-search"></i></span>
+          </div>
+            <input style={{height: "40px"}} type="search" placeholder="Search for people" className="form-control"onChange={ event => {
+            this.setState({
+              searchTerm: event.target.value
+            })}
+          }></input>
+        </div>
         {error && (
         <div className="alert alert-danger">
            <p>{error}</p>

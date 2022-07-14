@@ -131,6 +131,9 @@ class NewPost extends Component {
             </div>
         </form>
         <div className="d-flex align-items-center justify-content-center mt-0">
+
+          
+          
       <input style={{width: "50%"}} className="form-control" type="file" onChange={(event) => {this.setState({imageSelected: event.target.files[0]})}}/>
       <button className="btn btn-raised mt-2" onClick={this.uploadImage} style={{backgroundColor: "#5f0f40", color: "white"}}>Attach photo</button>
              {postImgId &&

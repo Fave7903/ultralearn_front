@@ -47,7 +47,7 @@ class Posts extends Component {
    </div>
             {post.body.length > 105 && this.state.more ? <p className="card-text">{post.body.substring(0, 150)}...<span style={{cursor: "pointer", color: "#5f0f40"}} onClick={() => this.setState({more: !this.state.more})}>see more</span></p> : <p className="card-text">{post.body}</p>}
     {post.postImgId &&
-   <div className="container" style={{backgroundColor: "#5f0f40", width: '100%', height: '350px'}}>
+   <div className="container" style={{backgroundColor: "white", width: '100%', height: '350px'}}>
      <Image cloudName="favoursoar" publicId={post.postImgId} style={{objectFit: 'contain', width: "100%", height: "100%"}}/>
    
    </div>

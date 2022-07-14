@@ -23,3 +23,18 @@ export const list = () => {
     })
     .catch(err => console.log(err))
   }
+
+export const listByUser = (name, token) => {
+    return fetch(`https://api-ultralearn.herokuapp.com/posts/by/${name}`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+    })
+    .then(response => {
+      return response.json()
+    })
+    .catch(err => console.log(err))
+  }
