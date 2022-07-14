@@ -38,3 +38,35 @@ export const listByUser = (name, token) => {
     })
     .catch(err => console.log(err))
   }
+
+export const like = (userId, token, postId) => {
+    return fetch(`https://api-ultralearn.herokuapp.com/post/like`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify({userId, postId})
+    })
+    .then(response => {
+      return response.json()
+    })
+    .catch(err => console.log(err))
+  }
+
+export const unlike = (userId, token, postId) => {
+    return fetch(`https://api-ultralearn.herokuapp.com/post/unlike`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify({userId, postId})
+    })
+    .then(response => {
+      return response.json()
+    })
+    .catch(err => console.log(err))
+  }

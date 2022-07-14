@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {list} from './apiPost'
 import {Link} from 'react-router-dom'
 import {Image} from 'cloudinary-react'
+import Like from './Like'
 
 class Posts extends Component {
   constructor() {
@@ -23,10 +24,18 @@ class Posts extends Component {
     })
   }
 
+  
+
   renderPosts = (posts) => {
     return (
             <div>
             {posts.map((post, i) => {
+            
+          
+            
+              
+             
+              
           const posterFull = post.postedBy ? post.postedBy.fullName : " Unknown"
           const posterUser = post.postedBy ? post.postedBy.username : " Unknown"
         return (
@@ -45,13 +54,14 @@ class Posts extends Component {
      <p style={{color: "#5f0f40"}} className="mb-1">Posted on {new Date(post.created).toDateString()}</p>
      <hr style={{color: "#5f0f40"}}></hr>
    </div>
-            {post.body.length > 105 && this.state.more ? <p className="card-text">{post.body.substring(0, 150)}...<span style={{cursor: "pointer", color: "#5f0f40"}} onClick={() => this.setState({more: !this.state.more})}>see more</span></p> : <p className="card-text">{post.body}</p>}
+            {post.body.length > 150 && this.state.more ? <p className="card-text">{post.body.substring(0, 150)}...<span style={{cursor: "pointer", color: "#5f0f40"}} onClick={() => this.setState({more: !this.state.more})}>see more</span></p> : <p className="card-text">{post.body}</p>}
     {post.postImgId &&
    <div className="container" style={{backgroundColor: "white", width: '100%', height: '350px'}}>
      <Image cloudName="favoursoar" publicId={post.postImgId} style={{objectFit: 'contain', width: "100%", height: "100%"}}/>
    
    </div>
     }
+    <Like postId={post._id} likeCount={post.likes.length}/>
   </div>
           
 </div>
