@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import {Image} from 'cloudinary-react'
+import Like from '../posts/Like'
 
 class ProfileTabs extends Component {
   constructor() {
@@ -48,6 +49,7 @@ class ProfileTabs extends Component {
    
    </div>
     }
+    <Like postId={post._id} likeCount={post.likes.length}/>
   </div>
           
 </div>
