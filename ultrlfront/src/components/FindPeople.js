@@ -56,6 +56,8 @@ class FindPeople extends Component {
               return val
             } else if (val.fullName.toLowerCase().includes(this.state.searchTerm.toLowerCase()) || val.username.toLowerCase().includes(this.state.searchTerm.toLowerCase())) {
               return val
+            } else {
+              return false
             }
           }).map((user, i) => (
             <div className="card mx-3" key={i}>
