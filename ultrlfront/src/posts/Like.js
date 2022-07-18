@@ -12,8 +12,15 @@ class Like extends Component {
     }
   }
 
+  checkLike = (likeArr) => {
+    const userId = isAuthenticated().user._id
+    let match = likeArr.indexOf(userId) !== -1
+    return match
+  }
+
   componentDidMount = () => {
-    this.setState({postId: this.props.postId, likes: this.props.likeCount})
+    this.setState({postId: this.props.postId, likes: this.props.likeCount, like: this.checkLike(this.props.likeArr)})
+
   }
 
   likeToggle = () => {

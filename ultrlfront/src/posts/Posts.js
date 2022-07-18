@@ -10,7 +10,8 @@ class Posts extends Component {
     this.state = {
       posts: [],
       loading: true,
-      more: true
+      more: true,
+      likesArr: []
     };
   }
 
@@ -33,8 +34,6 @@ class Posts extends Component {
             
           
             
-              
-             
               
           const posterFull = post.postedBy ? post.postedBy.fullName : " Unknown"
           const posterUser = post.postedBy ? post.postedBy.username : " Unknown"
@@ -61,7 +60,7 @@ class Posts extends Component {
    
    </div>
     }
-    <Like postId={post._id} likeCount={post.likes.length}/>
+    <Like postId={post._id} likeArr={post.likes} likeCount={post.likes.length}/>
   </div>
           
 </div>

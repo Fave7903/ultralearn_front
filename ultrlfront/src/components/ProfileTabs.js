@@ -49,7 +49,7 @@ class ProfileTabs extends Component {
    
    </div>
     }
-    <Like postId={post._id} likeCount={post.likes.length}/>
+    <Like postId={post._id} likeArr={post.likes} likeCount={post.likes.length}/>
   </div>
           
 </div>
