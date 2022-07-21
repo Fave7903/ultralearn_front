@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom'
 import {Image} from 'cloudinary-react'
 import Like from './Like'
 import NewPost from './NewPost'
-import Comments from './Comments'
 
 class Posts extends Component {
   constructor() {
@@ -13,8 +12,7 @@ class Posts extends Component {
       posts: [],
       loading: true,
       more: true,
-      likesArr: [],
-      pComments: []
+      likesArr: []
     };
   }
 

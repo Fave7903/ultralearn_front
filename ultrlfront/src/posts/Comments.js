@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {comment, uncomment} from './apiPost'
+import {comment} from './apiPost'
 import {isAuthenticated} from '../auth'
 import {Image} from 'cloudinary-react'
 import {Link} from 'react-router-dom'
