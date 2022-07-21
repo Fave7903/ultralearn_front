@@ -24,6 +24,16 @@ export const list = () => {
     .catch(err => console.log(err))
   }
 
+export const getPost = postId => {
+    return fetch(`https://api-ultralearn.herokuapp.com/post/${postId}`, {
+      method: "GET",
+    })
+    .then(response => {
+      return response.json()
+    })
+    .catch(err => console.log(err))
+  }
+
 export const listByUser = (name, token) => {
     return fetch(`https://api-ultralearn.herokuapp.com/posts/by/${name}`, {
       method: "GET",
@@ -64,6 +74,38 @@ export const unlike = (userId, token, postId) => {
         Authorization: `Bearer ${token}`
       },
       body: JSON.stringify({userId, postId})
+    })
+    .then(response => {
+      return response.json()
+    })
+    .catch(err => console.log(err))
+  }
+
+export const comment = (userId, token, postId, comment) => {
+    return fetch(`https://api-ultralearn.herokuapp.com/post/comment`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify({userId, postId, comment})
+    })
+    .then(response => {
+      return response.json()
+    })
+    .catch(err => console.log(err))
+  }
+
+export const uncomment = (userId, token, postId, comment) => {
+    return fetch(`https://api-ultralearn.herokuapp.com/post/uncomment`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify({userId, postId, comment})
     })
     .then(response => {
       return response.json()

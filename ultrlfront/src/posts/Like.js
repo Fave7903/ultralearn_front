@@ -45,7 +45,6 @@ class Like extends Component {
   render () {
     return (
       <div>
-        <hr></hr>
         <p onClick={this.likeToggle}>{this.state.likes} <i style={{fontSize: "22px", cursor: "pointer", color: "#5f0f40"}} className="fa fa-thumbs-up" aria-hidden="true"></i></p>
     </div>
     )

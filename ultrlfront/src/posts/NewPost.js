@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { isAuthenticated } from '../auth'
-import { create } from './apiPost'
+import { create, list } from './apiPost'
 import Axios from 'axios'
 import {Image} from 'cloudinary-react'
 
@@ -43,15 +43,13 @@ class NewPost extends Component {
   }
   clickSubmit = event => {
     if (!this.state.body && !this.state.postImgId) {
-      window.onbeforeunload = () => {
         event.preventDefault()
         this.setState({error: "Please fill in the required fields"})
-      }
+     
     } else {
       event.preventDefault()
-    window.scrollTo(0, 0)
-    window.location.reload()
-    this.setState({loading: true})
+      
+    // this.setState({loading: true})
     const {body, postImgId} = this.state
     const post = {
       body,
@@ -64,21 +62,35 @@ class NewPost extends Component {
     create(name, token, post)
       .then(data => {
         if (data.error) {
-          this.setState({error: data.error, loading: false})
+          this.setState({error: data.error})
           console.log(data.error)
         }
         else {
-          this.setState({loading: false, body: ""})
+          list().then(data => {
+      if (data.error) {
+        console.log(data.error)
+      } else {
+        this.props.updatePosts(data)
+        this.setState({loading: false, body: "", postImgId: ""})
+          window.scrollTo(0, 500)
+      }
+    })
+          
+          
         }
       })
       }
     
   }
+
+
+  
+  
   
   
   
   render() {
-    const {body, error, loading, postImgId} = this.state
+    const {body, error, postImgId} = this.state
 
    
     return (
@@ -98,11 +110,7 @@ class NewPost extends Component {
         </div>
 
 
-        {loading ? <div className="jumbotron text-center">
-          <div className="spinner-border text-primary" role="status">
-  <span className="sr-only">Loading...</span>
-</div>
-        </div> : ""}
+        
 
         <form>
 

@@ -8,11 +8,13 @@ import EditProfile from './components/EditProfile'
 import FindPeople from './components/FindPeople'
 import Users from './components/Users'
 import Terms from './components/Terms'
+import SingPost from './posts/SingPost'
 
 const MainRouter = () => {
   return (
     <Switch>
       <Route exact path="/" component={Dashboard}></Route>
+      <Route exact path="/post/:postId" component={SingPost}></Route>
       <Route exact path="/users" component={Users}></Route>
       <Route exact path="/signup" component={Signup}></Route>
       <Route exact path="/signin" component={Signin}></Route>
