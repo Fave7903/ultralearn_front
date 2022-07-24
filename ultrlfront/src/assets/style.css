@@ -1,6 +1,20 @@
 .body{
     color:black;
 }
+html, body, #app, #app>div, #root {
+    height: 100%
+  }
+
+.body {
+    display: table;
+}
+
+.signup-input{ 
+    height: 50px; 
+    border-radius:6px;
+    background: transparent;
+    padding-left: 17px; 
+}
 .float-start{
 font-weight: 700;
 padding: 2VW
@@ -44,7 +58,12 @@ padding: 2VW
 .fw-bolder{
     color: #5F0F40;
 }
+.signup-ititle{
 
+}
+.fonts15{
+    font-size: 15px
+}
 .txt {
 color: #5F0F40;
 text-decoration: none;
