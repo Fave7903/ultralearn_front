@@ -96,7 +96,7 @@ class Signin extends Component {
                       className="form-control signup-input"
                       value={email}>
                     </input>
-                  </div>
+                  </div> 
 
 
                   <div className="form-group mb-2">
