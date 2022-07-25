@@ -4,9 +4,7 @@ import { signin, authenticate } from '../auth'
 import { Link } from 'react-router-dom'
 import '../assets/style.css'
 // import image3 from '../assets/image 3.png'
-import ultralearn from '../assets/ultralearn (1).png'
-import logo from '../assets/newLogo.png'
-import { Authsidebar } from './authsidebar'
+ import { Authsidebar } from './authsidebar'
 
 
 
@@ -111,7 +109,7 @@ class Signin extends Component {
                       value={password}>
                     </input>
                     <div className="input-group-btn">
-                      <a href="#" style={{ textDecoration: "none", color: "#888", fontSize: "12px" }} className="" onClick={this.toggle}>
+                      <a href="javascript:;" style={{ textDecoration: "none", color: "#888", fontSize: "12px" }} className="" onClick={this.toggle}>
                         {toggler === "password" ? <span >Show</span> : <span>Hide</span>} Password.
                       </a>
                     </div>
