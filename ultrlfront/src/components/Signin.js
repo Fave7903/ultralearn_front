@@ -109,9 +109,9 @@ class Signin extends Component {
                       value={password}>
                     </input>
                     <div className="input-group-btn">
-                      <a href="/#" style={{ textDecoration: "none", color: "#888", fontSize: "12px" }} className="" onClick={this.toggle}>
+                      <button type="button" style={{ textDecoration: "none", color: "#888", fontSize: "12px" }} className="link_button" onClick={this.toggle}>
                         {toggler === "password" ? <span >Show</span> : <span>Hide</span>} Password.
-                      </a>
+                      </button>
                     </div>
                    </div>
  
