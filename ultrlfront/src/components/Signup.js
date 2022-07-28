@@ -3,7 +3,6 @@ import { signup } from '../auth'
 import { Link } from 'react-router-dom'
 // import image3 from '../assets/image 3.png'
 // import logo from '../assets/newLogo.png'
- import '../assets/style.css'
 import { Authsidebar } from './authsidebar'
 
 class Signup extends Component {

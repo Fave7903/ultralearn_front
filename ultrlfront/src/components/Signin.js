@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { signin, authenticate } from '../auth'
 import { Link } from 'react-router-dom'
-import '../assets/style.css'
 // import image3 from '../assets/image 3.png'
- import { Authsidebar } from './authsidebar'
+import { Authsidebar } from './authsidebar'
+import { Errormsg } from './errormsg'
 
 
 
@@ -66,86 +66,88 @@ class Signin extends Component {
       return <Redirect to="/" />
     }
     return (
-      <div>
+      <>
 
-        <div className="container-fluid">
-          <div className="row">
+        <div className="h-full grid grid-cols-2">
           <Authsidebar />
-            <div className="col bg-light">
-              <br></br>
+          <div className='col-span-2 md:col-span-1 md:h-full flex flex-col' style={{ backgroundColor: "#f8f9fa" }}>
+            <div className='my-auto p-6'>
+
+
+              <Errormsg error={error} style={{ display: error ? "" : "none" }} />
               <div className="alert alert-danger" style={{ display: error ? "" : "none" }}>
                 {error}
               </div>
 
-              {loading ? <div className="jumbotron text-center">
-                <div className="spinner-border text-primary" role="status">
+              {loading ? <div className="text-center">
+                <div className="text-green" role="status">
                   <span className="sr-only">Loading...</span>
                 </div>
               </div> : ""}
               <div className="p-5 mt-5">
-                <div className="fs-3 fw-bolder mt-5">Welcome Back!</div>
+                <div className="text-xl fw-bolder mt-5">Welcome Back!</div>
                 <div className="greytext fonts15  my-1">Please enter your details below</div>
-                <form class="mt-4">
+                <form class="mt-7">
 
-                <div className="form-group mb-4">
-                    <label className="fw-bold signup-ititle">Email</label>
-                    <input
+                  <div class="my-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                      Email
+                    </label>
+                    <input class="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       onChange={this.handleChange("email")}
-                      type="email"
-                      placeholder="Email"
-                      className="form-control signup-input"
-                      value={email}>
-                    </input>
-                  </div> 
+                      type="email" id="username" value={email} type="text" placeholder="Email" />
+                  </div>
 
-
-                  <div className="form-group mb-2">
-                    <label className="fw-bold signup-ititle">Password</label>
+                  <div class="my-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                      Password
+                    </label>
                     <input
                       onChange={this.handleChange("password")}
                       type={toggler}
-                      className="form-control signup-input"
-                      placeholder="6+ characters, must contain a number"
-                      value={password}>
-                    </input>
-                    <div className="input-group-btn">
+                      class="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password"
+                      value={password}
+                      type="password" placeholder="******************" />
+                    <div className="m-0">
                       <button type="button" style={{ textDecoration: "none", color: "#888", fontSize: "12px" }} className="link_button" onClick={this.toggle}>
                         {toggler === "password" ? <span >Show</span> : <span>Hide</span>} Password.
                       </button>
                     </div>
-                   </div>
- 
-
-                   <div className="form-group mb-2">
-                    <div className="mx-4 mt-3 ">
-                      <input className="form-check-input mr-2" type="checkbox" value="" id="flexCheckChecked"></input>
+                  <div className="">
+                       <input className="form-check-input mr-2" type="checkbox" value="" id="flexCheckChecked"></input>
                       <label className="form-check-label fonts15" for="flexCheckChecked" >
                         Remember me
                       </label>
-                    </div>
-                  </div>  
- 
-
-                  <div className="col-5 mx-auto mt-5 mb-3">
-                    <button style={{ height: "50px", borderRadius: "15px", color: "white" }} className="btn col mx-auto" onClick={this.clickSubmit}>Login</button>
+                   </div>
                   </div>
-                </form>
-               
-                <div className="text-center">
-                  <p className="fonts15">
+
+
+                  <div class="flex items-center mt-6 mb-3 justify-between">
+                    <button  class="hover:bg-blue-700 btn col  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={this.clickSubmit} type="button">
+                      Sign In
+                    </button> 
+                  </div>
+
+                  <div className="fonts15 mb-3">
                     Don't have an account?&nbsp;&nbsp;
                     <Link to="/signup" style={{ color: "#5F0F40" }} className="fw-bold">Signup</Link>
-                  </p>
-                </div>
-              </div>
+                  </div>
+
+
+ 
+                </form>
+
+                 
+               </div>
+
+
 
             </div>
           </div>
         </div>
 
+      </>
 
-
-      </div>
     );
   }
 }

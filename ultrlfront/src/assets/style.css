@@ -1,6 +1,15 @@
-.body{
-    color:black;
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn{
+  @apply py-2 px-6 rounded;
 }
+.btn-blue {
+  @apply  bg-blue-500 text-blue-100;
+}
+ 
 html, body, #app, #app>div, #root {
     height: 100%
   }
@@ -26,8 +35,10 @@ padding: 2VW
     font-weight: 700;
     text-align: center;
     margin-left: -6rem;
+}
 
-
+.ul-purple{
+    color: #5F0F40
 }
 .greytext{
     color: #3C3B3B;
