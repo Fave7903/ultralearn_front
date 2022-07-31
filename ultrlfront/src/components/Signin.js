@@ -113,6 +113,7 @@ class Signin extends Component {
                         {toggler === "password" ? <span >Show</span> : <span>Hide</span>} Password.
                       </button>
                     </div>
+
                   <div className="">
                        <input className="form-check-input mr-2" type="checkbox" value="" id="flexCheckChecked"></input>
                       <label className="form-check-label fonts15" for="flexCheckChecked" >
@@ -123,7 +124,7 @@ class Signin extends Component {
 
 
                   <div class="flex items-center mt-6 mb-3 justify-between">
-                    <button  class="hover:bg-blue-700 btn col  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={this.clickSubmit} type="button">
+                    <button  class="btn  text-white font-bold py-2 px-4 rounded  " onClick={this.clickSubmit} type="button">
                       Sign In
                     </button> 
                   </div>
