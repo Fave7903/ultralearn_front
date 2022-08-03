@@ -3,8 +3,8 @@ import { signup } from '../auth'
 import { Link } from 'react-router-dom'
 // import image3 from '../assets/image 3.png'
 // import logo from '../assets/newLogo.png'
+ import '../assets/style.css'
 import { Authsidebar } from './authsidebar'
-import { Errormsg } from './errormsg'
 
 class Signup extends Component {
   constructor() {
@@ -73,36 +73,8 @@ class Signup extends Component {
 
 
   render() {
-    const { fullName, username, email, password, error, open, loading, toggler } = this.state
+    const { fullName, username, email, password, open, loading, toggler } = this.state
     return (
-<<<<<<< Updated upstream
-      <div className="h-full grid grid-cols-2 ">
-        <Authsidebar />
-        <div className='col-span-2 md:col-span-1 md:h-full flex flex-col' style={{ backgroundColor: "#f8f9fa" }}>
-          <div className='my-auto p-6'>
-
-            <div className="p-5 mt-5">
-              <h2 className=" mb-5 fw-bolder">Register</h2>
-              <Errormsg error={error} style={{ display: error ? "" : "none" }} />
-
-              <div className="alert alert-info" style={{ display: open ? "" : "none" }}>
-                New account successfully created. Please <Link to='/signin'>Sign in</Link>
-              </div>
-              {loading ? <div className="jumbotron text-center">
-                <div className="spinner-border text-primary" role="status">
-                  <span className="sr-only">Loading...</span>
-                </div>
-              </div> : ""}
-              <form>
-                <div class="my-4">
-                  <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                    Full Name
-                  </label>
-                  <input class="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    onChange={this.handleChange("fullName")}
-                    type="text"
-                    value={fullName} type="text" placeholder="Your Full Name" />
-=======
       <div className='body h-100'>
         <div className="contaner-fluid ">
           <div className="row ">
@@ -116,92 +88,99 @@ class Signup extends Component {
                 </div> */}
                 <div className="alert alert-info" style={{ display: open ? "" : "none" }}>
                   New account successfully created. Please <Link to='/signin'>Sign in</Link>
->>>>>>> Stashed changes
                 </div>
-
-
-                <div class="my-4">
-                  <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                    Username
-                  </label>
-                  <input class="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    onChange={this.handleChange("username")}
-                    type="text"
-                    value={username} type="text" placeholder="Your Username" />
-                </div>
-
-
-                <div class="my-4">
-                  <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                    Email
-                  </label>
-                  <input class="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    onChange={this.handleChange("email")}
-                    type="email" id="username" value={email} type="text" placeholder="Email" />
-                </div>
-
-
-
-                <div className="my-6">
-                  <label className="block text-gray-700 text-sm font-bold mb-2" for="password">
-                    Password
-                  </label>
-                  <input
-                    onChange={this.handleChange("password")}
-                    type={toggler}
-                    className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    value={password}   >
-                  </input>
-                  <div className="m-0">
-                    <button type="button" style={{ textDecoration: "none", color: "#888", fontSize: "12px" }} className="link_button" onClick={this.toggle}>
-                      {toggler === "password" ? <span >Show</span> : <span>Hide</span>} Password.
-                    </button>
+                {loading ? <div className="jumbotron text-center">
+                  <div className="spinner-border text-primary" role="status">
+                    <span className="sr-only">Loading...</span>
                   </div>
-                </div>
+                </div> : ""}
+                <form>
+                  <div className="row">
+                    <div className="form-group mb-4 col-6">
+                      <label className="fw-bold signup-ititle">Full Name</label>
+                      <input
+
+                        onChange={this.handleChange("fullName")}
+                        type="text"
+                        className="form-control signup-input"
+                        placeholder="Your name"
+                        value={fullName}>
+                      </input>
+                    </div>
+                    <div className="form-group mb-4 col-6">
+                      <label className="fw-bold signup-ititle">Username</label>
+                      <input
+
+                        onChange={this.handleChange("username")}
+                        type="text"
+                        placeholder="Your username"
+                        className="form-control signup-input"
+                        value={username}>
+                      </input>
+                    </div>
+                  </div>
+                  <div className="form-group mb-4">
+                    <label className="fw-bold signup-ititle">Email</label>
+                    <input
+                      onChange={this.handleChange("email")}
+                      type="email"
+                      placeholder="Email"
+                      className="form-control signup-input"
+                      value={email}>
+                    </input>
+                  </div>
+                  <div className="form-group mb-2">
+                    <label className="fw-bold signup-ititle">Password</label>
 
 
-                <div className="">
-                  <input className="form-check-input mr-2" type="checkbox" value="" id="flexCheckChecked"></input>
-                  <label className="form-check-label fonts15" for="flexCheckChecked" >
-                    Remember me
-                  </label>
-                </div>
-
-
-
-
-                <div className="mb-2">
-                  <div className="mt-1">
+                    <input
+                      onChange={this.handleChange("password")}
+                      type={toggler}
+                      className="form-control signup-input"
+                      placeholder="6+ characters, must contain a number"
+                      value={password}>
+                    </input>
+                    <div className="input-group-btn">
+                      <button type="button" style={{ textDecoration: "none", color: "#888", fontSize: "12px" }} className="link_button" onClick={this.toggle}>
+                        {toggler === "password" ? <span >Show</span> : <span>Hide</span>} Password.
+                      </button >
+                    </div>
+                     </div>
+                  <div className="form-group mb-2">
+                    <div className="mx-4 mt-3 ">
+                      <input className="form-check-input mr-2" type="checkbox" value="" id="flexCheckChecked"></input>
+                      <label className="form-check-label fonts15" for="flexCheckChecked" >
+                        Remember me
+                      </label>
+                    </div>
+                  </div>  
+              <div className="form-group mb-2">
+                <div className="mt-1 mx-4">
                     <input onClick={() => {
                       if (this.state.accept === false) {
                         this.setState({ accept: true })
                       } else {
                         this.setState({ accept: false })
                       }
-                    }}className="form-check-input mr-2" type="checkbox" value="" id="defaultCheck1" />
+                    }} onChange={() => this.setState({ error: "" })} className="form-check-input mr-2" type="checkbox" value="" id="defaultCheck1" />
                     <label className='fonts15'>
-                      Creating an account means you accept our <Link to='/terms' style={{ color: "#5F0F40" }} className="fw-bold">Terms and Conditions</Link>
+                    Creating an account means you accept our <Link to='/terms' style={{ color: "#5F0F40" }} className="fw-bold">Terms and Conditions</Link>
                     </label>
-
-                  </div>
+                  
                 </div>
-
-
-
-                <div class="flex items-center mt-6 mb-3 justify-between">
-                  <button class="hover:bg-blue-700 btn col  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={this.clickSubmit} type="button">
-                    Sign Up
-                  </button>
-                </div>
-
-                <div className="fonts15 mb-3">
-                Already have an account?&nbsp;&nbsp;
+                <div className="col-5 mt-4 mx-auto">
+                  <button className="btn col mx-auto my-3" style={{ height: "50px", borderRadius: "15px", color: "white" }} onClick={this.clickSubmit} >Sign Up</button>
+                  <p className="fonts15">
+                  Already have an account?&nbsp;&nbsp;
                   <Link to="/signin" style={{ color: "#5F0F40" }} className="fw-bold">Login</Link>
+                </p>
                 </div>
-  
-              </form>
-            </div>
+              </div>
+              <br></br>
+            </form>
           </div>
+        </div>
+      </div>
         </div >
       </div >
     );
