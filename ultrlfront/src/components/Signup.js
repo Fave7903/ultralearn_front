@@ -75,6 +75,7 @@ class Signup extends Component {
   render() {
     const { fullName, username, email, password, error, open, loading, toggler } = this.state
     return (
+<<<<<<< Updated upstream
       <div className="h-full grid grid-cols-2 ">
         <Authsidebar />
         <div className='col-span-2 md:col-span-1 md:h-full flex flex-col' style={{ backgroundColor: "#f8f9fa" }}>
@@ -101,6 +102,21 @@ class Signup extends Component {
                     onChange={this.handleChange("fullName")}
                     type="text"
                     value={fullName} type="text" placeholder="Your Full Name" />
+=======
+      <div className='body h-100'>
+        <div className="contaner-fluid ">
+          <div className="row ">
+            <Authsidebar />
+            <div className="h-100 bg-light col-xs-12 col-sm-12 col-md-6">
+              
+              <div className="p-5 mt-5">
+                <h2 className=" mb-5 fw-bolder">Register</h2>
+                {/* <div className="alert alert-danger" style={{ display: error ? "" : "none" }}>
+                  {error}
+                </div> */}
+                <div className="alert alert-info" style={{ display: open ? "" : "none" }}>
+                  New account successfully created. Please <Link to='/signin'>Sign in</Link>
+>>>>>>> Stashed changes
                 </div>
 
 
@@ -162,7 +178,7 @@ class Signup extends Component {
                       } else {
                         this.setState({ accept: false })
                       }
-                    }} onChange={() => this.setState({ error: "" })} className="form-check-input mr-2" type="checkbox" value="" id="defaultCheck1" />
+                    }}className="form-check-input mr-2" type="checkbox" value="" id="defaultCheck1" />
                     <label className='fonts15'>
                       Creating an account means you accept our <Link to='/terms' style={{ color: "#5F0F40" }} className="fw-bold">Terms and Conditions</Link>
                     </label>
