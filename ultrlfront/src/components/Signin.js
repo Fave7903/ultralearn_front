@@ -66,7 +66,6 @@ class Signin extends Component {
       return <Redirect to="/" />
     }
     return (
-      <>
 
         <div className="h-full grid grid-cols-2">
           <Authsidebar />
@@ -85,17 +84,18 @@ class Signin extends Component {
                 </div>
               </div> : ""}
               <div className="p-5 mt-5">
-                <div className="text-xl fw-bolder mt-5">Welcome Back!</div>
+                <h4 className="font-medium fw-bolder leading-tight text-2xl mt-0 mb-2">Welcome Back!</h4>
                 <div className="greytext fonts15  my-1">Please enter your details below</div>
                 <form class="mt-7">
 
+              <div className='grid grid-cols-2'>
                   <div class="my-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                       Email
                     </label>
                     <input class="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       onChange={this.handleChange("email")}
-                      type="email" id="username" value={email} type="text" placeholder="Email" />
+                      type="email" id="username" value={email} placeholder="Email" />
                   </div>
 
                   <div class="my-6">
@@ -107,11 +107,13 @@ class Signin extends Component {
                       type={toggler}
                       class="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password"
                       value={password}
-                      type="password" placeholder="******************" />
+                      />
                     <div className="m-0">
                       <button type="button" style={{ textDecoration: "none", color: "#888", fontSize: "12px" }} className="link_button" onClick={this.toggle}>
                         {toggler === "password" ? <span >Show</span> : <span>Hide</span>} Password.
                       </button>
+                    
+                    </div>
                     </div>
 
                   <div className="">
@@ -146,8 +148,6 @@ class Signin extends Component {
             </div>
           </div>
         </div>
-
-      </>
 
     );
   }
