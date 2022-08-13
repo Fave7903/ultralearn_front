@@ -74,15 +74,13 @@ class Signin extends Component {
 
 
               <Errormsg error={error} style={{ display: error ? "" : "none" }} />
-              <div className="alert alert-danger" style={{ display: error ? "" : "none" }}>
-                {error}
-              </div>
+              
 
-              {loading ? <div className="text-center">
-                <div className="text-green" role="status">
-                  <span className="sr-only">Loading...</span>
-                </div>
-              </div> : ""}
+              {loading ?  <div class="flex items-center justify-center space-x-2 animate-bounce">
+    <div class="w-8 h-8 bg-purple-300 rounded-full"></div>
+    <div class="w-8 h-8 bg-purple-600 rounded-full"></div>
+    <div class="w-8 h-8 bg-purple-900 rounded-full"></div>
+</div> : ""}
               <div className="p-5 mt-5">
                 <h4 className="font-medium fw-bolder leading-tight text-2xl mt-0 mb-2">Welcome Back!</h4>
                 <div className="greytext fonts15  my-1">Please enter your details below</div>
@@ -107,6 +105,7 @@ class Signin extends Component {
                       type={toggler}
                       class="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password"
                       value={password}
+                      placeholder="6+ characters & numbers"
                       />
                     <div className="m-0">
                       <button type="button" style={{ textDecoration: "none", color: "#888", fontSize: "12px" }} className="link_button" onClick={this.toggle}>
@@ -126,7 +125,7 @@ class Signin extends Component {
 
 
                   <div class="flex items-center mt-6 mb-3 justify-between">
-                    <button  class="btn  text-white font-bold py-2 px-4 rounded  " onClick={this.clickSubmit} type="button">
+                    <button  class="sgnbut text-white font-bold py-2 px-4 rounded  " onClick={this.clickSubmit}>
                       Sign In
                     </button> 
                   </div>
