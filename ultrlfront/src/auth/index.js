@@ -1,5 +1,5 @@
 export const signup = (user) => {
-    return fetch('/signup', {
+    return fetch('https://api-ultralearn.herokuapp.com/signup', {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -14,7 +14,7 @@ export const signup = (user) => {
   }
 
 export const signin = (user) => {
-    return fetch('/login', {
+    return fetch('https://api-ultralearn.herokuapp.com/signin', {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -38,7 +38,7 @@ export const authenticate = (jwt, next) => {
 export const signout = (next) => {
   if (typeof window !== "undefined") localStorage.removeItem("jwt")
   next()
-  return fetch('/signout', {
+  return fetch('https://api-ultralearn.herokuapp.com/signout', {
     method: "GET"
   }).then(response => {
     return response.json()
