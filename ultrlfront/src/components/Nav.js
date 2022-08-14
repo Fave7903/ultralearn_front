@@ -1,51 +1,88 @@
-import { Redirect, Link } from 'react-router-dom'
-import ultra from '../assets/ultra.png'
-import { signout } from '../auth'
-import { isAuthenticated } from '../auth'
-import { Image } from 'cloudinary-react'
+// import { Redirect, Link } from 'react-router-dom'
+// import ultra from '../assets/ultra.png'
+// import { signout } from '../auth'
+// import { isAuthenticated } from '../auth'
+// import { Image } from 'cloudinary-react'
+import { Logotext } from './logotext'
+import messages from "../assets/messages.svg"
+import notificationImage from "../assets/notification.png"
+import notification2Image from "../assets/notification2.png"
+import avatarImage from "../assets/avatar.jpg"
 
-const Nav = () => {
+
+const Nav = (hasnotif = true) => {
 
   return (
-    <div>
+    <>
 
-      <nav className="navbar fixed-top navbar-expand-lg py-0 navbar-light bg-light">
-        <Link className="navbar-brand mx-2" to="/">
-          <img src={ultra} style={{ width: "30px", height: "30px" }} className="d-inline-block align-top" alt="" />
-          <span className="fw-bolder h4" style={{ color: "#5f0f40" }}>UltraLEARN</span>
-        </Link>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-          <ul className="navbar-nav lead">
-            <li className="nav-item active mx-5">
-              <Link className="nav-link" to="/" style={{ color: "#5f0f40" }}>Home </Link>
-            </li>
-            <li className="nav-item active mx-5">
-              <Link className="nav-link" to="/findpeople" style={{ color: "#5f0f40" }}>Add Friends<span className="sr-only">(current)</span></Link>
-            </li>
 
-          </ul>
 
-        </div>
-        <span className="dropdown navbar-text mx-4">
-          <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {isAuthenticated().user.imgId ? <Image cloudName="favoursoar" publicId={isAuthenticated().user.imgId} style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '50%', borderColor: "purple" }} /> :
-              <i className="fa-solid fa-user mx-3" style={{ color: "#5f0f40", fontSize: "35px" }}></i>
-            }
-            {isAuthenticated().user.username}
+      <nav className="bg-white px-4 py-2.5 rounded ">
+        <div className="container flex flex-wrap justify-between items-center mx-auto">
+          <a href="https://flowbite.com/" className="flex items-center">
+            <Logotext small={true} />
           </a>
-          <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <Link className="dropdown-item" to={`/ul/${isAuthenticated().user.username}`} style={{ color: "#5f0f40" }}>Profile</Link>
-            <div className="dropdown-divider"></div>
-            <Link className="dropdown-item" to="/signin"><span style={{ color: "#5f0f40" }} onClick={() => signout(() => <Redirect to={"/signin"} />)}>Signout</span></Link>
+
+          <div className="md:block md:w-auto" id="navbar-default">
+            <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <li>
+                <a href="/" className="block ul-purple  py-2 pr-4 pl-3 rounded" aria-current="page">Home</a>
+              </li>
+              <li>
+                <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">About us</a>
+              </li>
+              <li>
+                <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
+              </li>
+              <li>
+                <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Skills</a>
+              </li>
+            </ul>
           </div>
-        </span>
+
+
+          <div className='flex flex-row'>
+            <img style={{ width: "35px", height: "35px" }} src={messages} className="image-fluid mx-1 mt-0" alt="Message Icon" />
+            <img style={{ width: "35px", height: "35px" }} src={(hasnotif) ? notification2Image : notificationImage} className="image-fluid mx-1 mt-0" alt="Message Icon" />
+            <div className='flex flex-row'>
+              <img style={{ width: "35px", height: "35px" }} className="rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src={avatarImage} alt="user " />
+              <span>Beomafav</span>
+              
+            </div>
+          </div>
+        </div>
       </nav>
 
+ 
 
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </>
   )
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { isAuthenticated } from '../auth'
-import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
 import Posts from '../posts/Posts'
 import Nav from './Nav'
 
@@ -9,15 +9,14 @@ const Dashboard = () => {
     <div>
       {isAuthenticated() &&
         <div>
-        <Nav />
-
-          <div className="container">
-            <Posts />
-          </div>
-          </div>
+          <Nav />
+          <Posts />
+        </div>
       }
       {!isAuthenticated() &&
-        <Redirect to="/signup" />
+        <>
+          deisgn this page
+        </>
       }
     </div>
   );
