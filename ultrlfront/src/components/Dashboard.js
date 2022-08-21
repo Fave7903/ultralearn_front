@@ -1,10 +1,10 @@
 import React from 'react'
 import { isAuthenticated } from '../auth'
+import Footer from '../components/Footer'
 // import { Redirect } from 'react-router-dom'
 import Posts from '../posts/Posts'
 import Nav from './Nav'
-import likeimg from '../assets/like.png'
-import commentimg from '../assets/comment.png'
+// import Explore from './Explore'
 
 const Dashboard = () => {
   return (
@@ -12,14 +12,14 @@ const Dashboard = () => {
       {isAuthenticated() &&
         <div>
           <Nav />
+          {/* <Explore/> */}
           <Posts />
-          <img src={likeimg} className="p-1 space-x-1" />
-          <img src={commentimg} className="p-1" />
+          <Footer/>
         </div>
       }
       {!isAuthenticated() &&
         <>
-         design this page
+          deisgn this page
         </>
       }
     </div>

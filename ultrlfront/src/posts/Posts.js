@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { list } from './apiPost'
 import { Link } from 'react-router-dom'
 import { Image } from 'cloudinary-react'
-import Like from './Like'
+import Like from '../assets/Like.png'
+import comment from '../assets/comment.png'
 // import NewPost from './NewPost'
 import avatarImage from "../assets/avatar.jpg"
 
@@ -72,6 +73,11 @@ class Posts extends Component {
 
                     </div>
                   }
+                  <div className='flex float-right hover:float-left"'>
+                    <span>  <img className=" px-3" src={Like} alt="Like " /></span>
+
+                   <span><img className='pt-3' src={comment} alt='comment'/></span>
+                   </div>
                 </div>
               </div>
 
