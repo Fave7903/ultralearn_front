@@ -171,7 +171,7 @@ class Signup extends Component {
                       }
                     }} onChange={() => this.setState({ error: "" })} className="form-check-input mr-2" type="checkbox" value="" id="defaultCheck1" />
                     <label className='fonts15'>
-                    Creating an account means you accept our <Link to='/terms' style={{ color: "#5F0F40" }} className="fw-bold">Terms and Conditions</Link>
+                    Creating an account means you accept our <Link to='/terms' style={{ color: "#460273" }} className="fw-bold">Terms and Conditions</Link>
                     </label>
                   
                 </div>
@@ -187,7 +187,7 @@ class Signup extends Component {
 
                   <div className="fonts15 mb-3">
                     Already have an account?&nbsp;&nbsp;
-                    <Link to="/signin" style={{ color: "#5F0F40" }} className="fw-bold">Signin</Link>
+                    <Link to="/signin" style={{ color: "#460273" }} className="fw-bold">Signin</Link>
                   </div>
 
 

@@ -132,7 +132,7 @@ class Signin extends Component {
 
                   <div className="fonts15 mb-3">
                     Don't have an account?&nbsp;&nbsp;
-                    <Link to="/signup" style={{ color: "#5F0F40" }} className="fw-bold">Signup</Link>
+                    <Link to="/signup" style={{ color: "#460273" }} className="fw-bold">Signup</Link>
                   </div>
 
 

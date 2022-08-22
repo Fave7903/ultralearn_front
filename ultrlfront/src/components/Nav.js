@@ -9,6 +9,7 @@ import notificationImage from "../assets/notification.png"
 import notification2Image from "../assets/notification2.png"
 import avatarImage from "../assets/avatar.jpg"
 import Hamburgermenu from "../components/Hamburgermenu"
+import { Menu, Transition } from "@headlessui/react";
 
 
 const Nav = (hasnotif = true) => {
@@ -49,6 +50,7 @@ const Nav = (hasnotif = true) => {
             <div className='flex flex-row'>
               <img style={{ width: "35px", height: "35px" }} className="rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src={avatarImage} alt="user " />
               <span>Beomafav</span>
+              
               
             </div>
           </div>

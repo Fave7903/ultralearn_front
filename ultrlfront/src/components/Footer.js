@@ -8,12 +8,12 @@ import twitter from "../assets/🦆 icon _twitter_.png"
 
 const Footer = () => {
     return (
-<footer className="p-4 bg-white sm:p-6 place-items-center">
-    <div className="md:flex md:justify-between text-center mx-auto flex mb-8">
+<footer className="p-4 bg-white sm:p-6 ">
+    <div className="md:flex md:justify-between text-center mx-auto content-center flex justify-center place-content-center flex mb-8">
         <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div className="">
 
-                <ul className="mx-36 justify-items-start inline-block">
+                <ul className=" justify-items-start inline-block">
                     <li className="mb-4 ul-purple text-2xl font-semibold ">
                     <a href="/" className="ul-purple text-2xl font-semibold">Terms</a>
                          </li>
@@ -26,14 +26,14 @@ const Footer = () => {
                 </ul>
             </div>
             <div>
-                <ul classNameName="mx-36 ">
+                <ul classNameName=" ">
                     <li className="mb-4 ul-purple text-2xl font-semibold">Contact Us</li>
                     <li className="mb-4 ul-purple text-2xl font-semibold">
                         <a href="/" className="">About Us</a>
                     </li>
                 </ul>
             </div>
-            <div className="mx-36">
+            <div className="">
                 <h2 className ="mb-7 ul-purple text-2xl font-semibold">Mobile App</h2>
                 <ul className ="">
                     <li className ="mb-7 ul-purple">
