@@ -6,7 +6,7 @@ import Like from '../assets/Like.png'
 import comment from '../assets/comment.png'
 // import NewPost from './NewPost'
 import avatarImage from "../assets/avatar.jpg"
-
+import Verticalicon from "../components/verticalicon"
 
 class Posts extends Component {
   constructor() {
@@ -65,8 +65,14 @@ class Posts extends Component {
 
                 </div>
                 <div className='col-span-3'>
-                  <h2 className='font-bold'>Posted recently</h2>
-                {post.body.length > 150 && this.state.more ? <p className="card-text">{post.body.substring(0, 150)}...<span style={{ cursor: "pointer", color: "#5f0f40" }} onClick={() => this.setState({ more: !this.state.more })}>see more</span></p> : <p className="card-text">{post.body}</p>}
+                  <div className='flex '>
+                  <h2 className='font-bold mr-74'>Posted recently</h2>
+                  <div className='flex float-right'>           <Verticalicon/></div>
+
+                  </div>
+
+
+                {post.body.length > 150 && this.state.more ? <p className="card-text">{post.body.substring(0, 150)}...<span style={{ cursor: "pointer", color: "/5f0f40" }} onClick={() => this.setState({ more: !this.state.more })}>see more</span></p> : <p className="card-text">{post.body}</p>}
                   {post.postImgId &&
                     <div className="mt-6" style={{ backgroundColor: "white", width: '100%', height: '350px' }}>
                       <Image cloudName="favoursoar" className="sm:visible invisible"publicId={post.postImgId} style={{ objectFit: 'contain', width: "100%", height: "100%" }} />

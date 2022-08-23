@@ -51,7 +51,6 @@ const Nav = (hasnotif = true) => {
               <img style={{ width: "35px", height: "35px" }} className="rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src={avatarImage} alt="user " />
               <span>Beomafav</span>
               
-              
             </div>
           </div>
         </div>
