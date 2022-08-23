@@ -114,7 +114,7 @@ export default function DropdownComponent() {
             </Transition>
         </Menu>
         <div className="col-span-8">
-                <input type="text" style={{ width:"59vw"}}className=" w-80 sm:w-auto sm:ml-20 -ml-36 px-4 py-5 text-1xl bg-neutral-900 border rounded-md" placeholder="What are your interests?"></input>
+                <input type="text" style={{ width:"61vw"}}className=" w-80 sm:w-auto sm:ml-20 -ml-36 px-4 py-5 text-1xl bg-neutral-900 border rounded-md" placeholder="What are your interests?"></input>
             </div>
         </div>
         <div className="mb-3">
