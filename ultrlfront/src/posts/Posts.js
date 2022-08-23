@@ -67,7 +67,7 @@ class Posts extends Component {
                 <div className='col-span-3'>
                   <div className='flex '>
                   <h2 className='font-bold mr-74'>Posted recently</h2>
-                  <div className='flex float-right'>           <Verticalicon/></div>
+                  <div className='flex float-right right-0'>  <Verticalicon/></div>
 
                   </div>
 

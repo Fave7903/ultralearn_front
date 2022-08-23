@@ -32,6 +32,7 @@ export default function LongMenu() {
         aria-expanded={open ? 'true' : undefined}
         aria-haspopup="true"
         onClick={handleClick}
+        style={{ color: 'white',right: "0%" ,bottom:"8px" ,float: "right"}} 
       >
         <MoreVertIcon />
       </IconButton>
@@ -45,14 +46,16 @@ export default function LongMenu() {
         onClose={handleClose}
         PaperProps={{
           style: {
+
             maxHeight: ITEM_HEIGHT * 4.5,
             width: '20ch',
           },
         }}
       >
         {options.map((option) => (
-          <MenuItem key={option} selected={option === 'Pyxis'} className="ul-purple"onClick={handleClose}>
+          <MenuItem key={option} selected={option === 'Pyxis'} style={{ color: '#460273' }}onClick={handleClose}>
             {option}
+
           </MenuItem>
         ))}
       </Menu>
