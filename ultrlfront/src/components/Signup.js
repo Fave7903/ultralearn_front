@@ -112,39 +112,39 @@ class Signup extends Component {
                     <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
                       Full Name
                     </label>
-                    <input className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    <input className="shadow appearance-none h-11 border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       onChange={this.handleChange("fullName")}
                       type="text" id="fullName" value={fullName} placeholder="Full Name" />
                   </div>
 
 
                   <div className="my-4 ">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    <label class="block  text-sm font-bold mb-2" for="username">
                       Username
                     </label>
-                    <input className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    <input className="shadow appearance-none border h-11 rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       onChange={this.handleChange("username")}
                       type="text" id="username" value={username} placeholder="Your username" />
                   </div>
                 </div>
 
                   <div className="my-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    <label className="block  text-sm font-bold mb-2" for="username">
                       Email
                     </label>
-                    <input className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    <input className="border rounded w-full h-11 py-2 px-3 "
                       onChange={this.handleChange("email")}
                       type="email" id="username" value={email} placeholder="Email" />
                   </div>
 
                   <div className="my-6">
-                    <label className="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    <label className="block text-gray-700 h-11 text-sm font-bold mb-2" for="password">
                       Password
                     </label>
                     <input
                       onChange={this.handleChange("password")}
                       type={toggler}
-                      className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password"
+                      className="shadow appearance-none border rounded h-11 w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password"
                       value={password}
                       placeholder="6+ characters & numbers"
                       />
@@ -156,7 +156,7 @@ class Signup extends Component {
                     </div>
 
                   <div className="">
-                       <input className="form-check-input mr-2" type="checkbox" value="" id="flexCheckChecked"></input>
+                       <input className="form-check-input h-11 mr-2" type="checkbox" value="" id="flexCheckChecked"></input>
                       <label className="form-check-label fonts15" for="flexCheckChecked" >
                         Remember me
                       </label>
@@ -179,7 +179,7 @@ class Signup extends Component {
                   </div>
 
 
-                  <div className="flex items-center mt-6 mb-3 justify-between">
+                  <div className="flex items-center mt-6 mb-3 justify-center">
                     <button  className="sgnbut text-white font-bold py-2 px-4 rounded  " onClick={this.clickSubmit} type="button">
                       Sign Up
                     </button> 

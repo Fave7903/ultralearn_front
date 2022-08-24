@@ -9,6 +9,7 @@ import { Errormsg } from './errormsg'
 
 
 
+
 class Signin extends Component {
   constructor() {
     super()
@@ -67,7 +68,7 @@ class Signin extends Component {
     }
     return (
 
-        <div className="h-full grid grid-cols-2">
+        <div className="h-full grid grid-cols-2"style={{ backgroundImage:" url(/signinimage.png)" }}>
           <Authsidebar />
           <div className='col-span-2 md:col-span-1 md:h-full flex flex-col' style={{ backgroundColor: "#f8f9fa" }}>
             <div className='my-auto p-6'>
@@ -81,33 +82,33 @@ class Signin extends Component {
     <div class="w-8 h-8 bg-purple-600 rounded-full"></div>
     <div class="w-8 h-8 bg-purple-900 rounded-full"></div>
 </div> : ""}
-              <div className="p-5 mt-5">
-                <h4 className="font-medium fw-bolder leading-tight text-2xl mt-0 mb-2">Welcome Back!</h4>
-                <div className="greytext fonts15  my-1">Please enter your details below</div>
+              <div className="p-5 mt-0">
+                <h4 className="font-medium fw-bolder leading-tight text-2xl -mt-22 mb-2">Welcome Back!</h4>
+                <div className="text-dark fonts15  my-1">Welcome Back,please enter your details</div>
                 <form class="mt-7">
 
-              <div className='grid grid-cols-2'>
+              <div className='grid g'>
                   <div class="my-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                      Email
+                      Username/Email
                     </label>
-                    <input class="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    <input class="shadow appearance-none border rounded h-11 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       onChange={this.handleChange("email")}
                       type="email" id="username" value={email} placeholder="Email" />
                   </div>
 
-                  <div class="my-6">
+                  <div class="my-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
                       Password
                     </label>
                     <input
                       onChange={this.handleChange("password")}
                       type={toggler}
-                      class="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password"
+                      class="shadow appearance-none border rounded h-11 w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password"
                       value={password}
                       placeholder="6+ characters & numbers"
                       />
-                    <div className="m-0">
+                    <div className="m-0 ">
                       <button type="button" style={{ textDecoration: "none", color: "#888", fontSize: "12px" }} className="link_button" onClick={this.toggle}>
                         {toggler === "password" ? <span >Show</span> : <span>Hide</span>} Password.
                       </button>
@@ -124,9 +125,9 @@ class Signin extends Component {
                   </div>
 
 
-                  <div class="flex items-center mt-6 mb-3 justify-between">
+                  <div class="flex items-center mt-6 mb-3 justify-center">
                     <button  class="sgnbut text-white font-bold py-2 px-4 rounded  " onClick={this.clickSubmit}>
-                      Sign In
+                      Log In
                     </button> 
                   </div>
 
