@@ -57,12 +57,12 @@ class Posts extends Component {
                   </Link>
                   <div className='w-auto ml-3'>
                     <h2 className='font-semibold text-1xl sm:text-2xl'> 
-                      <Link  to={`/ul/${posterUser}`}> {posterFull}</Link>
+                      <Link  to={`/users/${posterUser}`}> {posterFull}</Link>
                     </h2>
                     <p className='text-sm sm:text-base'>Product Design</p>
                     <p className='text-sm'>Lagos, Nigeria</p><br />
                   </div>
-
+ 
                 </div>
                 <div className='col-span-3'>
                   <div className='flex '>

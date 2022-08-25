@@ -13,7 +13,7 @@ const Dashboard = () => {
       {isAuthenticated() &&
         <div>
           <Nav />
-          < Explore />
+          <Explore />
           <Posts />
           <Footer/>
         </div>
