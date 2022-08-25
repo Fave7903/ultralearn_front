@@ -103,17 +103,17 @@ class Profile extends Component {
 </div>
         </div> : ""}
             
-          <h1 className="fw-bolder" style={{color: "#5f0f40"}}>{user.fullName}</h1>
+          <h1 className="fw-bolder" style={{color: "#460273"}}>{user.fullName}</h1>
         <p>{user.username}</p>
-            <p className="fw-bold" style={{color: "#5f0f40"}}>{user.bio}</p> 
-            <p style={{display: user.location ? "" : "none", color: "#5f0f40"}}><i className='fas fa-map-marker-alt'></i>{` ${user.location}, Nigeria`}</p>
-        <p style={{display: user.created ? "" : "none", color: "#5f0f40"}}><i class='far fa-calendar-alt'></i>{` Joined ${new Date(user.created).toDateString()}`}</p>
-            {user.followers.length === 1 ? <p className="fw-bold" style={{display: user.followers ? "" : "none", color: "#5f0f40"}}>{`${user.followers.length} Follower, ${user.following.length} Following`}</p>
+            <p className="fw-bold" style={{color: "#460273"}}>{user.bio}</p> 
+            <p style={{display: user.location ? "" : "none", color: "#460273"}}><i className='fas fa-map-marker-alt'></i>{` ${user.location}, Nigeria`}</p>
+        <p style={{display: user.created ? "" : "none", color: "#460273"}}><i class='far fa-calendar-alt'></i>{` Joined ${new Date(user.created).toDateString()}`}</p>
+            {user.followers.length === 1 ? <p className="fw-bold" style={{display: user.followers ? "" : "none", color: "#460273"}}>{`${user.followers.length} Follower, ${user.following.length} Following`}</p>
             :
-              <p className="fw-bold" style={{display: user.followers ? "" : "none", color: "#5f0f40"}}>{`${user.followers.length} Followers, ${user.following.length} Following`}</p>
+              <p className="" style={{display: user.followers ? "" : "none", color: "#460273"}}>{`${user.followers.length} Followers, ${user.following.length} Following`}</p>
             }
         </div>
-          <div className="col-sm-2">
+          <div className="">
           {isAuthenticated().user && isAuthenticated().user._id === user._id ? (
               <Link className="btn btn-outline btn-lg" to={`/edit/${isAuthenticated().user.username}`}>Edit Profile</Link>
           ) :

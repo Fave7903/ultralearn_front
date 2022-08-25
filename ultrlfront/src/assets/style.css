@@ -43,10 +43,13 @@ padding: 2VW
     text-align: center;
     margin-left: -6rem;
 }
+.border-purple{
+    border:1px solid #460273;
+}
 
 .ul-purple{
     color: 
-    #460273
+    #460273;
 }
 .post-bgpurple{
     background-color: 
