@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
  import '../assets/style.css'
 import { Authsidebar } from './authsidebar'
 import { Errormsg } from './errormsg'
+import Bgimage from "../assets/signupimage.png"
 
 class Signup extends Component {
   constructor() {
@@ -22,6 +23,7 @@ class Signup extends Component {
       accept: false
     }
   }
+
   handleChange = name => event => {
     this.setState({ error: "" })
     this.setState({ open: false })
@@ -76,12 +78,12 @@ class Signup extends Component {
   render() {
     const { fullName, username, error, email, password, open, loading, toggler } = this.state
     return (
-      <div className="h-full grid grid-cols-2">
+      <div className="h-full grid grid-cols-2"style={{backgroundImage:`url(${Bgimage})`}}>
           <Authsidebar />
           <div className='col-span-2 md:col-span-1 md:h-full flex flex-col' style={{ backgroundColor: "#f8f9fa" }}>
             <div className='my-auto p-6'>
 
-            <h2 className='font-medium fw-bolder leading-tight text-4xl mt-0 mb-2'>Register</h2>
+            <h2 className='font-medium fw-bolder leading-tight text-2xl ml-4 mt-0 mb-0'>Register</h2>
             <Errormsg error={error} style={{ display: error ? "" : "none" }} />
               
       
@@ -103,16 +105,16 @@ class Signup extends Component {
             </div>
  
                 </div>
-              <div className="p-5 mt-5">
+              <div className="p-5 pt-0">
               
-                <form className="mt-7">
+                <form className="mt-2">
 
-                <div className='grid grid-cols-2'>
+                <div className='grid grid-cols-2 gap-8'>
                   <div className="my-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
                       Full Name
                     </label>
-                    <input className="shadow appearance-none h-11 border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    <input className="shadow appearance-none h-11 border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       onChange={this.handleChange("fullName")}
                       type="text" id="fullName" value={fullName} placeholder="Full Name" />
                   </div>
@@ -122,7 +124,7 @@ class Signup extends Component {
                     <label class="block  text-sm font-bold mb-2" for="username">
                       Username
                     </label>
-                    <input className="shadow appearance-none border h-11 rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    <input className="shadow appearance-none border h-11 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       onChange={this.handleChange("username")}
                       type="text" id="username" value={username} placeholder="Your username" />
                   </div>
@@ -138,7 +140,7 @@ class Signup extends Component {
                   </div>
 
                   <div className="my-6">
-                    <label className="block text-gray-700 h-11 text-sm font-bold mb-2" for="password">
+                    <label className="block text-gray-700 h-11 text-sm font-bold mb-0" for="password">
                       Password
                     </label>
                     <input
@@ -148,16 +150,16 @@ class Signup extends Component {
                       value={password}
                       placeholder="6+ characters & numbers"
                       />
-                    <div className="mt-0 mb-5">
+                    <div className="mt-0 mb-2">
                       <button type="button" style={{ textDecoration: "none", color: "#888", fontSize: "12px" }} className="link_button" onClick={this.toggle}>
                         {toggler === "password" ? <span >Show</span> : <span>Hide</span>} Password.
                       </button>
                     
                     </div>
 
-                  <div className="">
-                       <input className="form-check-input h-11 mr-2" type="checkbox" value="" id="flexCheckChecked"></input>
-                      <label className="form-check-label fonts15" for="flexCheckChecked" >
+                  <div className="flex ">
+                       <input className="h-11 mr-2" type="checkbox" value="" id="flexCheckChecked"></input>
+                      <label className="fonts15 mt-3" for="flexCheckChecked" >
                         Remember me
                       </label>
                    </div>

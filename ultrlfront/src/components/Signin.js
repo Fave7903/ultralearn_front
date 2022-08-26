@@ -3,8 +3,10 @@ import { Redirect } from 'react-router-dom'
 import { signin, authenticate } from '../auth'
 import { Link } from 'react-router-dom'
 // import image3 from '../assets/image 3.png'
-import { Authsidebar } from './authsidebar'
+
 import { Errormsg } from './errormsg'
+import { Authsidebar } from './authsidebar'
+import bgimage from "../assets/signinimage.png"
 
 
 
@@ -22,6 +24,16 @@ class Signin extends Component {
       toggler: "password"
     }
   }
+ styles = {
+    div: {
+        backgroundImage: `url(${bgimage})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        width: '100%',
+        height: '100%'
+    }
+}
 
   handleChange = name => event => {
     this.setState({ error: "" })
@@ -68,10 +80,10 @@ class Signin extends Component {
     }
     return (
 
-        <div className="h-full grid grid-cols-2"style={{ backgroundImage:" url(/signinimage.png)" }}>
-          <Authsidebar />
+        <div className="h-full grid grid-cols-2 bg-no-repeat bg-contain"style={{ backgroundImage:`url(${bgimage})` }}>
+                    <Authsidebar />
           <div className='col-span-2 md:col-span-1 md:h-full flex flex-col' style={{ backgroundColor: "#f8f9fa" }}>
-            <div className='my-auto p-6'>
+            <div className='my-auto mt-14 pt- p-6'>
 
 
               <Errormsg error={error} style={{ display: error ? "" : "none" }} />
@@ -82,8 +94,8 @@ class Signin extends Component {
     <div class="w-8 h-8 bg-purple-600 rounded-full"></div>
     <div class="w-8 h-8 bg-purple-900 rounded-full"></div>
 </div> : ""}
-              <div className="p-5 mt-0">
-                <h4 className="font-medium fw-bolder leading-tight text-2xl -mt-22 mb-2">Welcome Back!</h4>
+              <div className="p-5 mt-2">
+                <h4 className="font-medium fw-bolder leading-tight text-2xl -mt-0 mb-2">Welcome Back!</h4>
                 <div className="text-dark fonts15  my-1">Welcome Back,please enter your details</div>
                 <form class="mt-7">
 

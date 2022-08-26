@@ -40,8 +40,10 @@ class Posts extends Component {
     return (
       <div>
         {posts.map((post, i) => {
+ // eslint-disable-next-line
 
           const obj = post.comments
+           // eslint-disable-next-line
           const newComm = obj[post.comments.length - 1]
 
           const posterFull = post.postedBy ? post.postedBy.fullName : " Unknown"
@@ -66,7 +68,7 @@ class Posts extends Component {
                 </div>
                 <div className='col-span-3'>
                   <div className='flex '>
-                  <h2 className='font-bold mr-74'>Posted recently</h2>
+                  <h2 className='font-bold mr-74'>Posted {new Date(post.created).toDateString()}</h2>
                   <div className='flex float-right right-0'>  <Verticalicon/></div>
 
                   </div>

@@ -9,7 +9,7 @@ import notificationImage from "../assets/notification.png"
 import notification2Image from "../assets/notification2.png"
 import avatarImage from "../assets/avatar.jpg"
 import Hamburgermenu from "../components/Hamburgermenu"
-import { Menu, Transition } from "@headlessui/react";
+
 
 
 const Nav = (hasnotif = true) => {

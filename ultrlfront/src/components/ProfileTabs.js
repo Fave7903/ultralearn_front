@@ -6,6 +6,7 @@ import Comment from "../assets/Comment-purple.png"
 import Verticalicon from "../components/verticalicon"
 import avatarImage from "../assets/avatar.jpg"
 
+
 class ProfileTabs extends Component {
   constructor() {
     super()
