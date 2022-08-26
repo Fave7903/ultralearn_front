@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { isAuthenticated } from '../auth'
 import { Redirect, Link } from 'react-router-dom'
 import { read } from './apiUser'
-import FollowButton from './FollowButton'
+import addLocation from "../assets/Add Location purple.png"
 import ProfileTabs from './ProfileTabs'
 import { Image } from 'cloudinary-react'
 import { listByUser } from '../posts/apiPost'
 import fetchedImgSrc from "../assets/defaultcover.svg"
+import date from "../assets/date.png"
 
 class Profile extends Component {
   constructor() {
@@ -87,18 +88,24 @@ class Profile extends Component {
       <div>
 
 
-        <div>
-          <div className=" w-full flex justify-center w-80" style={{ height: '248px' }}>
+        <div className='max-w-80'>
+          <div className=" w-full flex justify-center" style={{ height: '248px' }}>
             <div className="flex flex-col">
               <div
                 className="md:relative bg-gray-100 md:rounded-bl-lg md:rounded-br-lg"
-                style={{ width: '940px', height: '248px', backgroundImage: `url(${fetchedImgSrc})` }}>
+                style={{ width: '995px', height: '248px', backgroundImage: `url(${fetchedImgSrc})` }}>
                 {/* // cover photo */}
-                <div className="mt-20">
+                <div className="mt-20 ">
                   {/* profile photo border-4 border-white*/}
-                  <Image cloudName="favoursoar" publicId={user.imgId} className="rounded-full md:absolute mt-20 left-40  w-40 h-40"
-                    style={{ width: '168px', height: '168px' }} />
+                  <Image cloudName="favoursoar" publicId={user.imgId} className=" rounded-full md:absolute mt-20 left-36  w-40 h-40"
+                    style={{  height: '168px' }} />
+
                 </div>
+                <div className='float-right mt-20'>
+                    <button className='border-purple ul-purple bg-white px-2 py-3 text-white md:absolute mt-24 right-0'>  <Link className="" to={`/edit/${isAuthenticated().user.username}`}>Edit Profile</Link></button>
+                    </div>
+         
+  
               </div>
             </div>
           </div>
@@ -108,28 +115,21 @@ class Profile extends Component {
 
             <div className="mt-12 pt-9 md:px-40"> 
            <h1 className="font-bold text-3xl fw-bolder mt-3" style={{ color: "#460273" }}>{user.fullName}</h1>
-              <p>{user.username}</p>
-              <p className="fw-bold" style={{ color: "#460273" }}>{user.bio}</p>
-              <p style={{ display: user.location ? "" : "none", color: "#460273" }}><i className='fas fa-map-marker-alt'></i>{` ${user.location}, Nigeria`}</p>
-              <p style={{ display: user.created ? "" : "none", color: "#460273" }}><i class='far fa-calendar-alt'></i>{` Joined ${new Date(user.created).toDateString()}`}</p>
-              {user.followers.length === 1 ? <p className="fw-bold" style={{ display: user.followers ? "" : "none", color: "#460273" }}>{`${user.followers.length} Follower, ${user.following.length} Following`}</p>
+              <p className="font-bold" style={{ color: "#460273" }}>{user.bio}</p>
+              <div className='flex'><img style={{ width: "25px", height: "25px" }} className="sm:visible invisible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 " src={addLocation} alt="user " /> <p style={{ display: user.location ? "" : "none", color: "#460273" }}> {` ${user.location}, Nigeria`}</p></div>
+              <div className='flex'><img src={date } alt=""style={{ width: "25px", height: "21px" }} className="sm:visible invisible shadow-sm image-fluid mx-1 " /> <p style={{ display: user.created ? "" : "none", color: "#460273" }}> {`  Joined  ${new Date(user.created).toDateString()}`} </p></div>
+              {user.followers.length === 1 ? <p className="fw-bold" style={{ display: user.followers ? "" : "none", color: "#460273" }}>{`${user.followers.length} Follower  ${user.following.length} Following`}</p>
                 :
                 <p className="" style={{ display: user.followers ? "" : "none", color: "#460273" }}>{`${user.followers.length} Followers, ${user.following.length} Following`}</p>
               }
             </div> 
-          {/* // END INFOS */}
-          {/* // TABS */}
-          <div className="w-full mt-20 flex justify-center">
-            <div className="flex justify-between mb-2.5">
+            <hr style={{ height: '10px', backgroundColor: '#460273' }}></hr>
 
-
-            </div>
-          </div>
           {/* // END TABS */}
 
         </div>
 
-        <div className="w-full flex justify-center w-80 container px-10 m-10">
+        <div className="w-full justify-center px-10 m-10">
 
           <div className="row">
             <div className="container col-sm-10 lead mt-2">
@@ -151,12 +151,12 @@ class Profile extends Component {
                 <Link className="btn btn-outline btn-lg" to={`/edit/${isAuthenticated().user.username}`}>Edit Profile</Link>
               ) :
                 <div style={{ display: user.fullName ? "" : "none" }}>
-                  <FollowButton following={this.state.following} onButtonClick={this.clickFollow} />
+
                 </div>
               }
             </div>
           </div>
-          <hr style={{ height: '5px', backgroundColor: 'purple' }}></hr>
+
           <ProfileTabs followers={user.followers} following={user.following} posts={posts} />
         </div>
       </div>

@@ -5,8 +5,6 @@ import {Redirect} from 'react-router-dom'
 import Nav from './Nav'
 import Axios from 'axios'
 import avatarImage from "../assets/avatar.jpg"
-import backgroundimage from "../assets/bg-profile.png"
-import {Image} from 'cloudinary-react'
 
 
 class EditProfile extends Component {
@@ -126,7 +124,7 @@ class EditProfile extends Component {
   
   
   render() {
-    const {fullName, username, email, password, error, dateOfBirth, bio, skillInterests, redirectToProfile, gender, location, loading, imgId} = this.state
+    const {fullName, username, email, error, bio, skillInterests, redirectToProfile,  location, loading} = this.state
 
     if (redirectToProfile) {
       return <Redirect to={`/ul/${isAuthenticated().user.username}`}></Redirect>
@@ -136,7 +134,7 @@ class EditProfile extends Component {
         <Nav />
         <div  className='px-16'>
           <div className='grid grid-cols-6 'style={{ backgroundImage:" url(/bg-profile.png)" }} >
-            <div>
+            <div className='sm:visible invisible'>
             <img style={{ width: "100px", height: "100px" }} className="sm:visible invisible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 " src={avatarImage} alt="user " />
             </div>
           <div className='col-span-3 '>
@@ -169,17 +167,17 @@ class EditProfile extends Component {
           <div className='mt-12'>
             <ul className=''>
               <li><a href='/'className='ul-purple font-bold  py-6'>Edit Profile</a></li>
-              <li><a href='/'className='ul-purple '>Notifications</a></li>
-              <li><a href='/'className='ul-purple '>Social Profiles</a></li>
-              <li><a href='/'className='ul-purple '>Privacy Policy</a></li>
-              <li><a href='/'className='ul-purple '>Terms of Services</a></li>
-              <li><a href='/'className='ul-purple '>Support</a></li>
-              <li><a href='/'className='text-red-500'>Log Out</a></li>
+              <li><a href='/'className='ul-purple sm:visible invisible '>Notifications</a></li>
+              <li><a href='/'className='ul-purple  sm:visible invisible '>Social Profiles</a></li>
+              <li><a href='/'className='ul-purple  sm:visible invisible'>Privacy Policy</a></li>
+              <li><a href='/'className='ul-purple  sm:visible invisible'>Terms of Services</a></li>
+              <li><a href='/'className='ul-purple  sm:visible invisible '>Support</a></li>
+              <li><a href='/'className='text-red-500  sm:visible invisible'>Log Out</a></li>
             </ul>
           </div>
           <div className='col-span-5'>
-            <div className='grid  grid-cols-2 mb-5  gap-'>
-            <div className="-mr-70">
+            <div className=' grid grid-cols-0 sm:grid grid-cols-2 mb-5  gap-'>
+            <div className="mr-2 sm:-mr-70">
                     <label className="block text-sm font-bold mb-2 ul-purple" for="Firstname">
                       First Name
                     </label>
