@@ -117,8 +117,8 @@ class Profile extends Component {
             <div className="mt-12 pt-9  mx-40"> 
            <h1 className="font-bold text-3xl fw-bolder mt-3" style={{ color: "#460273" }}>{user.fullName}</h1>
               <p className="font-bold" style={{ color: "#460273" }}>{user.bio}</p>
-              <div className='flex'><img style={{ width: "25px", height: "25px" }} className="sm:visible invisible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 " src={addLocation} alt="user " /> <p style={{ display: user.location ? "" : "none", color: "#460273" }}> {` ${user.location}, Nigeria`}</p></div>
-              <div className='flex'><img src={date } alt=""style={{ width: "25px", height: "21px" }} className="sm:visible invisible shadow-sm image-fluid mx-1 " /> <p style={{ display: user.created ? "" : "none", color: "#460273" }}> {`  Joined  ${new Date(user.created).toDateString()}`} </p></div>
+              <div className='flex'><img style={{ width: "25px", height: "25px" }} className=" rounded-full border border-gray-100 shadow-sm image-fluid " src={addLocation} alt="user " /> <p style={{ display: user.location ? "" : "none", color: "#460273" }}> {` ${user.location}, Nigeria`}</p></div>
+              <div className='flex'><img src={date } alt=""style={{ width: "25px", height: "21px" }} className="shadow-sm image-fluid " /> <p style={{ display: user.created ? "" : "none", color: "#460273" }}> {`  Joined  ${new Date(user.created).toDateString()}`} </p></div>
               {user.followers.length === 1 ? <p className="fw-bold" style={{ display: user.followers ? "" : "none", color: "#460273" }}>{`${user.followers.length} Follower  ${user.following.length} Following`}</p>
                 :
                 <p className="" style={{ display: user.followers ? "" : "none", color: "#460273" }}>{`${user.followers.length} Followers, ${user.following.length} Following`}</p>

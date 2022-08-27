@@ -58,7 +58,7 @@ class ProfileTabs extends Component {
         {post.body.length > 105 && this.state.more ? <p className="card-text">{post.body.substring(0, 150)}...<span style={{cursor: "pointer", color: "#460273"}} onClick={() => this.setState({more: !this.state.more})}>see more</span></p> : <p className="card-text">{post.body}</p>}
     {post.postImgId && 
                         <div className="" style={{ backgroundColor: "white", width: '100%', height: '350px' }}>
-                        <Image cloudName="favoursoar" className="sm:visible invisible"publicId={post.postImgId} style={{ objectFit: 'contain', width: "100%", height: "100%" }} />
+                        <Image cloudName="favoursoar" className=""publicId={post.postImgId} style={{ objectFit: 'contain', width: "100%", height: "100%" }} />
   
                       </div>
     }
