@@ -53,7 +53,7 @@ class Posts extends Component {
 
               <div className='post-bgpurple w-full px-2 sm:px-7 py-8 mb-4 text-white grid grid-cols-5 gap-5 sm:gap-4'>
                 <div className='col-span-2 flex flex-row'>
-                  <Link className="d-flex mx-2 mb-0" to={`/ul/${posterUser}`}> {post.postedBy.imgId ? <Image cloudName="favoursoar" className="rounded-full" publicId={post.postedBy.imgId} style={{ width: '100px', height: '100px', objectFit: 'cover', }} /> :
+                  <Link className="d-flex mx-2 mb-0" to={`/users/${posterUser}`}> {post.postedBy.imgId ? <Image cloudName="favoursoar" className="rounded-full" publicId={post.postedBy.imgId} style={{ width: '100px', height: '100px', objectFit: 'cover', }} /> :
                     <img style={{ width: "100px", height: "100px" }} className="sm:visible invisible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src={avatarImage} alt="user " />
                   }
                   </Link>

@@ -92,9 +92,7 @@ class Profile extends Component {
         <div className='max-w-80'>
           <div className=" w-full flex justify-center" style={{ height: '248px' }}>
             <div className="flex flex-col">
-              <div
-                className="md:relative bg-gray-100 md:rounded-bl-lg md:rounded-br-lg"
-                style={{ width: '995px', height: '248px', backgroundImage: `url(${fetchedImgSrc})` }}>
+              <div className="md:relative bg-gray-100 md:rounded-bl-lg md:rounded-br-lg" style={{ width: '995px', height: '248px', backgroundImage: `url(${fetchedImgSrc})` }}>
                 {/* // cover photo */}
                 <div className="mt-20 ">
                   {/* profile photo border-4 border-white*/}
@@ -116,7 +114,7 @@ class Profile extends Component {
             
             */}
 
-            <div className="mt-12 pt-9 md:px-40"> 
+            <div className="mt-12 pt-9  mx-40"> 
            <h1 className="font-bold text-3xl fw-bolder mt-3" style={{ color: "#460273" }}>{user.fullName}</h1>
               <p className="font-bold" style={{ color: "#460273" }}>{user.bio}</p>
               <div className='flex'><img style={{ width: "25px", height: "25px" }} className="sm:visible invisible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 " src={addLocation} alt="user " /> <p style={{ display: user.location ? "" : "none", color: "#460273" }}> {` ${user.location}, Nigeria`}</p></div>
@@ -126,13 +124,13 @@ class Profile extends Component {
                 <p className="" style={{ display: user.followers ? "" : "none", color: "#460273" }}>{`${user.followers.length} Followers, ${user.following.length} Following`}</p>
               }
             </div> 
-            <hr style={{ height: '10px', backgroundColor: '#460273' }}></hr>
+            <hr style={{ height: '10px',width:"100%", backgroundColor: '#460273' }}></hr>
 
           {/* // END TABS */}
 
         </div>
 
-        <div className="w-full justify-center px-10 m-10">
+        <div className="w-full justify-center px-8 my-8">
 
           <div className="row">
             <div className="container col-sm-10 lead mt-2">
@@ -146,19 +144,6 @@ class Profile extends Component {
               
               </div>
             </div>
-
-            <div className="row">
-
-            <div className="">
-              {isAuthenticated().user && isAuthenticated().user._id === user._id ? (
-                <Link className="btn btn-outline btn-lg" to={`/edit/${isAuthenticated().user.username}`}>Edit Profile</Link>
-              ) :
-                <div style={{ display: user.fullName ? "" : "none" }}>
-
-                </div>
-              }
-            </div>
-          </div>
 
           <ProfileTabs followers={user.followers} following={user.following} posts={posts} />
         </div>

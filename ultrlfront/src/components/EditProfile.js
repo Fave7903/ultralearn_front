@@ -5,7 +5,7 @@ import {Redirect} from 'react-router-dom'
 import Nav from './Nav'
 import Axios from 'axios'
 import avatarImage from "../assets/avatar.jpg"
-import bgImage from "../assets/bg-profile.png"
+import camera from "../assets/Camera.png"
 
 
 class EditProfile extends Component {
@@ -128,19 +128,20 @@ class EditProfile extends Component {
     const {fullName, username, email, error, bio, skillInterests, redirectToProfile,  location, loading} = this.state
 
     if (redirectToProfile) {
-      return <Redirect to={`/ul/${isAuthenticated().user.username}`}></Redirect>
+      return <Redirect to={`/users/${isAuthenticated().user.username}`}></Redirect>
     }
     return (
       <div>
         <Nav />
         <div  className='px-16'>
-          <div className='block sm:grid grid-cols-6 ' >
-            <div className='sm:visible invisible'>
-            <img style={{ width: "100px", height: "100px" }} className="sm:visible invisible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 " src={avatarImage} alt="user " />
+          <div className='grid grid-cols-8 sm:grid grid-cols-6 -mb-12 sm:mb-0 ' >
+            <div className='col-span-4 sm:col-span-2'>
+            <img style={{ width: "100px", height: "100px" }} className="sm:visible invisble rounded-full border border-gray-100 shadow-sm image-fluid mx-1 " src={avatarImage} alt="user " />
+            <img style={{ width: "30px", height: "20px" }} src={camera}className="relative ml-11 -mt-4"alt ="change pic"/>
             </div>
-          <div className='block sm:col-span-3'>
-          <h1 className="text-2xl -mt-20 sm:-mt-0  sm:ml-0 font-bold ul-purple ">Profile</h1>
-          <p className='ul-purple'>Update your photo and personal details</p>
+          <div className=' col-span-4 sm:col-span-3 '>
+          <h1 className="text-2xl mt-4 sm:-mt-0  sm:ml-0 font-bold ul-purple ">Profile</h1>
+          <p className='ul-purple text-sm'>Update your photo and personal details</p>
           </div>
           <div className='float-right block sm:col-span-2 '>
           <button className="  post-bgpurple text-white mr-1 sm:mr-5 mb-5 lg:mb-0 px-10 py-2 text-center justify-center text-1xl   " onClick={this.clickSubmit}>Save</button>
@@ -215,7 +216,7 @@ class EditProfile extends Component {
             <label className="block text-sm font-bold mb-2 ul-purple">Location</label>
             <input 
               onChange={this.handleChange("location")} 
-              type="number"  className="border-purple shadow appearance-none h-11 border rounded w-3/4 lg:w-3/4 md:w-2/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"value={location}>
+              type="text"  className="border-purple shadow appearance-none h-11 border rounded w-3/4 lg:w-3/4 md:w-2/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"value={location}>
             </input>
           </div>
                   </div>

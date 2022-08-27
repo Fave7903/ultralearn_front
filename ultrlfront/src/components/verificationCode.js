@@ -15,7 +15,7 @@ class VerificationCode extends Component {
           <Logotext />
           <div className=''>
             <img className='w-[600px] h-[400px] ' src={Bg} alt='' srcset='' />
-            <div className='flex justify-center items-center'>
+            <div className='flex text-4xl justify-center items-center'>
               <span className='text-[#460273] w-[577px] h-[41px] text-center text-3xl'>
                 Exploring Growth Conversations
               </span>
