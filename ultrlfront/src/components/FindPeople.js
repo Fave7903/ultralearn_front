@@ -3,6 +3,7 @@ import { findPeople, follow } from './apiUser'
 import {Link} from 'react-router-dom'
 import {isAuthenticated} from '../auth'
 import Nav from './Nav'
+import avatar from "../assets/avatar.jpg"
 import {Image} from 'cloudinary-react'
 
 class FindPeople extends Component {
@@ -60,16 +61,16 @@ class FindPeople extends Component {
               return false
             }
           }).map((user, i) => (
-            <div className="card mx-3" key={i}>
+            <div className="px-2 sm:px-16 flex grid grid-cols-2 sm:grid grid-cols-3 mb-8" key={i}>
+  <div className="">
   {user.imgId ? <Image cloudName="favoursoar" publicId={user.imgId} style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%', borderColor: "purple"}}/> :
-          <i className="fa-solid fa-user mx-3" style={{color: "#5f0f40", fontSize: "100px"}}></i>
+          <img src={avatar}alt="Avatar" className=" invisble sm:visible rounded-full"style={{color: "#460273", width: "100px",height:"100px"}}/>
           }
-  <div className="card-body">
-    <h5 className="card-title">{user.fullName}</h5>
-    <p className="card-text">{user.username}</p>
-    <Link to={`/ul/${user.username}`} className="btn btn-raised btn-sm" style={{backgroundColor: "#5f0f40", color: "white"}}>View Profile</Link>
-    <button style={{backgroundColor: "#5f0f40", color: "white"}} onClick={() => this.clickFollow(user, i)} className='btn btn-raised btn-info float-right btn-sm mx-3 mt-1'>Follow</button>
   </div>
+  <Link to={`/users/${user.username}`} className=" text-dark text-1xl sm:text-2xl" ><h5 className="">{user.fullName}</h5></Link>
+  <div className=''>
+    <button style={{backgroundColor: "#460273", color: "white"}} onClick={() => this.clickFollow(user, i)} className=' float-right py-4 px-8'>Follow</button>
+    </div>
 </div>
           ))}
         </div>
@@ -81,17 +82,14 @@ class FindPeople extends Component {
     return (
       <div className='container pt-5 mt-5'>
         <Nav />
-        <h2 className="d-flex align-items-center justify-content-center mt-5 mb-5">Find People</h2>
 
-        <div className="input-group mb-3" style ={{width: "50%"}}>
+        <div className="-mb-10 sm:mb-8  " >
           <div className="input-group-prepend">
             <span className="input-group-text" id="basic-addon1"><i className="fas fa-search"></i></span>
           </div>
-            <input style={{height: "40px"}} type="search" placeholder="Search for people" className="form-control"onChange={ event => {
-            this.setState({
-              searchTerm: event.target.value
-            })}
-          }></input>
+          <input type="search" style={{ width:"62vw"}}className="w-100 sm:w-auto bg-slate-400 h-16 ml-16 sm:ml-14 px-4 sm:px-6 py-5 text-1xl  border border-black-300  border rounded-md"onChange={ event => {
+            this.setState({ searchTerm: event.target.value})}} placeholder="Search Friends"></input>
+                 <button className=" invisible sm:visible w-48 post-bgpurple h-16 text-white  justify-center  px-6 py-5 font-medium text-1xl  border border-gray-300 rounded-md shadow-sm  ">Search</button>
         </div>
         {error && (
         <div className="alert alert-danger">

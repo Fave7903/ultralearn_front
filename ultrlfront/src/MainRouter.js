@@ -9,10 +9,16 @@ import FindPeople from './components/FindPeople'
 import Users from './components/Users'
 import Terms from './components/Terms'
 import SingPost from './posts/SingPost'
+import VerificationEmail from './components/VerificationEmail'
+import VerificationCode from './components/verificationCode';
+import VerificationPass from './components/verificationPass';
 
 const MainRouter = () => {
   return (
     <Switch>
+      <Route exact path='/verificationemail' component={VerificationEmail}></Route>
+      <Route exact path='/verificationcode' component={VerificationCode}></Route>
+      <Route exact path='/verificationpass' component={VerificationPass}></Route>
       <Route exact path="/" component={Dashboard}></Route>
       <Route exact path="/post/:postId" component={SingPost}></Route>
       <Route exact path="/users" component={Users}></Route>

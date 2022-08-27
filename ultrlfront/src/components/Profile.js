@@ -8,6 +8,7 @@ import { Image } from 'cloudinary-react'
 import { listByUser } from '../posts/apiPost'
 import fetchedImgSrc from "../assets/defaultcover.svg"
 import date from "../assets/date.png"
+import avatar from "../assets/avatar.jpg"
 
 class Profile extends Component {
   constructor() {
@@ -97,8 +98,10 @@ class Profile extends Component {
                 {/* // cover photo */}
                 <div className="mt-20 ">
                   {/* profile photo border-4 border-white*/}
-                  <Image cloudName="favoursoar" publicId={user.imgId} className=" rounded-full md:absolute mt-20 left-36  w-40 h-40"
-                    style={{  height: '168px' }} />
+                  {user.imgId ?  <Image cloudName="favoursoar" publicId={user.imgId} className=" rounded-full md:absolute mt-20 left-36  w-40 h-40"
+                    style={{  height: '168px' }} /> :
+                    <img src={avatar}alt="Avatar" className="rounded-full md:absolute mt-20 left-36  w-40 h-40"style={{color: "#460273", width: "178 px",height:"168px"}}/>
+                    }
 
                 </div>
                 <div className='float-right mt-20'>
