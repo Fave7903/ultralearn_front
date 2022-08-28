@@ -7,6 +7,7 @@ import comment from '../assets/comment.png'
 // import NewPost from './NewPost'
 import avatarImage from "../assets/avatar.jpg"
 import Verticalicon from "../components/verticalicon"
+import Explore from '../components/Explore'
 
 class Posts extends Component {
   constructor() {
@@ -105,6 +106,7 @@ class Posts extends Component {
 
     return (
       <>
+      <Explore updatePosts={this.updatePosts} />
         {/**
          * 
         <div>

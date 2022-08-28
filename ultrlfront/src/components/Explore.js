@@ -1,3 +1,4 @@
+import React, {Component} from 'react'
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import avatarImage from "../assets/avatar.jpg"
@@ -5,13 +6,94 @@ import camera from "../assets/Camera.png"
 import uploadphoto from "../assets/Upload Photo.png"
 import uploadfile from "../assets/Upload File.png"
 import addlocation from "../assets/Add Location.png"
+import { isAuthenticated } from '../auth'
+import { create, list } from '../posts/apiPost'
+import Axios from 'axios'
+import {Image} from 'cloudinary-react'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 
 }
 
-export default function DropdownComponent() {
+export default class DropdownComponent extends Component {
+    constructor() {
+        super()
+        this.state = {
+          body: "",
+          error: "",
+          user: {},
+          loading: false,
+          imageSelected: "",
+          postImgId: ""
+        }
+      }
+
+      componentDidMount() {
+        this.setState({user: isAuthenticated().user})
+      }
+    
+      uploadImage = () => {
+      const formData = new FormData()
+      formData.append('file', this.state.imageSelected)
+      formData.append('upload_preset', "favoursoar")
+    
+      Axios.post("https://api.cloudinary.com/v1_1/favoursoar/image/upload", formData).then(response => {
+        this.setState({postImgId: response.data.public_id})
+        console.log()
+      }).catch(err => {
+        console.log(err)
+      })
+    }
+    
+     
+      handleChange = name => event => {
+        this.setState({error: ""})
+        this.setState({open: false})
+        this.setState({ [name]: event.target.value })
+      }
+      clickSubmit = event => {
+        if (!this.state.body && !this.state.postImgId) {
+            event.preventDefault()
+            this.setState({error: "Please fill in the required fields"})
+         
+        } else {
+          event.preventDefault()
+          
+        // this.setState({loading: true})
+        const {body, postImgId} = this.state
+        const post = {
+          body,
+          postImgId
+        }
+        //console.log(user)
+        const name = isAuthenticated().user.username
+        const token = isAuthenticated().token
+        console.log(post)
+        create(name, token, post)
+          .then(data => {
+            if (data.error) {
+              this.setState({error: data.error})
+              console.log(data.error)
+            }
+            else {
+              list().then(data => {
+          if (data.error) {
+            console.log(data.error)
+          } else {
+            this.props.updatePosts(data)
+            this.setState({loading: false, body: "", postImgId: ""})
+          }
+        })
+              
+              
+            }
+          })
+          }
+        
+      }
+    render() {
+    const {body, error, postImgId} = this.state
     return (
         <div>
                     <div className="flex mb-4">
@@ -119,12 +201,17 @@ export default function DropdownComponent() {
             </div>
         </div>
         <div className="-mt-24 sm:mt-0 mb-3">
-                <h1 className="text-3xl ml-4 sm:ml-14">Welcome Back Berah! </h1>
+                <h1 className="text-3xl ml-4 sm:ml-14">{`Welcome back ${isAuthenticated().user.username}!`} </h1>
             </div>
             <div className="flex ml-12">
                 <img style={{ width: "100px", height: "100px" }} className="invisible sm:visible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src ={avatarImage} alt="user"></img>
-                <input type="text" style={{ width:"62vw"}}className="bg-slate-400 h-16 -ml-36 sm:ml-2 px-6 py-5 text-1xl  border rounded-md" placeholder="Tell us something"></input>
-                 <button className=" w-78 post-bgpurple h-16 text-white ml- inline-flex justify-center  px-6 py-4 text-sm font-medium text-2xl  border border-gray-300 rounded-md shadow-sm  ">Post</button>
+                <input type="text" 
+                style={{ width:"62vw"}}
+                className="bg-slate-400 h-16 -ml-36 sm:ml-2 px-6 py-5 text-1xl  border rounded-md" 
+                placeholder="Tell us something"
+                onChange={this.handleChange("body")}
+                value={body}></input>
+                 <button className=" w-78 post-bgpurple h-16 text-white ml- inline-flex justify-center  px-6 py-4 text-sm font-medium text-2xl  border border-gray-300 rounded-md shadow-sm  " onClick={this.clickSubmit}>Post</button>
             </div>
             <div className="ml-4 sm:ml-44 flex -mt-6 mb-6">
                  <img src={camera}alt ="UploadImage"className="mr-2 w-4 h-5"/>
@@ -138,4 +225,5 @@ export default function DropdownComponent() {
 
        
     );
+}
 }
