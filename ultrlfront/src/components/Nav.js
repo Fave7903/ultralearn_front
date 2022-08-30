@@ -28,13 +28,13 @@ const Nav = (hasnotif = true) => {
           <div className="md:block md:w-auto lg:flex hidden" id="navbar-default">
             <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
-                <a href="/" className="block ul-purple  py-2 pr-4 pl-3 rounded" aria-current="page">Home</a>
+                <a href="../components/Dashboard.js" className="block ul-purple  py-2 pr-4 pl-3 rounded" aria-current="page">Home</a>
               </li>
               <li>
                 <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">About us</a>
               </li>
               <li>
-                <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
+                <a href="../components/Contactus.js" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
               </li>
               <li>
                 <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Skills</a>

@@ -85,12 +85,7 @@ padding: 2VW
     color: #460273;
     font-weight: bold;
 }
-.image-fluid{
-    width: 19%;
-}
-.img-fluid{
-    margin-top: -9vw;
-}
+
 .fb{
     width: 10vw;
 }
@@ -135,6 +130,9 @@ form-check-input[type=checkbox]:checked {
 .float-end{
     float: right;
 }
+.list-style-type{
+    list-style-type: disc;
+}
 @media screen and (max-width: 768px){
     .caption{
         margin-top: -7rem;
@@ -150,13 +148,9 @@ form-check-input[type=checkbox]:checked {
     #460273;
 
 }
-.content{
-    background-color: #EFE9E9;
-
-}
 .text1{
-    font-weight: 700;
-    border-bottom: 0.3vw solid #460273;
+
+    border-bottom: 5px solid #460273;
     text-align: center;
     margin: auto;
     justify-content: center;
@@ -169,15 +163,15 @@ form-check-input[type=checkbox]:checked {
     text-align: center;
 }
 .btn1{
-    color: #5F0F40;
+    color: #460273;
     background-color: white;
-    border: 1px solid #5F0F40;
+    border: 1px solid #460273;
     margin: 3vw;
     padding:0.7vw;
 }
 .btn2{
     color: white;
-    background-color: #5F0F40;
+    background-color: #460273;
     border: none;
     padding: 0.7vw;
   

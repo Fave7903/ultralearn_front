@@ -6,8 +6,10 @@ import Dashboard from './components/Dashboard'
 import Profile from './components/Profile'
 import EditProfile from './components/EditProfile'
 import FindPeople from './components/FindPeople'
+import AddFriends from './components/AddFriends'
 import Users from './components/Users'
 import Terms from './components/Terms'
+import Contact from './components/Contactus'
 import SingPost from './posts/SingPost'
 import VerificationEmail from './components/VerificationEmail'
 import VerificationCode from './components/verificationCode';
@@ -25,8 +27,10 @@ const MainRouter = () => {
       <Route exact path="/signup" component={Signup}></Route>
       <Route exact path="/signin" component={Signin}></Route>
       <Route exact path="/terms" component={Terms}></Route>
+      <Route exact path="/contact" component={Contact}></Route>
       <Route exact path="/users/:name" component={Profile}></Route>
       <Route exact path="/findpeople" component={FindPeople}></Route>
+      <Route exact path="/addfriends" component={AddFriends}></Route>
       <Route exact path="/edit/:name" component={EditProfile}></Route>
     </Switch>
   );
