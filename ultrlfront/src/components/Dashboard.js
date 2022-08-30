@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 // import { Redirect } from 'react-router-dom'
 import Posts from '../posts/Posts'
 import Nav from './Nav'
-import Explore from './Explore'
+
 
 
 const Dashboard = () => {

@@ -7,40 +7,37 @@ import '../assets/style.css';
 class VerificationPass extends Component {
   render() {
     return (
-      <div className='flex flex-col md:flex-row justify-between mt-0 '>
-        <div className=' color col-xs-12 col-sm-12 col-md-6 h3 '>
+      <div className=' h-full grid grid-cols-2 '>
+        <div className=' '>
           <Logotext />
-          <div className=' items-center'>
+          <div className=' items-center hidden md:block'>
             <img
-              className='text-center w-[429px] h-[504px] '
+              className='mx-auto '
               src={Bg}
               alt=''
               srcset=''
             />
             <div className='flex justify-center items-center'>
-              <span className='text-[#460273] w-[577px] h-[41px] text-center text-3xl'>
+              <span style={{ color: "#460273", margin: "1.5em", fontSize: "20px" }} className="text-center " >
                 Exploring Growth Conversations
               </span>
             </div>
           </div>
         </div>
-        <div className='bg-[#F4F4F4] h-screen w-full flex flex-col items-center justify-center '>
-          <div className='flex mb-8 items-center justify-center'>
-            <img className='w-[110px] h-[110px]' src={Check} alt='' />
+        <div className=' h-screen w-full p-8 mx-auto col-span-2 md:col-span-1 md:h-full flex flex-col 'style={{ backgroundColor: "#f8f9fa" }}>
+          <div className='my-12 sm:my-24 items-center justify-center'>
+            <img className='mx-auto text-center mb-30' src={Check} alt='' />
           </div>
 
-          <div className='flex flex-col '>
-            <h2 className='text-5xl text-[#333333]'>Congratulations!</h2>
-            <p className='text-center p-2'>
+          <div className=''>
+            <h2 className='text-2xl sm:text-5xl text-center mx-auto'>Congratulations!</h2>
+            <p className='text-center p-2 mb-10 sm:mb-20'>
               Your account has been successfully verified
             </p>
           </div>
-          <button
-            className=' w-[304px] bg-[#460273] rounded mt-10 h-[30px] text-[#ffffff]'
-            type='submit'
-          >
-            Done
-          </button>
+          <button  class="sgnbut text-center mx-auto w-full sm:w-3/4 text-white font-bold rounded  " onClick={this.clickSubmit}>
+                    Done
+                    </button> 
         </div>
       </div>
     );

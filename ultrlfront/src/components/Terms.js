@@ -4,15 +4,15 @@ import {Link} from 'react-router-dom'
 const Terms = () => {
   return (
     <div>
-      <div className="container terms">
-        <div className="content">
-            <h1 className="text1">Terms and Conditions</h1>
+      <div className=" terms">
+        <div className="content w-screen"style={{backgroundColor:" #EFE9E9"}}>
+            <h1 className="text1 text-2xl w">Terms and Conditions</h1>
         </div>
         <div>
-            <ul>
-                <li>You must be 13 years or older to use this site. </li>
-                <li>You may not post nude, partially nude, or sexually suggestive photos.</li>
-                <li> You are responsible for any activity that occurs under your screen name. </li>
+            <ul className='list-style-type px-8 text-2xl'>
+                <li >You must be 13 years or older to use this site. </li >
+                <li >You may not post nude, partially nude, or sexually suggestive photos.</li >
+                <li > You are responsible for any activity that occurs under your screen name. </li>
                 <li>You are responsible for keeping your password secure. </li>
                 <li>You must not abuse, harass, threaten, impersonate or intimidate other Ultralearn users.</li>
                 <li>You may not use the ultralearn service for any illegal or unauthorized purpose. International users agree to comply with all local laws regarding online conduct and acceptable content.</li>
@@ -32,7 +32,8 @@ const Terms = () => {
         </div>
         
       </div>
-      <Link style={{color: "#5F0F40"}} className='lead d-flex justify-content-center text-align-center fw-bold' to='/signup'>Back to sign up</Link>
+      <div className='flex items-center mt-6 mb-3 justify-center'> <button className='my-2 mx-auto'> <Link className='text-white sgnbut' to='/signup'>Sign up</Link></button></div>
+     
     </div>
   )
 }

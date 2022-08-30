@@ -2,60 +2,62 @@ import React, { Component } from 'react';
 import { Logotext } from './logotext';
 import Bg from '../assets/undraw_secure_login_pdn4.png';
 import '../assets/style.css';
-
-const styles = {
-  input: 'form-control border-1 outline bg-[#000000] signup-input p-1 rounded-lg w-10 h-10',
-};
+import { Authsidebar } from './authsidebar2'
 
 class VerificationCode extends Component {
+  constructor() {
+    super()
+    this.state = {
+      email: "",
+      password: "",
+      error: "",
+      redirectToReferer: false,
+      loading: false,
+      toggler: "password"
+    }
+  }
   render() {
+
     return (
-      <div className='flex flex-col md:flex-row justify-between mt-0 '>
-        <div className='  color col-xs-12 col-sm-12 col-md-6 h3 '>
-          <Logotext />
-          <div className=''>
-            <img className='w-[600px] h-[400px] ' src={Bg} alt='' srcset='' />
-            <div className='flex text-4xl justify-center items-center'>
-              <span className='text-[#460273] w-[577px] h-[41px] text-center text-3xl'>
-                Exploring Growth Conversations
-              </span>
+      <div className='h-full grid grid-cols-2 '>
+        <div className=' '>
+        <Authsidebar />
+        </div>
+        <div className='h-screen w-full p-8 col-span-2 md:col-span-1 md:h-full flex flex-col 'style={{ backgroundColor: "#f8f9fa" }}>
+          <div className=' sm:mt-8 -mt-10 mb-18'>
+            <div className='font-semibold text-3xl mb-2'>Verification Code</div>
+            <div className='text-md ul-purple text-1xl'>
+            Enter the 6 digit code sent to your email
             </div>
           </div>
-        </div>
-        <div className='bg-[#F4F4F4] h-screen w-full '>
-          <div className=' w-[309px] h-[80px] mt-[96px] ml-[69px] flex flex-col'>
-            <span className='font-semibold text-3xl'>Email Verification</span>
-            <span className='text-md text-[#460273]'>
-              Kindly enter your email address
-            </span>
-          </div>
-          <div className='flex justify-center items-center'>
+          <div className=''>
             <form
-              action=''
-              className='flex flex-col w-[464px] h-[103px] mt-[196px] justify-between items-center '
+              action='mt-0 sm:mt-30'
+              className=''
             >
-              <div className='flex flex-col'>
-                <label className='fw-bold signup-ititle' htmlFor='email'>
-                  Code
-                </label>
-                <div className='flex space-x-2'>
-                  <input className={styles.input} type='text' />
-                  <input className={styles.input} type='text' />
-                  <input className={styles.input} type='text' />
-                  <input className={styles.input} type='text' />
-                  <input className={styles.input} type='text' />
-                  <input className={styles.input} type='text' />
-                </div>
-              </div>
+                                <div class="w-80 sm:w-auto mt-12 sm:mt-44 mb-20 sm:mb-40">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                      Enter
+                    </label>
+                    <div className='flex-gap-7 sm:flex gap-7 -mx- md:mx-4'><input class="shadow appearance-none border rounded h-11 w-10 sm:w-14 text-center text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      type="number"placeholder="" />
+                       <input class="shadow appearance-none border rounded h-11 w-10 sm:w-14  text-center text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      type="number"placeholder="" />
+                      <input class="shadow appearance-none border rounded h-11 w-10 sm:w-14 text-center text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      type="number"placeholder="" />
+                      <input class="shadow appearance-none border rounded h-11 w-10 sm:w-14 text-center text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      type="number"placeholder="" />
+                      <input class="shadow appearance-none border rounded h-11 w-10 sm:w-14 text-center text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      type="number"placeholder="" />
+                      <input class="shadow appearance-none border rounded h-11 w-10 sm:w-14 text-center text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      type="number"placeholder="" /></div>
 
-              <button
-                className=' w-[464px] bg-[#460273] rounded mt-10 h-[100px] text-[#ffffff]'
-                type='submit'
-              >
-                Enter
-              </button>
-              <p>
-                Didn't receive code? <span>Resend Code</span>
+                  </div>
+              <button  class="sgnbut  w-80 sm:w-3/4 text-white font-bold rounded  " onClick={this.clickSubmit}>
+                     Get Code
+                    </button> 
+                    <p className='ml-0 sm:ml-20 '>
+                Didn't receive code? <span className='ul-purple'>Resend Code</span>
               </p>
             </form>
           </div>

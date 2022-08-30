@@ -9,7 +9,7 @@ import addlocation from "../assets/Add Location.png"
 import { isAuthenticated } from '../auth'
 import { create, list } from '../posts/apiPost'
 import Axios from 'axios'
-import {Image} from 'cloudinary-react'
+
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -93,7 +93,7 @@ export default class DropdownComponent extends Component {
         
       }
     render() {
-    const {body, error, postImgId} = this.state
+    const {body} = this.state
     return (
         <div>
                     <div className="flex mb-4">
