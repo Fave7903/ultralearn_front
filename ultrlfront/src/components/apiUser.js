@@ -1,5 +1,5 @@
 export const read = (name, token) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/ul/${name}`, {
+    return fetch(`/ul/${name}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -14,7 +14,7 @@ export const read = (name, token) => {
   }
 
 export const update = (name, token, user) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/ul/${name}`, {
+    return fetch(`/ul/${name}`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -45,7 +45,7 @@ export const update = (name, token, user) => {
 //   }
 
 export const list = () => {
-    return fetch(`https://api-ultralearn.herokuapp.com/users`, {
+    return fetch(`/ul`, {
       method: "GET",
     })
     .then(response => {
@@ -55,7 +55,7 @@ export const list = () => {
   }
 
 export const follow = (userId, token, followId) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/user/follow`, {
+    return fetch(`/user/follow`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -71,7 +71,7 @@ export const follow = (userId, token, followId) => {
   }
 
 export const unfollow = (userId, token, unfollowId) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/user/unfollow`, {
+    return fetch(`/user/unfollow`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -87,7 +87,7 @@ export const unfollow = (userId, token, unfollowId) => {
   }
 
 export const findPeople = (name, token) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/user/findpeople/${name}`, {
+    return fetch(`/user/findpeople/${name}`, {
       method: "GET",
       headers: {
         Accept: "application/json",

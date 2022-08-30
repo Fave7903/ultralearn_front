@@ -1,5 +1,5 @@
 export const create = (name, token, post) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/post/new/${name}`, {
+    return fetch(`/post/new/${name}`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -15,7 +15,7 @@ export const create = (name, token, post) => {
   }
 
 export const list = () => {
-    return fetch(`https://api-ultralearn.herokuapp.com/posts`, {
+    return fetch(`/posts`, {
       method: "GET",
     })
     .then(response => {
@@ -25,7 +25,7 @@ export const list = () => {
   }
 
 export const getPost = postId => {
-    return fetch(`https://api-ultralearn.herokuapp.com/post/${postId}`, {
+    return fetch(`/post/${postId}`, {
       method: "GET",
     })
     .then(response => {
@@ -35,7 +35,7 @@ export const getPost = postId => {
   }
 
 export const listByUser = (name, token) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/posts/by/${name}`, {
+    return fetch(`/posts/by/${name}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -50,7 +50,7 @@ export const listByUser = (name, token) => {
   }
 
 export const like = (userId, token, postId) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/post/like`, {
+    return fetch(`/post/like`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -66,7 +66,7 @@ export const like = (userId, token, postId) => {
   }
 
 export const unlike = (userId, token, postId) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/post/unlike`, {
+    return fetch(`/post/unlike`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -82,7 +82,7 @@ export const unlike = (userId, token, postId) => {
   }
 
 export const comment = (userId, token, postId, comment) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/post/comment`, {
+    return fetch(`/post/comment`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -98,7 +98,7 @@ export const comment = (userId, token, postId, comment) => {
   }
 
 export const uncomment = (userId, token, postId, comment) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/post/uncomment`, {
+    return fetch(`/post/uncomment`, {
       method: "PUT",
       headers: {
         Accept: "application/json",

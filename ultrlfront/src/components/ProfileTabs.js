@@ -31,14 +31,14 @@ class ProfileTabs extends Component {
             </div>
           </div>
         {posts.map((post, i) => {
-          const posterFull = post.postedBy ? post.postedBy.fullName : " Unknown"
-          const posterUser = post.postedBy ? post.postedBy.username : " Unknown"
+          const posterFull = post.user ? post.user.fullName : " Unknown"
+          const posterUser = post.user ? post.user.username : " Unknown"
         return (
 
           
         <div className="w-full px-2 sm:px-7 py-8 mb-4 ul-purple bg-white grid grid-cols-5 gap-5 sm:gap-4" style={{borderBottom: " 8px solid #C4C4C4"}} key={i}>
    <div className="col-span-2 flex flex-row"> 
-     <Link className="d-flex mx-2 mb-0" to={`/users/${posterUser}`}>{post.postedBy.imgId ? <Image cloudName="favoursoar" className="rounded-full" publicId={post.postedBy.imgId} style={{ width: '100px', height: '100px', objectFit: 'cover', }} /> :
+     <Link className="d-flex mx-2 mb-0" to={`/users/${posterUser}`}>{post.user.imgId ? <Image cloudName="favoursoar" className="rounded-full" publicId={post.user.imgId} style={{ width: '100px', height: '100px', objectFit: 'cover', }} /> :
                     <img style={{ width: "100px", height: "100px" }} className=" rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src={avatarImage} alt="user " />
                   }
      </Link>
@@ -52,7 +52,7 @@ class ProfileTabs extends Component {
       </div>
       <div className='col-span-3'>
         <div className='flex gap-4'>
-        <h2 style={{color: "#460273"}} className="font-bold">Posted on {new Date(post.created).toDateString()}</h2>
+        <h2 style={{color: "#460273"}} className="font-bold">Posted on {new Date(post.createdAt).toDateString()}</h2>
         <div className='flex float-right right-0' >  <Verticalicon style={{color:"#460273"}}/></div>
         </div>
         {post.body.length > 105 && this.state.more ? <p className="card-text">{post.body.substring(0, 150)}...<span style={{cursor: "pointer", color: "#460273"}} onClick={() => this.setState({more: !this.state.more})}>see more</span></p> : <p className="card-text">{post.body}</p>}

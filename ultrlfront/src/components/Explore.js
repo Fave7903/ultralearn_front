@@ -204,7 +204,10 @@ export default class DropdownComponent extends Component {
                 <h1 className="text-3xl ml-4 sm:ml-14">{`Welcome back ${isAuthenticated().user.username}!`} </h1>
             </div>
             <div className="flex ml-12">
-                <img style={{ width: "100px", height: "100px" }} className="invisible sm:visible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src ={avatarImage} alt="user"></img>
+                {isAuthenticated().user.imgId? <Image cloudName="favoursoar" publicId={isAuthenticated().user.imgId} className="invisible sm:visible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0"
+                    style={{ width: "100px", height: "100px" }} /> : <img style={{ width: "100px", height: "100px" }} className="invisible sm:visible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src ={avatarImage} alt="user"></img>}
+
+                
                 <input type="text" 
                 style={{ width:"62vw"}}
                 className="bg-slate-400 h-16 -ml-36 sm:ml-2 px-6 py-5 text-1xl  border rounded-md" 

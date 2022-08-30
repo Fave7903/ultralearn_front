@@ -14,7 +14,7 @@ class Profile extends Component {
   constructor() {
     super()
     this.state = {
-      user: { following: [], followers: [] },
+      user: {},
       redirectToSignin: false,
       loading: true,
       following: false,
@@ -22,14 +22,14 @@ class Profile extends Component {
       posts: []
     }
   }
-  checkFollow = user => {
-    const jwt = isAuthenticated()
-    const match = user.followers.find(follower => {
-      // one id has  many other ids (followers) and vice versa
-      return follower._id === jwt.user._id
-    })
-    return match
-  }
+  // checkFollow = user => {
+  //   const jwt = isAuthenticated()
+  //   const match = user.followers_len.find(follower => {
+  //     // one id has  many other ids (followers_len) and vice versa
+  //     return follower._id === jwt.user._id
+  //   })
+  //   return match
+  // }
 
   clickFollow = callApi => {
     const userId = isAuthenticated().user._id
@@ -51,8 +51,8 @@ class Profile extends Component {
         if (data.error) {
           this.setState({ redirectToSignin: true })
         } else {
-          let following = this.checkFollow(data)
-          this.setState({ user: data, following })
+          // let following = this.checkFollow(data)
+          this.setState({ user: data }) //following
           this.setState({ loading: false })
           this.loadPosts(data.username)
         }
@@ -118,10 +118,10 @@ class Profile extends Component {
            <h1 className="font-bold text-3xl fw-bolder mt-3" style={{ color: "#460273" }}>{user.fullName}</h1>
               <p className="font-bold" style={{ color: "#460273" }}>{user.bio}</p>
               <div className='flex'><img style={{ width: "25px", height: "25px" }} className=" rounded-full border border-gray-100 shadow-sm image-fluid " src={addLocation} alt="user " /> <p style={{ display: user.location ? "" : "none", color: "#460273" }}> {` ${user.location}, Nigeria`}</p></div>
-              <div className='flex'><img src={date } alt=""style={{ width: "25px", height: "21px" }} className="shadow-sm image-fluid " /> <p style={{ display: user.created ? "" : "none", color: "#460273" }}> {`  Joined  ${new Date(user.created).toDateString()}`} </p></div>
-              {user.followers.length === 1 ? <p className="fw-bold" style={{ display: user.followers ? "" : "none", color: "#460273" }}>{`${user.followers.length} Follower  ${user.following.length} Following`}</p>
+              <div className='flex'><img src={date } alt=""style={{ width: "25px", height: "21px" }} className="shadow-sm image-fluid " /> <p style={{ display: user.createdAt ? "" : "none", color: "#460273" }}> {`  Joined  ${new Date(user.createdAt).toDateString()}`} </p></div>
+              {user.followers_len === 1 ? <p className="fw-bold" style={{color: "#460273" }}>{`${user.followers_len} Follower  ${user.following_len} Following`}</p>
                 :
-                <p className="" style={{ display: user.followers ? "" : "none", color: "#460273" }}>{`${user.followers.length} Followers, ${user.following.length} Following`}</p>
+                <p className="" style={{color: "#460273" }}>{`${user.followers_len} Followers, ${user.following_len} Following`}</p>
               }
             </div> 
             <hr style={{ height: '10px',width:"100%", backgroundColor: '#460273' }}></hr>
@@ -145,7 +145,7 @@ class Profile extends Component {
               </div>
             </div>
 
-          <ProfileTabs followers={user.followers} following={user.following} posts={posts} />
+          <ProfileTabs posts={posts} />
         </div>
       </div>
     );
