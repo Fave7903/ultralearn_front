@@ -89,20 +89,20 @@ class Profile extends Component {
       <div>
 
 
-        <div className='max-w-80'>
+        <div className='w-max'>
           <div className=" w-full flex justify-center" style={{ height: '248px' }}>
             <div className="flex flex-col">
-              <div className="md:relative bg-gray-100 md:rounded-bl-lg md:rounded-br-lg" style={{ width: '995px', height: '248px', backgroundImage: `url(${fetchedImgSrc})` }}>
+              <div className="w-screen h-80 bg-no-repeat  md:relative sm:mb-0 mb-10 bg-gray-100 md:rounded-bl-lg md:rounded-br-lg" style={{ backgroundImage: `url(${fetchedImgSrc})` }}>
                 {/* // cover photo */}
-                <div className="mt-20 ">
+                <div className="">
                   {/* profile photo border-4 border-white*/}
-                  {user.imgId ?  <Image cloudName="favoursoar" publicId={user.imgId} className=" rounded-full md:absolute mt-20 left-36  w-40 h-40"
+                  {user.imgId ?  <Image cloudName="favoursoar" publicId={user.imgId} className=" rounded-full sm:absolute mt-20 left-36  w-40 h-40"
                     style={{  height: '168px' }} /> :
-                    <img src={avatar}alt="Avatar" className="rounded-full md:absolute mt-20 left-36  w-40 h-40"style={{color: "#460273", width: "178 px",height:"168px"}}/>
+                    <img src={avatar}alt="Avatar" className="rounded-full sm:absolute mt-40 left-36  w-40 h-40"style={{color: "#460273", width: "178 px",height:"168px"}}/>
                     }
 
                 </div>
-                <div className='float-right mt-20'>
+                <div className='invisible sm:visible sm:float-right mt-40'>
                     <button className='border-purple ul-purple bg-white px-2 py-3 text-white md:absolute mt-24 right-0'>  <Link className="" to={`/edit/${isAuthenticated().user.username}`}>Edit Profile</Link></button>
                     </div>
          
@@ -114,11 +114,11 @@ class Profile extends Component {
             
             */}
 
-            <div className="mt-12 pt-9  mx-40"> 
-           <h1 className="font-bold text-3xl fw-bolder mt-3" style={{ color: "#460273" }}>{user.fullName}</h1>
+            <div className="mt-18 sm:mt-12 my-20 sm:my-0 pt-15 sm:pt-9  mb-10 sm:mb-4 mx-24 sm:mx-40"> 
+           <h1 className="font-bold text-3xl fw-bolder  mt-3" style={{ color: "#460273" }}>{user.fullName}</h1>
               <p className="font-bold" style={{ color: "#460273" }}>{user.bio}</p>
               <div className='flex'><img style={{ width: "25px", height: "25px" }} className=" rounded-full border border-gray-100 shadow-sm image-fluid " src={addLocation} alt="user " /> <p style={{ display: user.location ? "" : "none", color: "#460273" }}> {` ${user.location}, Nigeria`}</p></div>
-              <div className='flex'><img src={date } alt=""style={{ width: "25px", height: "21px" }} className="shadow-sm image-fluid " /> <p style={{ display: user.created ? "" : "none", color: "#460273" }}> {`  Joined  ${new Date(user.created).toDateString()}`} </p></div>
+              <div className='flex'><img src={date } alt=""style={{ width: "25px", height: "21px" }} className="shadow-sm image-fluid " /> <p style={{ display: user.created ? "" : "none", color: "#460273" }}> {`   Joined  ${new Date(user.created).toDateString()}`} </p></div>
               {user.followers.length === 1 ? <p className="fw-bold" style={{ display: user.followers ? "" : "none", color: "#460273" }}>{`${user.followers.length} Follower  ${user.following.length} Following`}</p>
                 :
                 <p className="" style={{ display: user.followers ? "" : "none", color: "#460273" }}>{`${user.followers.length} Followers, ${user.following.length} Following`}</p>
@@ -130,7 +130,7 @@ class Profile extends Component {
 
         </div>
 
-        <div className="w-full justify-center px-8 my-8">
+        <div className="w-full justify-center px-2 sm:px-8 my-8">
 
           <div className="row">
             <div className="container col-sm-10 lead mt-2">

@@ -9,6 +9,7 @@ import notificationImage from "../assets/notification.png"
 import notification2Image from "../assets/notification2.png"
 import avatarImage from "../assets/avatar.jpg"
 import Hamburgermenu from "../components/Hamburgermenu"
+import Dropdown from "../components/Dropdown"
 
 
 
@@ -28,13 +29,13 @@ const Nav = (hasnotif = true) => {
           <div className="md:block md:w-auto lg:flex hidden" id="navbar-default">
             <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
-                <a href="../components/Dashboard.js" className="block ul-purple  py-2 pr-4 pl-3 rounded" aria-current="page">Home</a>
+                <a href="/" className="block ul-purple  py-2 pr-4 pl-3 rounded" aria-current="page">Home</a>
               </li>
               <li>
                 <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">About us</a>
               </li>
               <li>
-                <a href="../components/Contactus.js" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
+                <a href="/contact" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
               </li>
               <li>
                 <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Skills</a>
@@ -50,6 +51,7 @@ const Nav = (hasnotif = true) => {
             <div className='flex flex-row'>
               <img style={{ width: "35px", height: "35px" }} className="rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src={avatarImage} alt="user " />
               <span>Beomafav</span>
+              <span><Dropdown/></span>
               
             </div>
           </div>

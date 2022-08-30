@@ -73,8 +73,7 @@ class Posts extends Component {
                   <div className='flex float-right right-0'>  <Verticalicon/></div>
 
                   </div>
-
-
+                  
                 {post.body.length > 150 && this.state.more ? <p className="card-text">{post.body.substring(0, 150)}...<span style={{ cursor: "pointer", color: "/5f0f40" }} onClick={() => this.setState({ more: !this.state.more })}>see more</span></p> : <p className="card-text">{post.body}</p>}
                   {post.postImgId &&
                     <div className="mt-6" style={{ backgroundColor: "white", width: '100%', height: '350px' }}>
