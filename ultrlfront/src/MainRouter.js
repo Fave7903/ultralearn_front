@@ -16,6 +16,8 @@ import Following from './components/Following'
 import VerificationEmail from './components/VerificationEmail'
 import VerificationCode from './components/verificationCode';
 import VerificationPass from './components/verificationPass';
+import popupdelete from './components/popupdelete'
+import popupedit from './components/popupedit'
 
 const MainRouter = () => {
   return (
@@ -37,6 +39,8 @@ const MainRouter = () => {
       <Route exact path="/findpeople" component={FindPeople}></Route>
       <Route exact path="/addfriends" component={AddFriends}></Route>
       <Route exact path="/edit/:name" component={EditProfile}></Route>
+      <Route exact path="/popupdelete" component={popupdelete}></Route>
+      <Route exact path="/popupedit" component={popupedit}></Route>
     </Switch>
   );
 }
