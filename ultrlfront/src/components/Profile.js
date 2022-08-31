@@ -96,7 +96,7 @@ class Profile extends Component {
                 {/* // cover photo */}
                 <div className="">
                   {/* profile photo border-4 border-white*/}
-                  {user.imgId ?  <Image cloudName="favoursoar" publicId={user.imgId} className=" rounded-full sm:absolute mt-20 left-36  w-40 h-40"
+                  {user.imgId ?  <Image cloudName="favoursoar" publicId={user.imgId} className=" rounded-full sm:absolute mt-40 left-36  w-40 h-40"
                     style={{  height: '168px' }} /> :
                     <img src={avatar}alt="Avatar" className="rounded-full sm:absolute mt-40 left-36  w-40 h-40"style={{color: "#460273", width: "178 px",height:"168px"}}/>
                     }
