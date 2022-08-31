@@ -11,6 +11,8 @@ import Users from './components/Users'
 import Terms from './components/Terms'
 import Contact from './components/Contactus'
 import SingPost from './posts/SingPost'
+import Followers from './components/Followers'
+import Following from './components/Following'
 import VerificationEmail from './components/VerificationEmail'
 import VerificationCode from './components/verificationCode';
 import VerificationPass from './components/verificationPass';
@@ -27,6 +29,9 @@ const MainRouter = () => {
       <Route exact path="/signup" component={Signup}></Route>
       <Route exact path="/signin" component={Signin}></Route>
       <Route exact path="/terms" component={Terms}></Route>
+      <Route exact path="/contact" component={Contact}></Route>
+      <Route exact path="/following" component={Following}></Route>
+      <Route exact path="/followers" component={Followers}></Route>
       <Route exact path="/contact" component={Contact}></Route>
       <Route exact path="/users/:name" component={Profile}></Route>
       <Route exact path="/findpeople" component={FindPeople}></Route>

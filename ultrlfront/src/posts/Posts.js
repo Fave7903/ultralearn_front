@@ -14,7 +14,7 @@ class Posts extends Component {
     super()
     this.state = {
       posts: [],
-      loading: true,
+      loading: false,
       more: true,
       likesArr: []
     };

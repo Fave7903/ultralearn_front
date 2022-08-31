@@ -9,7 +9,9 @@ import Nav from './Nav'
 
 const Dashboard = () => {
   return (
+    
     <div>
+      
       {isAuthenticated() &&
         <div>
           <Nav />
@@ -17,11 +19,6 @@ const Dashboard = () => {
           <Posts />
           <Footer/>
         </div>
-      }
-      {!isAuthenticated() &&
-        <>
-          deisgn this page
-        </>
       }
     </div>
   );
