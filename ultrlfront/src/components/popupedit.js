@@ -1,5 +1,6 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+import { Link } from 'react-router-dom'
 
 export default function Example() {
   const [open, setOpen] = useState(true)
@@ -34,21 +35,19 @@ export default function Example() {
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                 <div className="bg-purple-100 h-full px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                  <div className="sm:flex sm:items-start">
+                  <div className="">
                     <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                       <Dialog.Title as="h3" className="text-lg font-medium leading-6 ul-purple">
                         Edit post
                       </Dialog.Title>
-                      <div className="mt-5 w-full">
-                       <input
-                       type="text"
+                      <div className="mt-5 w-full ">
+                       <textarea  type="text"
                        name="edit post"
                        id="edit post"
-                       className="block w-100 bg-white rounded-md border-gray-300  focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                       placeholder="Edit post"
-                       />
+                       className="w-full bg-white py-10 px-2"
+                       placeholder=""
+                    ></textarea>
                       </div>
-                      <br/><br/>   <br/><br/>
                     </div>
                     </div>
                 </div>
@@ -60,6 +59,7 @@ export default function Example() {
                   >
                     Cancel
                   </button>
+                  <Link to="./">
                   <button
                     type="button"style={{backgroundColor:"#460273"}}
                     className="mt-3 inline-flex w-full justify-center  px-12 py-2 text-base font-medium text-white shadow-sm hover:bg-purple focus:outline-none focus:ring-2 focus: focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
@@ -68,6 +68,8 @@ export default function Example() {
                   >
                     Done
                   </button>
+                  </Link>
+
                 </div>
               </Dialog.Panel>
             </Transition.Child>
