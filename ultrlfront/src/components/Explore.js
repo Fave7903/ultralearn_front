@@ -104,8 +104,8 @@ export default class DropdownComponent extends Component {
                 <input type="text" style={{ width:"61vw"}} className="invisible sm:visible w-80 sm:w-auto sm:ml-20 -ml-36 px-0 sm:px-4 py-0 sm:py-5 text-1xl bg-neutral-900 border rounded-md" placeholder="What are your interests?"></input>
             </div>
         </div>
-        <div className="-mt-24 sm:mt-0 mb-3">
-                <h1 className="text-3xl ml-4 sm:ml-14">{`Welcome back ${isAuthenticated().user.username}!`} </h1>
+        <div className="-mt-24 sm:mt-0 mb-3 ">
+                <h1 className="text-3xl ml-4 mt-10 sm:ml-14">{`Welcome back ${isAuthenticated().user.username}!`} </h1>
             </div>
             <div className="flex ml-12">
                 <img style={{ width: "100px", height: "100px" }} className="invisible sm:visible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src ={avatarImage} alt="user"></img>
