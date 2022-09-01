@@ -21,7 +21,7 @@ export default function Example() {
           <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
         </Transition.Child>
 
-        <div className="fixed inset-0 z-5 overflow-y-auto">
+        <div className="fixed inset-0 z-5 h-full overflow-y-auto">
           <div className="flex min-h-full items-end justify-center p-4  text-center sm:items-center sm:p-0">
             <Transition.Child
               as={Fragment}
@@ -33,35 +33,36 @@ export default function Example() {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div className="bg-purple-100 h-full px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                   <div className="sm:flex sm:items-start">
                     <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 ul-purple">
                         Edit post
                       </Dialog.Title>
-                      <div className="mt-5">
+                      <div className="mt-5 w-full">
                        <input
                        type="text"
                        name="edit post"
                        id="edit post"
-                       className="block w-full bg-white rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                       placeholder="edit post"
+                       className="block w-100 bg-white rounded-md border-gray-300  focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                       placeholder="Edit post"
                        />
                       </div>
+                      <br/><br/>   <br/><br/>
                     </div>
                     </div>
                 </div>
                 <div className="bg-purple-100 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                   <button
                     type="button"
-                    className="inline-flex w-full justify-center rounded-md border border-white bg-white px-4 py-2 text-base font-medium text-purple-600 shadow-sm hover:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
+                    className="inline-flex w-full justify-center  border-white bg-white px-12 py-2 text-base font-medium ul-purple shadow-sm hover:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
                     onClick={() => setOpen(false)}
                   >
                     Cancel
                   </button>
                   <button
-                    type="button"
-                    className="mt-3 inline-flex w-full justify-center rounded-md border border-purple bg-purple-900 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-purple focus:outline-none focus:ring-2 focus: focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                    type="button"style={{backgroundColor:"#460273"}}
+                    className="mt-3 inline-flex w-full justify-center  px-12 py-2 text-base font-medium text-white shadow-sm hover:bg-purple focus:outline-none focus:ring-2 focus: focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                     onClick={() => setOpen(false)}
                     ref={cancelButtonRef}
                   >

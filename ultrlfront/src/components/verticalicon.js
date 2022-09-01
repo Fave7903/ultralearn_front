@@ -7,7 +7,7 @@ import SharePost from "../assets/Share post.png"
 import EditPost from "../assets/Edit post.png"
 import DeletePost from "../assets/Delete.png"
 import  ReportPost from "../assets/Repost.png"
-import popupdelete from "../components/popupdelete"
+import { Link } from 'react-router-dom'
 
 
 
@@ -41,6 +41,7 @@ export default function LongMenu() {
         MenuListProps={{
           'aria-labelledby': 'long-button',
         }}
+
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
@@ -52,18 +53,20 @@ export default function LongMenu() {
           },
         }}
       > 
-          <MenuItem style={{ color: '#460273' }}>
-            <div className="flex">Share Post <img alt="Icon"className="mx-2"style={{width:"20px",height:"20px"}}src={SharePost}/></div>
-          </MenuItem>
+      <Link to="/share"> <MenuItem style={{ color: '#460273' }}        className="bg-purple-100">
+            <div  className="flex">Share Post <img alt="Icon"className="mx-2"style={{width:"20px",height:"20px"}}src={SharePost}/></div>
+          </MenuItem></Link>
+          <Link to="/edit">
           <MenuItem style={{ color: '#460273' }}id="">
             <div className="flex">Edit Post <img alt="Icon" className="mx-5" style={{width:"20px",height:"20px"}}src={EditPost}/></div>
           </MenuItem>
-          <MenuItem style={{ color: '#460273' }}id="delete"data-dropdown-toggle="popupdelete">
+          </Link>
+          <Link to="/delete"> <MenuItem style={{ color: '#460273' }}id="delete"data-dropdown-toggle="popupdelete">
             <div className="flex">Delete Post <img alt="Icon" className="mx-2" style={{width:"20px",height:"20px"}}src={DeletePost}/></div>
-          </MenuItem>
-          <MenuItem style={{ color: '#460273' }}>
+          </MenuItem></Link>
+          <Link> <MenuItem style={{ color: '#460273' }}>
             <div className="flex">Report Post <img alt="Icon" className="mx-2" style={{width:"20px",height:"20px"}}src={ReportPost}/></div>
-          </MenuItem>
+          </MenuItem></Link>
       </Menu>
     </div>
   );

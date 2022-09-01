@@ -1,5 +1,6 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+import { Link } from 'react-router-dom'
 
 export default function Example() {
   const [open, setOpen] = useState(true)
@@ -48,21 +49,21 @@ export default function Example() {
                   </div>
                 </div>
                 <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                  <button
+                  <Link to="/"><button
                     type="button"
                     className="mt-3 inline-flex w-full justify-center rounded-md border border-red-300 bg-white px-4 py-2 text-base font-medium text-red-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                     onClick={() => setOpen(false)}
                     ref={cancelButtonRef}
                   >
                     Cancel
-                  </button>
-                  <button
+                  </button></Link>
+                  <Link to="/"><button
                     type="button"
                     className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
                     onClick={() => setOpen(false)}
                   >
                     Delete
-                  </button>
+                  </button></Link>
                 </div>
               </Dialog.Panel>
             </Transition.Child>

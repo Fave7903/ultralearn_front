@@ -141,9 +141,17 @@ class Signup extends Component {
                   </div>
 
                   <div className="my-6">
-                    <label className="block text-gray-700 h-11 text-sm font-bold mb-0" for="password">
+                  <div className=''>
+                      <span>
+                      <label class="block text-gray-700 text-sm font-bold -mb-5" for="password">
                       Password
                     </label>
+                      </span>
+                      <span className='float-right'>
+                      <p className='forgot-password ul-purple text-sm font-bold float-right mb-2'>
+                    <Link to="/verification" style={{ color: "#460273" }} className="fw-bold">Forgot Password?</Link></p>
+                      </span>
+                    </div>
                     <input
                       onChange={this.handleChange("password")}
                       type={toggler}

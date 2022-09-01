@@ -43,12 +43,12 @@ const MainRouter = () => {
       <Route exact path="/findpeople" component={FindPeople}></Route>
       <Route exact path="/addfriends" component={AddFriends}></Route>
       <Route exact path="/edit/:name" component={EditProfile}></Route>
-      <Route exact path="/popupdelete" component={popupdelete}></Route>
+      <Route exact path="/delete" component={popupdelete}></Route>
       <Route exact path="/forgotPassword" component={ForgotPass}></Route>
       <Route exact path="/changePassword" component={ChangePassword}></Route>
       <Route exact path="/reset" component={Reset}></Route>
       <Route exact path="/successful" component={Successsful}></Route>
-      <Route exact path="/popupedit" component={popupedit}></Route>
+      <Route exact path="/edit" component={popupedit}></Route>
     </Switch>
   );
 }
