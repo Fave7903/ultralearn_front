@@ -18,6 +18,10 @@ import VerificationCode from './components/verificationCode';
 import VerificationPass from './components/verificationPass';
 import popupdelete from './components/popupdelete'
 import popupedit from './components/popupedit'
+import ForgotPass from './components/forgotPass'
+import ChangePassword from './components/changePassword'
+import Reset from './components/reset'
+import Successsful from './components/successful'
 
 const MainRouter = () => {
   return (
@@ -40,6 +44,10 @@ const MainRouter = () => {
       <Route exact path="/addfriends" component={AddFriends}></Route>
       <Route exact path="/edit/:name" component={EditProfile}></Route>
       <Route exact path="/popupdelete" component={popupdelete}></Route>
+      <Route exact path="/forgotPassword" component={ForgotPass}></Route>
+      <Route exact path="/changePassword" component={ChangePassword}></Route>
+      <Route exact path="/reset" component={Reset}></Route>
+      <Route exact path="/successful" component={Successsful}></Route>
       <Route exact path="/popupedit" component={popupedit}></Route>
     </Switch>
   );
