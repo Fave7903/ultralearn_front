@@ -51,10 +51,15 @@ class ProfileTabs extends Component {
                   </div>
       </div>
       <div className='col-span-3'>
-        <div className='flex gap-4'>
-        <h2 style={{color: "#460273"}} className="font-bold">Posted on {new Date(post.created).toDateString()}</h2>
-        <div className='flex float-right right-0' >  <Verticalicon style={{color:"#460273"}}/></div>
-        </div>
+      <div className=''>
+                    <span>
+                    <h2 className='font-bold mr-74'>Posted on {new Date(post.created).toDateString()}</h2>
+                    </span>
+                    <span>
+                    <div className='-mt-15 float-right '>  <Verticalicon/></div>
+                    </span>
+
+                  </div>
         {post.body.length > 105 && this.state.more ? <p className="card-text">{post.body.substring(0, 150)}...<span style={{cursor: "pointer", color: "#460273"}} onClick={() => this.setState({more: !this.state.more})}>see more</span></p> : <p className="card-text">{post.body}</p>}
     {post.postImgId && 
                         <div className="" style={{ backgroundColor: "white", width: '100%', height: '350px' }}>

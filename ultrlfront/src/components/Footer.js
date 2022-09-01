@@ -15,19 +15,19 @@ const Footer = () => {
 
                 <ul className=" justify-items-start inline-block">
                     <li className="mb-4 ul-purple text-1xl font-semibold ">
-                    <a href="/" className="ul-purple text-1xl font-semibold">Terms</a>
+                    <a href="/terms" className="ul-purple text-1xl font-semibold">Terms</a>
                          </li>
                     <li className="mb-4">
                         <a href="/" className="ul-purple text-1xl font-semibold">Privacy</a>
                     </li>
                     <li>
-                        <a href="/" className="ul-purple text-1xl font-semibold">Help</a>
+                        <a href="/contact" className="ul-purple text-1xl font-semibold">Help</a>
                     </li>
                 </ul>
             </div>
             <div>
                 <ul classNameName=" ">
-                    <li className="mb-4 ul-purple text-1xl font-semibold">Contact Us</li>
+                    <li className="mb-4 ul-purple text-1xl font-semibold"><a href="/contact" className="">Contact Us</a></li>
                     <li className="mb-4 ul-purple text-1xl font-semibold">
                         <a href="/" className="">About Us</a>
                     </li>

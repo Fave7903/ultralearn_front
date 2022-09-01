@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
+import { Menu} from "@headlessui/react";
 import avatarImage from "../assets/avatar.jpg"
 import camera from "../assets/Camera.png"
 import uploadphoto from "../assets/Upload Photo.png"
@@ -11,10 +10,6 @@ import { create, list } from '../posts/apiPost'
 import Axios from 'axios'
 
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
-
-}
 
 export default class DropdownComponent extends Component {
     constructor() {

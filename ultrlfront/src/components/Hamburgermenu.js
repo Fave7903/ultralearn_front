@@ -47,10 +47,10 @@ export default function Header() {
                 <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">About us</a>
               </li>
               <li>
-                <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
+                <a href="/contact" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
               </li>
               <li>
-                <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Skills</a>
+                <a href="/findpeople" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Friends</a>
               </li>
               <li className="flex"> <img style={{ width: "35px", height: "35px" }} src={messages} className="image-fluid mx-1 mt-0" alt="Message Icon" /><img style={{ width: "35px", height: "35px" }} src={notification2Image} className="image-fluid mx-1 mt-0" alt="Message Icon" /></li>
               <li className="ul-purple py-2 pr-4 pl-2">Beomafav</li>

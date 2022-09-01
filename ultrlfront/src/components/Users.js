@@ -27,9 +27,9 @@ class Users extends Component {
             <div className="card col-md-3 mx-3" key={i}>
   <img src={avatar} className="card-img-top" alt={user.username} style={{width: '180px', height: '180px', objectFit: 'cover', borderRadius: '50%'}}/>
   <div className="card-body">
-    <h5 className="card-title">{user.fullName}</h5>
+    <h5 className="text-1xl">{user.fullName}</h5>
     <p className="card-text">{user.username}</p>
-    <Link to={`/ul/${user.username}`} className="btn btn-primary btn-raised btn-sm">View Profile</Link>
+    <Link to={`/users/${user.username}`} className="btn btn-primary btn-raised btn-sm">View Profile</Link>
   </div>
 </div>
           ))}

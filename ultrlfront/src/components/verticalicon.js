@@ -32,7 +32,7 @@ export default function LongMenu() {
         aria-expanded={open ? 'true' : undefined}
         aria-haspopup="true"
         onClick={handleClick}
-        style={{ color: 'white',right: "0%" ,bottom:"8px" ,float: "right"}} 
+        style={{ color: 'white',right: "0%" ,bottom:"30px" ,float: "right"}} 
       >
         <MoreVertIcon />
       </IconButton>
@@ -56,12 +56,12 @@ export default function LongMenu() {
       <Link to="/share"> <MenuItem style={{ color: '#460273' }}        className="bg-purple-100">
             <div  className="flex">Share Post <img alt="Icon"className="mx-2"style={{width:"20px",height:"20px"}}src={SharePost}/></div>
           </MenuItem></Link>
-          <Link to="/edit">
+          <Link to="/editpost">
           <MenuItem style={{ color: '#460273' }}id="">
             <div className="flex">Edit Post <img alt="Icon" className="mx-5" style={{width:"20px",height:"20px"}}src={EditPost}/></div>
           </MenuItem>
           </Link>
-          <Link to="/delete"> <MenuItem style={{ color: '#460273' }}id="delete"data-dropdown-toggle="popupdelete">
+          <Link to="/deletepost"> <MenuItem style={{ color: '#460273' }}id="delete"data-dropdown-toggle="popupdelete">
             <div className="flex">Delete Post <img alt="Icon" className="mx-2" style={{width:"20px",height:"20px"}}src={DeletePost}/></div>
           </MenuItem></Link>
           <Link> <MenuItem style={{ color: '#460273' }}>

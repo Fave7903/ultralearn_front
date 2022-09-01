@@ -7,7 +7,6 @@ import Profile from './components/Profile'
 import EditProfile from './components/EditProfile'
 import FindPeople from './components/FindPeople'
 import AddFriends from './components/AddFriends'
-import Users from './components/Users'
 import Terms from './components/Terms'
 import Contact from './components/Contactus'
 import SingPost from './posts/SingPost'
@@ -31,7 +30,6 @@ const MainRouter = () => {
       <Route exact path='/verificationpass' component={VerificationPass}></Route>
       <Route exact path="/" component={Dashboard}></Route>
       <Route exact path="/post/:postId" component={SingPost}></Route>
-      <Route exact path="/users" component={Users}></Route>
       <Route exact path="/signup" component={Signup}></Route>
       <Route exact path="/signin" component={Signin}></Route>
       <Route exact path="/terms" component={Terms}></Route>
@@ -43,12 +41,12 @@ const MainRouter = () => {
       <Route exact path="/findpeople" component={FindPeople}></Route>
       <Route exact path="/addfriends" component={AddFriends}></Route>
       <Route exact path="/edit/:name" component={EditProfile}></Route>
-      <Route exact path="/delete" component={popupdelete}></Route>
+      <Route exact path="/deletepost" component={popupdelete}></Route>
       <Route exact path="/forgotPassword" component={ForgotPass}></Route>
       <Route exact path="/changePassword" component={ChangePassword}></Route>
       <Route exact path="/reset" component={Reset}></Route>
       <Route exact path="/successful" component={Successsful}></Route>
-      <Route exact path="/edit" component={popupedit}></Route>
+      <Route exact path="/editpost" component={popupedit}></Route>
     </Switch>
   );
 }

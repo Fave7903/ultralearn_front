@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Logotext } from './logotext';
-import Bg from '../assets/undraw_secure_login_pdn4.png';
 import '../assets/style.css';
 import { Authsidebar } from './authsidebar2'
 
