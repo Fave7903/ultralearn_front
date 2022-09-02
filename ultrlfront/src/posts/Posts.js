@@ -8,13 +8,14 @@ import comment from '../assets/comment.png'
 import avatarImage from "../assets/avatar.jpg"
 import Verticalicon from "../components/verticalicon"
 import Explore from '../components/Explore'
+import { Loading } from '../components/Loading'
 
 class Posts extends Component {
   constructor() {
     super()
     this.state = {
       posts: [],
-      loading: false,
+      loading: true,
       more: true,
       likesArr: []
     };
@@ -62,8 +63,8 @@ class Posts extends Component {
                     <h2 className='font-semibold text-1xl sm:text-2xl'> 
                       <Link  to={`/users/${posterUser}`}> {posterFull}</Link>
                     </h2>
-                    <p className='text-sm sm:text-base'>Product Design</p>
-                    <p className='text-sm'>Lagos, Nigeria</p><br />
+                    <p className='text-sm sm:text-base'>{post.user.bio}</p>
+                    <p className='text-sm'>{post.user.location}, Nigeria</p><br />
                   </div>
  
                 </div>
@@ -117,11 +118,7 @@ class Posts extends Component {
         </div>
          */}
         <div className=''>
-          {loading ? <div className="jumbotron text-center">
-            <div className="spinner-border text-primary" role="status">
-              <span className="sr-only">Loading...</span>
-            </div>
-          </div> : ""}
+          {loading ? <Loading /> : ""}
 
 
           {this.renderPosts(posts)}

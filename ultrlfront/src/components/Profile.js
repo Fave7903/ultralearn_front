@@ -13,12 +13,13 @@ import FollowButton from './FollowButton'
 import Arrow from "../assets/Arrow.svg"
 import Share from "../components/share"
 import { Loading } from './Loading'
+import Followers from './Followers'
 
 class Profile extends Component {
   constructor() {
     super()
     this.state = {
-      user: {},
+      user: { myfollowings: [], myfollowers: [] },
       redirectToSignin: false,
       loading: true,
       following: false,
@@ -132,13 +133,19 @@ class Profile extends Component {
            <h1 className="font-bold text-3xl fw-bolder  mt-3" style={{ color: "#460273" }}>{user.fullName}</h1>
               <p className="font-bold" style={{ color: "#460273" }}>{user.bio}</p>
 
-              <div className='flex'><img style={{ width: "25px", height: "25px" }} className=" rounded-full border border-gray-100 shadow-sm image-fluid " src={addLocation} alt="user " /> <p style={{ display: user.location ? "" : "none", color: "#460273" }}> {` ${user.location}, Nigeria`}</p></div>
+              
 
-              <div className='flex'><img src={date } alt=""style={{ width: "25px", height: "21px" }} className="shadow-sm image-fluid " /> <p style={{ display: user.createdAt ? "" : "none", color: "#460273" }}> {`  Joined  ${new Date(user.createdAt).toDateString()}`} </p></div>
-              {user.fullName ? <p className="" style={{color: "#460273" }}>{`${user.followers_len} Followers ${user.following_len} Following`}</p>
+              <div className='flex'><img style={{ width: "25px", height: "25px" }} className=" rounded-full border border-gray-100 shadow-sm image-fluid " src={addLocation} alt="user " /><p style={{ display: user.location ? "" : "none", color: "#460273" }}>&nbsp; {` ${user.location}, Nigeria`}</p></div>
+           
+            
+
+
+              <div className='flex'><img src={date } alt=""style={{ width: "25px", height: "21px" }} className="shadow-sm image-fluid " /> <p style={{ display: user.createdAt ? "" : "none", color: "#460273" }}> &nbsp;{`Joined  ${new Date(user.createdAt).toDateString()}`} </p></div>
+              {user.fullName ? <p className='font-bold'><Link to={`/followers/${user.username}`} className="" style={{color: "#460273" }}>{`${user.followers_len} Followers`}</Link> . <Link to={`/following/${user.username}`} className="" style={{color: "#460273" }}>{`${user.following_len} Following`}</Link></p>
 : <Loading />}
               
             </div> 
+
             <hr style={{ height: '10px',width:"100%", backgroundColor: '#460273' }}></hr>
 
           {/* // END TABS */}
@@ -159,7 +166,7 @@ class Profile extends Component {
               
               </div>
             </div>
-
+            
           <ProfileTabs posts={posts} />
         </div>
       </div>
