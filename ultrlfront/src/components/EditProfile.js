@@ -7,7 +7,9 @@ import avatarImage from "../assets/avatar.jpg"
 import camera from "../assets/Camera.png"
 import Arrow from "../assets/Arrow 2.png"
 import {signout} from '../auth'
-
+import uploadphoto from "../assets/Upload Photo.png"
+import uploadfile from "../assets/Upload File.png"
+import {Image} from 'cloudinary-react'
 
 class EditProfile extends Component {
   constructor() {
@@ -127,7 +129,7 @@ class EditProfile extends Component {
   
   
   render() {
-    const {fullName, username, email, error, bio, skillInterests, redirectToProfile,  location} = this.state
+    const {fullName, username, email, error, bio, skillInterests, redirectToProfile,  location, imgId} = this.state
 
     if (redirectToProfile) {
       return <Redirect to={`/users/${isAuthenticated().user.username}`}></Redirect>
@@ -141,8 +143,14 @@ class EditProfile extends Component {
 
             <div className='col-span-4 sm:col-span-2 '>
               <div className='flex flex-col'>
-              <span><img style={{ width: "100px", height: "100px" }} className="sm:visible invisble mx-auto rounded-full border border-gray-100 shadow-sm image-fluid mx-1 " src={avatarImage} alt="user " /></span>
-              <span class=" mt-25 mx-auto"> <img style={{ width: "20px", height: "10px" }} src={camera}className="relative m"alt ="change pic"/></span>
+              <span>{imgId ? <Image cloudName="favoursoar" publicId={imgId} className="sm:visible invisble mx-auto rounded-full border border-gray-100 shadow-sm image-fluid mx-1" style={{width: "100px", height: "100px"}}/> :<img style={{ width: "100px", height: "100px" }} className="sm:visible invisble mx-auto rounded-full border border-gray-100 shadow-sm image-fluid mx-1 " src={avatarImage} alt="user " />}</span>
+              <span class='mt-25 mx-auto flex'>
+              
+            <input style={{display: "none"}} ref={fileInput => this.fileInput = fileInput} type="file" onChange={(event) => {this.setState({imageSelected: event.target.files[0]})}}/>
+                 <img style={{cursor: 'pointer'}} onClick={() => this.fileInput.click()} src ={uploadphoto} className = "mr-2 w-5 h-5"alt="UploadPhoto"/>
+                 <img style={{cursor: 'pointer'}} onClick={this.uploadImage} src={uploadfile} className = "mr-2 w-5 h-5" alt="UploadFile"/>
+                
+               </span>
               </div>
              
             </div>

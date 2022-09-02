@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { findPeople, follow } from './apiUser'
+import { findPeople, myfollowers } from './apiUser'
 import {Link} from 'react-router-dom'
 import {isAuthenticated} from '../auth'
 import Arrow from "../assets/Arrow.svg"
@@ -14,14 +14,25 @@ class Followers extends Component {
       error: "",
       open: false,
       loading: true, 
-      searchTerm: ""
+      searchTerm: "",
+      following: false
     };
   }
 
-  componentDidMount = () => {
-    const name = isAuthenticated().user.username
+  componentDidMount() {
+    const name = this.props.match.params.name
+    this.init(name)
+  }
+
+  componentWillReceiveProps(props) {
+    const name = props.match.params.name
+    this.init(name)
+  }
+
+
+  init = (name) => {
     const token = isAuthenticated().token
-    findPeople(name, token).then(data => {
+    myfollowers(name, token).then(data => {
       if (data.error) {
         console.log(data.error)
       } else {
@@ -30,25 +41,7 @@ class Followers extends Component {
     })
   }
 
-  clickFollow = (user, i) => {
-    const userId = isAuthenticated().user._id
-    const token = isAuthenticated().token
-    window.scrollTo(0, 0)
-    follow(userId, token, user._id)
-    .then(data => {
-      if (data.error) {
-          this.setState({error: data.error})
-      } else {
-        let toFollow = this.state.users
-        toFollow.splice(i, 1)
-        this.setState({
-          users: toFollow,
-          open: true,
-          followMessage: `You've started following ${user.username}`
-        })
-      }
-    })
-  }
+  
 
   renderUsers = (users) => (
     <div>
@@ -69,7 +62,9 @@ class Followers extends Component {
   </div>
   <Link to={`/users/${user.username}`} className=" text-dark text-1xl sm:text-2xl" ><p className="">{user.fullName}</p></Link>
   <div className=''>
-    <button style={{backgroundColor: "#460273", color: "white"}} onClick={() => this.clickFollow(user, i)} className=' float-right py-4 px-8'>Follow</button>
+  <Link to={`/users/${user.username}`} style={{backgroundColor: "#460273", color: "white"}} className=' float-right py-4 px-8'>See More</Link>
+    
+    
     </div>
 </div>
           ))}
@@ -82,8 +77,8 @@ class Followers extends Component {
     return (
       <div className='container p-4 '>
         <div className='flex ml-6 p-10'>
-        <Link to={`/users/`}><img style={{ width: "30px", height: "20px" }} src={Arrow}className="relativemr-20"alt ="Arrow"/></Link>
-            <h4 className='text-2xl  mx-auto '>Following</h4>
+        <Link to={`/users/${this.props.match.params.name}`}><img style={{ width: "30px", height: "20px" }} src={Arrow}className="relativemr-20"alt ="Arrow"/></Link>
+            <h4 className='text-2xl  mx-auto '>{`${this.props.match.params.name}'s followers`}</h4>
         </div>
         {error && (
         <div className="alert alert-danger">

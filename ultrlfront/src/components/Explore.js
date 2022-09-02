@@ -7,6 +7,7 @@ import { isAuthenticated } from '../auth'
 import { create, list } from '../posts/apiPost'
 import {Image} from 'cloudinary-react'
 import Axios from 'axios'
+import { read } from './apiUser'
 
 
 
@@ -24,7 +25,16 @@ export default class DropdownComponent extends Component {
       }
 
       componentDidMount() {
-        this.setState({user: isAuthenticated().user})
+        const name = isAuthenticated().user.username
+        const token = isAuthenticated().user.token
+        read(name, token)
+    .then(data => {
+      if (data.error) {
+        this.setState({ error: data.error })
+      } else {
+        this.setState({ user: data })
+      }
+    })
       }
     
       uploadImage = () => {
@@ -87,7 +97,7 @@ export default class DropdownComponent extends Component {
         
       }
     render() {
-    const {body, postImgId} = this.state
+    const {body, postImgId, user} = this.state
     return (
         <div>
                     {/* <div className="flex mb-4">
@@ -104,10 +114,10 @@ export default class DropdownComponent extends Component {
             </div>
         </div> */}
         <div className="-mt-17 sm:mt-6 mb-8 ">
-                <h1 className="text-3xl ml-4 mt-10 sm:ml-14">{`Welcome back ${isAuthenticated().user.username}!`} </h1>
+                {user.username && <h1 className="text-3xl ml-4 mt-10 sm:ml-14">{`Welcome back ${user.username}!`} </h1>}
             </div>
             <div className="flex ml-12">
-                {isAuthenticated().user.imgId? <Image cloudName="favoursoar" publicId={isAuthenticated().user.imgId} className="invisible sm:visible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0"
+                {user.imgId? <Image cloudName="favoursoar" publicId={user.imgId} className="invisible sm:visible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0"
                     style={{ width: "100px", height: "100px" }} /> : <img style={{ width: "100px", height: "100px" }} className="invisible sm:visible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src ={avatarImage} alt="user"></img>}
 
                 

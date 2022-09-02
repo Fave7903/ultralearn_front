@@ -34,8 +34,8 @@ const MainRouter = () => {
       <Route exact path="/signin" component={Signin}></Route>
       <Route exact path="/terms" component={Terms}></Route>
       <Route exact path="/contact" component={Contact}></Route>
-      <Route exact path="/following" component={Following}></Route>
-      <Route exact path="/followers" component={Followers}></Route>
+      <Route exact path="/following/:name" component={Following}></Route>
+      <Route exact path="/followers/:name" component={Followers}></Route>
       <Route exact path="/contact" component={Contact}></Route>
       <Route exact path="/users/:name" component={Profile}></Route>
       <Route exact path="/findpeople" component={FindPeople}></Route>

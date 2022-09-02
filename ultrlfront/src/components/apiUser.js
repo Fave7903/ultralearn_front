@@ -101,3 +101,36 @@ export const findPeople = (name, token) => {
     .catch(err => console.log(err))
 }
 
+
+export const myfollowers = (name, token) => {
+    return fetch(`https://api-ultralearn.herokuapp.com/user/followers/${name}`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then(response => {
+      return response.json()
+    })
+    .catch(err => console.log(err))
+}
+
+
+export const myfollowings = (name, token) => {
+    return fetch(`https://api-ultralearn.herokuapp.com/user/followings/${name}`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then(response => {
+      return response.json()
+    })
+    .catch(err => console.log(err))
+}
+
+
