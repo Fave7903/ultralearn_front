@@ -21,6 +21,7 @@ import ForgotPass from './components/forgotPass'
 import ChangePassword from './components/changePassword'
 import Reset from './components/reset'
 import Successsful from './components/successful'
+import Sharepost from "./components/share"
 
 const MainRouter = () => {
   return (
@@ -42,6 +43,7 @@ const MainRouter = () => {
       <Route exact path="/addfriends" component={AddFriends}></Route>
       <Route exact path="/edit/:name" component={EditProfile}></Route>
       <Route exact path="/deletepost" component={popupdelete}></Route>
+      <Route exact path="/sharepost" component={Sharepost}></Route>
       <Route exact path="/forgotPassword" component={ForgotPass}></Route>
       <Route exact path="/changePassword" component={ChangePassword}></Route>
       <Route exact path="/reset" component={Reset}></Route>
