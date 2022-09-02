@@ -29,23 +29,16 @@ class Contact extends Component {
     this.setState({ [name]: event.target.value })
   }
 
-  toggle = () => {
-    if (this.state.toggler === "password") {
-      this.setState({ toggler: "text" })
-    } else {
-      this.setState({ toggler: "password" })
-    }
-  }
+  
 
 
   clickSubmit = event => {
     event.preventDefault()
     window.scrollTo(0, 0)
     this.setState({ loading: true })
-    const { email, password } = this.state
+    const { email } = this.state
     const user = {
-      email,
-      password
+      email
     }
     signin(user)
       .then(data => {
@@ -83,7 +76,7 @@ class Contact extends Component {
 <div class="w-8 h-8 bg-purple-600 rounded-full"></div>
 <div class="w-8 h-8 bg-purple-900 rounded-full"></div>
 </div> : ""}
-    <div className="p-8 -mt-5 h-auto"style={{backgroundColor:"#D9D9D9"}}>
+    <div className="p-8 -mt-5 h-full"style={{backgroundColor:"#D9D9D9"}}>
       <h4 className="ul-purple text-center font-bold text-2xl">Contact Us</h4>
       <form class="mt-7">
 

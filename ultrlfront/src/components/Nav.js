@@ -1,4 +1,4 @@
-// import { Redirect, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import ultra from '../assets/ultra.png'
 // import { signout } from '../auth'
 import { isAuthenticated } from '../auth'
@@ -49,10 +49,10 @@ const Nav = (hasnotif = true) => {
             {/* <img style={{ width: "35px", height: "35px" }} src={messages} className="image-fluid mx-1 mt-0" alt="Message Icon" />
             <img style={{ width: "35px", height: "35px" }} src={(hasnotif) ? notification2Image : notificationImage} className="image-fluid mx-1 mt-0" alt="Message Icon" /> */}
             <div className='flex flex-row'>
-
+             
               {isAuthenticated().user.imgId? <Image cloudName="favoursoar" publicId={isAuthenticated().user.imgId} className="rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0"
                     style={{ width: "35px", height: "35px" }} /> : <img style={{ width: "35px", height: "35px" }} className="rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src={avatarImage} alt="user " /> }
-              
+                   
               <span>{isAuthenticated().user.username}</span>
        <span><Dropdown/></span>
 
