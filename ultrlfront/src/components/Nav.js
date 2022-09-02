@@ -32,13 +32,13 @@ const Nav = (hasnotif = true) => {
                 <a href="/" className="block ul-purple  py-2 pr-4 pl-3 rounded" aria-current="page">Home</a>
               </li>
               <li>
-                <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">About us</a>
+                <a href="/findpeople" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Find Friends</a>
               </li>
               <li>
                 <a href="/contact" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
               </li>
               <li>
-                <a href="/findpeople" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Friends</a>
+                <a href="/addfriends" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Add Friends</a>
               </li>
             </ul>
           </div>
@@ -46,8 +46,8 @@ const Nav = (hasnotif = true) => {
 
 
           <div className='flex flex-row lg:flex hidden'>
-            <img style={{ width: "35px", height: "35px" }} src={messages} className="image-fluid mx-1 mt-0" alt="Message Icon" />
-            <img style={{ width: "35px", height: "35px" }} src={(hasnotif) ? notification2Image : notificationImage} className="image-fluid mx-1 mt-0" alt="Message Icon" />
+            {/* <img style={{ width: "35px", height: "35px" }} src={messages} className="image-fluid mx-1 mt-0" alt="Message Icon" />
+            <img style={{ width: "35px", height: "35px" }} src={(hasnotif) ? notification2Image : notificationImage} className="image-fluid mx-1 mt-0" alt="Message Icon" /> */}
             <div className='flex flex-row'>
 
               {isAuthenticated().user.imgId? <Image cloudName="favoursoar" publicId={isAuthenticated().user.imgId} className="rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0"

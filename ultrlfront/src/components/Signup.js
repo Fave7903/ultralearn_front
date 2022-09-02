@@ -146,7 +146,7 @@ class Signup extends Component {
                       </span>
                       <span className='float-right'>
                       <p className='forgot-password ul-purple text-sm font-bold float-right mb-2'>
-                    <Link to="/verification" style={{ color: "#460273" }} className="fw-bold">Forgot Password?</Link></p>
+                    <Link to="/forgotpassword" style={{ color: "#460273" }} className="fw-bold">Forgot Password?</Link></p>
                       </span>
                     </div>
                     <input

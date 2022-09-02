@@ -3,6 +3,7 @@ import { isAuthenticated } from '../auth'
 import { read, update } from './apiUser'
 import {Redirect} from 'react-router-dom'
 import Nav2 from './Nav2'
+import { Link } from 'react-router-dom'
 import Axios from 'axios'
 import iconlock from "../assets/iconlock.png"
 
@@ -149,10 +150,13 @@ class ChangePassword extends Component {
                 <input type="password" name="password" id="password" placeholder="********" className="bg-gray-50 border border-purple-900 text-white text-sm rounded-lg focus:ring-purple-900 focus:border-blue-500 block w-full p-2.5 dark:bg-purple-900 dark:border-purple-900 dark:placeholder-gray-400 dark:text-white" required></input>
                 </div>
               <div className='flex items-center mt-6 mb-3 justify-center'>
+                <Link to="/reset">
                 <button type="submit" className="w-30 text-white bg-purple-900 hover:bg-white hover:text-purple-900 focus:ring-4 focus:outline-none 
                         focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-indgo-900 dark:hover:bg-purple-900
                         dark:focus:ring-purple-900">Reset Password
                 </button>
+                </Link>
+
                
               </div>
               

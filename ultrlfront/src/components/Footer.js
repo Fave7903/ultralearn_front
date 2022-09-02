@@ -28,12 +28,12 @@ const Footer = () => {
             <div>
                 <ul classNameName=" ">
                     <li className="mb-4 ul-purple text-1xl font-semibold"><a href="/contact" className="">Contact Us</a></li>
-                    <li className="mb-4 ul-purple text-1xl font-semibold">
+                    {/* <li className="mb-4 ul-purple text-1xl font-semibold">
                         <a href="/" className="">About Us</a>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
-            <div className="">
+            {/* <div className="">
                 <h2 className ="mb-7 ul-purple text-1xl font-semibold">Mobile App</h2>
                 <ul className ="">
                     <li className ="mb-7 ul-purple">
@@ -43,30 +43,30 @@ const Footer = () => {
                         <a href="/" className=""><img src={appstore} className=" " alt="Appstore icon" /></a>
                     </li>
                 </ul>
-            </div>
+            </div> */}
         </div>
     </div>
     <div className="sm:flex sm:items-center sm:justify-between  text-xl">
         <span className=" sm:text-center ul-purple ">© 2022 <a href="https://flowbite.com/" className="">UltraLearn Inc. All rights reserved</a>
         </span>
         <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-            <a href="/" className="">
+            <a href="https://www.facebook.com/profile.php?id=100081860272267" className="">
                 <img src={facebook}className="image"alt=""/>
                 <span className="sr-only">Facebook page</span>
             </a>
-            <a href="/ f" className="">
+            <a href="https://youtube.com/channel/UCO2A9GvgoCR5CsvYMwOmaOw" className="">
                <img src= {youtube}className=""alt=""/>
                 <span className="sr-only">You tube account</span>
             </a>
-            <a href="/ f" className="">
+            <a href="https://www.linkedin.com/in/ultralearn-ng" className="">
                <img src= {linkedin}className=""alt=""/>
                 <span className="sr-only">linkedin account</span>
             </a>
-            <a href="/" className="">
+            <a href="https://instagram.com/ultralearnng?igshid=NmNmNjAwNzg=" className="">
                <img src={instagram} className=""alt=""/>
                 <span className="sr-only">Instagram page</span>
             </a>
-            <a href="/" className="">
+            <a href="https://twitter.com/UltralearnNg?t=YT4NmI6gOWISWaerYCgrLw&s=09" className="">
                 < img src ={twitter}  className=""alt=""/>
                 <span className="sr-only">Twitter page</span>
             </a>

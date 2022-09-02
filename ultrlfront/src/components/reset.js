@@ -150,7 +150,7 @@ class Reset extends Component {
               </div>
               <div className="fonts-15 mb-3 text-center pt-5 sm:pt-3">
                     Didn't receive any mail?
-                    <Link to="/signup" style={{ color: "#460273" }} className="fw-bold"> Click to resend</Link>
+                    <Link to="/verificationemail" style={{ color: "#460273" }} className="fw-bold"> Click to resend</Link>
                   </div>
                   <div className='flex justify-center w-full m-0 p-0'>
                 <button class="flex text-black text-purple-900   py-2 px-4 rounded-full" onClick={this.clickSubmit} type="button">

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import {Image} from 'cloudinary-react'
-import Like from '../assets/Like-purple.png'
-import comment from "../assets/Comment-purple.png"
 import avatarImage from "../assets/avatar.jpg"
 import Verticalicon from "../components/verticalicon2"
 
@@ -22,13 +20,13 @@ class ProfileTabs extends Component {
         
           
 
-          <div className='grid grid-cols-2 py-2 'style={{borderBottom: " 8px solid #C4C4C4"}}>
+          <div className='text-center py-2 'style={{borderBottom: " 8px solid #C4C4C4"}}>
           <div>
             <h3 style={{color: "#460273"}} className='-mt-6 justfy-center text-2xl'>Posts</h3>
              </div>
-            <div className='float-right'>
+            {/* <div className='float-right'>
             <h3 style={{color: "#460273"}} className='float-right -mt-6  justfy-center text-2xl'>Media</h3>
-            </div>
+            </div> */}
           </div>
         {posts.map((post, i) => {
           const posterFull = post.user ? post.user.fullName : " Unknown"
@@ -67,11 +65,11 @@ class ProfileTabs extends Component {
   
                       </div>
     }
-                      <div className='flex float-right hover:float-left"'>
+                      {/* <div className='flex float-right hover:float-left"'>
                     <span>  <img className=" px-3" src={Like} alt="Like " /></span>
 
                    <span><img className='pt-3' src={comment} alt='comment'/></span>
-                   </div>
+                   </div> */}
          </div>
           
 </div>

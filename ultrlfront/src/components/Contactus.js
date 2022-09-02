@@ -5,7 +5,7 @@ import { signin, authenticate } from '../auth'
 
 import { Errormsg } from './errormsg'
 import Nav from "../components/Nav"
-import bgimage from "../assets/Logo-2.png"
+import bgimage from "../assets/contactbgimage.png"
 
 
 
@@ -71,7 +71,7 @@ class Contact extends Component {
         <div>
             <Nav/>
                     <div className="h-full grid grid-cols-2 ">
-                        <div className='col-span-1 hidden md:block flex flex-col bg-no-repeat bg-contain'style={{ backgroundImage:`url(${bgimage})` }}>
+                        <div className='col-span-1 hidden md:block flex flex-col bg-no-repeat bg-cover bg-enter w-50'style={{ backgroundImage:`url(${bgimage})` }}>
                         </div>
 
 <div className='col-span-2 md:col-span-1 md:h-full flex flex-col' >
@@ -110,6 +110,7 @@ class Contact extends Component {
           <button  class="sgnbut text-white font-bold py-2 px-4 rounded  " onClick={this.clickSubmit}>Submit
           </button> 
         </div>
+        <br/>
 
 
 

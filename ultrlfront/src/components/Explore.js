@@ -90,7 +90,7 @@ export default class DropdownComponent extends Component {
     const {body, postImgId} = this.state
     return (
         <div>
-                    <div className="flex mb-4">
+                    {/* <div className="flex mb-4">
              <Menu as="div" className="col-span-4 relative inline-block text-left">
             <div className="">
                 <Menu.Button className="invisible sm:visible post-bgpurple text-white sm:ml-12 -ml-0 inline-flex justify-center w-full px-6 py-4 text-sm font-medium text-2xl  border border-gray-300 rounded-md shadow-sm  ">
@@ -102,8 +102,8 @@ export default class DropdownComponent extends Component {
         <div className="col-span-8 invisible sm:visible">
                 <input type="text" style={{ width:"61vw"}} className="invisible sm:visible w-80 sm:w-auto sm:ml-20 -ml-36 px-0 sm:px-4 py-0 sm:py-5 text-1xl bg-neutral-900 border rounded-md" placeholder="What are your interests?"></input>
             </div>
-        </div>
-        <div className="-mt-24 sm:mt-0 mb-3 ">
+        </div> */}
+        <div className="-mt-17 sm:mt-6 mb-8 ">
                 <h1 className="text-3xl ml-4 mt-10 sm:ml-14">{`Welcome back ${isAuthenticated().user.username}!`} </h1>
             </div>
             <div className="flex ml-12">

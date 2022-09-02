@@ -85,11 +85,11 @@ class Posts extends Component {
 
                     </div>
                   }
-                  <div className='flex float-right hover:float-left"'>
+                  {/* <div className='flex float-right hover:float-left"'>
                     <span>  <img className=" px-3" src={Like} alt="Like " /></span>
 
                    <span><img className='pt-3' src={comment} alt='comment'/></span>
-                   </div>
+                   </div> */}
                 </div>
               </div>
 

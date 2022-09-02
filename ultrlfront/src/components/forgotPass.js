@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { isAuthenticated } from '../auth'
 import { read, update } from './apiUser'
+import { Link } from 'react-router-dom'
 import {Redirect} from 'react-router-dom'
 import Nav2 from './Nav2'
 import Axios from 'axios'
@@ -143,9 +144,9 @@ class ForgotPass extends Component {
                         placeholder="Enter your mail here" required=""></input>
               </div>
               <div className='float-right'>
-                <button type="submit" className="w-30 flex text-white bg-purple-900 hover:bg-white hover:text-purple-900 focus:ring-4 focus:outline-none 
+                <Link to="/changepassword"> <button type="submit" className="w-30 flex text-white bg-purple-900 hover:bg-white hover:text-purple-900 focus:ring-4 focus:outline-none 
                         focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-indgo-900 dark:hover:bg-purple-900
-                        dark:focus:ring-purple-900" >Reset Password</button>
+                        dark:focus:ring-purple-900" >Reset Password</button></Link>
                 <br></br><br></br>
               </div>
               <div className=' flex justify-center w-full m-0 p-0'>
