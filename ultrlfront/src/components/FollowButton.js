@@ -10,13 +10,13 @@ class FollowButton extends Component {
     }
   render() {
     return (
-      <div className="d-inline-block mt-5">
+      <div>
 
         {
           !this.props.following ? (
-            <button style={{backgroundColor: "#460273", color: "white"}} onClick={this.followClick} className="btn btn-raised mt-5">Follow</button>
+            <button onClick={this.followClick} className="border-purple ul-purple bg-white px-2 py-3 text-white md:absolute mt-24 right-0">Follow</button>
           ) : (
-             <button style={{color: "#460273"}} onClick={this.unfollowClick} className="btn btn-raised mt-5 btn-outline">Following</button>   
+             <button onClick={this.unfollowClick} className="border-purple ul-purple bg-white px-2 py-3 text-white md:absolute mt-24 right-0">Following</button>   
           )
         }
       </div>

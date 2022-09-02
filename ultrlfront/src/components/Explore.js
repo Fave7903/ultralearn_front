@@ -8,6 +8,7 @@ import uploadfile from "../assets/Upload File.png"
 import addlocation from "../assets/Add Location.png"
 import { isAuthenticated } from '../auth'
 import { create, list } from '../posts/apiPost'
+import {Image} from 'cloudinary-react'
 import Axios from 'axios'
 
 

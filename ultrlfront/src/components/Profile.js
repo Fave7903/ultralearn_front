@@ -9,6 +9,7 @@ import { listByUser } from '../posts/apiPost'
 import fetchedImgSrc from "../assets/defaultcover.svg"
 import date from "../assets/date.png"
 import avatar from "../assets/avatar.jpg"
+import FollowButton from './FollowButton'
 
 class Profile extends Component {
   constructor() {
@@ -22,19 +23,19 @@ class Profile extends Component {
       posts: []
     }
   }
-  // checkFollow = user => {
-  //   const jwt = isAuthenticated()
-  //   const match = user.followers_len.find(follower => {
-  //     // one id has  many other ids (followers_len) and vice versa
-  //     return follower._id === jwt.user._id
-  //   })
-  //   return match
-  // }
+  checkFollow = user => {
+    const jwt = isAuthenticated()
+    const match = user.myfollowers.find(follower => {
+      // one id has  many other ids (followers) and vice versa
+      return follower.id === jwt.user.id
+    })
+    return match
+  }
 
   clickFollow = callApi => {
-    const userId = isAuthenticated().user._id
+    const userId = isAuthenticated().user.id
     const token = isAuthenticated().token
-    callApi(userId, token, this.state.user._id)
+    callApi(userId, token, this.state.user.id)
       .then(data => {
         if (data.error) {
           this.setState({ error: data.error })
@@ -44,19 +45,23 @@ class Profile extends Component {
       })
   }
 
+  
+
+
+
   init = (name) => {
     const token = isAuthenticated().token
     read(name, token)
-      .then(data => {
-        if (data.error) {
-          this.setState({ redirectToSignin: true })
-        } else {
-          // let following = this.checkFollow(data)
-          this.setState({ user: data }) //following
-          this.setState({ loading: false })
-          this.loadPosts(data.username)
-        }
-      })
+    .then(data => {
+      if (data.error) {
+        this.setState({ redirectToSignin: true })
+      } else {
+        let following = this.checkFollow(data)
+        this.setState({ user: data, following })
+        this.setState({ loading: false})
+        this.loadPosts(data.username)
+      }
+    })
   }
 
   loadPosts = name => {
@@ -102,8 +107,15 @@ class Profile extends Component {
                     }
 
                 </div>
+
                 <div className='invisible sm:visible sm:float-right mt-40'>
-                    <button className='border-purple ul-purple bg-white px-2 py-3 text-white md:absolute mt-24 right-0'>  <Link className="" to={`/edit/${isAuthenticated().user.username}`}>Edit Profile</Link></button>
+                  {isAuthenticated().user && isAuthenticated().user.id === user.id ?
+                    <button className='border-purple ul-purple bg-white px-2 py-3 text-white md:absolute mt-24 right-0'><Link className="" to={`/edit/${isAuthenticated().user.username}`}>Edit Profile</Link></button>
+                  :
+                  <div style={{display: user.fullName ? "" : "none"}}>
+                  <FollowButton following={this.state.following} onButtonClick={this.clickFollow} />
+                 </div>
+                }
                     </div>
          
   
