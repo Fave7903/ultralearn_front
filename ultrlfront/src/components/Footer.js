@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
     </div>
     <div className="sm:flex sm:items-center sm:justify-between  text-xl">
-        <span className=" sm:text-center ul-purple ">© 2022 <a href="https://flowbite.com/" className="">UltraLearn Inc. All rights reserved</a>
+        <span className=" sm:text-center ul-purple ">© 2022 <a href="" className="">UltraLearn Inc. All rights reserved</a>
         </span>
         <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
             <a href="https://www.facebook.com/profile.php?id=100081860272267" className="">
