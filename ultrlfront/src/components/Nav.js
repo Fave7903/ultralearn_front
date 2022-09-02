@@ -38,7 +38,7 @@ const Nav = (hasnotif = true) => {
                 <a href="/contact" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
               </li>
               <li>
-                <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Skills</a>
+                <a href="/findpeople" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Friends</a>
               </li>
             </ul>
           </div>

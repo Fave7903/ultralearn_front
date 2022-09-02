@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom'
 import { Errormsg } from './errormsg'
 import { Authsidebar } from './authsidebar'
 import bgimage from "../assets/signinimage.png"
+import google from "../assets/google icon.png"
+
 
 
 
@@ -110,9 +112,17 @@ class Signin extends Component {
                   </div>
 
                   <div class="my-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    <div className=''>
+                      <span>
+                      <label class="block text-gray-700 text-sm font-bold -mb-5" for="password">
                       Password
                     </label>
+                      </span>
+                      <span className='float-right'>
+                      <p className='forgot-password ul-purple text-sm font-bold float-right mb-2'>
+                    <Link to="/verification" style={{ color: "#460273" }} className="fw-bold">Forgot Password?</Link></p>
+                      </span>
+                    </div>
                     <input
                       onChange={this.handleChange("password")}
                       type={toggler}
@@ -142,8 +152,18 @@ class Signin extends Component {
                       Log In
                     </button> 
                   </div>
+                  <div className="fonts-15 mt-10 mb-5  text-center pt-5 sm:pt-3">
+                    Or continue with
+                  </div>
 
-                  <div className="fonts15 mb-3">
+                  <div className='flex justify-center mb-10 gap-10 space-x-10'>                    
+                  <div className="h-10 w-10 grid grid-cols-4 bg-no-repeat bg-contain" style={{ backgroundImage:`url(${google})` }} ></div>
+                  {/* <div className="h-10 w-10 grid grid-cols-4 bg-no-repeat bg-contain" style={{ backgroundImage:`url(${twitterc})` }}></div>
+                  <div className="h-20 w-15 grid grid-cols-4 bg-no-repeat bg-contain" style={{ backgroundImage:`url(${facebook})` }}></div> */}
+
+                  </div>
+
+                  <div className="fonts15 mb-3 text-center">
                     Don't have an account?&nbsp;&nbsp;
                     <Link to="/signup" style={{ color: "#460273" }} className="fw-bold">Signup</Link>
                   </div>

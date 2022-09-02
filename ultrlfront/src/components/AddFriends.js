@@ -6,7 +6,7 @@ import Nav from './Nav'
 import avatar from "../assets/avatar.jpg"
 import {Image} from 'cloudinary-react'
 
-class FindPeople extends Component {
+class AddFriends extends Component {
   constructor() {
     super()
     this.state = {
@@ -61,23 +61,26 @@ class FindPeople extends Component {
               return false
             }
           }).map((user, i) => (
-            <div className="px-2 sm:px-16 flex grid grid-cols-2 sm:grid grid-cols-3 mb-8" key={i}>
+            <div className="px-2 sm:px-16  mt-20 flex grid grid-cols-2 sm:grid grid-cols-3 mb-8" key={i}>
   <div className="">
   {user.imgId ? <Image cloudName="favoursoar" publicId={user.imgId} style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%', borderColor: "purple"}}/> :
           <img src={avatar}alt="Avatar" className=" invisble sm:visible rounded-full"style={{color: "#460273", width: "100px",height:"100px"}}/>
           }
   </div>
-  <Link to={`/users/${user.username}`} className=" text-dark text-1xl sm:text-2xl" ><h5 className="">{user.fullName}</h5></Link>
+  <span><Link to={`/users/${user.username}`} className=" text-dark text-1xl sm:text-2xl" ><p className="">{user.fullName}</p></Link> <p className="text-dark text-1xl">Product Design</p></span>
+
+
+
   <div className=''>
     <button style={{backgroundColor: "#460273", color: "white"}} onClick={() => this.clickFollow(user, i)} className=' float-right py-4 px-8'>Follow</button>
     </div>
 </div>
           ))}
-                  <div className="-mb-10 sm:mb-8  " >
+                  <div className="mb-20 sm:mb-8  " >
           <div className="input-group-prepend">
             <span className="input-group-text" id="basic-addon1"><i className="fas fa-search"></i></span>
           </div>
-          <h1 className='ml-16 sm:ml-14 mb-2 text-1xl sm:text-2xl ul-purple font-bold'>Add Via Email</h1>
+          <h1 className='ml-16 sm:ml-14 mb-2 my-4 text-1xl sm:text-2xl ul-purple font-bold'>Add Via Email</h1>
           <input type="search" style={{ width:"62vw"}}className="w-100 sm:w-auto bg-slate-400 h-16 ml-16 sm:ml-14 px-4 sm:px-6 py-5 text-1xl  border border-black-300  border rounded-md"onChange={ event => {
             this.setState({ searchTerm: event.target.value})}} placeholder="Add Friends"></input>
                  <button className=" invisible sm:visible w-48 post-bgpurple h-16 text-white  justify-center  px-6 py-5 font-medium text-1xl  border border-gray-300 rounded-md shadow-sm  ">Add</button>
@@ -119,4 +122,4 @@ class FindPeople extends Component {
   }
 }
 
-export default FindPeople
+export default AddFriends

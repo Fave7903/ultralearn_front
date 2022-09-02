@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { signin, authenticate } from '../auth'
-import { Link } from 'react-router-dom'
 // import image3 from '../assets/image 3.png'
 
 import { Errormsg } from './errormsg'

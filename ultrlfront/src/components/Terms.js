@@ -3,13 +3,13 @@ import {Link} from 'react-router-dom'
 
 const Terms = () => {
   return (
-    <div>
-      <div className=" terms">
-        <div className="content w-screen"style={{backgroundColor:" #EFE9E9"}}>
+    <div >
+      <div className=" terms ">
+        <div className="content w-screen "style={{backgroundColor:" #EFE9E9"}}>
             <h1 className="text1 text-2xl w">Terms and Conditions</h1>
         </div>
         <div>
-            <ul className='list-style-type px-8 text-2xl'>
+            <ul className='list-style-type px-8 text-2xl '>
                 <li >You must be 13 years or older to use this site. </li >
                 <li >You may not post nude, partially nude, or sexually suggestive photos.</li >
                 <li > You are responsible for any activity that occurs under your screen name. </li>
@@ -32,7 +32,14 @@ const Terms = () => {
         </div>
         
       </div>
-      <div className='flex items-center mt-6 mb-3 justify-center'> <button className='my-2 mx-auto'> <Link className='text-white sgnbut' to='/signup'>Sign up</Link></button></div>
+      <div className='flex items-center gap-12 mt-6 mb-3 justify-center'> 
+      <span>
+      <button className='my-2 mx-auto'> <Link className='text-white sgnbut py-3' to='/signup'>Agree</Link></button>
+      </span>
+      <span>
+      <button className='my-2 mx-auto'style={{backgroundColor:"white"}}> <Link className='ul-purple border-purple px-8 py-2.5' to='/signup'>Cancel</Link></button>        
+      </span>
+     </div>
      
     </div>
   )

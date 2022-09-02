@@ -51,20 +51,20 @@ class SingPost extends Component {
         </div> : ""}
         
         <div>
-          <div className="card mb-2" style={{boxShadow: "2px 5px #5f0f40"}}>
+          <div className="card mb-2" style={{boxShadow: "2px 5px #460273"}}>
   <div className="card-body">
    <div className="card-title"> 
-     <Link className="d-flex mx-2 mb-0" to={`/ul/${postedBy.username}`}>
+     <Link className="d-flex mx-2 mb-0" to={`/users/${postedBy.username}`}>
     
        {postedBy.imgId ? <Image cloudName="favoursoar" publicId={postedBy.imgId} style={{width: '50px', height: '50px', objectFit: 'cover', borderRadius: '50%'}}/> :
-          <i className="fa-solid fa-user mx-3" style={{color: "#5f0f40", fontSize: "50px"}}></i>
+          <i className="fa-solid fa-user mx-3" style={{color: "#460273", fontSize: "50px"}}></i>
           }
       <div className="mx-2">
-       <p className="fw-bold lead mb-0" style={{color: "#5f0f40"}}>{postedBy.fullName}</p><p className="font-italic" style={{color: "#5f0f40"}}>{postedBy.username}</p>
+       <p className="fw-bold lead mb-0" style={{color: "#460273"}}>{postedBy.fullName}</p><p className="font-italic" style={{color: "#460273"}}>{postedBy.username}</p>
         </div>
      </Link>
-     <p style={{color: "#5f0f40", display: post.created ? "" : "none"}} className="mb-1">Posted on {new Date(post.created).toDateString()}</p>
-     <hr style={{color: "#5f0f40"}}></hr>
+     <p style={{color: "#460273", display: post.created ? "" : "none"}} className="mb-1">Posted on {new Date(post.created).toDateString()}</p>
+     <hr style={{color: "#460273"}}></hr>
    </div>
              <p className="card-text">{post.body}</p>
     {post.postImgId &&
