@@ -1,7 +1,9 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
-
+import {Link, Redirect} from 'react-router-dom'
+import { isAuthenticated } from '../auth'
+import { signout } from '../auth'
 
 
 export default function Example() {
@@ -39,64 +41,25 @@ export default function Example() {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="/"
+                <Link
+                  to={`/users/${isAuthenticated().user.username}`}
                   className='ul-purple
                     block px-4 py-2 text-sm'
                 >Profile
-                </a>
+                </Link>
               )}
             </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="/"
-                  className='ul-purpleblock px-4 py-2 text-sm'
-                >Communities
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="/"
-                  className=' ul-purple block px-4 py-2 text-sm'
-                >Accomplishments
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-                {({ active }) => (
-                  <button
-                    type="submit"
-                    className='ul-purple block w-full px-4 py-2 text-left text-sm'
-                  >
-                    Help Center
-                  </button>
-                )}
-              </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <button
-                    type="submit"
-                    className=
-                      'ul-purple block w-full px-4 py-2 text-left text-sm'
-                  >Settings
-                  </button>
-                )}
-              </Menu.Item>
-            <form method="POST" action="/">
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    type="submit"
+                  <Link
+                    to='/signin'
                     className='ul-purple block w-full px-4 py-2 text-left text-sm'
+                    onClick={() => signout(() => <Redirect to={"/signin"} />)}
                   >
                     Log Out 
-                  </button>
+                  </Link>
                 )}
               </Menu.Item>
-            </form>
           </div>
         </Menu.Items>
       </Transition>

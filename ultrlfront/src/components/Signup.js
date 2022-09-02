@@ -8,6 +8,7 @@ import { Authsidebar } from './authsidebar'
 import { Errormsg } from './errormsg'
 import Bgimage from "../assets/signupimage.png"
 import google from "../assets/google icon.png"
+import { Loading } from './Loading'
 
 class Signup extends Component {
   constructor() {
@@ -89,11 +90,7 @@ class Signup extends Component {
               
       
 
-           {loading ?  <div class="flex items-center justify-center space-x-2 animate-bounce">
-    <div class="w-8 h-8 bg-purple-300 rounded-full"></div>
-    <div class="w-8 h-8 bg-purple-600 rounded-full"></div>
-    <div class="w-8 h-8 bg-purple-900 rounded-full"></div>
-</div> : ""}
+           {loading ?  <Loading /> : ""}
               
 
               <div style={{ display: open ? "" : "none" }}>

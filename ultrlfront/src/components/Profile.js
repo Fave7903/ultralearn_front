@@ -12,6 +12,7 @@ import avatar from "../assets/avatar.jpg"
 import FollowButton from './FollowButton'
 import Arrow from "../assets/Arrow.svg"
 import Share from "../components/share"
+import { Loading } from './Loading'
 
 class Profile extends Component {
   constructor() {
@@ -134,11 +135,9 @@ class Profile extends Component {
               <div className='flex'><img style={{ width: "25px", height: "25px" }} className=" rounded-full border border-gray-100 shadow-sm image-fluid " src={addLocation} alt="user " /> <p style={{ display: user.location ? "" : "none", color: "#460273" }}> {` ${user.location}, Nigeria`}</p></div>
 
               <div className='flex'><img src={date } alt=""style={{ width: "25px", height: "21px" }} className="shadow-sm image-fluid " /> <p style={{ display: user.createdAt ? "" : "none", color: "#460273" }}> {`  Joined  ${new Date(user.createdAt).toDateString()}`} </p></div>
-              {user.followers_len === 1 ? <p className="fw-bold" style={{color: "#460273" }}>{`${user.followers_len} Follower  ${user.following_len} Following`}</p>
-
-                :
-                <p className="" style={{color: "#460273" }}>{`${user.followers_len} Followers, ${user.following_len} Following`}</p>
-              }
+              {user.fullName ? <p className="" style={{color: "#460273" }}>{`${user.followers_len} Followers ${user.following_len} Following`}</p>
+: <Loading />}
+              
             </div> 
             <hr style={{ height: '10px',width:"100%", backgroundColor: '#460273' }}></hr>
 

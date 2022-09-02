@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { isAuthenticated } from '../auth'
 import { read, update } from './apiUser'
-import {Redirect} from 'react-router-dom'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import Axios from 'axios'
 import avatarImage from "../assets/avatar.jpg"
 import camera from "../assets/Camera.png"
 import Arrow from "../assets/Arrow 2.png"
+import {signout} from '../auth'
 
 
 class EditProfile extends Component {
@@ -24,7 +24,6 @@ class EditProfile extends Component {
       gender: "",
       bio: "",
       skillInterests: "",
-      loading: false,
       redirectToProfile: false,
       imageSelected: "",
       imgId: ""
@@ -128,7 +127,7 @@ class EditProfile extends Component {
   
   
   render() {
-    const {fullName, username, email, error, bio, skillInterests, redirectToProfile,  location, loading} = this.state
+    const {fullName, username, email, error, bio, skillInterests, redirectToProfile,  location} = this.state
 
     if (redirectToProfile) {
       return <Redirect to={`/users/${isAuthenticated().user.username}`}></Redirect>
@@ -164,11 +163,7 @@ class EditProfile extends Component {
         </div>
 
 
-        {loading ? <div className="jumbotron text-center">
-          <div className="spinner-border text-primary" role="status">
-  <span className="sr-only">Loading...</span>
-</div>
-        </div> : ""}
+  
 
         <form className='mt-8'>
           <div className=''>
@@ -176,20 +171,16 @@ class EditProfile extends Component {
           <div className='block block md:grid grid-cols-6 gap-0'>
           <div className='-mt-42 sm:mt-12 -mb-28 sm:mb-0'>
             <ul className=''>
-              <li><a href='/'className='ul-purple font-bold text-2xl lg:font-1xl mt-10 sm:mt-0 w-full py-6'>Edit Profile</a></li>
-              <li><a href='/'className='ul-purple sm:visible invisible '>Notifications</a></li>
-              <li><a href='/'className='ul-purple  sm:visible invisible '>Social Profiles</a></li>
-              <li><a href='/'className='ul-purple  sm:visible invisible'>Privacy Policy</a></li>
-              <li><a href='/'className='ul-purple  sm:visible invisible'>Terms of Services</a></li>
-              <li><a href='/'className='ul-purple  sm:visible invisible '>Support</a></li>
-              <li><a href='/'className='text-red-500  sm:visible invisible'>Log Out</a></li>
+              <li className='ul-purple font-bold text-2xl lg:font-1xl mt-10 sm:mt-0 w-full py-6'>Edit Profile</li>
+              <li><a href='/terms'className='ul-purple  sm:visible invisible'>Terms of Services</a></li>
+              <li><Link to='/signin'className='text-red-500  sm:visible invisible' onClick={() => signout(() => <Redirect to={"/signin"} />)}>Log Out</Link></li>
             </ul>
           </div>
           <div className=' -mt-30 md:mt-0 col-span-6 md:col-span-5'>
             <div className=' block md:grid grid-cols-2 mb-5 '>
             <div className="mr-2 md:-mr-70">
                     <label className="block text-sm font-bold mb-2 ul-purple" for="Firstname">
-                      First Name
+                      Full Name
                     </label>
                     <input className=" border-purple mb-2 shadow appearance-none h-11 border rounded w-full w-3/4 md:w-2/4 py-2 px-3 ul-purple leading-tight focus:outline-none focus:shadow-outline"
                       onChange={this.handleChange("fullName")}
@@ -197,7 +188,7 @@ class EditProfile extends Component {
                   </div>
                   <div className="-ml-0 md:-ml-24">
                     <label class="block  text-sm font-bold mb-2 ul-purple" for="lastname">
-                      Last Name
+                      Username
                     </label>
                     <input className="border-purple ul-purple shadow appearance-none border h-11 rounded w-full md:w-2/4 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                       onChange={this.handleChange("username")}

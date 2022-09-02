@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
 import { Menu} from "@headlessui/react";
 import avatarImage from "../assets/avatar.jpg"
-import camera from "../assets/Camera.png"
 import uploadphoto from "../assets/Upload Photo.png"
 import uploadfile from "../assets/Upload File.png"
-import addlocation from "../assets/Add Location.png"
 import { isAuthenticated } from '../auth'
 import { create, list } from '../posts/apiPost'
 import {Image} from 'cloudinary-react'
@@ -89,7 +87,7 @@ export default class DropdownComponent extends Component {
         
       }
     render() {
-    const {body} = this.state
+    const {body, postImgId} = this.state
     return (
         <div>
                     <div className="flex mb-4">
@@ -122,10 +120,12 @@ export default class DropdownComponent extends Component {
                  <button className=" w-78 post-bgpurple h-16 text-white ml- inline-flex justify-center  px-6 py-4 text-sm font-medium text-2xl  border border-gray-300 rounded-md shadow-sm  " onClick={this.clickSubmit}>Post</button>
             </div>
             <div className="ml-4 sm:ml-44 flex -mt-6 mb-6">
-                 <img src={camera}alt ="UploadImage"className="mr-2 w-4 h-5"/>
-                 <img src ={uploadphoto} className = "mr-2 w-5 h-5"alt="UploadPhoto"/>
-                 <img src ={uploadfile} className = "mr-2 w-5 h-5" alt="UploadFile"/>
-                 <img src ={addlocation} className = "mr-2 w-5 h-5"alt="Add Location"/>
+            <input style={{display: "none"}} ref={fileInput => this.fileInput = fileInput} type="file" onChange={(event) => {this.setState({imageSelected: event.target.files[0]})}}/>
+                 <img style={{cursor: 'pointer'}} onClick={() => this.fileInput.click()} src ={uploadphoto} className = "mr-2 w-5 h-5"alt="UploadPhoto"/>
+                 <img style={{cursor: 'pointer'}} onClick={this.uploadImage} src={uploadfile} className = "mr-2 w-5 h-5" alt="UploadFile"/>
+                 {postImgId &&
+      <Image cloudName="favoursoar" publicId={postImgId} style={{width: "300px", height: "350px"}}/>
+             }
                  </div>
         </div>
 
