@@ -9,12 +9,9 @@ import { listByUser } from '../posts/apiPost'
 import fetchedImgSrc from "../assets/defaultcover.svg"
 import date from "../assets/date.png"
 import avatar from "../assets/avatar.jpg"
-<<<<<<< HEAD
 import FollowButton from './FollowButton'
-=======
 import Arrow from "../assets/Arrow.svg"
 import Share from "../components/share"
->>>>>>> 44d737627918f599f5966607bb06ca37fd1daa31
 
 class Profile extends Component {
   constructor() {
@@ -133,18 +130,12 @@ class Profile extends Component {
             <div className="mt-18 sm:mt-12 my-20 sm:my-0 pt-15 sm:pt-9  mb-10 sm:mb-4 mx-24 sm:mx-40"> 
            <h1 className="font-bold text-3xl fw-bolder  mt-3" style={{ color: "#460273" }}>{user.fullName}</h1>
               <p className="font-bold" style={{ color: "#460273" }}>{user.bio}</p>
-<<<<<<< HEAD
+
               <div className='flex'><img style={{ width: "25px", height: "25px" }} className=" rounded-full border border-gray-100 shadow-sm image-fluid " src={addLocation} alt="user " /> <p style={{ display: user.location ? "" : "none", color: "#460273" }}> {` ${user.location}, Nigeria`}</p></div>
 
               <div className='flex'><img src={date } alt=""style={{ width: "25px", height: "21px" }} className="shadow-sm image-fluid " /> <p style={{ display: user.createdAt ? "" : "none", color: "#460273" }}> {`  Joined  ${new Date(user.createdAt).toDateString()}`} </p></div>
               {user.followers_len === 1 ? <p className="fw-bold" style={{color: "#460273" }}>{`${user.followers_len} Follower  ${user.following_len} Following`}</p>
 
-              
-=======
-              <div className='flex'><img style={{ width: "25px", height: "25px" }} className=" rounded-full border border-gray-100 shadow-sm image-fluid " src={addLocation} alt="user " /> <div className="pl-2" style={{ display: user.location ? "" : "none", color: "#460273" }}> {` ${user.location}, Nigeria`}</div></div>
-              <div className='flex'><img src={date } alt=""style={{ width: "25px", height: "21px" }} className="shadow-sm image-fluid " /> <div className="pl-2" style={{ display: user.created ? "" : "none", color: "#460273" }}> {`   Joined  ${new Date(user.created).toDateString()}`} </div></div>
-              {user.followers.length === 1 ?  <Link to={`/followers}`} ><img style={{ width: "30px", height: "20px" }} src={Arrow}className="relativemr-20"alt ="Arrow"/><p className="fw-bold" style={{ display: user.followers ? "" : "none", color: "#460273" }}>{`${user.followers.length} Follower  ${user.following.length} Following`}</p></Link>
->>>>>>> 44d737627918f599f5966607bb06ca37fd1daa31
                 :
                 <p className="" style={{color: "#460273" }}>{`${user.followers_len} Followers, ${user.following_len} Following`}</p>
               }

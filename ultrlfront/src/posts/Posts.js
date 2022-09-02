@@ -68,19 +68,13 @@ class Posts extends Component {
  
                 </div>
                 <div className='col-span-3'>
-<<<<<<< HEAD
-                  <div className='flex '>
-                  <h2 className='font-bold mr-74'>Posted {new Date(post.createdAt).toDateString()}</h2>
-                  <div className='flex float-right right-0'>  <Verticalicon/></div>
-=======
                   <div className=''>
                     <span>
-                    <h2 className='font-bold mr-74'>Posted on {new Date(post.created).toDateString()}</h2>
+                    <h2 className='font-bold mr-74'>Posted on {new Date(post.createdAt).toDateString()}</h2>
                     </span>
                     <span>
                     <div className='-mt-15 float-right '>  <Verticalicon/></div>
                     </span>
->>>>>>> 44d737627918f599f5966607bb06ca37fd1daa31
 
                   </div>
                   
