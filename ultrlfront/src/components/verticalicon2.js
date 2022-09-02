@@ -53,9 +53,9 @@ export default function LongMenu() {
           },
         }}
       > 
-      <Link to="/share"> <MenuItem style={{ color: '#460273' }}        className="bg-purple-100">
+      {/* <Link to="/share"> <MenuItem style={{ color: '#460273' }}        className="bg-purple-100">
             <div  className="flex">Share Post <img alt="Icon"className="mx-2"style={{width:"20px",height:"20px"}}src={SharePost}/></div>
-          </MenuItem></Link>
+          </MenuItem></Link> */}
           <Link to="/edit">
           <MenuItem style={{ color: '#460273' }}id="">
             <div className="flex">Edit Post <img alt="Icon" className="mx-5" style={{width:"20px",height:"20px"}}src={EditPost}/></div>
@@ -64,9 +64,9 @@ export default function LongMenu() {
           <Link to="/delete"> <MenuItem style={{ color: '#460273' }}id="delete"data-dropdown-toggle="popupdelete">
             <div className="flex">Delete Post <img alt="Icon" className="mx-2" style={{width:"20px",height:"20px"}}src={DeletePost}/></div>
           </MenuItem></Link>
-          <Link> <MenuItem style={{ color: '#460273' }}>
+          {/* <Link> <MenuItem style={{ color: '#460273' }}>
             <div className="flex">Report Post <img alt="Icon" className="mx-2" style={{width:"20px",height:"20px"}}src={ReportPost}/></div>
-          </MenuItem></Link>
+          </MenuItem></Link> */}
       </Menu>
     </div>
   );

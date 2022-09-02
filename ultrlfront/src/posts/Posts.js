@@ -9,6 +9,8 @@ import avatarImage from "../assets/avatar.jpg"
 import Verticalicon from "../components/verticalicon"
 import Explore from '../components/Explore'
 import { Loading } from '../components/Loading'
+import {isAuthenticated} from '../auth'
+
 
 class Posts extends Component {
   constructor() {
@@ -37,6 +39,7 @@ class Posts extends Component {
   }
 
   renderPosts = (posts) => {
+    const userId = isAuthenticated().user._id
 
     console.log(posts)
     return (
@@ -74,7 +77,9 @@ class Posts extends Component {
                     <h2 className='font-bold mr-74'>Posted on {new Date(post.createdAt).toDateString()}</h2>
                     </span>
                     <span>
-                    <div className='-mt-15 float-right '>  <Verticalicon/></div>
+                    {/* <div className='-mt-15 float-right '>  <Verticalicon/></div> */}
+                    { ( userId == post.user.id)? <div className='-mt-15 float-right '>  <Verticalicon/> </div>:  ""}
+
                     </span>
 
                   </div>

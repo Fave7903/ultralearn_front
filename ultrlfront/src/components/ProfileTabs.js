@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom'
 import {Image} from 'cloudinary-react'
 import avatarImage from "../assets/avatar.jpg"
 import Verticalicon from "../components/verticalicon2"
+import {isAuthenticated} from '../auth'
+
 
 class ProfileTabs extends Component {
   constructor() {
@@ -15,6 +17,8 @@ class ProfileTabs extends Component {
   render() {
     //const {following, followers} = this.props
     const {posts} = this.props
+    const userId = isAuthenticated().user._id
+
     return ( 
        <div>
         
@@ -54,7 +58,7 @@ class ProfileTabs extends Component {
                     <h2 className='font-bold mr-74'>Posted on {new Date(post.createdAt).toDateString()}</h2>
                     </span>
                     <span>
-                    <div className='-mt-15 float-right '>  <Verticalicon/></div>
+                    { ( userId == post.user.id)? <div className='-mt-15 float-right '>  <Verticalicon/> </div>:  ""}
                     </span>
 
                   </div>
