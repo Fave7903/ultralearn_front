@@ -19,7 +19,7 @@ const Dashboard = () => {
           <Posts />
           <Footer/>
         </div>
-      : <Redirect to="/signup" />}
+      : <Redirect to="/landingpage" />}
     </div>
   );
 }

@@ -1,8 +1,6 @@
 import { Logotext } from './logotext'
 import Hamburgermenu2 from "../components/Hamburgermenu2"
 import { Link } from 'react-router-dom'
-import { isAuthenticated } from '../auth'
-
 
 
 const Nav = (hasnotif = true) => {

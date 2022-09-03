@@ -1,7 +1,5 @@
 import { useState } from "react"; 
 
-import messages from "../assets/messages.svg"
-import notification2Image from "../assets/notification2.png"
 
 
 export default function Header() {
