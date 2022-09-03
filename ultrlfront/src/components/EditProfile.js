@@ -153,7 +153,7 @@ class EditProfile extends Component {
               </div>
              
             </div>
-          <div className=' col-span-4 sm:col-span-3 '>
+          <div className=' col-span-4 sm:col-span-3 mb-4 sm:mb-0'>
           <h1 className="text-2xl -mt-0 sm:-mt-0  sm:ml-0 font-bold ul-purple ">Profile</h1>
           <p className='ul-purple text-sm mb-5 sm:mb-0'>Update your photo and personal details</p>
           </div>
@@ -176,9 +176,9 @@ class EditProfile extends Component {
           <div className=''>
             
           <div className='block block md:grid grid-cols-6 gap-0'>
-          <div className='-mt-42 sm:mt-12 -mb-28 sm:mb-0'>
+          <div className='mt-2 sm:mt-12 -mb-28 sm:mb-0'>
             <ul className=''>
-              <li className='ul-purple font-bold text-2xl lg:font-1xl mt-10 sm:mt-0 w-full py-6'>Edit Profile</li>
+              <li className='ul-purple font-bold text-2xl lg:font-1xl mb-14 sm:mt-0 w-full py-6'>Edit Profile</li>
               <li><a href='/terms'className='ul-purple  sm:visible invisible'>Terms of Services</a></li>
               <li><Link to='/signin'className='text-red-500  sm:visible invisible' onClick={() => signout(() => <Redirect to={"/signin"} />)}>Log Out</Link></li>
             </ul>
