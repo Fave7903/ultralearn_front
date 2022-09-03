@@ -216,7 +216,7 @@ class EditProfile extends Component {
           <div>
 <label for="countries" className="block text-sm font-bold mb-2 ul-purple">Gender</label>
 <select  value={gender} onChange={this.handleChange("gender")}  id="countries" className="border-purple shadow appearance-none h-11 mb-5 border rounded w-3/4 lg:w-3/4 md:w-2/4 py-2 px-3 ul-purple leading-tight focus:outline-none focus:shadow-outline">
-  <option selected="">Select Gender</option>
+  <option selected="" disabled>Select Gender</option>
   <option value="Male">Male</option>
   <option value="Female">Female</option>
 </select>
@@ -230,7 +230,7 @@ class EditProfile extends Component {
 
           <label for="countries" className="block text-sm font-bold mb-2 ul-purple">Location</label>
 <select  value={location} onChange={this.handleChange("location")}  id="countries" className="border-purple ul-purple shadow appearance-none h-11 border rounded w-3/4 lg:w-3/4 md:w-2/4 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline">
-  <option selected="">Where do you stay</option>
+  <option selected="" disabled>Where do you stay</option>
   <option value="Abia">Abia</option>
     <option value="Adamawa">Adamawa</option>
     <option value="Akwa Ibom">Akwa Ibom</option>

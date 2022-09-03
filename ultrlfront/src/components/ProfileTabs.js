@@ -48,8 +48,8 @@ class ProfileTabs extends Component {
                     <h2 className='font-semibold text-1xl sm:text-2xl'> 
                       <Link  to={`/users/${posterUser}`}> {posterFull}</Link>
                     </h2>
-                    <p className='text-sm sm:text-base'>Product Design</p>
-                    <p className='text-sm'>Lagos, Nigeria</p><br />
+                    <p className='text-sm sm:text-base'>{post.user.bio}</p>
+                    <p className='text-sm'>{post.user.location}, Nigeria</p><br />
                   </div>
       </div>
       <div className='col-span-3'>
