@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 import { Authsidebar } from './authsidebar'
 import { Errormsg } from './errormsg'
 import Bgimage from "../assets/signupimage.png"
-import google from "../assets/google icon.png"
 import { Loading } from './Loading'
 
 class Signup extends Component {
@@ -192,16 +191,16 @@ class Signup extends Component {
                       Sign Up
                     </button> 
                   </div>
-                  <div className="fonts-15 mt-10 mb-5  text-center pt-5 sm:pt-3">
+                  {/* <div className="fonts-15 mt-10 mb-5  text-center pt-5 sm:pt-3">
                     Or continue with
-                  </div>
+                  </div> */}
 
-                  <div className='flex justify-center mb-10 gap-10 space-x-10'>                    
-                  <div className="h-10 w-10 grid grid-cols-4 bg-no-repeat bg-contain" style={{ backgroundImage:`url(${google})` }} ></div>
+                  {/* <div className='flex justify-center mb-10 gap-10 space-x-10'>                    
+                  <div className="h-10 w-10 grid grid-cols-4 bg-no-repeat bg-contain" style={{ backgroundImage:`url(${google})` }} ></div> */}
                   {/* <div className="h-10 w-10 grid grid-cols-4 bg-no-repeat bg-contain" style={{ backgroundImage:`url(${twitterc})` }}></div>
                   <div className="h-20 w-15 grid grid-cols-4 bg-no-repeat bg-contain" style={{ backgroundImage:`url(${facebook})` }}></div> */}
 
-                  </div>
+                  {/* </div> */}
 
                   <div className="fonts15 mb-3 text-center">
                     Already have an account?&nbsp;&nbsp;
