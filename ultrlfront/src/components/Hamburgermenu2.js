@@ -1,6 +1,8 @@
 import { useState } from "react"; 
 import {Link} from 'react-router-dom'
 import { isAuthenticated } from '../auth'
+import { Redirect} from 'react-router-dom'
+import { signout } from '../auth'
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
@@ -51,7 +53,15 @@ export default function Header() {
               </li>
               <li>
                 <a href="/contact" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
-              </li>              
+              </li>   
+              <li>
+              <Link
+                    to='/signin'
+                    className='ul-purple block w-full px-4 py-2 text-left text-sm'
+                    onClick={() => signout(() => <Redirect to={"/signin"} />)}
+                  >
+                    Log Out 
+                  </Link></li>           
               </ul>
         
             </div>
