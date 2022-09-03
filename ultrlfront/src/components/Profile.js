@@ -109,7 +109,7 @@ class Profile extends Component {
 
                 </div>
 
-                <div className=' sm:float-right mt-40'>
+                <div className='block sm:float-right ml-24 sm:ml-0 mt-8 sm:mt-40'>
                   {isAuthenticated().user && isAuthenticated().user.id === user.id ?
                     <button className='border-purple ul-purple bg-white px-2 py-3 text-white md:absolute mt-24 right-0'><Link className="" to={`/edit/${isAuthenticated().user.username}`}>Edit Profile</Link></button>
                   :
@@ -127,7 +127,7 @@ class Profile extends Component {
             
             */}
 
-            <div className="mt-18 sm:mt-12 my-20 sm:my-0 pt-15 sm:pt-9  mb-10 sm:mb-4 mx-24 sm:mx-40"> 
+            <div className="mt-18 sm:mt-12 my-20 sm:my-0 pt-15 sm:pt-9  mb-20 sm:mb-4 mx-24 sm:mx-40"> 
            <h1 className="font-bold text-3xl fw-bolder  mt-3" style={{ color: "#460273" }}>{user.fullName}</h1>
               <p className="font-bold" style={{ color: "#460273" }}>{user.bio}</p>
 
