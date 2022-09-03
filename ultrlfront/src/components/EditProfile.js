@@ -4,7 +4,6 @@ import { read, update } from './apiUser'
 import {Link, Redirect} from 'react-router-dom'
 import Axios from 'axios'
 import avatarImage from "../assets/avatar.jpg"
-import camera from "../assets/Camera.png"
 import Arrow from "../assets/Arrow 2.png"
 import {signout} from '../auth'
 import uploadphoto from "../assets/Upload Photo.png"
@@ -129,7 +128,7 @@ class EditProfile extends Component {
   
   
   render() {
-    const {fullName, username, email, error, bio, skillInterests, redirectToProfile,  location, imgId} = this.state
+    const {fullName, username, email, error, bio, gender, skillInterests, redirectToProfile,  location, imgId} = this.state
 
     if (redirectToProfile) {
       return <Redirect to={`/users/${isAuthenticated().user.username}`}></Redirect>
@@ -212,21 +211,70 @@ class EditProfile extends Component {
                     <input className="border-purple  shadow appearance-none  ul-purple h-11 border rounded mb-5 w-3/4 lg:w-3/4 md:w-2/4 py-2 px-3 ul-purple leading-tight focus:outline-none focus:shadow-outline"
                       onChange={this.handleChange("email")}
                       type="text" id="fullName" value={email} placeholder="Email" />
-                                    <div className=" ">
-            <label className="block text-sm font-bold mb-2 ul-purple">Phone Number</label>
-             <input 
-              onChange={this.handleChange("email")} 
-              type="number"  className=" border-purple shadow appearance-none h-11 mb-5 border rounded w-3/4 lg:w-3/4 md:w-2/4 py-2 px-3 ul-purple leading-tight focus:outline-none focus:shadow-outline"value={email}>
-            </input>
-          </div>
+
+
+          <div>
+<label for="countries" className="block text-sm font-bold mb-2 ul-purple">Gender</label>
+<select  value={gender} onChange={this.handleChange("gender")}  id="countries" className="border-purple shadow appearance-none h-11 mb-5 border rounded w-3/4 lg:w-3/4 md:w-2/4 py-2 px-3 ul-purple leading-tight focus:outline-none focus:shadow-outline">
+  <option selected="">Select Gender</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+</select>
+
+</div>
+
+
+
           <div className=" mt-4 sm:mt-0">
-            <label className="block text-sm font-bold mb-2 ul-purple">Location</label>
-            <input 
-              onChange={this.handleChange("location")} 
-              type="text"  className="border-purple ul-purple shadow appearance-none h-11 border rounded w-3/4 lg:w-3/4 md:w-2/4 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"value={location}>
-            </input>
+
+
+          <label for="countries" className="block text-sm font-bold mb-2 ul-purple">Location</label>
+<select  value={location} onChange={this.handleChange("location")}  id="countries" className="border-purple ul-purple shadow appearance-none h-11 border rounded w-3/4 lg:w-3/4 md:w-2/4 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline">
+  <option selected="">Where do you stay</option>
+  <option value="Abia">Abia</option>
+    <option value="Adamawa">Adamawa</option>
+    <option value="Akwa Ibom">Akwa Ibom</option>
+    <option value="Anambra">Anambra</option>
+    <option value="Bauchi">Bauchi</option>
+    <option value="Bayelsa">Bayelsa</option>
+    <option value="Benue">Benue</option>
+    <option value="Borno">Borno</option>
+    <option value="Cross River">Cross River</option>
+    <option value="Delta">Delta</option>
+    <option value="Ebonyi">Ebonyi</option>
+    <option value="Edo">Edo</option>
+    <option value="Ekiti">Ekiti</option>
+    <option value="Enugu">Enugu</option>
+    <option value="FCT">Federal Capital Territory</option>
+    <option value="Gombe">Gombe</option>
+    <option value="Imo">Imo</option>
+    <option value="Jigawa">Jigawa</option>
+    <option value="Kaduna">Kaduna</option>
+    <option value="Kano">Kano</option>
+    <option value="Katsina">Katsina</option>
+    <option value="Kebbi">Kebbi</option>
+    <option value="Kogi">Kogi</option>
+    <option value="Kwara">Kwara</option>
+    <option value="Lagos">Lagos</option>
+    <option value="Nasarawa">Nasarawa</option>
+    <option value="Niger">Niger</option>
+    <option value="Ogun">Ogun</option>
+    <option value="Ondo">Ondo</option>
+    <option value="Osun">Osun</option>
+    <option value="Oyo">Oyo</option>
+    <option value="Plateau">Plateau</option>
+    <option value="Rivers">Rivers</option>
+    <option value="Sokoto">Sokoto</option>
+    <option value="Taraba">Taraba</option>
+    <option value="Yobe">Yobe</option>
+    <option value="Zamfara">Zamfara</option>
+</select>
+
           </div>
                   </div>
+
+
+
                   <div className="col-span-1 -ml-26">
                     <label className="block text-sm font-bold mb-2 ul-purple">Your Bio</label>
                      <textarea onChange={this.handleChange("bio")}  type="text" className="ul-purple border-purple  mb-3 h-36 rounded w-full sm:w-3/4 py-2 px-3" value={bio} placeholder="Give a short description about yourself">  </textarea>

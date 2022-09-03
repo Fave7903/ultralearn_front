@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import { Menu} from "@headlessui/react";
 import avatarImage from "../assets/avatar.jpg"
 import uploadphoto from "../assets/Upload Photo.png"
 import uploadfile from "../assets/Upload File.png"

@@ -58,7 +58,7 @@ class ProfileTabs extends Component {
                     <h2 className='font-bold mr-74'>Posted on {new Date(post.createdAt).toDateString()}</h2>
                     </span>
                     <span>
-                    { ( userId == post.user.id)? <div className='-mt-15 float-right '>  <Verticalicon/> </div>:  ""}
+                    { ( userId === post.user.id)? <div className='-mt-15 float-right '>  <Verticalicon/> </div>:  ""}
                     </span>
 
                   </div>

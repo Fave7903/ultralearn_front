@@ -11,9 +11,7 @@ import date from "../assets/date.png"
 import avatar from "../assets/avatar.jpg"
 import FollowButton from './FollowButton'
 import Arrow from "../assets/Arrow.svg"
-import Share from "../components/share"
 import { Loading } from './Loading'
-import Followers from './Followers'
 
 class Profile extends Component {
   constructor() {

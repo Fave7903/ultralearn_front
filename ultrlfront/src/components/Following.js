@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { findPeople, myfollowings } from './apiUser'
+import { myfollowings } from './apiUser'
 import {Link} from 'react-router-dom'
 import {isAuthenticated} from '../auth'
 import Arrow from "../assets/Arrow.svg"

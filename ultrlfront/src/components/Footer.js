@@ -1,5 +1,3 @@
-import appstore from "../assets/appstore.png"
-import playstore from "../assets/playstore.png"
 import facebook from "../assets/🦆 icon _facebook_.png"
 import youtube from "../assets/🦆 icon _youtube_.png"
 import linkedin from "../assets/🦆 icon _linkedin original_.png"
@@ -43,11 +41,11 @@ const Footer = () => {
                         <a href="/" className=""><img src={appstore} className=" " alt="Appstore icon" /></a>
                     </li>
                 </ul>
-            </div> */}
+            </div> */} 
         </div>
     </div>
     <div className="sm:flex sm:items-center sm:justify-between  text-xl">
-        <span className=" sm:text-center ul-purple ">© 2022 <a href="" className="">UltraLearn Inc. All rights reserved</a>
+        <span className=" sm:text-center ul-purple ">© 2022 <a href="/" className="">UltraLearn Inc. All rights reserved</a>
         </span>
         <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
             <a href="https://www.facebook.com/profile.php?id=100081860272267" className="">

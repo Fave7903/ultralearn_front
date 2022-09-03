@@ -1,12 +1,6 @@
-import { Link } from 'react-router-dom'
-// import ultra from '../assets/ultra.png'
-// import { signout } from '../auth'
 import { isAuthenticated } from '../auth'
 import { Image } from 'cloudinary-react'
 import { Logotext } from './logotext'
-import messages from "../assets/messages.svg"
-import notificationImage from "../assets/notification.png"
-import notification2Image from "../assets/notification2.png"
 import avatarImage from "../assets/avatar.jpg"
 import Hamburgermenu from "../components/Hamburgermenu"
 import Dropdown from "../components/Dropdown"
