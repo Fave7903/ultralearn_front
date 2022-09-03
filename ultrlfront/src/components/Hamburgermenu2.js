@@ -1,4 +1,6 @@
 import { useState } from "react"; 
+import {Link} from 'react-router-dom'
+import { isAuthenticated } from '../auth'
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
@@ -40,10 +42,15 @@ export default function Header() {
                 <a href="/" className="block ul-purple  py-2 pr-4 pl-3 rounded" aria-current="page">Home</a>
               </li>
               <li>
-                <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">About us</a>
+              <Link
+                  to={`/users/${isAuthenticated().user.username}`}
+                  className='ul-purple
+                    block px-4 py-2 text-sm'
+                >Profile
+                </Link>
               </li>
               <li>
-                <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
+                <a href="/contact" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
               </li>              
               </ul>
         
