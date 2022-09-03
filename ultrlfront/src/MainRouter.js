@@ -50,7 +50,7 @@ const MainRouter = () => {
       <Route exact path="/reset" component={Reset}></Route>
       <Route exact path="/successful" component={Successsful}></Route>
       <Route exact path="/editpost" component={popupedit}></Route>
-      <Route exact path="/landingpage" component={ladingpage}></Route>
+      <Route exact path="/landingpage" component={Landingpage}></Route>
     </Switch>
   );
 }
