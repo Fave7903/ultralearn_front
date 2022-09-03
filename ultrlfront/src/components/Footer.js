@@ -10,7 +10,7 @@ const Footer = () => {
     <div className=" md:justify-center ">
         <div className="grid grid-cols-4 gap-10 sm:gap-6 sm:grid-cols-3 mb-4">
             <div className="">
-
+{/* 
                 <ul className=" justify-items-start inline-block">
                     <li className="mb-4 ul-purple text-1xl font-semibold ">
                     <a href="/terms" className="ul-purple text-1xl font-semibold">Terms</a>
@@ -21,11 +21,11 @@ const Footer = () => {
                     <li>
                         <a href="/contact" className="ul-purple text-1xl font-semibold">Help</a>
                     </li>
-                </ul>
+                </ul> */}
             </div>
             <div>
                 <ul classNameName=" ">
-                    <li className="mb-4 ul-purple text-1xl font-semibold"><a href="/contact" className="">Contact Us</a></li>
+                    {/* <li className="mb-4 ul-purple text-1xl font-semibold"><a href="/contact" className="">Contact Us</a></li> */}
                     {/* <li className="mb-4 ul-purple text-1xl font-semibold">
                         <a href="/" className="">About Us</a>
                     </li> */}

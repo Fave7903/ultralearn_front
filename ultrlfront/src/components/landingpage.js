@@ -1,5 +1,8 @@
 import Nav from "./Nav3"
+<<<<<<< HEAD
 // import Nav2 from './Nav2'
+=======
+>>>>>>> 90ce7f2c2c14eb0897d2e1102af66cdce56439ed
 import React, { Component } from 'react'
 import { isAuthenticated } from '../auth'
 import {Redirect} from 'react-router-dom'
