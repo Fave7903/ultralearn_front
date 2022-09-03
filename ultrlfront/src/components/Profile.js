@@ -109,7 +109,7 @@ class Profile extends Component {
 
                 </div>
 
-                <div className='invisible sm:visible sm:float-right mt-40'>
+                <div className=' sm:float-right mt-40'>
                   {isAuthenticated().user && isAuthenticated().user.id === user.id ?
                     <button className='border-purple ul-purple bg-white px-2 py-3 text-white md:absolute mt-24 right-0'><Link className="" to={`/edit/${isAuthenticated().user.username}`}>Edit Profile</Link></button>
                   :

@@ -44,7 +44,7 @@ export default function Header() {
                 <a href="/" className="block ul-purple  py-2 pr-4 pl-3 rounded" aria-current="page">Home</a>
               </li>
               <li>
-                <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">About us</a>
+                <a href="/" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Profile</a>
               </li>
               <li>
                 <a href="/contact" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
@@ -52,8 +52,6 @@ export default function Header() {
               <li>
                 <a href="/findpeople" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Friends</a>
               </li>
-              <li className="flex"> <img style={{ width: "35px", height: "35px" }} src={messages} className="image-fluid mx-1 mt-0" alt="Message Icon" /><img style={{ width: "35px", height: "35px" }} src={notification2Image} className="image-fluid mx-1 mt-0" alt="Message Icon" /></li>
-              <li className="ul-purple py-2 pr-4 pl-2">Beomafav</li>
               
               </ul>
         
