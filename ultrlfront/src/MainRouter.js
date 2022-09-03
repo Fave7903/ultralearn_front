@@ -22,7 +22,7 @@ import ChangePassword from './components/changePassword'
 import Reset from './components/reset'
 import Successsful from './components/successful'
 import {Share} from "./components/share"
-import Landingpage from "./components/landingpage"
+import Landingpage from './components/landingpage'
 
 const MainRouter = () => {
   return (

@@ -24,9 +24,9 @@ const Nav = (hasnotif = true) => {
               <div>
               </div>
               <div className='mr-0'>
-                <a href="/" className="block ul-purple text-2xl pl-6 md:pl-16 pr-28  rounded h md:border-0 ">Contact Us</a>
+                <a href="/contact" className="block ul-purple text-2xl pl-6 md:pl-16 pr-28  rounded h md:border-0 ">Contact Us</a>
               </div>
-              <button  className="text-white px-16 py-4 text-2xl"style={{ background: "#460273"  }}>
+              <button  className="text-white px-16 py-4 text-2xl" style={{ background: "#460273"}}>
                      <Link to="https://gmail.us11.list-manage.com/subscribe/post?u=e72c886d94fcb5404e1c6460b&amp;id=ce59d1bc58&amp;f_id=00978ce0f0" >Join WaitList</Link>
                   </button>
             </div>

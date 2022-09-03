@@ -3,7 +3,7 @@ import Nav from "./Nav3"
 import React, { Component } from 'react'
 import { isAuthenticated } from '../auth'
 import {Redirect} from 'react-router-dom'
-import bgimage from "../assets/landingpage.png"
+import bgimage from '../assets/landingpage.png'
 
 
 
@@ -43,7 +43,7 @@ class Landingpage extends Component {
                 </div>
             </div>
             <div className="hidden md:block">
-        <div className=" h-full pl-10 mr-10 mx-auto col-span-1 bg-no-repeat bg-contain "style={{ backgroundImage:`url(${bgimage})` }}></div>
+        <div className=" h-full  mx-auto col-span-1 bg-no-repeat bg-contain "style={{ backgroundImage:`url(${bgimage})` }}></div>
             </div>
 
         </div>
