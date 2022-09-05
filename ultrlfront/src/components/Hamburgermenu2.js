@@ -41,23 +41,23 @@ export default function Header() {
               </svg>
               <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
-                <a href="/" className="block ul-purple  py-2 pr-4 pl-3 rounded" aria-current="page">Home</a>
+                <a href="/" className="block ul-purple  py-2 pr-4 pl-3 " aria-current="page">Home</a>
               </li>
               <li>
               <Link
                   to={`/users/${isAuthenticated().user.username}`}
                   className='ul-purple
-                    block px-4 py-2 text-sm'
+                    block px-4 py-2 pl-3 text-sm'
                 >Profile
                 </Link>
               </li>
               <li>
-                <a href="/contact" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
+                <a href="/contact" className="block ul-purple  py-2 pr-4 pl-3  ">Contact Us</a>
               </li>   
               <li>
               <Link
                     to='/signin'
-                    className='ul-purple block w-full px-4 py-2 text-left text-sm'
+                    className='text-red block pr-4 py-2 pl-3 '
                     onClick={() => signout(() => <Redirect to={"/signin"} />)}
                   >
                     Log Out 

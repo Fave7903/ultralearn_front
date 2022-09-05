@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { signin, authenticate } from '../auth'
 // import image3 from '../assets/image 3.png'
-
-import { Errormsg } from './errormsg'
 import Nav from "../components/Nav"
 import bgimage from "../assets/contactbgimage.png"
 
@@ -18,45 +15,16 @@ class Contact extends Component {
       email: "",
       fullName: "",
       message:"",
-      error: "",
       redirectToReferer: false,
       loading: false,
 
     }
   }
   handleChange = name => event => {
-    this.setState({ error: "" })
     this.setState({ [name]: event.target.value })
   }
-
-  
-
-
-  clickSubmit = event => {
-    event.preventDefault()
-    window.scrollTo(0, 0)
-    this.setState({ loading: true })
-    const { email } = this.state
-    const user = {
-      email
-    }
-    signin(user)
-      .then(data => {
-        if (data.error) {
-          this.setState({ error: data.error, loading: false })
-        }
-        else {
-          authenticate(data, () => {
-            this.setState({ redirectToReferer: true })
-          })
-        }
-      })
-  }
-
-
-
   render() {
-    const { email, fullName, error,message, redirectToReferer, loading} = this.state
+    const { email, fullName,message, redirectToReferer, loading} = this.state
     if (redirectToReferer) {
       return <Redirect to="/" />
     }
@@ -70,7 +38,6 @@ class Contact extends Component {
 
 <div className='col-span-2 md:col-span-1 md:h-full flex flex-col' >
   <div className='my-auto mt-1 pt- p-6'>
- <Errormsg error={error} style={{ display: error ? "" : "none" }} />
 
     {loading ?  <div class="flex items-center justify-center space-x-2 animate-bounce">
 <div class="w-8 h-8 bg-purple-300 rounded-full"></div>
