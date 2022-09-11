@@ -113,7 +113,7 @@ class Signin extends Component {
                   <div class="my-4">
                     <div className=''>
                       <span>
-                      <label class="block text-gray-700 text-sm font-bold -mb-5" for="password">
+                      <label class="block  text-sm font-bold mb-2" for="password">
                       Password
                     </label>
                       </span>

@@ -139,7 +139,7 @@ class Signup extends Component {
                   <div className="my-6">
                   <div className=''>
                       <span>
-                      <label class="block text-gray-700 text-sm font-bold -mb-5" for="password">
+                      <label class="block text-sm font-bold mb-2" for="password">
                       Password
                     </label>
                       </span>

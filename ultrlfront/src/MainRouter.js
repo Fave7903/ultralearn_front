@@ -22,7 +22,8 @@ import ChangePassword from './components/changePassword'
 import Reset from './components/reset'
 import Successsful from './components/successful'
 import {Share} from "./components/share"
-import Landingpage from './components/landingpage'
+import Comment from "./posts/Comments"
+
 
 const MainRouter = () => {
   return (
@@ -50,7 +51,7 @@ const MainRouter = () => {
       <Route exact path="/reset" component={Reset}></Route>
       <Route exact path="/successful" component={Successsful}></Route>
       <Route exact path="/editpost" component={popupedit}></Route>
-      <Route exact path="/landingpage" component={Landingpage}></Route>
+      <Route exact path ="/comment" component={Comment}></Route>
     </Switch>
   );
 }
