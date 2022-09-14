@@ -6,7 +6,7 @@ import twitter from "../assets/🦆 icon _twitter_.png"
 
 const Footer = () => {
     return (
-<footer className="p-4 bg-white sm:p-6 ">
+<footer className="p-4 sm:p-6 ">
     <div className=" md:justify-center ">
         <div className="grid grid-cols-4 gap-10 sm:gap-6 sm:grid-cols-3 mb-4">
             <div className="">

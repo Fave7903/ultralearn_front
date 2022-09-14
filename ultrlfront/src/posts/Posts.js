@@ -53,7 +53,7 @@ class Posts extends Component {
           return (
             <>
 
-              <div className='post-bgpurple w-full px-2 sm:px-7 py-8 mb-4 text-white grid grid-cols-5 gap-5 sm:gap-4'>
+              <div className='post-bgpurple marginals px-2 sm:px-7 py-8 mb-4 grid grid-cols-5 gap-5 sm:gap-4' style={{color: '#460273'}}>
                 <div className='col-span-2 flex flex-row'>
                   <Link className="d-flex mx-2 mb-0" to={`/users/${posterUser}`}> {post.user.imgId ? <Image cloudName="favoursoar" className="rounded-full" publicId={post.user.imgId} style={{ width: '100px', height: '100px', objectFit: 'cover', }} /> :
                     <img style={{ width: "100px", height: "100px" }} className="sm:visible invisible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src={avatarImage} alt="user " />
@@ -64,7 +64,7 @@ class Posts extends Component {
                       <Link  to={`/users/${posterUser}`}> {posterFull}</Link>
                     </h2>
                     <p className='text-sm sm:text-base'>{post.user.bio}</p>
-                    <p className='text-sm'>{post.user.location}, Nigeria</p><br />
+                    <p className='text-sm' style={{display: post.user.location ? "" : "none"}}>{post.user.location}, Nigeria</p><br />
                   </div>
  
                 </div>
@@ -81,7 +81,7 @@ class Posts extends Component {
 
                   </div>
                   
-                {post.body.length > 150 && this.state.more ? <p className="card-text">{post.body.substring(0, 150)}...<span style={{ cursor: "pointer", color: "/5f0f40" }} onClick={() => this.setState({ more: !this.state.more })}>see more</span></p> : <p className="card-text">{post.body}</p>}
+                {post.body.length > 150 && this.state.more ? <p className="">{post.body.substring(0, 150)}...<span style={{ cursor: "pointer", color: "/5f0f40" }} onClick={() => this.setState({ more: !this.state.more })}>see more</span></p> : <p className="card-text">{post.body}</p>}
                   {post.postImgId &&
                     <div className="mt-6" style={{ backgroundColor: "white", width: '100%', height: '350px' }}>
                       <Image cloudName="favoursoar" className="sm:visible invisible"publicId={post.postImgId} style={{ objectFit: 'contain', width: "100%", height: "100%" }} />
@@ -119,7 +119,7 @@ class Posts extends Component {
           <NewPost updatePosts={this.updatePosts} />
         </div>
          */}
-        <div className=''>
+        <div className='post-back'>
           {loading ? <Loading /> : ""}
 
 

@@ -13,7 +13,7 @@ const Dashboard = () => {
     <div>
       
       {isAuthenticated() ?
-        <div>
+        <div className='post-back smallNav'>
           <Nav />
           
           <Posts />

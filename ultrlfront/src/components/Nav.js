@@ -14,16 +14,16 @@ const Nav = (hasnotif = true) => {
 
 
 
-      <nav className="bg-white px-4 py-2.5 rounded ">
-        <div className="container flex flex-wrap justify-between items-center mx-auto">
+      <nav className="px-4 py-2.5 rounded post-back ">
+        <div className="container flex flex-wrap justify-between items-center mx-auto post-back">
           <a href="/" className="flex items-center">
             <Logotext small={true} />
           </a>
           < Hamburgermenu />
-          <div className="md:block md:w-auto lg:flex hidden" id="navbar-default">
-            <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <div className="md:block md:w-auto lg:flex hidden post-back" id="navbar-default">
+            <ul className="post-back flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
-                <a href="/" className="block ul-purple  py-2 pr-4 pl-3 rounded" aria-current="page">Home</a>
+                <a href="/" className="post-back block ul-purple  py-2 pr-4 pl-3 rounded" aria-current="page">Home</a>
               </li>
               <li>
                 <a href="/findpeople" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Find Friends</a>

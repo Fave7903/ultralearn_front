@@ -3,6 +3,31 @@
 @tailwind components;
 @tailwind utilities;
 
+.post-back {
+    background-color: #f1eded;
+}
+
+.ourcolor {
+    color: #460273;
+}
+@media screen and (min-width: 550px) {
+    .marginals {
+        margin-left: 150px;
+        margin-right: 150px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        box-shadow: 2px 2px 2px 2px rgb(209, 207, 207);
+    } 
+}
+@media screen and (max-width: 480px) {
+    .marginals {
+       width: 100%;
+    } 
+    .smallNav {
+        width: 100%;
+    }
+}
 .sgnbut {
     background-color: #460273;
     padding-left: 33px;
@@ -63,10 +88,11 @@ padding: 2VW
 .ul-purple{
     color: 
     #460273;
+    background-color: #f1eded;
 }
 .post-bgpurple{
     background-color: 
-    #460273
+    #fff
 }
 .greytext{
     color: #3C3B3B;

@@ -98,7 +98,7 @@ export default class DropdownComponent extends Component {
     render() {
     const {body, postImgId, user} = this.state
     return (
-        <div>
+        <div className='post-back'>
                     {/* <div className="flex mb-4">
              <Menu as="div" className="col-span-4 relative inline-block text-left">
             <div className="">
@@ -112,10 +112,10 @@ export default class DropdownComponent extends Component {
                 <input type="text" style={{ width:"61vw"}} className="invisible sm:visible w-80 sm:w-auto sm:ml-20 -ml-36 px-0 sm:px-4 py-0 sm:py-5 text-1xl bg-neutral-900 border rounded-md" placeholder="What are your interests?"></input>
             </div>
         </div> */}
-        <div className="-mt-17 sm:mt-6 mb-8 ">
+        <div className="-mt-17 sm:mt-6 mb-8 post-back">
                 {user.username && <h1 className="text-3xl ml-4 mt-10 sm:ml-14">{`Welcome back ${user.username}!`} </h1>}
             </div>
-            <div className="flex ml-12">
+            <div className="flex ml-12 post-back">
                 {user.imgId? <Image cloudName="favoursoar" publicId={user.imgId} className="invisible sm:visible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0"
                     style={{ width: "100px", height: "100px" }} /> : <img style={{ width: "100px", height: "100px" }} className="invisible sm:visible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src ={avatarImage} alt="user"></img>}
 
@@ -126,7 +126,7 @@ export default class DropdownComponent extends Component {
                 placeholder="Tell us something"
                 onChange={this.handleChange("body")}
                 value={body}></input>
-                 <button className=" w-78 post-bgpurple h-16 text-white ml- inline-flex justify-center  px-6 py-4 text-sm font-medium text-2xl  border border-gray-300 rounded-md shadow-sm  " onClick={this.clickSubmit}>Post</button>
+                 <button className=" w-78 h-16 text-white ml- inline-flex justify-center  px-6 py-4 text-sm font-medium text-2xl  border border-gray-300 rounded-md shadow-sm  " style={{backgroundColor: "#460273"}} onClick={this.clickSubmit}>Post</button>
             </div>
             <div className="ml-4 sm:ml-44 flex -mt-6 mb-6">
             <input style={{display: "none"}} ref={fileInput => this.fileInput = fileInput} type="file" onChange={(event) => {this.setState({imageSelected: event.target.files[0]})}}/>
