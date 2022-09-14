@@ -90,7 +90,7 @@ class FindPeople extends Component {
           </div>
           <input type="search" style={{ width:"62vw"}}className="w-100 sm:w-auto bg-slate-400 h-16 ml-16 sm:ml-14 px-4 sm:px-6 py-5 text-1xl  border border-black-300  border rounded-md"onChange={ event => {
             this.setState({ searchTerm: event.target.value})}} placeholder="Search Friends"></input>
-                 <button className=" invisible sm:visible w-48 post-bgpurple h-16 text-white  justify-center  px-6 py-5 font-medium text-1xl  border border-gray-300 rounded-md shadow-sm  ">Search</button>
+                 <button className=" invisible sm:visible w-48 h-16 text-white  justify-center  px-6 py-5 font-medium text-1xl  border border-gray-300 rounded-md shadow-sm  " style={{backgroundColor: "#460273"}}>Search</button>
         </div>
         <Errormsg error={error} style={{ display: error ? "" : "none" }} />
         {open && (
