@@ -23,7 +23,7 @@ import Reset from './components/reset'
 import Successsful from './components/successful'
 import {Share} from "./components/share"
 import Comment from "./posts/Comments"
-
+import Aboutus from "./components/Aboutus"
 
 const MainRouter = () => {
   return (
@@ -52,6 +52,7 @@ const MainRouter = () => {
       <Route exact path="/successful" component={Successsful}></Route>
       <Route exact path="/editpost" component={popupedit}></Route>
       <Route exact path ="/comment" component={Comment}></Route>
+      <Route exact path ="/Aboutus" component={Aboutus}></Route>
     </Switch>
   );
 }
