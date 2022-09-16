@@ -26,6 +26,9 @@ const Nav = (hasnotif = true) => {
                 <a href="/" className="post-back block ul-purple  py-2 pr-4 pl-3 rounded" aria-current="page">Home</a>
               </li>
               <li>
+              <a href="/Aboutus" className="post-back block ul-purple  py-2 pr-4 pl-3 rounded" aria-current="page">About us</a>
+              </li>
+              <li>
                 <a href="/findpeople" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Find Friends</a>
               </li>
               <li>

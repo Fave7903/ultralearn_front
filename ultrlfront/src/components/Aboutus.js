@@ -89,10 +89,7 @@ const Aboutus = () => {
 
             </div>
                 
-
-            
-                        
-                  
+    
             <Footer/>
         </div>
      );
