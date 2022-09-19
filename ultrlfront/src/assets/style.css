@@ -6,6 +6,15 @@
 .post-back {
     background-color: #f1eded;
 }
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scroll{
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+So w
 
 .ourcolor {
     color: #460273;
