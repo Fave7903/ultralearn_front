@@ -1,5 +1,5 @@
 import React from "react";
-import ultralearn from '../assets/newestLogo.png'
+import ultralearn from '../assets/Logo.png'
 
 export const Logotext = (small = false) => {
     return (
