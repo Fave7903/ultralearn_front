@@ -29,13 +29,10 @@ const Nav = (hasnotif = true) => {
               <a href="/Aboutus" className="post-back block ul-purple  py-2 pr-4 pl-3 rounded" aria-current="page">About us</a>
               </li>
               <li>
-                <a href="/findpeople" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Find Friends</a>
-              </li>
-              <li>
                 <a href="/contact" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
               </li>
               <li>
-                <a href="/addfriends" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Add Friends</a>
+                <a href="/findpeople" className="block ul-purple  py-2 pr-4 pl-3  rounded h md:border-0 ">Friends</a>
               </li>
             </ul>
           </div>

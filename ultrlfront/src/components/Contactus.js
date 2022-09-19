@@ -45,19 +45,19 @@ class Contact extends Component {
 <div class="w-8 h-8 bg-purple-900 rounded-full"></div>
 </div> : ""}
     <div className="p-8 -mt-5 h-full"style={{backgroundColor:"#D9D9D9"}}>
-      <h4 className="ul-purple text-center font-bold text-2xl">Contact Us</h4>
+      <h4 style={{color:"#460273"}}className="text-center font-bold text-2xl">Contact Us</h4>
       <form class="mt-7">
 
     <div className='grid g'>
     <div className="my-6">
-                    <input className="shadow appearance-none border rounded w-full py-5 px-3 ul-purple leading-tight focus:outline-none focus:shadow-outline"
+                    <input className="shadow appearance-none border rounded w-full py-5 px-3  ul-purple2 leading-tight focus:outline-none focus:shadow-outline"
                       onChange={this.handleChange("fullName")}
                       type="text" id="fullName" value={fullName} placeholder="Name" />
                   </div>
 
         <div class="my-6">
 
-          <input class="shadow appearance-none border rounded w-full py-5 px-3 ul-purple text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          <input class="shadow appearance-none border rounded w-full py-5 px-3  ul-purple2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             onChange={this.handleChange("email")}
             type="email" id="username" value={email} placeholder="Email" />
         </div>

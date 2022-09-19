@@ -41,19 +41,22 @@ export default function Header() {
               </svg>
               <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
-                <a href="/" className="block ul-purple  py-2 pr-4 pl-3 " aria-current="page">Home</a>
+                <a href="/" className="block  ul-purple2  py-2 pr-4 pl-3 " aria-current="page">Home</a>
               </li>
               <li>
               <Link
                   to={`/users/${isAuthenticated().user.username}`}
-                  className='ul-purple
+                  className=' ul-purple2
                     block px-4 py-2 pl-3 text-sm'
                 >Profile
                 </Link>
               </li>
               <li>
-                <a href="/contact" className="block ul-purple  py-2 pr-4 pl-3  ">Contact Us</a>
-              </li>   
+                <a href="/contact" className="block  ul-purple2  py-2 pr-4 pl-3  ">Contact Us</a>
+              </li>  
+              <li>
+                <a href="/Aboutus" className="block  ul-purple2  py-2 pr-4 pl-3  ">About Us</a>
+              </li>  
               <li>
               <Link
                     to='/signin'

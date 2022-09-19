@@ -154,12 +154,12 @@ class EditProfile extends Component {
              
             </div>
           <div className=' col-span-4 sm:col-span-3 mb-4 sm:mb-0'>
-          <h1 className="text-2xl -mt-0 sm:-mt-0  sm:ml-0 font-bold ul-purple ">Profile</h1>
-          <p className='ul-purple text-sm mb-5 sm:mb-0'>Update your photo and personal details</p>
+          <h1 className="text-2xl -mt-0 sm:-mt-0  sm:ml-0 font-bold  ul-purple2 ">Profile</h1>
+          <p className=' ul-purple2 text-sm mb-5 sm:mb-0'>Update your photo and personal details</p>
           </div>
           <div className='float-right block sm:col-span-2 mt-25 sm:mt-0 '>
-          <button className="  post-bgpurple text-white mr-1 sm:mr-5 mb-5 lg:mb-0 px-10 py-2 text-center justify-center text-1xl   " onClick={this.clickSubmit}>Save</button>
-          <button className="  md:visible invisible ul-purple  border-purple justify-center  px-8 py-2  text-1xl    " onClick={this.cancel}>Cancel</button>
+          <button style={{backgroundColor:"#460273",color:"#fff"}}className="   mr-1 sm:mr-5 mb-5 lg:mb-0 px-10 py-2 text-center justify-center text-1xl   " onClick={this.clickSubmit}>Save</button>
+          <button className="  m  ul-purple2  border-purple justify-center  px-8 py-2  text-1xl    " onClick={this.cancel}>Cancel</button>
           </div>
           </div>
 
@@ -178,26 +178,26 @@ class EditProfile extends Component {
           <div className='block block md:grid grid-cols-6 gap-0'>
           <div className='mt-2 sm:mt-12 -mb-28 sm:mb-0'>
             <ul className=''>
-              <li className='ul-purple font-bold text-2xl lg:font-1xl mb-14 sm:mt-0 w-full py-6'>Edit Profile</li>
-              <li><a href='/terms'className='ul-purple  sm:visible invisible'>Terms of Services</a></li>
+              <li className=' ul-purple2 font-bold text-2xl lg:font-1xl mb-14 sm:mt-0 w-full py-6'>Edit Profile</li>
+              <li><a href='/terms'className=' ul-purple2  sm:visible invisible'>Terms of Services</a></li>
               <li><Link to='/signin'className='text-red-500  sm:visible invisible' onClick={() => signout(() => <Redirect to={"/signin"} />)}>Log Out</Link></li>
             </ul>
           </div>
           <div className=' -mt-30 md:mt-0 col-span-6 md:col-span-5'>
             <div className=' block md:grid grid-cols-2 mb-5 '>
             <div className="mr-2 md:-mr-70">
-                    <label className="block text-sm font-bold mb-2 ul-purple" for="Firstname">
+                    <label className="block text-sm font-bold mb-2  ul-purple2" for="Firstname">
                       Full Name
                     </label>
-                    <input className=" border-purple mb-2 shadow appearance-none h-11 border rounded w-full w-3/4 md:w-2/4 py-2 px-3 ul-purple leading-tight focus:outline-none focus:shadow-outline"
+                    <input className=" border-purple mb-2 shadow appearance-none h-11 border rounded w-full w-3/4 md:w-2/4 py-2 px-3  ul-purple2 leading-tight focus:outline-none focus:shadow-outline"
                       onChange={this.handleChange("fullName")}
                       type="text" id="fullName" value={fullName} placeholder="First Name" />
                   </div>
                   <div className="-ml-0 md:-ml-24">
-                    <label class="block  text-sm font-bold mb-2 ul-purple" for="lastname">
+                    <label class="block  text-sm font-bold mb-2  ul-purple2" for="lastname">
                       Username
                     </label>
-                    <input className="border-purple ul-purple shadow appearance-none border h-11 rounded w-full md:w-2/4 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                    <input className="border-purple  ul-purple2 shadow appearance-none border h-11 rounded w-full md:w-2/4 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                       onChange={this.handleChange("username")}
                       type="text" id="username" value={username} placeholder="Last Name" />
                   </div>
@@ -205,17 +205,17 @@ class EditProfile extends Component {
 
             <div className='grid  grid-cols-3 gap-0'>
             <div className="col-span-2 mb-5 -mr-0 md:-mr-40">
-                    <label className="block  text-sm font-bold mb-2 ul-purple" for="Email">
+                    <label className="block  text-sm font-bold mb-2  ul-purple2" for="Email">
                       Email
                     </label>
-                    <input className="border-purple  shadow appearance-none  ul-purple h-11 border rounded mb-5 w-3/4 lg:w-3/4 md:w-2/4 py-2 px-3 ul-purple leading-tight focus:outline-none focus:shadow-outline"
+                    <input className="border-purple  shadow appearance-none   ul-purple2 h-11 border rounded mb-5 w-3/4 lg:w-3/4 md:w-2/4 py-2 px-3  ul-purple2 leading-tight focus:outline-none focus:shadow-outline"
                       onChange={this.handleChange("email")}
                       type="text" id="fullName" value={email} placeholder="Email" />
 
 
           <div>
-<label for="countries" className="block text-sm font-bold mb-2 ul-purple">Gender</label>
-<select  value={gender} onChange={this.handleChange("gender")}  id="countries" className="border-purple shadow appearance-none h-11 mb-5 border rounded w-3/4 lg:w-3/4 md:w-2/4 py-2 px-3 ul-purple leading-tight focus:outline-none focus:shadow-outline">
+<label for="countries" className="block text-sm font-bold mb-2  ul-purple2">Gender</label>
+<select  value={gender} onChange={this.handleChange("gender")}  id="countries" className="border-purple shadow appearance-none h-11 mb-5 border rounded w-3/4 lg:w-3/4 md:w-2/4 py-2 px-3  ul-purple2 leading-tight focus:outline-none focus:shadow-outline">
   <option selected="" disabled>Select Gender</option>
   <option value="Male">Male</option>
   <option value="Female">Female</option>
@@ -228,8 +228,8 @@ class EditProfile extends Component {
           <div className=" mt-4 sm:mt-0">
 
 
-          <label for="countries" className="block text-sm font-bold mb-2 ul-purple">Location</label>
-<select  value={location} onChange={this.handleChange("location")}  id="countries" className="border-purple ul-purple shadow appearance-none h-11 border rounded w-3/4 lg:w-3/4 md:w-2/4 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline">
+          <label for="countries" className="block text-sm font-bold mb-2  ul-purple2">Location</label>
+<select  value={location} onChange={this.handleChange("location")}  id="countries" className="border-purple  ul-purple2 shadow appearance-none h-11 border rounded w-3/4 lg:w-3/4 md:w-2/4 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline">
   <option selected="" disabled>Where do you stay</option>
   <option value="Abia">Abia</option>
     <option value="Adamawa">Adamawa</option>
@@ -276,14 +276,14 @@ class EditProfile extends Component {
 
 
                   <div className="col-span-1 -ml-26">
-                    <label className="block text-sm font-bold mb-2 ul-purple">Your Bio</label>
-                     <textarea onChange={this.handleChange("bio")}  type="text" className="ul-purple border-purple  mb-3 h-36 rounded w-full sm:w-3/4 py-2 px-3" value={bio} placeholder="Give a short description about yourself">  </textarea>
+                    <label className="block text-sm font-bold mb-2  ul-purple2">Your Bio</label>
+                     <textarea onChange={this.handleChange("bio")}  type="text" className=" ul-purple2 border-purple  mb-3 h-36 rounded w-full sm:w-3/4 py-2 px-3" value={bio} placeholder="Give a short description about yourself">  </textarea>
                      <div className="form-group mt-4 sm:mt-0">
-                       <label className="block text-sm font-bold mb-0 sm:mb-1 ul-purple">Skill Interest</label>
+                       <label className="block text-sm font-bold mb-0 sm:mb-1  ul-purple2">Skill Interest</label>
             <input 
               onChange={this.handleChange("skillInterests")} 
               type="text" 
-              className="border-purple ul-purple  shadow appearance-none h-11 border rounded w-full sm:w-3/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+              className="border-purple  ul-purple2  shadow appearance-none h-11 border rounded w-full sm:w-3/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
               value={skillInterests}>
             </input>
           </div>

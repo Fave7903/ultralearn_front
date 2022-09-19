@@ -43,7 +43,7 @@ export default function Example() {
               {({ active }) => (
                 <Link
                   to={`/users/${isAuthenticated().user.username}`}
-                  className='ul-purple
+                  className=' ul-purple2
                     block px-4 py-2 text-sm'
                 >Profile
                 </Link>
@@ -53,7 +53,7 @@ export default function Example() {
                 {({ active }) => (
                   <Link
                     to='/signin'
-                    className='ul-purple block w-full px-4 py-2 text-left text-sm'
+                    className=' ul-purple2 block w-full px-4 py-2 text-left text-sm'
                     onClick={() => signout(() => <Redirect to={"/signin"} />)}
                   >
                     Log Out 
