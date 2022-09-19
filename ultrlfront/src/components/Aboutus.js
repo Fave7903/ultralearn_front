@@ -29,9 +29,9 @@ const Aboutus = () => {
                 </div>
             </div>
             
-            <div className='p-8 shadow">'style={{backgroundColor:"#460273"}}>
+            <div className='p-8 shadow mx-auto">'style={{backgroundColor:"#460273"}}>
             <p className='text-center text-5xl font-bold text-white dark:text-white'>Meet Our Team</p>
-            <div className='flex items-center flex-col md:flex-row justify evenly'>
+            <div className='flex items-center mx-auto flex-col md:flex-row justify evenly'>
             <div className='p-7'>
             <div className='text-center mb-4 opacity-90'>
             <img className='mx-auto object-cover rounded-full h-40 w-40 ' src={garfield} alt='' srcset='' />

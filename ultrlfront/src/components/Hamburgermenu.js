@@ -57,15 +57,15 @@ export default function Header() {
               <li>
               <Link
                   to={`/users/${isAuthenticated().user.username}`}
-                  className=' ul-purple2
-                    block px-4 py-2 text-sm'
+                  className=' ul-purple2 py-2 pr-4 pl-3 
+                    block'
                 >Profile
                 </Link>
               </li>
               <li>
               <Link
                     to='/signin'
-                    className='text-red block w-full px-4 py-2 text-left text-sm'
+                    className='ul-purple2 block w-full  py-2 pr-4 pl-3  '
                     onClick={() => signout(() => <Redirect to={"/signin"} />)}
                   >
                     Log Out 
