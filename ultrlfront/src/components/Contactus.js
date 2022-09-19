@@ -37,14 +37,14 @@ class Contact extends Component {
                         </div>
 
 <div className='col-span-2 md:col-span-1 md:h-full flex flex-col' >
-  <div className='my-auto mt-1 pt- p-6'>
+  <div className='mt-5 mb-5 pt-'>
 
     {loading ?  <div class="flex items-center justify-center space-x-2 animate-bounce">
 <div class="w-8 h-8 bg-purple-300 rounded-full"></div>
 <div class="w-8 h-8 bg-purple-600 rounded-full"></div>
 <div class="w-8 h-8 bg-purple-900 rounded-full"></div>
 </div> : ""}
-    <div className="p-8 -mt-5 h-full"style={{backgroundColor:"#D9D9D9"}}>
+    <div className="p-8 -mt-5 "style={{backgroundColor:"#D9D9D9"}}>
       <h4 style={{color:"#460273"}}className="text-center font-bold text-2xl">Contact Us</h4>
       <form class="mt-7">
 
@@ -67,10 +67,12 @@ class Contact extends Component {
         </div>
 
 
-        <div class="flex items-center mt-6 mb-10 justify-center">
+        <div class="flex items-center mt-6 mb-12 justify-center">
           <button  class="sgnbut text-white font-bold py-2 px-4 rounded  " onClick={this.clickSubmit}>Submit
           </button> 
         </div>
+        <br/>
+        <br/>
         <br/>
 
 
