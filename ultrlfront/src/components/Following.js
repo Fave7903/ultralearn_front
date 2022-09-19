@@ -71,13 +71,14 @@ class Followers extends Component {
               return false
             }
           }).map((user, i) => (
-            <div className="px-2 sm:px-16 flex grid grid-cols-2 sm:grid grid-cols-3 mb-8" key={i}>
-  <div className="">
+            <div className="px-2 sm:px-16 flex grid grid-cols-2 sm:grid grid-cols-2 mb-8" key={i}>
+  <div className="flex gap-7">
   {user.imgId ? <Image cloudName="favoursoar" publicId={user.imgId} style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%', borderColor: "purple"}}/> :
           <img src={avatar}alt="Avatar" className=" invisble sm:visible rounded-full"style={{color: "#460273", width: "100px",height:"100px"}}/>
           }
+           <Link to={`/users/${user.username}`} className=" text-dark text-1xl sm:text-2xl" ><p className="">{user.fullName}</p></Link>
   </div>
-  <Link to={`/users/${user.username}`} className=" text-dark text-1xl sm:text-2xl" ><p className="">{user.fullName}</p></Link>
+ 
   <div className=''>
     <Link to={`/users/${user.username}`} style={{backgroundColor: "#460273", color: "white"}} className=' float-right py-4 px-8'>See More</Link>
     </div>
