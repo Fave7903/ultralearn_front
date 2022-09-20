@@ -84,10 +84,10 @@ const Aboutus = () => {
 
             </div>
 
-           <div className='flex items-center mt-6 mb-10 justify-center'>
+           {/* <div className='flex items-center mt-6 mb-10 justify-center'>
            <button type="button" class="py-2 px-4 bg-purple-300 text-purple-600 text-center text-base font-semibold shadow-md rounded-sm ">
            View the team</button>
-           </div>
+           </div> */}
 
 
             </div>

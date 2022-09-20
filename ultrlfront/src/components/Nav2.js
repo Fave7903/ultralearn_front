@@ -23,10 +23,10 @@ const Nav2 = (hasnotif = true) => {
                 <a href="/" className="block ul-purple text-2xl  mx-24 rounded" aria-current="page">Home</a>
               </li>
               <li>
-                <a href="/" className="block ul-purple text-2xl    mx-24  rounded h md:border-0 ">About us</a>
+                <a href="/about" className="block ul-purple text-2xl    mx-24  rounded h md:border-0 ">About us</a>
               </li>
               <li className='mr-10'>
-                <a href="/" className="block ul-purple text-2xl  mx-24 pr-10  rounded h md:border-0 ">Contact Us</a>
+                <a href="/contact" className="block ul-purple text-2xl  mx-24 pr-10  rounded h md:border-0 ">Contact Us</a>
               </li>
               <div className="fonts-15 mb-3 sgnbut text-center pr-20 pt-5 sm:pt-3">
                      <Link to="/signup" style={{ color: "white", background: "#460273", padding: "5px 10px",  }} className="fw-bold text-2xl">Signup</Link>

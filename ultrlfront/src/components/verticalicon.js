@@ -3,10 +3,8 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import SharePost from "../assets/Share post.png"
 import EditPost from "../assets/Edit post.png"
 import DeletePost from "../assets/Delete.png"
-import  ReportPost from "../assets/Repost.png"
 import { Link } from 'react-router-dom'
 
 
@@ -32,7 +30,7 @@ export default function LongMenu() {
         aria-expanded={open ? 'true' : undefined}
         aria-haspopup="true"
         onClick={handleClick}
-        style={{ color: 'white',right: "0%" ,bottom:"30px" ,float: "right"}} 
+        style={{ color: '#460273',right: "0%" ,bottom:"30px" ,float: "right"}} 
       >
         <MoreVertIcon />
       </IconButton>
@@ -53,20 +51,20 @@ export default function LongMenu() {
           },
         }}
       > 
-      <Link to="/share"> <MenuItem style={{ color: '#460273' }}        className="bg-purple-100">
+      {/* <Link to="/share"> <MenuItem style={{ color: '#460273' }}        className="bg-purple-100">
             <div  className="flex">Share Post <img alt="Icon"className="mx-2"style={{width:"20px",height:"20px"}}src={SharePost}/></div>
-          </MenuItem></Link>
-          <Link to="/editpost">
+          </MenuItem></Link> */}
+          <Link to="/edit">
           <MenuItem style={{ color: '#460273' }}id="">
             <div className="flex">Edit Post <img alt="Icon" className="mx-5" style={{width:"20px",height:"20px"}}src={EditPost}/></div>
           </MenuItem>
           </Link>
-          <Link to="/deletepost"> <MenuItem style={{ color: '#460273' }}id="delete"data-dropdown-toggle="popupdelete">
+          <Link to="/delete"> <MenuItem style={{ color: '#460273' }}id="delete"data-dropdown-toggle="popupdelete">
             <div className="flex">Delete Post <img alt="Icon" className="mx-2" style={{width:"20px",height:"20px"}}src={DeletePost}/></div>
           </MenuItem></Link>
-          <Link> <MenuItem style={{ color: '#460273' }}>
+          {/* <Link> <MenuItem style={{ color: '#460273' }}>
             <div className="flex">Report Post <img alt="Icon" className="mx-2" style={{width:"20px",height:"20px"}}src={ReportPost}/></div>
-          </MenuItem></Link>
+          </MenuItem></Link> */}
       </Menu>
     </div>
   );

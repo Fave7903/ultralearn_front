@@ -83,18 +83,9 @@ html, body, #app, #app>div, #root {
 font-weight: 700;
 padding: 2VW
 }
-.caption{
-    color: #460273;
-    font-size: 1.3rem;
-    margin-top:-14rem;
-    font-weight: 700;
-    text-align: center;
-    margin-left: -6rem;
-}
 .border-purple{
     border:1px solid #460273;
 }
-
 .ul-purple{
     color: 
     #460273;
@@ -108,9 +99,6 @@ padding: 2VW
 .post-bgpurple{
     background-color: 
     #fff
-}
-.greytext{
-    color: #3C3B3B;
 }
 
 .btn{
@@ -130,9 +118,7 @@ padding: 2VW
 .fb{
     width: 10vw;
 }
-.fw-bolder{
-    color: #460273;
-}
+
 
 
 .link_button {

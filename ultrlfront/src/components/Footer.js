@@ -27,7 +27,7 @@ const Footer = () => {
                 <ul classNameName=" ">
                     {/* <li className="mb-4 ul-purple text-1xl font-semibold"><a href="/contact" className="">Contact Us</a></li> */}
                     {/* <li className="mb-4 ul-purple text-1xl font-semibold">
-                        <a href="/" className="">About Us</a>
+                        <a href="/about" className="">About Us</a>
                     </li> */}
                 </ul>
             </div>

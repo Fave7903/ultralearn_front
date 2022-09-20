@@ -46,18 +46,18 @@ export default function Header() {
                 <a href="/" className="block  ul-purple2  py-2 pr-4 pl-3 rounded" aria-current="page">Home</a>
               </li>
               <li>
-                <a href="/Aboutus" className="block  ul-purple2  py-2 pr-4 pl-3  rounded h md:border-0 ">About Us</a>
-              </li>
-              <li>
-                <a href="/contact" className="block  ul-purple2  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
-              </li>
-              <li>
-                <a href="/findpeople" className="block  ul-purple2  py-2 pr-4 pl-3  rounded h md:border-0 ">Friends</a>
-              </li>
-              <li>
               <Link to={`/users/${isAuthenticated().user.username}`}className=' ul-purple2 py-2 pr-4 pl-3 block rounded h md:border-0 '
                 >Profile
                 </Link>
+              </li> 
+              <li>
+                <a href="/findpeople" className="block  ul-purple2  py-2 pr-4 pl-3  rounded h md:border-0 ">Friends</a>
+              </li>                         
+              <li>
+                <a href="/about" className="block  ul-purple2  py-2 pr-4 pl-3  rounded h md:border-0 ">About Us</a>
+              </li>
+              <li>
+                <a href="/contact" className="block  ul-purple2  py-2 pr-4 pl-3  rounded h md:border-0 ">Contact Us</a>
               </li>
               <li>
               <Link to='/signin' className='ul-purple2 block w-full  py-2 pr-4 pl-3 rounded h md:border-0  'onClick={() => signout(() => <Redirect to={"/signin"} />)}>

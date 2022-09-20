@@ -55,7 +55,7 @@ export default function Header() {
                 <a href="/contact" className="block  ul-purple2  py-2 pr-4 pl-3  ">Contact Us</a>
               </li>  
               <li>
-                <a href="/Aboutus" className="block  ul-purple2  py-2 pr-4 pl-3  ">About Us</a>
+                <a href="/about" className="block  ul-purple2  py-2 pr-4 pl-3  ">About Us</a>
               </li>  
               <li>
               <Link

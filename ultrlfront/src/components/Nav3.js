@@ -22,7 +22,7 @@ const Nav = (hasnotif = true) => {
                 <a href="/" className="block ul-purple text-2xl px-6 md:px-16 rounded" aria-current="page">Home</a>
               </div>
               <div>
-                <a href="/Aboutus" className="block ul-purple text-2xl px-6 md:px-16 rounded" aria-current="page">About Us</a>
+                <a href="/about" className="block ul-purple text-2xl px-6 md:px-16 rounded" aria-current="page">About Us</a>
               </div>
               <div className='mr-0'>
                 <a href="/contact" className="block ul-purple text-2xl pl-6 md:pl-16 pr-28  rounded h md:border-0 ">Contact Us</a>

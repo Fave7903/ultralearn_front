@@ -12,13 +12,13 @@ const style = {
   };
 
 
-export const Share = ({ url = '' }) => {
+export const Share = ({ url = 'https://www.facebook.com/profile.php?id=100081860272267' }) => {
     return (
         <>
             <ShareSocial 
                 style={style}
                 url ={url}
-                socialTypes={['facebook','twitter','reddit','linkedin']}
+                socialTypes={['facebook','twitter','linkedin']}
             />
         </>
     )
