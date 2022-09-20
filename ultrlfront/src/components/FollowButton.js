@@ -10,13 +10,13 @@ class FollowButton extends Component {
     }
   render() {
     return (
-      <div>
+      <div className='no-scroll'>
 
         {
           !this.props.following ? (
-            <button onClick={this.followClick} className="border-purple ul-purple2 bg-white px-2 py-3 text-white md:absolute mt-24 right-0">Follow</button>
+            <button onClick={this.followClick} className="border-purple  ul-purple2 bg-white px-2 py-3 text-white md:absolute mt-24 right-14">Follow</button>
           ) : (
-             <button onClick={this.unfollowClick} className="border-purple ul-purple2 bg-white px-2 py-3 text-white md:absolute mt-24 right-0">Following</button>   
+             <button onClick={this.unfollowClick} className="border-purple ul-purple2 bg-white px-2 py-3 text-white md:absolute mt-24 right-14">Following</button>   
           )
         }
       </div>

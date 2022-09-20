@@ -166,17 +166,9 @@ class Signin extends Component {
                     Don't have an account?&nbsp;&nbsp;
                     <Link to="/signup" style={{ color: "#460273" }} className="fw-bold">Signup</Link>
                   </div>
-
-
- 
-                </form>
-
-                 
+                </form>      
                </div>
-
-
-
-            </div>
+          </div>
           </div>
         </div>
 
