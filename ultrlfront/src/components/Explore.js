@@ -98,7 +98,7 @@ export default class DropdownComponent extends Component {
     render() {
     const {body, postImgId, user} = this.state
     return (
-        <div className='post-back ml-24'>
+        <div className='post-back ml-2 sm:ml-24'>
                     {/* <div className="flex mb-4">
              <Menu as="div" className="col-span-4 relative inline-block text-left">
             <div className="">
@@ -112,7 +112,7 @@ export default class DropdownComponent extends Component {
                 <input type="text" style={{ width:"61vw"}} className="invisible sm:visible w-80 sm:w-auto sm:ml-20 -ml-36 px-0 sm:px-4 py-0 sm:py-5 text-1xl bg-neutral-900 border rounded-md" placeholder="What are your interests?"></input>
             </div>
         </div> */}
-        <div className="-mt-17 sm:mt-6 ml-10 mb-8 post-back">
+        <div className="-mt-17 sm:mt-6 ml-0 sm:ml-10 mb-8 post-back">
                 {user.username && <h1 className="text-3xl ml-4 mt-10 sm:ml-14">{`Welcome back ${user.username}!`} </h1>}
             </div>
             <div className="flex  ml-12 post-back">

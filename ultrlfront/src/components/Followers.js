@@ -77,7 +77,7 @@ class Followers extends Component {
     
     return (
       <div className='container p-4 '>
-        <div className='flex ml-6 p-10'>
+        <div className='flex  -ml-2 sm:ml-6 p-2 sm:p-10'>
         <Link to={`/users/${this.props.match.params.name}`}><img style={{ width: "30px", height: "20px" }} src={Arrow}className="relativemr-20"alt ="Arrow"/></Link>
             <h4 className='text-2xl  mx-auto '>{`${this.props.match.params.name}'s followers`}</h4>
         </div>

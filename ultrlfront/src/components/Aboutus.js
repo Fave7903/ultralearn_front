@@ -14,8 +14,11 @@ const Aboutus = () => {
     return ( 
         <div >
             <Nav />
+            <div className="h-100 w-full hidden md:flex justify-center py-40 "  style={{ backgroundImage:`url(${Bg})` }}>
+          <p class="absolute text-5xl visible md:visible text-purple-900 font-bold">About Us</p>
+        </div>
 
-            <img className=' hidden md:block bg-origin-padding bg-gray-50 bg-opacity-60 flex flex-col p-0 bg-no-repeat bg-cover bg-enter' src={Bg} alt='' srcset='' />
+
             <div className="p-8 -mt-5 h-full"style={{backgroundColor:"white"}}>
                 <div>
                 <h4 className=" text-yellow-400 text-left font-bold text-3xl">Our Mission</h4>
@@ -29,7 +32,7 @@ const Aboutus = () => {
                 </div>
             </div>
             
-            <div className='p-8 shadow mx-auto">'style={{backgroundColor:"#460273"}}>
+            <div className=' py-8 px:20 sm:px-20 shadow mx-10">'style={{backgroundColor:"#460273"}}>
             <p className='text-center text-5xl font-bold text-white dark:text-white'>Meet Our Team</p>
             <div className='flex items-center mx-auto flex-col md:flex-row justify evenly'>
             <div className='p-7'>

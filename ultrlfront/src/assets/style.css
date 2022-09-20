@@ -32,6 +32,7 @@ So w
 @media screen and (max-width: 480px) {
     .marginals {
        width: 100%;
+       
     } 
     .smallNav {
         width: 100%;

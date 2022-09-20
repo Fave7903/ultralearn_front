@@ -137,7 +137,7 @@ class EditProfile extends Component {
       <div>
         <div  className='px-16'>
        
-          <div className='mt-20 grid grid-cols-8 sm:grid grid-cols-6 -mb-12 sm:mb-0 ' >
+          <div className='mt-10 sm:mt-20 grid grid-cols-8 sm:grid grid-cols-6 -mb-12 sm:mb-0 ' >
           <Link to={`/users/${isAuthenticated().user.username}`} className=" text-dark text-1xl sm:text-2xl" ><img style={{ width: "30px", height: "20px" }} src={Arrow}className="relative mt-2"alt ="Arrow"/></Link>
 
             <div className='col-span-4 sm:col-span-2 '>
