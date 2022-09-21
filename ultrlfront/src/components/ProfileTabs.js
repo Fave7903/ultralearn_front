@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import {Image} from 'cloudinary-react'
 import avatarImage from "../assets/avatar.jpg"
-import Verticalicon from "../components/verticalicon2"
+import Verticalicon from "../components/verticalicon"
 import {isAuthenticated} from '../auth'
 
 

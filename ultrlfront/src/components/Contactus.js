@@ -46,7 +46,7 @@ class Contact extends Component {
 </div> : ""}
     <div className="p-8 -mt-5 "style={{backgroundColor:"#D9D9D9"}}>
       <h4 style={{color:"#460273"}}className="text-center font-bold text-2xl">Contact Us</h4>
-      <form class="mt-7"action='mailto:adeboluwarinthomas@gmail.com'>
+      <form class="mt-7"action='mailto:ultralearnng@gmail.com'>
 
     <div className='grid g'>
     <div className="my-6">
