@@ -7,6 +7,8 @@ import Verticalicon from "../components/verticalicon"
 import Explore from '../components/Explore'
 import { Loading } from '../components/Loading'
 import {isAuthenticated} from '../auth'
+// import like from '../assets/Like-purple.png'
+import comment from '../assets/Comment-purple.png'
 
 
 class Posts extends Component {
@@ -53,8 +55,8 @@ class Posts extends Component {
           return (
             <>
 
-              <div className='post-bgpurple marginals px-2 sm:px-7 py-8 mb-4 grid grid-cols-5 gap-5 sm:gap-4' style={{color: '#460273'}}>
-                <div className='col-span-2 flex flex-row'>
+              <div className='font-poppins post-bgpurple marginals px-2 sm:px-7 py-8 mb-4 gap-5 sm:gap-4' style={{color: '#460273'}}>
+                <div className='flex flex-row'>
                   <Link className="d-flex mx-2 mb-0" to={`/users/${posterUser}`}> {post.user.imgId ? <Image cloudName="favoursoar" className="rounded-full" publicId={post.user.imgId} style={{ width: '100px', height: '100px', objectFit: 'cover', }} /> :
                     <img style={{ width: "100px", height: "100px" }} className="sm:visible invisible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src={avatarImage} alt="user " />
                   }
@@ -68,7 +70,7 @@ class Posts extends Component {
                   </div>
  
                 </div>
-                <div className='col-span-3'>
+                <div className='mt-5'>
                   <div className=''>
                     <span>
                     <h2 className='font-bold mr-74'>Posted on {new Date(post.createdAt).toDateString()}</h2>
@@ -81,18 +83,18 @@ class Posts extends Component {
 
                   </div>
                   
-                {post.body.length > 150 && this.state.more ? <p className="">{post.body.substring(0, 150)}...<span style={{ cursor: "pointer", color: "/5f0f40" }} onClick={() => this.setState({ more: !this.state.more })}>see more</span></p> : <p className="card-text">{post.body}</p>}
+                {post.body.length > 150 && this.state.more ? <p className="font-poppins">{post.body.substring(0, 150)}...<span style={{ cursor: "pointer", color: "/5f0f40" }} onClick={() => this.setState({ more: !this.state.more })}>see more</span></p> : <p className="font-poppins">{post.body}</p>}
                   {post.postImgId &&
                     <div className="mt-6" style={{ backgroundColor: "white", width: '100%', height: '350px' }}>
                       <Image cloudName="favoursoar" className="sm:visible invisible"publicId={post.postImgId} style={{ objectFit: 'contain', width: "100%", height: "100%" }} />
 
                     </div>
                   }
-                  {/* <div className='flex float-right hover:float-left"'>
-                    <span>  <img className=" px-3" src={Like} alt="Like " /></span>
+                  <div className='flex grid grid-cols-2'>
+                  <Link to={`post/${post.id}`} style={{pointer: 'cursor'}}><span className="flex flex-row"><span className='text-xl mt-8 pr-2'>{obj.length}</span><img className='mt-8' src={comment} alt='comment'/></span></Link>
 
-                   <span><img className='pt-3' src={comment} alt='comment'/></span>
-                   </div> */}
+                    {/* <span>  <img className="float-right" src={like} alt="Like" /></span> */}
+                   </div>
                 </div>
               </div>
 

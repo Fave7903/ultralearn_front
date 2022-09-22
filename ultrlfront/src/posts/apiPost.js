@@ -81,7 +81,7 @@ export const unlike = (userId, token, postId) => {
     .catch(err => console.log(err))
   }
 
-export const comment = (userId, token, postId, comment) => {
+export const comment = (userId, token, postId, text) => {
     return fetch(`https://api-ultralearn.herokuapp.com/post/comment`, {
       method: "PUT",
       headers: {
@@ -89,7 +89,7 @@ export const comment = (userId, token, postId, comment) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`
       },
-      body: JSON.stringify({userId, postId, comment})
+      body: JSON.stringify({userId, postId, text}) 
     })
     .then(response => {
       return response.json()
