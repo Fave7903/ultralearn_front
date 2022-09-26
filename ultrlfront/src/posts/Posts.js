@@ -58,43 +58,39 @@ class Posts extends Component {
               <div className='font-poppins post-bgpurple marginals px-2 sm:px-7 py-8 mb-4 gap-5 sm:gap-4' style={{color: '#460273'}}>
                 <div className='flex flex-row'>
                   <Link className="d-flex mx-2 mb-0" to={`/users/${posterUser}`}> {post.user.imgId ? <Image cloudName="favoursoar" className="rounded-full" publicId={post.user.imgId} style={{ width: '100px', height: '100px', objectFit: 'cover', }} /> :
-                    <img style={{ width: "100px", height: "100px" }} className="sm:visible invisible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src={avatarImage} alt="user " />
+                    <img style={{ width: "100px", height: "100px" }} className=" rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src={avatarImage} alt="user " />
                   }
                   </Link>
                   <div className='w-auto ml-3'>
                     <h2 className='font-semibold text-1xl sm:text-2xl'> 
                       <Link  to={`/users/${posterUser}`}> {posterFull}</Link>
                     </h2>
-                    <p className='text-sm sm:text-base'>{post.user.bio}</p>
-                    <p className='text-sm' style={{display: post.user.location ? "" : "none"}}>{post.user.location}, Nigeria</p><br />
-                  </div>
- 
-                </div>
-                <div className='mt-5'>
-                  <div className=''>
-                    <span>
-                    <h2 className='font-bold mr-74'>Posted on {new Date(post.createdAt).toDateString()}</h2>
-                    </span>
-                    <span>
-                    {/* <div className='-mt-15 float-right '>  <Verticalicon/></div> */}
-                    { ( userId === post.user.id)? <div className='-mt-15 float-right '>  <Verticalicon/> </div>:  ""}
-
-                    </span>
-
-                  </div>
-                  
-                {post.body.length > 150 && this.state.more ? <p className="font-poppins">{post.body.substring(0, 150)}...<span style={{ cursor: "pointer", color: "/5f0f40" }} onClick={() => this.setState({ more: !this.state.more })}>see more</span></p> : <p className="font-poppins">{post.body}</p>}
+                    <p className='text-sm '>{post.user.bio}</p>
+                    <p className='text-sm ' style={{display: post.user.location ? "" : "none"}}>{post.user.location}, Nigeria</p>
+                    <h2 className=' text-sm mb-5'>Posted on {new Date(post.createdAt).toDateString()}</h2>
+                    {post.body.length > 120 && this.state.more ? <p className="font-poppins font-bold ">{post.body.substring(0, 120)}...<span style={{ cursor: "pointer", color: "/5f0f40" }} onClick={() => this.setState({ more: !this.state.more })}>see more</span></p> : <p className="font-poppins font-bold ">{post.body}</p>}
                   {post.postImgId &&
                     <div className="mt-6" style={{ backgroundColor: "white", width: '100%', height: '350px' }}>
-                      <Image cloudName="favoursoar" className="sm:visible invisible"publicId={post.postImgId} style={{ objectFit: 'contain', width: "100%", height: "100%" }} />
-
-                    </div>
+                      <Image cloudName="favoursoar" className="e"publicId={post.postImgId} style={{ objectFit: 'contain', width: "100%", height: "100%" }} />
+ 
+                </div>
                   }
-                  <div className='flex grid grid-cols-2'>
-                  <Link to={`post/${post.id}`} style={{pointer: 'cursor'}}><span className="flex flex-row"><span className='text-xl mt-8 pr-2'>{obj.length}</span><img className='mt-8' src={comment} alt='comment'/></span></Link>
+                                    <div className='flex grid grid-cols-2 '>
+                  <Link to={`post/${post.id}`} style={{pointer: 'cursor'}}><span className="flex flex-row "><span className='text-xl mt-8 pr '>{obj.length}</span><img className='mt-8 pl-2' src={comment} alt='comment'/></span></Link>
 
                     {/* <span>  <img className="float-right" src={like} alt="Like" /></span> */}
                    </div>
+                  </div>
+                  </div>
+                <div className='m'>
+                  
+                    <p>
+                    {/* <div className='-mt-15 float-right '>  <Verticalicon/></div> */}
+                    { ( userId === post.user.id)? <div className='-mt-15 float-right '>  <Verticalicon/> </div>:  ""}
+
+                    </p>
+
+
                 </div>
               </div>
 

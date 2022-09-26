@@ -143,6 +143,7 @@ class Profile extends Component {
 : <Loading />}
               
             </div> 
+            <br/>
 
             <hr style={{ height: '10px',width:"100%", backgroundColor: '#460273' }}></hr>
 

@@ -68,32 +68,34 @@ class Comments extends Component {
             
         return (
             <div className="mt-4 mb-7 " key={i}>
-  <div className=" sm:mx-20 ">
-   <div className=" "> 
-     <Link className="" to={`/users/${comment.user.username}`}>
-    
-       {comment.user.imgId ? <Image cloudName="favoursoar" publicId={comment.user.imgId} className="w-10 h-10 rounded-full float-left m-5" /*style={{width: '50px', height: '50px', objectFit: 'cover', borderRadius: '50%'}}*//> :
-          <i className="" style={{color: "#460273", fontSize: "50px"}}></i>
-          }</Link>
+  <div className="">
+   {/* <div className=" ">  */}
+
           
         {/* <Link to={`//`}>  <Image  src={Dots} className="w-10 h-10 mt-2 float-right mr-5"/> </Link> */}
-        </div>
+        {/* </div> */}
       
-    <div className='ml-20 border-4 border-purple-300 rounded-lg p-3 prs-3'>
-      <div className=' '>
-        <div className="mx-2">
+    <div className='font-poppins post-bgpurple marginals px-12 sm:px-7 py-8 mb-4 gap-4 sm:gap-4' style={{color: '#460273'}}>
+      <div className=' flex flex-row'>
+      <Link className="" to={`/users/${comment.user.username}`}>
+    
+    {comment.user.imgId ? <Image cloudName="favoursoar" publicId={comment.user.imgId} className="w-10 h-10 rounded-full" style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%'}}/> :
+       <i className="" style={{color: "#460273", fontSize: "50px"}}></i>
+       }</Link>
+        <div className="d-flex mx-2 mb-0">
         <Link className=' ' to={`/users/${comment.user.username}`}>
           <p className="font-bold" style={{color: "#460273"}}>{comment.user.fullName}</p>   
         </Link>
       
        <p className="font-italic text-xs text-purple-900 mb-2">{comment.user.username}</p>
+       <p className="card-text ml-2 text-gray-500">{comment.text}</p>
         </div>
       </div>
      {/* <p className=" datestamp float-right mb-1 ml-2 text-xs text-gray-400">Commented on {new Date(comment.createdAt).toDateString()}</p> */}
      
    
    <div className=''>
-    <p className="card-text ml-2 text-gray-500">{comment.text}</p>
+   
    </div >
    <div className='flex '>
     {/* <div className='likee'>
@@ -101,9 +103,9 @@ class Comments extends Component {
     </div> */}
    
     
-    <div className='reply mx-3'>
+    {/* <div className='reply mx-3'>
       <p className='text-gray-400 align-middle p-3'>Reply</p>
-    </div>
+    </div> */}
     
    
    </div>

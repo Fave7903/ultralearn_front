@@ -45,10 +45,10 @@ class SingPost extends Component {
     return(
       <div>
         {loading? <Loading /> : ""}
-        <div className='font-poppins post-bgpurple marginals px-2 sm:px-7 py-8 mb-4 gap-5 sm:gap-4' style={{color: '#460273'}}>
+        <div className='font-poppins post-bgpurple marginals px-12 sm:px-7 py-8 mb-4 gap-4 sm:gap-4' style={{color: '#460273'}}>
                 <div className='flex flex-row'>
                   <Link className="d-flex mx-2 mb-0" to={`/users/${postedBy.username}`}> {postedBy.imgId ? <Image cloudName="favoursoar" className="rounded-full" publicId={postedBy.imgId} style={{ width: '100px', height: '100px', objectFit: 'cover', }} /> :
-                    <img style={{ width: "100px", height: "100px" }} className="sm:visible invisible rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src={avatarImage} alt="user " />
+                    <img style={{ width: "100px", height: "100px" }} className="rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src={avatarImage} alt="user " />
                   }
                   </Link>
                   <div className='w-auto ml-3'>
@@ -56,14 +56,22 @@ class SingPost extends Component {
                       <Link  to={`/users/${postedBy.username}`}> {postedBy.fullName}</Link>
                     </h2>
                     <p className='text-sm sm:text-base'>{postedBy.bio}</p>
-                    <p className='text-sm' style={{display: postedBy.location ? "" : "none"}}>{postedBy.location}, Nigeria</p><br />
+                    <p className='text-sm' style={{display: postedBy.location ? "" : "none"}}>{postedBy.location}, Nigeria</p>
+                    <p className='text-sm'>Posted on {new Date(post.createdAt).toDateString()}</p>
+                    <p className="font-poppins mt-4">{post.body}</p>
+                  {post.postImgId &&
+                    <div className="mt-6" style={{ backgroundColor: "white", width: '100%', height: '350px' }}>
+                      <Image cloudName="favoursoar" className="sm:visible invisible"publicId={post.postImgId} style={{ objectFit: 'contain', width: "100%", height: "100%" }} />
+
+                    </div>
+                  }
                   </div>
  
                 </div>
                 <div className='mt-5'>
                   <div className=''>
                     <span>
-                    <h2 className='font-bold mr-74'>Posted on {new Date(post.createdAt).toDateString()}</h2>
+
                     </span>
                     <span>
                     {/* <div className='-mt-15 float-right '>  <Verticalicon/></div> */}
@@ -73,13 +81,7 @@ class SingPost extends Component {
 
                   </div>
                   
-                 <p className="font-poppins">{post.body}</p>
-                  {post.postImgId &&
-                    <div className="mt-6" style={{ backgroundColor: "white", width: '100%', height: '350px' }}>
-                      <Image cloudName="favoursoar" className="sm:visible invisible"publicId={post.postImgId} style={{ objectFit: 'contain', width: "100%", height: "100%" }} />
 
-                    </div>
-                  }
                   {/* <div className='flex float-right hover:float-left"'>
                     <span>  <img className=" px-3" src={Like} alt="Like " /></span>
 
