@@ -87,7 +87,8 @@ class Comments extends Component {
           <p className="font-bold" style={{color: "#460273"}}>{comment.user.fullName}</p>   
         </Link>
       
-       <p className="font-italic text-xs text-purple-900 mb-2">{comment.user.username}</p>
+       <p className="font-italic text-xs text-purple-900 mb-2">Posted on {new Date(comment.createdAt).toDateString()}</p>
+       
        <p className="card-text ml-2 text-gray-500">{comment.text}</p>
         </div>
       </div>
