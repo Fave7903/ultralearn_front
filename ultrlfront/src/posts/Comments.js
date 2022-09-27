@@ -3,6 +3,7 @@ import {comment} from './apiPost'
 import {isAuthenticated} from '../auth'
 import {Image} from 'cloudinary-react'
 import {Link} from 'react-router-dom'
+import Arrow from "../assets/Arrow.svg"
 // import Thumbs from '../assets/Like-purple.png'
 // import Dots from '../assets/three-dots.svg'
 // import Like from './Like.js'
@@ -48,34 +49,39 @@ class Comments extends Component {
     
     const {comments} = this.props
     return (
-      
-      <div>
+      <div className='container p-4 '>
+       
+         <Link to={`/`} ><img style={{ width: "30px", height: "20px" }} src={Arrow} className="pl-2 my-4 top-0 "alt ="Arrow"/></Link>
         
 
+
         <form onSubmit={this.addComment}>
-          <div className="ml-20">
+          <div className="sm:mx-20 mx-4">
             {/* {isAuthenticated().user.imgId ? <Image cloudName="favoursoar" publicId={isAuthenticated().user.imgId} style={{width: '70px', height: '70px', objectFit: 'cover', borderRadius: '50%'}} className=""/> :
           <i className="" style={{color: "#460273", fontSize: "40px"}}></i>
           } */}
-          <div className="sm:mx-20 rounded-lg border-2 border-purple-600 h-10 ">
-          <input type="text" placeholder="Add comment" value={this.state.text} onChange={this.handleChange} className="b w-full h-15 pl-4 font-bold" /*style={{width: "90%", height: "50px", borderRadius: "15px"}}*//>
+          <div className="sm:mx-20 rounded-lg border-2 border-purple-600 h-10">
+          <input type="text" placeholder="Add comment" value={this.state.text} onChange={this.handleChange} className="pl-4 border-white w-full font-bold break-normal"/>
             </div>
             </div>
-            {this.state.text ? <button type="submit" className="btn bg-purple-600 h-10 mb-10 px-4 rounded-lg float-right mr-20" /*style={{backgroundColor: "#460273", height: "60px", width: "100px", borderRadius: "15px"}}*/>Add Comment</button> : ""}
+            <div>
+              { <button type="submit" className="btn bg-purple-600 h-10 mb-10 px-4 rounded-lg float-right mt-5 sm:mr-40 mr-10">Add Comment</button> }
+            </div>
+            
         </form>
-        <div className=''>
+        <div className=' mt-20'>
           {comments.map((comment, i) => {
             
         return (
             <div className="mt-4 mb-7 " key={i}>
-  <div className="">
-   {/* <div className=" ">  */}
+    <div className="">
+        {/* <div className=" ">  */}
 
           
         {/* <Link to={`//`}>  <Image  src={Dots} className="w-10 h-10 mt-2 float-right mr-5"/> </Link> */}
         {/* </div> */}
       
-    <div className='font-poppins post-bgpurple marginals px-12 sm:px-7 py-8 mb-4 gap-4 sm:gap-4' style={{color: '#460273'}}>
+    <div className='font-poppins post-bgpurple marginals px-4 sm:px-12 sm:px-7 py-8 mb-4 gap-4 sm:gap-4' style={{color: '#460273'}}>
       <div className=' flex flex-row'>
       <Link className="" to={`/users/${comment.user.username}`}>
     
@@ -123,7 +129,8 @@ class Comments extends Component {
               
             })}
         </div>
-      </div>
+
+    </div>
     )
   }
 }
