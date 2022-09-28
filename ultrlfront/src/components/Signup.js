@@ -79,9 +79,9 @@ class Signup extends Component {
       <div className="h-full grid grid-cols-2"style={{backgroundImage:`url(${Bgimage})`}}>
           <Authsidebar />
           <div className='col-span-2 md:col-span-1 md:h-full flex flex-col' style={{ backgroundColor: "#f8f9fa" }}>
-            <div className='my-auto p-6'>
+            <div className='mb-auto p-6'>
 
-            <h2 className='font-medium fw-bolder leading-tight text-2xl ml-4 mt-0 mb-0'>Register</h2>
+            <h2 className='font-medium fw-bolder leading-tight text-2xl ml-4 mt-2 mb-0'style={{color:"#460273"}}>Register</h2>
             <Errormsg error={error} class="mt-2"style={{ display: error ? "" : "none" }} />
               
       
