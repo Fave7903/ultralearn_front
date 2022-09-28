@@ -14,30 +14,51 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
-So w
+
 
 .ourcolor {
     color: #460273;
 }
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 500px) {
     .marginals {
         margin-left: 150px;
         margin-right: 150px;
-        margin-top: 30px;
-        margin-bottom: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
         border-radius: 15px;
         box-shadow: 2px 2px 2px 2px rgb(209, 207, 207);
     } 
 }
+@media screen and (min-width: 500px) {
+    .marginals2 {
+        margin-left: 150px;
+        margin-right: 150px;
+
+    } 
 @media screen and (max-width: 480px) {
     .marginals {
-       width: 100%;
+       /* margin-left: 10px;
+       margin-right: 10px; */
+       margin-top: 20px;
+
+       margin-bottom: 20px;
+       border-radius: 15px;
+       box-shadow: 2px 2px 2px 2px rgb(209, 207, 207);
        
     } 
     .smallNav {
         width: 100%;
     }
 }
+@media screen and (max-width: 480px) {
+    .marginals2 {
+       margin-left: 10px;
+
+       margin-right: 10px;
+
+
+       
+    } }
 .sgnbut {
     background-color: #460273;
     padding-left: 33px;
@@ -202,4 +223,4 @@ form-check-input[type=checkbox]:checked {
     border: none;
     padding: 0.7vw;
   
-}
+}}

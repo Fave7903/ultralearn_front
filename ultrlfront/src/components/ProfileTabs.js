@@ -49,7 +49,7 @@ class ProfileTabs extends Component {
                       <Link  to={`/users/${posterUser}`}> {posterFull}</Link>
                     </h2>
                     <p className='text-sm sm:text-base'>{post.user.bio}</p>
-                    <p className='text-sm'>{post.user.location}, Nigeria</p><br />
+                    <p className='text-sm'style={{display: post.user.location ? "" : "Nigeria"}}>{post.user.location}, Nigeria</p><br />
                   </div>
       </div>
       <div className='col-span-3'>

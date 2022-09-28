@@ -4,6 +4,7 @@ import {isAuthenticated} from '../auth'
 import {Image} from 'cloudinary-react'
 import {Link} from 'react-router-dom'
 import Arrow from "../assets/Arrow.svg"
+import avatarImage from "../assets/avatar.jpg"
 // import Thumbs from '../assets/Like-purple.png'
 // import Dots from '../assets/three-dots.svg'
 // import Like from './Like.js'
@@ -49,23 +50,20 @@ class Comments extends Component {
     
     const {comments} = this.props
     return (
-      <div className='container p-4 '>
-       
-         <Link to={`/`} ><img style={{ width: "30px", height: "20px" }} src={Arrow} className="pl-2 my-4 top-0 "alt ="Arrow"/></Link>
-        
-
-
+      <div className='mt-10'>
+ <Link to={`/`} ><img style={{ width: "30px", height: "20px" }} src={Arrow} className=" mb-40 absolute left-0 top-0  pl-2 my-4 "alt ="Arrow"/></Link>
         <form onSubmit={this.addComment}>
-          <div className="sm:mx-20 mx-4">
+          
+          <div className="">
             {/* {isAuthenticated().user.imgId ? <Image cloudName="favoursoar" publicId={isAuthenticated().user.imgId} style={{width: '70px', height: '70px', objectFit: 'cover', borderRadius: '50%'}} className=""/> :
           <i className="" style={{color: "#460273", fontSize: "40px"}}></i>
           } */}
-          <div className="sm:mx-20 rounded-lg border-2 border-purple-600 h-10">
-          <input type="text" placeholder="Add comment" value={this.state.text} onChange={this.handleChange} className="pl-4 border-white w-full font-bold break-normal"/>
-            </div>
+          <div className='marginals2 w-fit'>
+          <textarea type="text" placeholder="Add comment" value={this.state.text} onChange={this.handleChange} className="font-bold  w-full rounded-lg border-2 h-35 sm:h-40 "style={{backgroundColor:"#EFEEEE"}}/>
+          </div>
             </div>
             <div>
-              { <button type="submit" className="btn bg-purple-600 h-10 mb-10 px-4 rounded-lg float-right mt-5 sm:mr-40 mr-10">Add Comment</button> }
+              { <button type="submit" className=" h-14  mb-10 px-5 rounded-lg float-right  sm:mr-40 mr-1"style={{backgroundColor:"#460273",color:"#fff"}}>Add Comment</button> }
             </div>
             
         </form>
@@ -74,6 +72,7 @@ class Comments extends Component {
             
         return (
             <div className="mt-4 mb-7 " key={i}>
+              
     <div className="">
         {/* <div className=" ">  */}
 
@@ -82,11 +81,12 @@ class Comments extends Component {
         {/* </div> */}
       
     <div className='font-poppins post-bgpurple marginals px-4 sm:px-12 sm:px-7 py-8 mb-4 gap-4 sm:gap-4' style={{color: '#460273'}}>
+      
       <div className=' flex flex-row'>
       <Link className="" to={`/users/${comment.user.username}`}>
     
     {comment.user.imgId ? <Image cloudName="favoursoar" publicId={comment.user.imgId} className="w-10 h-10 rounded-full" style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%'}}/> :
-       <i className="" style={{color: "#460273", fontSize: "50px"}}></i>
+    <img className=" rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0 w-28 h-28" src={avatarImage} alt="user " />
        }</Link>
         <div className="d-flex mx-2 mb-0">
         <Link className=' ' to={`/users/${comment.user.username}`}>

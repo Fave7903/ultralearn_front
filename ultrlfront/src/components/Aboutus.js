@@ -2,11 +2,11 @@ import React from 'react'
 import Footer from '../components/Footer'
 import Nav from './Nav'
 import Bg from '../assets/rectangleimage.png'
-import garfield from '../assets/garfield.jpg'
-import Beomafav from '../assets/Beomafav.jpg'
-import drey from '../assets/drey.jpg'
-import amanda from '../assets/amanda.jpg'
-import daniel from '../assets/daniel.jpg'
+// import garfield from '../assets/garfield.jpg'
+// import Beomafav from '../assets/Beomafav.jpg'
+// import drey from '../assets/drey.jpg'
+// import amanda from '../assets/amanda.jpg'
+// import daniel from '../assets/daniel.jpg'
 
 
 
@@ -32,7 +32,7 @@ const Aboutus = () => {
                 </div>
             </div>
             
-            <div className=' py-8 px:20 sm:px-20 shadow mx-10">'style={{backgroundColor:"#460273"}}>
+            {/* <div className=' py-8 px:20 sm:px-20 shadow mx-10">'style={{backgroundColor:"#460273"}}>
             <p className='text-center text-5xl font-bold text-white dark:text-white'>Meet Our Team</p>
             <div className='flex items-center mx-auto flex-col md:flex-row justify evenly'>
             <div className='p-7'>
@@ -82,7 +82,7 @@ const Aboutus = () => {
             </div>
             
 
-            </div>
+            </div> */}
 
            {/* <div className='flex items-center mt-6 mb-10 justify-center'>
            <button type="button" class="py-2 px-4 bg-purple-300 text-purple-600 text-center text-base font-semibold shadow-md rounded-sm ">
@@ -90,7 +90,7 @@ const Aboutus = () => {
            </div> */}
 
 
-            </div>
+            {/* </div> */}
                 
     
             <Footer/>
