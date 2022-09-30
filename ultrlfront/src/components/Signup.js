@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 // import image3 from '../assets/image 3.png'
 // import logo from '../assets/newLogo.png'
  import '../assets/style.css'
-import { Authsidebar } from './authsidebar'
+import { Authsidebar3 } from './Authsidebar3'
 import { Errormsg } from './errormsg'
 import Bgimage from "../assets/signupimage.png"
 import { Loading } from './Loading'
@@ -77,7 +77,7 @@ class Signup extends Component {
     const { fullName, username, error, email, password, open, loading, toggler } = this.state
     return (
       <div className="h-full grid grid-cols-2"style={{backgroundImage:`url(${Bgimage})`}}>
-          <Authsidebar />
+          <Authsidebar3 />
           <div className='col-span-2 md:col-span-1 md:h-full flex flex-col' style={{ backgroundColor: "#f8f9fa" }}>
             <div className='mb-auto p-6'>
 
