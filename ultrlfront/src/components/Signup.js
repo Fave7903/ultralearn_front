@@ -125,7 +125,7 @@ class Signup extends Component {
                     <label className="block  text-sm font-bold mb-2" for="username">
                       Email
                     </label>
-                    <input className="border rounded w-full h-11 py-2 px-3 "
+                    <input className=" shadow appearance-none leading-tight focus:outline-none focus:shadow-outline w-full h-11 py-2 px-3 "
                       onChange={this.handleChange("email")}
                       type="email" id="username" value={email} placeholder="Email" />
                   </div>

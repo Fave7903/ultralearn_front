@@ -19,6 +19,9 @@
 .ourcolor {
     color: #460273;
 }
+.post-bgpurple{
+    background-color: #fff;
+}
 @media screen and (min-width: 500px) {
     .marginals {
         margin-left: 150px;
@@ -39,13 +42,14 @@
     .marginals {
        /* margin-left: 10px;
        margin-right: 10px; */
-       margin-top: 20px;
-
+       margin-top: 50px;
        margin-bottom: 20px;
        border-radius: 15px;
-       box-shadow: 2px 2px 2px 2px rgb(209, 207, 207);
+       background-color: #fff;
+       box-shadow: 2px 2px 2px 2px  rgb(209, 207, 207);
        
     } 
+
     .smallNav {
         width: 100%;
     }

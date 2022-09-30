@@ -111,7 +111,7 @@ class Profile extends Component {
 
                 <div className='no-scroll block sm:float-right ml-24 sm:ml-0 mt-12 sm:mt-40'>
                   {isAuthenticated().user && isAuthenticated().user.id === user.id ?
-                    <button className='border-purple  ul-purple2 bg-white px-2 py-3 text-white md:absolute mt-24 right-14'><Link className="" to={`/edit/${isAuthenticated().user.username}`}>Edit Profile</Link></button>
+                    <button style={{color:"#460273",border:"2px solid #460273"}}className='border-purple  bg-white px-2 py-3 text-white md:absolute mt-24 right-14'><Link className="" to={`/edit/${isAuthenticated().user.username}`}>Edit Profile</Link></button>
                   :
                   <div style={{display: user.fullName ? "" : "none"}}>
                   <FollowButton following={this.state.following} onButtonClick={this.clickFollow} />

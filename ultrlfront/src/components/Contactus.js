@@ -68,7 +68,7 @@ class Contact extends Component {
 
 
         <div class="flex items-center mt-6 mb-12 justify-center">
-          <button  class="sgnbut text-white font-bold py-2 px-4 rounded  " onClick={this.clickSubmit}>Submit
+          <button style={{backgroundColor:"#460273"}} className="sgnbut text-white font-bold py-2 px-4 rounded  " onClick={this.clickSubmit}>Submit
           </button> 
         </div>
         <br/>
