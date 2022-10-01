@@ -137,10 +137,7 @@ class Signup extends Component {
                       Password
                     </label>
                       </span>
-                      {/* <span className='float-right'>
-                      <p className='forgot-password ul-purple text-sm font-bold float-right mb-2'>
-                    <Link to="/forgotpassword" style={{ color: "#460273" }} className="fw-bold">Forgot Password?</Link></p>
-                      </span> */}
+                      
                     </div>
                     <input
                       onChange={this.handleChange("password")}
