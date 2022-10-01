@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import mailicon from "../assets/mailicon.png"
 import { Loading } from './Loading'
+import { resetLinkMail } from './apiUser'
 
 
 
@@ -34,11 +35,12 @@ class Reset extends Component {
   }
 
   render() {
+    const {loading, resent} = this.state
     return (
       <div>
         {loading ?  <Loading /> : ""} 
 
-<div style={{ display: reset ? "" : "none" }}>
+<div style={{ display: resent ? "" : "none" }}>
               <div class="bg-green-100 border border-green-400 text-green-700 mx-4 px-4 py-3 rounded relative" role="alert">
                 <span class="block sm:inline">Password reset link has been resent to your mail</span>
                 <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
