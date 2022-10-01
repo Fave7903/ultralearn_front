@@ -65,7 +65,7 @@ class Reset extends Component {
                     <button style={{ color: "#460273" }} className="fw-bold" onClick={this.clickSubmit}> Click to resend</button>
                   </div>
                   <div className='flex justify-center w-full m-0 p-0'>
-                <Link to='/login' class="flex text-black text-purple-900   py-2 px-4 rounded-full" type="button">
+                <Link to='/signin' class="flex text-black text-purple-900   py-2 px-4 rounded-full" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
                     Back to Login</Link>
