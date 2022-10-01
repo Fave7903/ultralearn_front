@@ -63,8 +63,8 @@ class ChangePassword extends Component {
                 </span>
             </div>
                 </div>
-        <div className='flex justify-center self-center  lg:pt-20'>
-          <div className="  p-4 w-full max-w-sm bg-white m-0 rounded-lg border border-purple-200 shadow-md sm:p-6 bg-gray-100 md:p-8 dark:bg-gray-800 dark:border-purple-900 ">
+        <div className='flex justify-center items-center h-screen py-auto'>
+          <div className="  p-4 w-full max-w-sm bg-white m-0 rounded-lg border border-purple-200  ">
             <form className=" space-y-7">
             <div className="items-center justify-center ">
               <img className='mx-auto text-center h-10  w-10  bg-no-repeat bg-contain' src = {iconlock} alt=""/>
@@ -82,9 +82,8 @@ class ChangePassword extends Component {
                 </div>
               <div className='flex items-center mt-6 mb-3 justify-center'>
                
-                <button onClick={this.clickSubmit} className="w-30 text-white bg-purple-900 hover:bg-white hover:text-purple-900 focus:ring-4 focus:outline-none 
-                        focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-indgo-900 dark:hover:bg-purple-900
-                        dark:focus:ring-purple-900">Reset Password
+                <button onClick={this.clickSubmit} className="w-30 text-white bg-purple-900  
+                        focus:ring-blue-300 ">Reset Password
                 </button>
                 
 

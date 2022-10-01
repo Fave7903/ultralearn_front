@@ -113,14 +113,15 @@ class Signin extends Component {
                   <div class="my-4">
                     <div className=''>
                       <span>
-                      <label class="block  text-sm font-bold mb-2" for="password">
+                      <label class="block  text-sm font-bold -mb-4" for="password">
                       Password
                     </label>
-                      </span>
-                      <span className='float-right'>
-                      <p className='forgot-password ul-purple text-sm font-bold float-right mb-2'>
+                    <span className='float-right'>
+                      <p className='forgot-password text-sm font-bold mb-2'>
                     <Link to="/forgotpassword" style={{ color: "#460273" }} className="fw-bold">Forgot Password?</Link></p>
                       </span>
+                      </span>
+
                     </div>
                     <input
                       onChange={this.handleChange("password")}

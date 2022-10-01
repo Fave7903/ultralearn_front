@@ -48,7 +48,7 @@ class Reset extends Component {
                 </span>
             </div>
                 </div>
-        <div className='flex justify-center self-center  lg:pt-20'>
+        <div className='flex justify-center items-center h-screen py-auto'>
           <div className="  p-4 w-full max-w-sm bg-white m-0 rounded-lg border border-purple-200 shadow-md sm:p-6 bg-gray-100 md:p-8 dark:bg-gray-800 dark:border-purple-900 ">
             <form className=" space-y-7">
             <div className="items-center justify-center ">
@@ -57,9 +57,8 @@ class Reset extends Component {
             <p className="text-sm text-center font-Montserrat font-bold text-purple-900 dark:text-white">We sent a password reset link to<br></br>
                         your mail</p>
               <div className='flex items-center mt-6 mb-3 justify-center'>
-                <a href="mailto:ultralearnng@gmail.com" type="submit" className="w-30 flex items-center text-white bg-purple-900 hover:bg-white hover:text-purple-900 focus:ring-4 focus:outline-none 
-                        focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-indgo-900 dark:hover:bg-purple-900
-                        dark:focus:ring-purple-900">Open Email</a>
+                <a href="mailto:ultralearnng@gmail.com" type="submit" className="w-30 flex items-center text-white bg-purple-900  
+                        focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 ">Open Email</a>
                
               </div>
               <div className="fonts-15 mb-3 text-center pt-5 sm:pt-3">

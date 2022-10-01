@@ -45,7 +45,7 @@ class ForgotPass extends Component {
     return (
       <div>
         {loading? <Loading />: ""}
-        <div className='flex justify-center self-center  lg:pt-20'>
+        <div className='flex justify-center items-center h-screen  py-auto'>
           <div className="  p-4 w-full max-w-sm bg-white m-0 rounded-lg border border-purple-200 shadow-md sm:p-6 bg-gray-100 md:p-8 dark:bg-gray-800 dark:border-purple-900 ">
             <form className=" space-y-7">
             <h2 className="text-3xl font-Montserrat font-bold text-purple-900 dark:text-white">Forgot Password</h2>
@@ -57,9 +57,8 @@ class ForgotPass extends Component {
                     value={email}    placeholder="Enter your mail here" required=""></input>
               </div>
               <div className='float-right'>
-                <button onClick={this.clickSubmit} className="w-30 flex text-white bg-purple-900 hover:bg-white hover:text-purple-900 focus:ring-4 focus:outline-none 
-                        focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-indgo-900 dark:hover:bg-purple-900
-                        dark:focus:ring-purple-900" >Next</button>
+                <button onClick={this.clickSubmit} className="w-30 flex text-white bg-purple-900  
+                        focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5" >Next</button>
                 <br></br><br></br>
               </div>
               <div className=' flex justify-center w-full m-0 p-0'>
