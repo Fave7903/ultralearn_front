@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 // import image3 from '../assets/image 3.png'
 // import logo from '../assets/newLogo.png'
  import '../assets/style.css'
-import { Authsidebar3  } from './Authsidebar3'
+import { Authsidebar3 } from './Authsidebar3'
 import { Errormsg } from './errormsg'
 import Bgimage from "../assets/signupimage.png"
 import { Loading } from './Loading'
