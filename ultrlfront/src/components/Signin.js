@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 // import image3 from '../assets/image 3.png'
 
 import { Errormsg } from './errormsg'
-import { Authsidebar } from './authsidebar'
+import { Authsidebar3 } from './Authsidebar3'
 import bgimage from "../assets/signinimage.png"
 
 
@@ -82,7 +82,7 @@ class Signin extends Component {
     return (
 
         <div className="h-full grid grid-cols-2 bg-no-repeat bg-contain"style={{ backgroundImage:`url(${bgimage})` }}>
-                    <Authsidebar />
+                    <Authsidebar3 />
           <div className='col-span-2 md:col-span-1 md:h-full flex flex-col' style={{ backgroundColor: "#f8f9fa" }}>
             <div className='my-auto mt-14 pt- p-6'>
 
