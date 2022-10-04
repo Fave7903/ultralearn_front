@@ -57,8 +57,8 @@ class Posts extends Component {
 
               <div className='font-poppins post-bgpurple marginals px-2 sm:px-7 py-8 mb-2 gap-5 sm:gap-4' style={{color: '#460273'}}>
                 <div className='flex flex-row'>
-                  <Link className="d-flex mx-2 mb-0  " to={`/users/${posterUser}`}> {post.user.imgId ? <Image cloudName="favoursoar" className="rounded-full w-28 h-28" publicId={post.user.imgId}  /> :
-                    <img className=" rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0 w-28 h-28" src={avatarImage} alt="user " />
+                  <Link className="d-flex mx-2 mb-0  " to={`/users/${posterUser}`}> {post.user.imgId ? <Image cloudName="favoursoar" className="rounded-full w-20 h-20" publicId={post.user.imgId}  /> :
+                    <img className=" rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0 w-20 h-20" src={avatarImage} alt="user " />
                   }
                   </Link>
                   <div className='w-auto ml-3'>
