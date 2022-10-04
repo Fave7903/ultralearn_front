@@ -73,12 +73,12 @@ class ChangePassword extends Component {
               <div>
               <label for="password" class="block mb-2 text-sm font-medium text-purple-900 dark:text-gray-300">Password</label>
                 <input onChange={this.handleChange("password1")}
-                    value={password1}  type="password" placeholder="********" className="bg-gray-50 border border-purple-900 text-sm rounded-lg focus:ring-purple-900 focus:border-blue-500 block w-full p-2.5 dark:bg-purple-900 dark:border-purple-900 dark:placeholder-gray-400" required></input>
+                    value={password1}  type="password" placeholder="********" className=" border border-purple-700 text-purple-900 placeholder-purple-700  text-sm rounded-lg focus:ring-purple-900 focus:border-blue-500 block w-full p-2.5 dark:bg-purple-900 dark:border-purple-900 dark:placeholder-gray-400" required></input>
               </div>
               <div>
                 <label for="password" class="block mb-2 text-sm font-medium text-purple-900 dark:text-gray-300">Confirm Password</label>
                 <input onChange={this.handleChange("password2")}
-                    value={password2} type="password" placeholder="********" className="bg-gray-50 border border-purple-900 text-sm rounded-lg focus:ring-purple-900 focus:border-blue-500 block w-full p-2.5 dark:bg-purple-900 dark:border-purple-900 dark:placeholder-gray-400" required></input>
+                    value={password2} type="password" placeholder="********" className=" border border-purple-700 text-purple-900 placeholder-purple-700 text-sm rounded-lg focus:ring-purple-900 focus:border-blue-500 block w-full p-2.5 dark:bg-purple-900 dark:border-purple-900 dark:placeholder-gray-400" required></input>
                 </div>
               <div className='flex items-center mt-6 mb-3 justify-center'>
                

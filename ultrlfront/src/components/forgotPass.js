@@ -52,13 +52,13 @@ class ForgotPass extends Component {
             <p className='text-sm text-purple-900 m-0'>No worries, we will send you reset instructions</p>
               <div>
                 <label for="email" className="block mb-2 text-purple-900 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
-                <input  type="email" name="email" id="email" className="bg-gray-100 border border-purple-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                <input  type="email" name="email" id="email" className="bg-purple-200 border border-purple-700 text-purple-900 placeholder-purple-700 Change the color of the input field to purple text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                     onChange={this.handleChange("email")}
                     value={email}    placeholder="Enter your mail here" required=""></input>
               </div>
               <div className='float-right'>
                 <button onClick={this.clickSubmit} className="w-30 flex text-white bg-purple-900  
-                        focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5" >Next</button>
+                        focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5" >Reset Password</button>
                 <br></br><br></br>
               </div>
               <div className=' flex justify-center w-full m-0 p-0'>

@@ -97,7 +97,7 @@ class Signin extends Component {
 </div> : ""}
               <div className="p-5 mt-0">
                 <h4 style={{color:"#460273"}}className=" font-medium fw-bolder leading-tight text-2xl -mt-10 mb-2">Welcome Back!</h4>
-                <div className="text-dark fonts15  my-1">Welcome Back,please enter your details</div>
+                <div className="text-dark fonts15  my-1">Welcome Back, please enter your details</div>
                 <form class="mt-7">
 
               <div className='grid g'>
