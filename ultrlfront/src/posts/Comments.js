@@ -59,7 +59,7 @@ class Comments extends Component {
           <i className="" style={{color: "#460273", fontSize: "40px"}}></i>
           } */}
           <div className='marginals2 w-fit'>
-          <textarea type="text" placeholder="Add comment" value={this.state.text} onChange={this.handleChange} className="font-bold  w-full rounded-lg border-2 h-35 sm:h-40 "style={{backgroundColor:"#EFEEEE"}}/>
+          <textarea type="text" placeholder="Add comment" value={this.state.text} onChange={this.handleChange} className="font-normal  w-full rounded-lg border-2 h-35 sm:h-40 "style={{backgroundColor:"#EFEEEE"}}/>
           </div>
             </div>
             <div>
