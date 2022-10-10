@@ -134,3 +134,34 @@ export const myfollowings = (name, token) => {
 }
 
 
+export const resetLinkMail = (mail) => {
+  return fetch(`https://api-ultralearn.herokuapp.com/ul/email`, {
+    method: 'POST',
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(mail)
+  })
+  .then(response => {
+    return response.json()
+  })
+  .catch(err => console.log(err))
+}
+
+
+export const passwordReset = (password, token) => {
+  console.log(token, password)
+  return fetch(`https://api-ultralearn.herokuapp.com/reset-password`, {
+    method: 'PUT',
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({password, token})
+  })
+  .then(response => {
+    return response.json()
+  })
+  .catch(err => console.log(err))
+}

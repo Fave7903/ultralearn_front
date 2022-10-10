@@ -76,7 +76,7 @@ class Followers extends Component {
   {user.imgId ? <Image cloudName="favoursoar" publicId={user.imgId} style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%', borderColor: "purple"}}/> :
           <img src={avatar}alt="Avatar" className=" invisble sm:visible rounded-full"style={{color: "#460273", width: "100px",height:"100px"}}/>
           }
-           <Link to={`/users/${user.username}`} className=" text-dark text-1xl sm:text-2xl" ><p className="">{user.fullName}</p></Link>
+           <Link to={`/users/${user.username}`} className=" text-dark text-1xl sm:text-2xl mt-4" ><p className="">{user.fullName}</p></Link>
   </div>
  
   <div className=''>

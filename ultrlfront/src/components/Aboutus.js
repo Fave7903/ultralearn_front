@@ -15,7 +15,7 @@ const Aboutus = () => {
         <div >
             <Nav />
             <div className="h-100 w-full hidden md:flex justify-center py-40 "  style={{ backgroundImage:`url(${Bg})` }}>
-          <p class="absolute text-5xl visible md:visible text-purple-900 font-bold">About Us</p>
+          <p class="absolute text-6xl visible md:visible text-purple-900 font-bold">About Us</p>
         </div>
 
 

@@ -76,7 +76,7 @@ class Posts extends Component {
                 </div>
                   }
                                     <div className='flex grid grid-cols-2 '>
-                  <Link to={`post/${post.id}`} style={{pointer: 'cursor'}}><span className="flex flex-row "><span className='text-xl mt-8 pr '>{obj.length}</span><img className='mt-8 pl-2 w-9' src={comment} alt='comment'/></span></Link>
+                  <Link to={`post/${post.id}`} style={{pointer: 'cursor'}}><span className="flex flex-row "><span className='text-xl mt-8 pr '>{obj.length}</span><img className='mt-8 pl-2 w-8' src={comment} alt='comment'/></span></Link>
 
                     {/* <span>  <img className="float-right" src={like} alt="Like" /></span> */}
                    </div>

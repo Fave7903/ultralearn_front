@@ -67,7 +67,7 @@ class FindPeople extends Component {
   {user.imgId ? <Image cloudName="favoursoar" publicId={user.imgId} style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%', borderColor: "purple"}}/> :
           <img src={avatar}alt="Avatar" className=" invisble sm:visible rounded-full"style={{color: "#460273", width: "100px",height:"100px"}}/>
           }
-            <Link to={`/users/${user.username}`} className=" text-dark text-1xl sm:text-2xl" ><h5 className="">{user.fullName}</h5></Link>
+            <Link to={`/users/${user.username}`} className=" text-dark text-1xl sm:text-2xl mt-4" ><h5 className="">{user.fullName}</h5></Link>
   </div>
 
   <div className=''>

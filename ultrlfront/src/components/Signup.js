@@ -125,7 +125,7 @@ class Signup extends Component {
                     <label className="block  text-sm font-bold mb-2" for="username">
                       Email
                     </label>
-                    <input className="border rounded w-full h-11 py-2 px-3 "
+                    <input className="border rounded w-full h-11 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline "
                       onChange={this.handleChange("email")}
                       type="email" id="username" value={email} placeholder="Email" />
                   </div>
@@ -137,10 +137,7 @@ class Signup extends Component {
                       Password
                     </label>
                       </span>
-                      {/* <span className='float-right'>
-                      <p className='forgot-password ul-purple text-sm font-bold float-right mb-2'>
-                    <Link to="/forgotpassword" style={{ color: "#460273" }} className="fw-bold">Forgot Password?</Link></p>
-                      </span> */}
+                      
                     </div>
                     <input
                       onChange={this.handleChange("password")}

@@ -46,8 +46,8 @@ const MainRouter = () => {
       <Route exact path="/post/:postId" component={SingPost}></Route>
       {/* <Route exact path="/addfriends" component={AddFriends}></Route> */}
       <Route exact path="/forgotPassword" component={ForgotPass}></Route>
-      <Route exact path="/changePassword" component={ChangePassword}></Route>
-      <Route exact path="/reset" component={Reset}></Route>
+      <Route exact path="/reset-password/:token" component={ChangePassword}></Route>
+      <Route exact path="/getmail" component={Reset}></Route>
       <Route exact path="/successful" component={Successful}></Route>
       <Route exact path="/deletepost" component={popupdelete}></Route>
       <Route exact path="/sharepost" component={Share}></Route>
