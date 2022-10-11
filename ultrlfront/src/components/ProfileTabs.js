@@ -20,7 +20,7 @@ class ProfileTabs extends Component {
     const userId = isAuthenticated().user._id
 
     return ( 
-       <div className='bg-gray-100'>      
+       <div className=''>      
           
 
           <div className='text-center py-2 rounded-lg 'style={{borderBottom: " 8px solid #fff"}}>
@@ -37,7 +37,7 @@ class ProfileTabs extends Component {
         return (
 
           
-        <div className="font-poppins post-bgpurple marginals px-4 text-purple-900 sm:px-12 sm:px-7 py-8 mb-4 gap-4 sm:gap-4" /*style={{borderBottom: " 8px solid #fff"}}*/ key={i}>
+        <div className="font-poppins  post-bgpurple marginals px-4 text-purple-900 sm:px-12 sm:px-7 py-8 mb-4 gap-4 sm:gap-4" /*style={{borderBottom: " 8px solid #fff"}}*/ key={i}>
    <div className="col-span-2 flex flex-row"> 
    <div className='flex float-left mt-0 w-28 h-28'>
      <Link className="d-flex mx-2 mb-3" to={`/users/${posterUser}`}>{post.user.imgId ? <Image cloudName="favoursoar" className="rounded-full" publicId={post.user.imgId} style={{ width: '100px', height: '100px', objectFit: 'cover', }} /> :
