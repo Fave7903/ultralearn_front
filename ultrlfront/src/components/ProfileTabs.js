@@ -20,16 +20,15 @@ class ProfileTabs extends Component {
     const userId = isAuthenticated().user._id
 
     return ( 
-       <div className='bg-grey-900'>
-        
+       <div className='bg-gray-100'>      
           
 
-          <div className='text-center py-2 rounded-lg bg-grey-900 'style={{borderBottom: " 8px solid #fff"}}>
+          <div className='text-center py-2 rounded-lg 'style={{borderBottom: " 8px solid #fff"}}>
           <div>
             <h3 style={{color: "#460273"}} className='mt-6 justfy-center text-2xl'>Posts</h3>
              </div>
             {/* <div className='float-right'>
-            <h3 style={{color: "#460273"}} className='float-right -mt-6  justfy-center text-2xl'>Media</h3>
+            <h3 style={{color: "#460273"}} className='float-right mt-6  justfy-center text-2xl'>Media</h3>
             </div> */}
           </div>
         {posts.map((post, i) => {
