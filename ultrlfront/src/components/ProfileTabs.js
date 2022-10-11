@@ -20,13 +20,13 @@ class ProfileTabs extends Component {
     const userId = isAuthenticated().user._id
 
     return ( 
-       <div>
+       <div className='bg-grey-900'>
         
           
 
-          <div className='text-center py-2 'style={{borderBottom: " 8px solid #C4C4C4"}}>
+          <div className='text-center py-2 rounded-lg bg-grey-900 'style={{borderBottom: " 8px solid #fff"}}>
           <div>
-            <h3 style={{color: "#460273"}} className='-mt-6 justfy-center text-2xl'>Posts</h3>
+            <h3 style={{color: "#460273"}} className='mt-6 justfy-center text-2xl'>Posts</h3>
              </div>
             {/* <div className='float-right'>
             <h3 style={{color: "#460273"}} className='float-right -mt-6  justfy-center text-2xl'>Media</h3>
@@ -38,19 +38,21 @@ class ProfileTabs extends Component {
         return (
 
           
-        <div className="w-full px-1 sm:px-7 py-8 mb-4 ul-purple bg-white grid grid-cols-5 gap-5 sm:gap-4" style={{borderBottom: " 8px solid #C4C4C4"}} key={i}>
+        <div className="font-poppins post-bgpurple marginals px-4 text-purple-900 sm:px-12 sm:px-7 py-8 mb-4 gap-4 sm:gap-4" /*style={{borderBottom: " 8px solid #fff"}}*/ key={i}>
    <div className="col-span-2 flex flex-row"> 
-     <Link className="d-flex mx-2 mb-0" to={`/users/${posterUser}`}>{post.user.imgId ? <Image cloudName="favoursoar" className="rounded-full" publicId={post.user.imgId} style={{ width: '100px', height: '100px', objectFit: 'cover', }} /> :
+   <div className='flex float-left mt-0 w-28 h-28'>
+     <Link className="d-flex mx-2 mb-3" to={`/users/${posterUser}`}>{post.user.imgId ? <Image cloudName="favoursoar" className="rounded-full" publicId={post.user.imgId} style={{ width: '100px', height: '100px', objectFit: 'cover', }} /> :
                     <img style={{ width: "100px", height: "100px" }} className=" rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src={avatarImage} alt="user " />
                   }
      </Link>
-     <div className='w-auto ml-3'>
+     </div>
+     <div className='w-auto ml-3 '>
                     <h2 className='font-semibold text-1xl sm:text-2xl'> 
                       <Link  to={`/users/${posterUser}`}> {posterFull}</Link>
                     </h2>
                     <p className='text-sm sm:text-base'>{post.user.bio}</p>
-                    <p className='text-sm'style={{display: post.user.location ? "" : "Nigeria"}}>{post.user.location}, Nigeria</p><br />
-                  </div>
+                    <p className='text-sm'style={{display: post.user.location ? "" : "Nigeria"}}>{post.user.location}Nigeria</p><br />
+      </div>
       </div>
       <div className='col-span-3'>
       <div className=''>
@@ -66,7 +68,7 @@ class ProfileTabs extends Component {
     {post.postImgId && 
                         <div className="" style={{ backgroundColor: "white", width: '100%', height: '350px' }}>
                         <Image cloudName="favoursoar" className=""publicId={post.postImgId} style={{ objectFit: 'contain', width: "100%", height: "100%" }} />
-  
+                
                       </div>
     }
                       {/* <div className='flex float-right hover:float-left"'>
@@ -74,6 +76,7 @@ class ProfileTabs extends Component {
 
                    <span><img className='pt-3' src={comment} alt='comment'/></span>
                    </div> */}
+                   
          </div>
           
 </div>
