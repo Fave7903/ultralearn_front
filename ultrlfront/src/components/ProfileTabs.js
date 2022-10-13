@@ -53,7 +53,7 @@ class ProfileTabs extends Component {
                     <p className='text-sm'style={{display: post.user.location ? "" : "Nigeria"}}>{post.user.location}Nigeria</p><br />
       </div>
       </div>
-      <div className='col-span-3 sm:ml-20 sm:pl-10'>
+      <div className='col-span-3 ml-20 pl-10'>
       <div className=''>
                     <span>
                     <h2 className='font-bold mr-74'>Posted on {new Date(post.createdAt).toDateString()}</h2>
