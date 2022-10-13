@@ -86,7 +86,7 @@ class Comments extends Component {
       <Link className="" to={`/users/${comment.user.username}`}>
     
     {comment.user.imgId ? <Image cloudName="favoursoar" publicId={comment.user.imgId} className="w-10 h-10 rounded-full" style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%'}}/> :
-    <img className=" rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0 w-28 h-28" src={avatarImage} alt="user " />
+    <img className=" rounded-full border border-gray-100 shadow-sm image-fluid mx-1 w-28 h-28" src={avatarImage} alt="user " />
        }</Link>
         <div className="d-flex mx-2 mb-0">
         <Link className=' ' to={`/users/${comment.user.username}`}>
@@ -95,7 +95,7 @@ class Comments extends Component {
       
        <p className="font-italic text-xs text-purple-900 mb-2">Posted on {new Date(comment.createdAt).toDateString()}</p>
        
-       <p className="card-text ml-2 text-gray-500">{comment.text}</p>
+       <p className="card-text ml-2 text-gray-500 ml-5 text-2xl">{comment.text}</p>
         </div>
       </div>
      {/* <p className=" datestamp float-right mb-1 ml-2 text-xs text-gray-400">Commented on {new Date(comment.createdAt).toDateString()}</p> */}
