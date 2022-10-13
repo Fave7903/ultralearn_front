@@ -51,13 +51,14 @@ class ProfileTabs extends Component {
                     </h2>
                     <p className='text-sm sm:text-base'>{post.user.bio}</p>
                     <p className='text-sm'style={{display: post.user.location ? "" : "Nigeria"}}>{post.user.location}Nigeria</p><br />
+                    
+                    <h2 className='font-bold mr-74 text-xs my-0 py-0 '>Posted on {new Date(post.createdAt).toDateString()}</h2>
+                    
       </div>
       </div>
-      <div className='col-span-3 ml-20 pl-10'>
+      <div className='col-span-3 sm:ml-20 sm:pl-10'>
       <div className=''>
-                    <span>
-                    <h2 className='font-bold mr-74'>Posted on {new Date(post.createdAt).toDateString()}</h2>
-                    </span>
+                    
                     <span>
                     { ( userId === post.user.id)? <div className='-mt-15 float-right '>  <Verticalicon/> </div>:  ""}
                     </span>
