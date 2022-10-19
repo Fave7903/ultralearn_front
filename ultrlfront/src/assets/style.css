@@ -6,6 +6,9 @@
 .post-back {
     background-color: #f1eded;
 }
+*{
+    box-sizing: border-box;
+}
 /* Hide scrollbar for Chrome, Safari and Opera */
 
 
@@ -50,7 +53,7 @@
     div.showMenuNav{
     display: block;
         position: absolute;
-        width: 60%;
+        /* width: 60%; */
         height: 70vh;
         top: 0;
         left: 0;
@@ -208,9 +211,9 @@
        box-shadow: 2px 2px 2px 2px rgb(209, 207, 207);
        
     } 
-    .smallNav {
+    /* .smallNav {
         width: 100%;
-    }
+    } */
 
     .marginals2 {
         margin-left: 10px;
@@ -229,11 +232,9 @@
 }
 
 
-div.showMenuNav{
+/* div.showMenuNav{
 display: block;
     position: absolute;
-    width: 60%;
-    height: 70vh;
     top: 0;
     left: 0;
     background: white;
@@ -242,7 +243,7 @@ display: block;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-}
+} */
 .btn-blue {
   @apply  bg-blue-500 text-blue-100;
 }
@@ -318,6 +319,7 @@ padding: 2VW
 @media screen and (min-width: 1024px) {
     .post-box {
         width: fit-content;
+        width: -moz-fit-content;
     }
 }
 .text1{
@@ -375,9 +377,9 @@ padding: 2VW
        box-shadow: 2px 2px 2px 2px rgb(209, 207, 207);
        
     } 
-    .smallNav {
+    /* .smallNav {
         width: 100%;
-    }
+    } */
 }
 @media screen and (max-width: 480px) {
     .marginals2 {
