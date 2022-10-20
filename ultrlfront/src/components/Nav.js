@@ -20,7 +20,7 @@ const Nav = (hasnotif = true) => {
             <Logotext small={true} />
           </a>
           < Hamburgermenu />
-          <div className="md:block md:w-auto lg:flex hidden post-back" id="navbar-default">
+          <div className="lg:block lg:w-auto lg:flex hidden post-back" id="navbar-default">
             <ul className="post-back flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
                 <a href="/" className="post-back block ul-purple  py-2 pr-4 pl-3 rounded" aria-current="page">Home</a>
