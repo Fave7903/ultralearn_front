@@ -23,7 +23,6 @@ class SingPost extends Component {
   }
 
 
-
   componentDidMount() {
     const postId = this.props.match.params.postId
     getPost(postId)
