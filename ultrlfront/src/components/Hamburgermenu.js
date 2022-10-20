@@ -26,7 +26,7 @@ export default function Header() {
 
           <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}> 
             <div
-              className="CROSS-ICON absolute top-0 right-0 px-8 py-8"
+              className="CROSS-ICON absolute top-0 left-0 px-8 py-8"
               onClick={() => setIsNavOpen(false)} 
             >
               <svg

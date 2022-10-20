@@ -30,6 +30,10 @@ class Comments extends Component {
     const postId = this.props.postId
     const text = this.state.text
     
+    if (text === "") {
+      // comments won't add if textarea is empty
+      return
+    }
 
     comment(userId, token, postId, text)
     .then(data => {
@@ -59,7 +63,7 @@ class Comments extends Component {
           <i className="" style={{color: "#460273", fontSize: "40px"}}></i>
           } */}
           <div className='marginals2 w-fit'>
-          <textarea type="text" placeholder="Add comment" value={this.state.text} onChange={this.handleChange} className="font-bold  w-full rounded-lg border-2 h-35 sm:h-40 "style={{backgroundColor:"#EFEEEE"}}/>
+          <textarea type="text" placeholder="Add comment" value={this.state.text} onChange={this.handleChange} className="font-normal  w-full rounded-lg border-2 h-35 sm:h-40 "style={{backgroundColor:"#EFEEEE"}}/>
           </div>
             </div>
             <div>
@@ -86,16 +90,21 @@ class Comments extends Component {
       <Link className="" to={`/users/${comment.user.username}`}>
     
     {comment.user.imgId ? <Image cloudName="favoursoar" publicId={comment.user.imgId} className="w-10 h-10 rounded-full" style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%'}}/> :
-    <img className=" rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0 w-28 h-28" src={avatarImage} alt="user " />
+    <img className=" rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0 w-20 h-20" src={avatarImage} alt="user " />
+
        }</Link>
-        <div className="d-flex mx-2 mb-0">
+        <div className="d-flex mx-2 mb-0 post-box">
         <Link className=' ' to={`/users/${comment.user.username}`}>
           <p className="font-bold" style={{color: "#460273"}}>{comment.user.fullName}</p>   
         </Link>
       
-       <p className="font-italic text-xs text-purple-900 mb-2">Posted on {new Date(comment.createdAt).toDateString()}</p>
+
+       <p className="font-italic text-xs mb-2">Posted on {new Date(comment.createdAt).toDateString()}</p>
        
-       <p className="card-text ml-2 text-gray-500">{comment.text}</p>
+       <p className="post-text">{comment.text}</p>
+
+      
+
         </div>
       </div>
      {/* <p className=" datestamp float-right mb-1 ml-2 text-xs text-gray-400">Commented on {new Date(comment.createdAt).toDateString()}</p> */}

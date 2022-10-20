@@ -61,14 +61,14 @@ class Posts extends Component {
                     <img className=" rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0 w-20 h-20" src={avatarImage} alt="user " />
                   }
                   </Link>
-                  <div className='w-auto ml-3'>
+                  <div className='w-auto ml-3 post-box'>
                     <h2 className='font-semibold text-1xl sm:text-2xl'> 
                       <Link  to={`/users/${posterUser}`}> {posterFull}</Link>
                     </h2>
                     <p className='text-sm '>{post.user.bio}</p>
                     <p className='text-sm ' style={{display: post.user.location ? "" : "none",}}>{post.user.location}, Nigeria</p>
-                    <h2 className=' text-sm mb-5'>Posted on {new Date(post.createdAt).toDateString()}</h2>
-                    {post.body.length > 120 && this.state.more ? <p className="font-poppins font-bold break-all ">{post.body.substring(0, 120)}...<span style={{ cursor: "pointer", color: "/5f0f40" }} onClick={() => this.setState({ more: !this.state.more })}>see more</span></p> : <p className="font-poppins font-bold ">{post.body}</p>}
+                    <h2 className=' text-sm mb-2.5'>Posted on {new Date(post.createdAt).toDateString()}</h2>
+                    {post.body.length > 120 && this.state.more ? <p className="font-poppins font-normal break-all post-text">{post.body.substring(0, 120)}...<span style={{ cursor: "pointer", color: "/5f0f40" }} onClick={() => this.setState({ more: !this.state.more })}>see more</span></p> : <p className="font-poppins font-normal post-text">{post.body}</p>}
                   {post.postImgId &&
                     <div className="mt-6" style={{ backgroundColor: "white", width: '100%', height: '350px' }}>
                       <Image cloudName="favoursoar" className="e"publicId={post.postImgId} style={{ objectFit: 'contain', width: "100%", height: "100%" }} />
@@ -76,7 +76,7 @@ class Posts extends Component {
                 </div>
                   }
                                     <div className='flex grid grid-cols-2 '>
-                  <Link to={`post/${post.id}`} style={{pointer: 'cursor'}}><span className="flex flex-row "><span className='text-xl mt-8 pr '>{obj.length}</span><img className='mt-8 pl-2 w-8' src={comment} alt='comment'/></span></Link>
+                  <Link to={`post/${post.id}`} style={{pointer: 'cursor'}}><span className="flex flex-row "><span className='text-xl mt-8 pr '>{obj.length}</span><img className='mt-8 pl-2 w-7' src={comment} alt='comment'/></span></Link>
 
                     {/* <span>  <img className="float-right" src={like} alt="Like" /></span> */}
                    </div>

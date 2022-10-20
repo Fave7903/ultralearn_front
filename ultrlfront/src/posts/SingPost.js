@@ -23,7 +23,6 @@ class SingPost extends Component {
   }
 
 
-
   componentDidMount() {
     const postId = this.props.match.params.postId
     getPost(postId)
@@ -51,14 +50,14 @@ class SingPost extends Component {
                     <img style={{ width: "100px", height: "100px" }} className="rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0" src={avatarImage} alt="user " />
                   }
                   </Link>
-                  <div className='w-auto ml-3'>
+                  <div className='w-auto ml-3 post-box'>
                     <h2 className='font-poppins text-1xl sm:text-2xl'> 
                       <Link  to={`/users/${postedBy.username}`}> {postedBy.fullName}</Link>
                     </h2>
                     <p className='text-sm sm:text-base'>{postedBy.bio}</p>
                     <p className='text-sm' style={{display: postedBy.location ? "" : "none"}}>{postedBy.location}, Nigeria</p>
                     <p className='text-sm'>Posted on {new Date(post.createdAt).toDateString()}</p>
-                    <p className="font-poppins mt-4">{post.body}</p>
+                    <p className="font-poppins mt-4 post-text">{post.body}</p>
                   {post.postImgId &&
                     <div className="mt-6" style={{ backgroundColor: "white", width: '100%', height: '350px' }}>
                       <Image cloudName="favoursoar" className="sm:visible invisible"publicId={post.postImgId} style={{ objectFit: 'contain', width: "100%", height: "100%" }} />
