@@ -54,7 +54,7 @@ export default function LongMenu() {
       {/* <Link to="/share"> <MenuItem style={{ color: '#460273' }}        className="bg-purple-100">
             <div  className="flex">Share Post <img alt="Icon"className="mx-2"style={{width:"20px",height:"20px"}}src={SharePost}/></div>
           </MenuItem></Link> */}
-          <Link to="/edit">
+          <Link to="/editpost"> 
           <MenuItem style={{ color: '#460273' }}id="">
             <div className="flex">Edit Post <img alt="Icon" className="mx-5" style={{width:"20px",height:"20px"}}src={EditPost}/></div>
           </MenuItem>

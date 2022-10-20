@@ -38,7 +38,7 @@ class Posts extends Component {
   }
 
   renderPosts = (posts) => {
-    const userId = isAuthenticated().user._id
+    const userId = isAuthenticated().user.id
 
     console.log(posts)
     return (
@@ -86,7 +86,7 @@ class Posts extends Component {
                   
                     <p>
                     {/* <div className='-mt-15 float-right '>  <Verticalicon/></div> */}
-                    { ( userId === post.user.id)? <div className='-mt-15 float-right '>  <Verticalicon/> </div>:  ""}
+                    {  userId === post.user.id ? <div className='float-right '>  <Verticalicon/> </div>:  ""}
 
                     </p>
 
