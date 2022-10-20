@@ -20,9 +20,7 @@ class ProfileTabs extends Component {
     const userId = isAuthenticated().user._id
 
     return ( 
-       <div className='post-bgpurple'>      
-          
-
+       <div className='post-bgpurple'>     
           <div className='text-center py-2 rounded-lg 'style={{borderBottom: " 8px solid #fff"}}>
           <div>
             <h3 style={{color: "#460273"}} className='mt-6 justfy-center text-2xl'>Posts</h3>

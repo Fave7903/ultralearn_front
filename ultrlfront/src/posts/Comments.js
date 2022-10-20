@@ -101,7 +101,7 @@ class Comments extends Component {
 
        <p className="font-italic text-xs text-purple-900 mb-2">Posted on {new Date(comment.createdAt).toDateString()}</p>
        
-       <p className="card-text ml-2 text-gray-500 post-text">{comment.text}</p>
+       <p className="post-text">{comment.text}</p>
 
       
 
