@@ -30,6 +30,10 @@ class Comments extends Component {
     const postId = this.props.postId
     const text = this.state.text
     
+    if (text === "") {
+      // comments won't add if textarea is empty
+      return
+    }
 
     comment(userId, token, postId, text)
     .then(data => {
@@ -86,15 +90,21 @@ class Comments extends Component {
       <Link className="" to={`/users/${comment.user.username}`}>
     
     {comment.user.imgId ? <Image cloudName="favoursoar" publicId={comment.user.imgId} className="w-10 h-10 rounded-full" style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '50%'}}/> :
-    <img className=" rounded-full border border-gray-100 shadow-sm image-fluid mx-1 w-28 h-28" src={avatarImage} alt="user " />
+    <img className=" rounded-full border border-gray-100 shadow-sm image-fluid mx-1 mt-0 w-20 h-20" src={avatarImage} alt="user " />
+
        }</Link>
-        <div className="d-flex mx-2 mb-0">
+        <div className="d-flex mx-2 mb-0 post-box">
         <Link className=' ' to={`/users/${comment.user.username}`}>
           <p className="font-bold" style={{color: "#460273"}}>{comment.user.fullName}</p>   
         </Link>
       
-       <p style={{color: "#460273"}}  className="font-italic text-sm mb-2">Posted on {new Date(comment.createdAt).toDateString()}</p>
-       <p style={{color: "#460273"}} className=" ml-0">{comment.text}</p>
+
+       <p className="font-italic text-xs text-purple-900 mb-2">Posted on {new Date(comment.createdAt).toDateString()}</p>
+       
+       <p className="card-text ml-2 text-gray-500 post-text">{comment.text}</p>
+
+      
+
         </div>
       </div>
      {/* <p className=" datestamp float-right mb-1 ml-2 text-xs text-gray-400">Commented on {new Date(comment.createdAt).toDateString()}</p> */}
