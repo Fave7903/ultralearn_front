@@ -99,7 +99,7 @@ class Comments extends Component {
         </Link>
       
 
-       <p className="font-italic text-xs text-purple-900 mb-2">Posted on {new Date(comment.createdAt).toDateString()}</p>
+       <p className="font-italic text-xs mb-2">Posted on {new Date(comment.createdAt).toDateString()}</p>
        
        <p className="post-text">{comment.text}</p>
 
