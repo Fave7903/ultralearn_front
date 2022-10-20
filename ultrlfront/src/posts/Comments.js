@@ -66,8 +66,9 @@ class Comments extends Component {
           <textarea type="text" placeholder="Add comment" value={this.state.text} onChange={this.handleChange} className="font-normal  w-full rounded-lg border-2 h-35 sm:h-40 "style={{backgroundColor:"#EFEEEE"}}/>
           </div>
             </div>
-            <div>
-              { <button type="submit" className=" h-14  mb-10 px-5 rounded-lg float-right  sm:mr-40 mr-1"style={{backgroundColor:"#460273",color:"#fff"}}>Add Comment</button> }
+            
+            <div style={{display: this.state.text ? "" : 'none'}}>
+              {this.state.text.trim().length ? <button type="submit" className=" h-14  mb-10 px-5 rounded-lg float-right  sm:mr-40 mr-1"style={{backgroundColor:"#460273",color:"#fff"}}>Add Comment</button> : "" }
             </div>
             
         </form>

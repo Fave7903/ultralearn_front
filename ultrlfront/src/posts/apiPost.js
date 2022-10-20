@@ -113,18 +113,18 @@ export const uncomment = (userId, token, postId, comment) => {
     .catch(err => console.log(err))
   }
 
-  export const editPost = (postId, newPost) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/post/${postId}`, {
-      method: "PUT",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
-      },
-      body: JSON.stringify(newPost) 
-    })
-    .then(response => {
-      return response.json()
-    })
-    .catch(err => console.log(err))
-  }
+  // export const editPost = (postId, newPost) => {
+  //   return fetch(`https://api-ultralearn.herokuapp.com/post/${postId}`, {
+  //     method: "PUT",
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //       Authorization: `Bearer ${token}`
+  //     },
+  //     body: JSON.stringify(newPost) 
+  //   })
+  //   .then(response => {
+  //     return response.json()
+  //   })
+  //   .catch(err => console.log(err))
+  // }
