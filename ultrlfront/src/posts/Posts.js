@@ -54,7 +54,7 @@ class Posts extends Component {
           const posterUser = post.user ? post.user.username : " Unknown"
           return (
             <>
-
+            <Link to={`post/${post.id}`} style={{pointer: 'cursor'}}>
               <div className='font-poppins post-bgpurple marginals px-2 sm:px-7 py-8 mb-2 gap-5 sm:gap-4' style={{color: '#460273'}}>
                 <div className='flex flex-row'>
                   <Link className="d-flex mx-2 mb-0  " to={`/users/${posterUser}`}> {post.user.imgId ? <Image cloudName="favoursoar" className="rounded-full w-20 h-20" publicId={post.user.imgId}  /> :
@@ -94,7 +94,7 @@ class Posts extends Component {
                 </div>
               </div>
 
-
+              </Link>
             </>
 
           )
