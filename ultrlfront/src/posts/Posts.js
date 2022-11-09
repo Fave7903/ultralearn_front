@@ -86,7 +86,7 @@ class Posts extends Component {
                   
                     <p>
                     {/* <div className='-mt-15 float-right '>  <Verticalicon/></div> */}
-                    {  userId === post.user.id ? <div className='float-right '>  <Verticalicon/> </div>:  ""}
+                    {/* {  userId === post.user.id ? <div className='float-right '>  <Verticalicon/> </div>:  ""} */}
 
                     </p>
 
