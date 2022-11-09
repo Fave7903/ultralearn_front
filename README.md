@@ -3,7 +3,7 @@ An environment where people can become better versions of themselves by promotin
 ## Features
 - User can Search for other users by name.
 - User can Edit their profile.
-- User can Add Friend .
+- User can Add Friends .
 - User can create posts.
 - User can makecomments.
 - Like / Unlike posts.
