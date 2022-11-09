@@ -55,7 +55,7 @@ class Comments extends Component {
     const {comments} = this.props
     return (
       <div className='mt-10'>
- <Link to={`/`} ><img style={{ width: "30px", height: "20px" }} src={Arrow} className=" mb-40 absolute left-0 top-0  pl-2 my-4 "alt ="Arrow"/></Link>
+ <Link to={`/`} ><img style={{ width: "41px", height: "20px" }} src={Arrow} className="sm:ml-10 ml-0 mb-40 absolute left-0 top-0  pl-2 my-4 "alt ="Arrow"/></Link>
         <form onSubmit={this.addComment}>
           
           <div className="">

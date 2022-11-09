@@ -82,16 +82,16 @@ class Posts extends Component {
                    </div>
                   </div>
                   </div>
-                <div className='m'>
+                {/* <div className='m'> */}
                   
-                    <p>
+                    {/* <p> */}
                     {/* <div className='-mt-15 float-right '>  <Verticalicon/></div> */}
                     {/* {  userId === post.user.id ? <div className='float-right '>  <Verticalicon/> </div>:  ""} */}
 
-                    </p>
+                    {/* </p> */}
 
 
-                </div>
+                {/* </div> */}
               </div>
 
               </Link>
