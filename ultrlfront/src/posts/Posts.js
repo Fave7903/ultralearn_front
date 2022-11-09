@@ -3,7 +3,7 @@ import { list } from './apiPost'
 import { Link } from 'react-router-dom'
 import { Image } from 'cloudinary-react'
 import avatarImage from "../assets/avatar.jpg"
-import Verticalicon from "../components/verticalicon"
+// import Verticalicon from "../components/verticalicon"
 import Explore from '../components/Explore'
 import { Loading } from '../components/Loading'
 import {isAuthenticated} from '../auth'
