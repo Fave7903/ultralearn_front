@@ -1,11 +1,12 @@
 # Ultralearn
 An environment where people can become better versions of themselves by promoting growth conversations for people to be equipped with skills they need without having to pass through difficulties,to have knowledge and accountability of the skill they want through conversations and to learn a skill easier and faster. This platform is entirely user based and only users can dictate the kind of skills that would be available on the platform.
 ## Features
+- User can Search for other users by name.
 - User can Edit their profile.
 - User can Add Friend .
 - User can create posts.
 - User can makecomments.
-- Like / Unlike posts
+- Like / Unlike posts.
 
 # Getting Started with Create React App
 
