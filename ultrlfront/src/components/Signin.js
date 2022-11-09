@@ -87,7 +87,7 @@ class Signin extends Component {
             <div className='my-auto mt-14 pt- p-6'>
 
 
-              <Errormsg error={error} style={{ display: error ? "" : "none" }} />
+              <Errormsg className='mt-2'error={error} style={{ display: error ? "" : "none" }} />
               
 
               {loading ?  <div class="flex items-center justify-center space-x-2 animate-bounce">
