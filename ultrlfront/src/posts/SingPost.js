@@ -6,8 +6,8 @@ import {Image} from 'cloudinary-react'
 import Comments from './Comments'
 import { Loading } from '../components/Loading'
 import avatarImage from "../assets/avatar.jpg"
-// import { isAuthenticated } from '../auth'
-// import Verticalicon from "../components/verticalicon"
+import { isAuthenticated } from '../auth'
+import Verticalicon from "../components/verticalicon"
 
 
 class SingPost extends Component {
