@@ -5,7 +5,7 @@ An environment where people can become better versions of themselves by promotin
 - User can Edit their profile.
 - User can Add Friends .
 - User can create posts.
-- User can makecomments.
+- User can make comments.
 - Like / Unlike posts.
 
 # Getting Started with Create React App
