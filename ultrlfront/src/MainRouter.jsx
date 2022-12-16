@@ -21,7 +21,7 @@ import ForgotPass from './components/forgotPass'
 import ChangePassword from './components/changePassword'
 import Reset from './components/reset'
 import Successful from './components/successful'
-import {Share} from "./components/share"
+
 import Comment from "./posts/Comments"
 import Aboutus from "./components/Aboutus"
 
@@ -50,7 +50,6 @@ const MainRouter = () => {
       <Route exact path="/getmail" component={Reset}></Route>
       <Route exact path="/successful" component={Successful}></Route>
       <Route exact path="/deletepost" component={popupdelete}></Route>
-      <Route exact path="/sharepost" component={Share}></Route>
       <Route exact path="/editpost" component={popupedit}></Route>
       <Route exact path ="/comment" component={Comment}></Route>
     </Switch>

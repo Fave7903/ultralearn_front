@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import {getPost} from './apiPost'
 import {Link} from 'react-router-dom'
 import {Image} from 'cloudinary-react'
-// import Like from './Like'
+import Like from './Like'
 import Comments from './Comments'
 import { Loading } from '../components/Loading'
 import avatarImage from "../assets/avatar.jpg"
 import { isAuthenticated } from '../auth'
 import Verticalicon from "../components/verticalicon"
+ 
 
 
 class SingPost extends Component {
@@ -89,7 +90,7 @@ class SingPost extends Component {
                 </div>
               </div>
      
-
+              <Like />
         <Comments postId={post.id} comments={comments} updateComments={this.updateComments}/>
         
     </div>
