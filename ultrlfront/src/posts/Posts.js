@@ -38,7 +38,7 @@ class Posts extends Component {
   }
 
   renderPosts = (posts) => {
-    const userId = isAuthenticated().user.id
+    // const userId = isAuthenticated().user.id
 
     console.log(posts)
     return (
