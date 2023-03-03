@@ -67,26 +67,20 @@ class SingPost extends Component {
                   </div>
  
                 </div>
-                <div className='mt-5'>
-                  <div className=''>
-                    <span>
+                {/* <div className='mt-5'> */}
 
+{/* 
                     </span>
-                    <span>
+                    <span> */}
                     {/* <div className='-mt-15 float-right '>  <Verticalicon/></div> */}
-                    { ( isAuthenticated().user.id === postedBy.id)? <div className='-mt-15 float-right '>  <Verticalicon/> </div>:  ""}
-
-                    </span>
-
-                  </div>
-                  
+                    {/* { ( isAuthenticated().user.id === postedBy.id)? <div className='-mt-15 float-right '>  <Verticalicon/> </div>:  ""} */}
 
                   {/* <div className='flex float-right hover:float-left"'>
                     <span>  <img className=" px-3" src={Like} alt="Like " /></span>
 
                    <span><img className='pt-3' src={comment} alt='comment'/></span>
                    </div> */}
-                </div>
+                {/* </div> */}
               </div>
      
 

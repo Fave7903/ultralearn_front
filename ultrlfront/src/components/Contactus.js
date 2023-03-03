@@ -31,12 +31,12 @@ class Contact extends Component {
     return (
         <div>
             <Nav/>
-                    <div className="h-full grid grid-cols-2 ">
+                    <div className=" grid grid-cols-2 ">
                         <div className='col-span-1 hidden md:block flex flex-col bg-no-repeat bg-cover bg-enter
-                         w-50'style={{ backgroundImage:`url(${bgimage})` }}>
+                         w-50 h-80vh'style={{ backgroundImage:`url(${bgimage})` }}>
                         </div>
 
-<div className='col-span-2 md:col-span-1 md:h-full flex flex-col' >
+<div className='col-span-2 md:col-span-1 md:h-80vh flex flex-col' >
   <div className='mt-5 mb-5 pt-'>
 
     {loading ?  <div class="flex items-center justify-center space-x-2 animate-bounce">
@@ -44,7 +44,7 @@ class Contact extends Component {
 <div class="w-8 h-8 bg-purple-600 rounded-full"></div>
 <div class="w-8 h-8 bg-purple-900 rounded-full"></div>
 </div> : ""}
-    <div className="p-8 -mt-5 "style={{backgroundColor:"#D9D9D9"}}>
+    <div className="p-14 -mt-5 h-80vh "style={{backgroundColor:"#D9D9D9"}}>
       <h4 style={{color:"#460273"}}className="text-center font-bold text-2xl">Contact Us</h4>
       <form class="mt-7"action='mailto:ultralearnng@gmail.com'>
 
@@ -62,12 +62,12 @@ class Contact extends Component {
             type="email" id="username" value={email} placeholder="Email" />
         </div>
         <div className='my-6'>
-        <textarea onChange={this.handleChange("message")}  type="text" className=" mb-3 h-40 rounded w-full py-30 px-3" value={message} placeholder="Your Message">  </textarea>
+        <textarea onChange={this.handleChange("message")}  type="text" className=" mb-7 h-40 rounded w-full py-30 px-3" value={message} placeholder="Your Message">  </textarea>
         </div>
         </div>
 
 
-        <div class="flex items-center mt-6 mb-12 justify-center">
+        <div class="flex items-center mt-8 mb-12 justify-center">
           <button  class="sgnbut text-white font-bold py-2 px-4 rounded  " onClick={this.clickSubmit}>Submit
           </button> 
         </div>
