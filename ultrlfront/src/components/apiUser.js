@@ -1,5 +1,5 @@
 export const read = (name, token) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/ul/${name}`, {
+    return fetch(`http://13.56.11.21:5050/ul/${name}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -14,7 +14,7 @@ export const read = (name, token) => {
   }
 
 export const update = (name, token, user) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/ul/${name}`, {
+    return fetch(`http://13.56.11.21:5050/ul/${name}`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -45,7 +45,7 @@ export const update = (name, token, user) => {
 //   }
 
 export const list = () => {
-    return fetch(`https://api-ultralearn.herokuapp.com/users`, {
+    return fetch(`http://13.56.11.21:5050/users`, {
       method: "GET",
     })
     .then(response => {
@@ -55,7 +55,7 @@ export const list = () => {
   }
 
 export const follow = (userId, token, followId) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/user/${followId}/follow`, {
+    return fetch(`http://13.56.11.21:5050/user/${followId}/follow`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -71,7 +71,7 @@ export const follow = (userId, token, followId) => {
   }
 
 export const unfollow = (userId, token, unfollowId) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/user/${unfollowId}/unfollow`, {
+    return fetch(`http://13.56.11.21:5050/user/${unfollowId}/unfollow`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -87,7 +87,7 @@ export const unfollow = (userId, token, unfollowId) => {
   }
 
 export const findPeople = (name, token) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/user/findpeople/${name}`, {
+    return fetch(`http://13.56.11.21:5050/user/findpeople/${name}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -103,7 +103,7 @@ export const findPeople = (name, token) => {
 
 
 export const myfollowers = (name, token) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/user/followers/${name}`, {
+    return fetch(`http://13.56.11.21:5050/user/followers/${name}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -119,7 +119,7 @@ export const myfollowers = (name, token) => {
 
 
 export const myfollowings = (name, token) => {
-    return fetch(`https://api-ultralearn.herokuapp.com/user/followings/${name}`, {
+    return fetch(`http://13.56.11.21:5050/user/followings/${name}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -135,7 +135,7 @@ export const myfollowings = (name, token) => {
 
 
 export const resetLinkMail = (mail) => {
-  return fetch(`https://api-ultralearn.herokuapp.com/ul/email`, {
+  return fetch(`http://13.56.11.21:5050/ul/email`, {
     method: 'POST',
     headers: {
       Accept: "application/json",
@@ -152,7 +152,7 @@ export const resetLinkMail = (mail) => {
 
 export const passwordReset = (password, token) => {
   console.log(token, password)
-  return fetch(`https://api-ultralearn.herokuapp.com/reset-password`, {
+  return fetch(`http://13.56.11.21:5050/reset-password`, {
     method: 'PUT',
     headers: {
       Accept: "application/json",
