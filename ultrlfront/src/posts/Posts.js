@@ -6,7 +6,7 @@ import avatarImage from "../assets/avatar.jpg"
 // import Verticalicon from "../components/verticalicon"
 import Explore from '../components/Explore'
 import { Loading } from '../components/Loading'
-import {isAuthenticated} from '../auth'
+// import {isAuthenticated} from '../auth'
 // import like from '../assets/Like-purple.png'
 import comment from '../assets/Comment-purple.png'
 
