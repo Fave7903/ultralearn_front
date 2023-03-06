@@ -1,5 +1,5 @@
 export const signup = (user) => {
-    return fetch('http://13.56.11.21:5050/signup', {
+    return fetch('https://ultralearn.xyz/signup', {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -14,7 +14,7 @@ export const signup = (user) => {
   }
 
 export const signin = (user) => {
-    return fetch('http://13.56.11.21:5050/login', {
+    return fetch('https://ultralearn.xyz/login', {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -38,7 +38,7 @@ export const authenticate = (jwt, next) => {
 export const signout = (next) => {
   if (typeof window !== "undefined") localStorage.removeItem("jwt")
   next()
-  return fetch('http://13.56.11.21:5050/signout', {
+  return fetch('https://ultralearn.xyz/signout', {
     method: "GET"
   }).then(response => {
     return response.json()

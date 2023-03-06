@@ -1,5 +1,5 @@
 export const create = (name, token, post) => {
-    return fetch(`http://13.56.11.21:5050/post/new/${name}`, {
+    return fetch(`https://ultralearn.xyz/post/new/${name}`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -15,7 +15,7 @@ export const create = (name, token, post) => {
   }
 
 export const list = () => {
-    return fetch(`http://13.56.11.21:5050/posts`, {
+    return fetch(`https://ultralearn.xyz/posts`, {
       method: "GET",
     })
     .then(response => {
@@ -25,7 +25,7 @@ export const list = () => {
   }
 
 export const getPost = postId => {
-    return fetch(`http://13.56.11.21:5050/post/${postId}`, {
+    return fetch(`https://ultralearn.xyz/post/${postId}`, {
       method: "GET",
     })
     .then(response => {
@@ -35,7 +35,7 @@ export const getPost = postId => {
   }
 
 export const listByUser = (name, token) => {
-    return fetch(`http://13.56.11.21:5050/posts/by/${name}`, {
+    return fetch(`https://ultralearn.xyz/posts/by/${name}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -50,7 +50,7 @@ export const listByUser = (name, token) => {
   }
 
 export const like = (userId, token, postId) => {
-    return fetch(`http://13.56.11.21:5050/post/like`, {
+    return fetch(`https://ultralearn.xyz/post/like`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -66,7 +66,7 @@ export const like = (userId, token, postId) => {
   }
 
 export const unlike = (userId, token, postId) => {
-    return fetch(`http://13.56.11.21:5050/post/unlike`, {
+    return fetch(`https://ultralearn.xyz/post/unlike`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -82,7 +82,7 @@ export const unlike = (userId, token, postId) => {
   }
 
 export const comment = (userId, token, postId, text) => {
-    return fetch(`http://13.56.11.21:5050/post/comment`, {
+    return fetch(`https://ultralearn.xyz/post/comment`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -98,7 +98,7 @@ export const comment = (userId, token, postId, text) => {
   }
 
 export const uncomment = (userId, token, postId, comment) => {
-    return fetch(`http://13.56.11.21:5050/post/uncomment`, {
+    return fetch(`https://ultralearn.xyz/post/uncomment`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -114,7 +114,7 @@ export const uncomment = (userId, token, postId, comment) => {
   }
 
   // export const editPost = (postId, newPost) => {
-  //   return fetch(`http://13.56.11.21:5050/post/${postId}`, {
+  //   return fetch(`https://ultralearn.xyz/post/${postId}`, {
   //     method: "PUT",
   //     headers: {
   //       Accept: "application/json",
